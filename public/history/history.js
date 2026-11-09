@@ -6,7 +6,7 @@ const safeUrl = value => {
   if (typeof value !== 'string' || !value.trim()) return null;
   try { const url = new URL(value, document.baseURI); return /^https?:$/.test(url.protocol) && !url.username && !url.password ? url.href : null; } catch { return null; }
 };
-let comparisonVersion = null;
+let comparisonVersion = null, groupingDraft = false;
 let generations = [], versions = [], pastProposals = new Map(), mode = 'versions', index = 0, selected = null, nextImage;
 const list = () => mode === 'versions' ? versions : generations;
 const recordName = record => String(record.title || record.id || 'ゲーム');
@@ -29,12 +29,13 @@ async function loadHistory() {
     const response = await fetch('./generations.json', { cache: 'no-cache', signal: AbortSignal.timeout(12000) });
     if (!response.ok) throw new Error();
     const data = await response.json();
+    groupingDraft = data.groupingStatus === 'draft';
     generations = (Array.isArray(data.generations) ? data.generations : []).filter(row => row && typeof row.id === 'string');
     versions = (Array.isArray(data.versions) ? data.versions : []).filter(row => row && typeof row.id === 'string');
     pastProposals = new Map((Array.isArray(data.proposals) ? data.proposals : []).map(row => [row.id, row]));
     if (!generations.length && !versions.length) { retryState('バージョンの記録を準備しています。'); return; }
     const select = $('version-select'); select.replaceChildren();
-    for (const [key, label, records] of [['versions', '各バージョン', versions], ['generations', '変化のまとまり', generations]]) {
+    for (const [key, label, records] of [['versions', '各バージョン', versions], ['generations', '変化のまとまり', groupingDraft ? [] : generations]]) {
       if (!records.length) continue;
       const group = element('optgroup'); group.label = label;
       for (const record of records) { const option = element('option', '', optionName(record)); option.value = `${key}:${record.id}`; group.append(option); }
@@ -160,7 +161,8 @@ function renderStory() {
   selected = list()[index]; if (!selected) return;
   const previous = list()[index - 1], next = list()[index + 1];
   $('version-select').value = `${mode}:${selected.id}`;
-  const meta = [versionLabel(selected), selected.period].filter(Boolean).join('　');
+  document.querySelector('.version-picker').hidden = groupingDraft && mode === 'generations';
+  const meta = [groupingDraft && mode === 'generations' ? '仮のまとまり（確認用）' : '', versionLabel(selected), selected.period].filter(Boolean).join('　');
   $('version-meta').textContent = meta; $('generation-title').textContent = recordName(selected);
   $('generation-summary').textContent = selected.summary || '';
   announcement.textContent = `${meta}、${recordName(selected)}を表示しています。`;
