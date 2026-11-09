@@ -15,3 +15,6 @@ Node.js 22以上、依存はws。`npm ci` → `npm start` でルートbuild-web�
 `/history/` は保存したHTML、`/history-play/` は旧版のローカルWorker再生です。`HISTORY_ASSET_BUCKET` がある場合、`archive.js` が対象作品のハッシュ名assets/chunksだけを同originから読み出します。大きいdata/wasmは復元キャッシュとしてGit対象外です。ローカル復元はルートの `scripts/fetch-history-assets.mjs`。配備にはこのハッシュ資産の事前配置が必要で、現運用は既存バケットの `orbit-salvage/history/` 配下を使用します。
 
 今回の関連試験は `node --test server/feedback.test.js server/archive.test.js server/static.test.js`。ローカルの短縮・得点を揃えた専用局面では、実Chromeで勝者の日本語投稿と共有票、履歴ページとの同一権利、ファイル再起動後の保持を確認しました。通常180秒の自然な勝利を確認した記録とは区別します。AIによる自動改修・自動再配備は実装していません。
+
+公開46では実Cloud Runのラウンド確定後にCloud Storageへのgrant1件の書込を確認し、Unityから履歴ページに移って同じ投票権が表示されました。本番の提案/票は0件で、確認用の文は投入していません。ローカルの実投稿・共有票と、公開の権利/永続化確認を区別しています。
+
