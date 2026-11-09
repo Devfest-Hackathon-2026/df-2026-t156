@@ -1,13 +1,14 @@
 # 谷の採鉱競争
 
-山間の採鉱場を歩き、鉱石を掘って売り、ピックへ再投資する3分の一人称対戦ゲームです。中位の道具で稼ぎ続けるか、最大Lv8まで強化して硬い鉱脈を素早く掘るか。残り時間、光っている店、見える相手を読んで決めます。
+3分の採鉱対戦を遊び、勝者は次の改善案を書き、ほかの参加者は投票します。実際に寄せられた意見で何が変わったかを、変更前後の画面と両方のゲームで辿れます。
 
-[ブラウザーで遊ぶ](https://orbit-salvage-prototype-905974313870.asia-northeast1.run.app/)
+[最新版を遊ぶ](https://orbit-salvage-prototype-905974313870.asia-northeast1.run.app/) · [ゲームの履歴](https://orbit-salvage-prototype-905974313870.asia-northeast1.run.app/history/) · [次の改善案](https://orbit-salvage-prototype-905974313870.asia-northeast1.run.app/history/#ideas)
 
-現在のゲームに加え、[これまでのゲームと改善案](https://orbit-salvage-prototype-905974313870.asia-northeast1.run.app/history/)から39の保存版を遊び、実際の試遊の意見と変更を辿れます。試合後は勝者が改善案を投稿し、ほかの参加者は案に投票できます。
+比較から見るなら、[宇宙船から自然の谷へ](https://orbit-salvage-prototype-905974313870.asia-northeast1.run.app/history/?version=r03)、[拾うから掘るへ](https://orbit-salvage-prototype-905974313870.asia-northeast1.run.app/history/?version=r04)、[景観の大岩も採れる](https://orbit-salvage-prototype-905974313870.asia-northeast1.run.app/history/?version=r15)、[円に入るだけの売却へ](https://orbit-salvage-prototype-905974313870.asia-northeast1.run.app/history/?version=r40)。意見のそばで前後の実版をそのまま遊べます。
 
-現在のルールは以下の通りです。提出物と保存版の再現方法は後半を参照してください。
+過去の実例は、開発中の本人の意見をCodexが実装してきた記録です。新しい投稿・投票とは分けて表示し、自動実装・自動再配備は接続していません。
 
+ゲーム本体は、山間の採鉱場を歩き、鉱石を掘って売り、道具へ再投資する一人称対戦です。近くで稼ぐか、希少鉱を争うか、残り時間と見える相手を読んで決めます。
 ## 遊び方
 
 |操作|キー|
@@ -149,4 +150,3 @@ Unity 2022.3.22f1（WebGL Build Support付）で `Unity/` を開き、`Assets/Sc
 ## 公開46の反映
 
 2026-11-09、通常URLを revision orbit-salvage-prototype-00046-geh に反映しました。投稿・投票はCloud Storage保存、履歴の39版データとページ6ファイルを配信照合済み。実Chromeでr01の参加・移動、r40→意見→r41の起動、最新版への復帰・銅2個の採掘を確認しています。通常180秒の追加網羅や全39版の通し試合は行っていません。Wasmは74e88d6b09bfb6fc167b64271c32ac30242ad84409cdccfd2e718f763d3bd1c3、dataはea9f8e19edd62be00184da0621ce3938d8a6dec9a9f9ba386a8a45aefae7042dです。
-

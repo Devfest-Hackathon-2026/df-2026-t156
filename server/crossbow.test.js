@@ -118,21 +118,21 @@ test('protected bodies are ignored and do not shield a vulnerable carrier beyond
   Object.assign(safe,{x:station.x,y:0,z:station.z,bag:['copper']});
   for(const p of [a,b,safe])recordCombatPose(w,p);
   shoot(w,a,b);advance(w,.6);
-  assert.deepEqual(safe.bag,['copper']);assert.equal(safe.impulseId,0);assert.equal(safe.hurtUntil,0);
+  assert.deepEqual(safe.bag,[]);assert.ok(safe.grossSales>=2, 'protection also automatically sells the copper');assert.equal(safe.impulseId,0);assert.equal(safe.hurtUntil,0);
   assert.equal(b.bag.length,0);assert.equal(a.bag.length,1);assert.equal(impacts(w).at(-1).targetId,b.id);
 });
 
 test('an existing arrow survives its shooter entering protection after release',()=>{
   const{w,a,b}=fixture();shoot(w,a,b);w.tick(.05);assert.equal(w.bolts.length,1);
   const station=w.stations.find(s=>s.id==='central');Object.assign(a,{x:station.x,z:station.z});recordCombatPose(w,a);
-  advance(w,.35);assert.equal(a.bag.length,1);assert.equal(impacts(w).at(-1).reason,'hit');
+  advance(w,.35);assert.equal(a.bag.length,0);assert.equal(a.goldSold,1, 'the arrow still steals gold, then the protected shooter sells it');assert.equal(impacts(w).at(-1).reason,'hit');
 });
 
-test('a protected visitor alone takes no impact, hurt or inventory change',()=>{
+test('a protected visitor sells automatically, without arrow impact or hurt',()=>{
   const{w,a,b}=fixture(),station=w.stations.find(s=>s.id==='central');
   Object.assign(a,{x:0,z:-12});Object.assign(b,{x:0,z:station.safeRadius-.1});
   recordCombatPose(w,a);recordCombatPose(w,b);shoot(w,a,b);advance(w,.7);
-  assert.equal(b.bag.length,1);assert.equal(b.hurtUntil,0);assert.equal(b.impulseId,0);
+  assert.equal(b.bag.length,0);assert.equal(b.goldSold,1);assert.equal(b.hurtUntil,0);assert.equal(b.impulseId,0);
   assert.ok(impacts(w).every(e=>e.targetId!==b.id));
 });
 
@@ -142,8 +142,9 @@ test('protection at swept arrow contact follows a carrier entering or leaving th
     Object.assign(a,{x:0,z:-12});Object.assign(b,{x:0,z:station.safeRadius+(entering?.7:-.3)});
     recordCombatPose(w,a);recordCombatPose(w,b);shoot(w,a,b);
     w.input(b.id,{z:entering?-1:1,sprint:true});advance(w,.65);
-    assert.equal(b.bag.length,entering?1:0,entering?'entering protection':'leaving protection');
-    if(entering){assert.equal(b.hurtUntil,0);assert.equal(b.impulseId,0);}
+    assert.equal(b.bag.length,0);assert.equal(b.goldSold,1, 'inside protection the carried gold is automatically sold');
+    if(entering){assert.equal(b.hurtUntil,0);assert.equal(b.impulseId,0);assert.ok(impacts(w).every(e=>e.targetId!==b.id));}
+    else {assert.equal(impacts(w).at(-1).targetId,b.id);assert.equal(impacts(w).at(-1).reason,'empty');assert.ok(b.impulseId>0);}
   }
 });
 
@@ -182,9 +183,9 @@ test('stale, future, invalid-direction and old-round releases never launch',()=>
   }
 });
 
-test('loaded shop selling cancels drawing, and clock recovery discards old flight and draw state',()=>{
-  const{w,a,b}=fixture();Object.assign(a,{x:0,z:0,bag:['copper']});w.input(a.id,{weapon:'bow',bowDrawing:true,sell:true});w.tick(.05);
-  assert.equal(a.bowDrawing,false);assert.ok(a.sellProgress>0);
+test('automatic shop selling is independent of drawing, and clock recovery discards old flight and draw state',()=>{
+  const{w,a,b}=fixture();Object.assign(a,{x:0,z:0,bag:['copper']});w.input(a.id,{weapon:'bow',bowDrawing:true});w.tick(.05);
+  assert.equal(a.bowDrawing,true, 'automatic selling does not require releasing the held bow');assert.equal(a.sellProgress,0);assert.equal(a.bag.length,0);assert.ok(w.events.some(e=>e.type==='sold'&&e.actorId===a.id));
   Object.assign(a,{x:18,z:-24});shoot(w,a,b);w.tick(.05);assert.equal(w.bolts.length,1);
   w.advanceClock(.3);assert.equal(w.bolts.length,0);assert.equal(a.bowDrawing,false);assert.equal(b.bag.length,1);
 });

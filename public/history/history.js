@@ -6,6 +6,7 @@ const safeUrl = value => {
   if (typeof value !== 'string' || !value.trim()) return null;
   try { const url = new URL(value, document.baseURI); return /^https?:$/.test(url.protocol) && !url.username && !url.password ? url.href : null; } catch { return null; }
 };
+let comparisonVersion = null;
 let generations = [], versions = [], pastProposals = new Map(), mode = 'versions', index = 0, selected = null, nextImage;
 const list = () => mode === 'versions' ? versions : generations;
 const recordName = record => String(record.title || record.id || 'ゲーム');
@@ -79,8 +80,10 @@ function appendOpinion(parent, summary, proposal) {
 }
 function changePair(row, destination) {
   const pair = element('div', 'change-pair');
-  if (row.idea) appendOpinion(pair, row.idea, pastProposals.get(row.proposalId));
-  if (row.change) { pair.append(element('p', 'change-label', `${destination}での変化`)); pair.append(element('p', 'change-text', row.change)); }
+  const opinion = element('div', 'opinion'), change = element('div', 'reflection');
+  if (row.idea) appendOpinion(opinion, row.idea, pastProposals.get(row.proposalId));
+  if (row.change) { change.append(element('p', 'change-label', `${destination}での変化`)); change.append(element('p', 'change-text', row.change)); }
+  pair.append(opinion, change);
   return pair;
 }
 function renderTransition(current, next) {
@@ -173,6 +176,22 @@ function renderStory() {
   $('play-note').textContent = playUrl ? '過去の版は一人で試せます' : '実装の記録は引き続き読めます';
   const source = safeUrl(selected.sourceUrl); $('source-link').hidden = !source;
   if (source) { $('source-link').href = source; $('source-link').target = '_blank'; $('source-link').rel = 'noopener noreferrer'; }
+  comparisonVersion = next || previous || null;
+  const compare = $('comparison-stage'), comparisonImage = $('comparison-image');
+  compare.hidden = !comparisonVersion;
+  document.querySelector('.story-grid').dataset.final = String(!next && !!previous);
+  const comparisonLabels = (next ? selected : previous)?.comparison;
+  $('before-label').textContent = `${next ? '変更前' : '反映後'}　${versionLabel(selected)}${comparisonLabels ? '　' + (next ? comparisonLabels.beforeLabel : comparisonLabels.afterLabel) : ''}`;
+  if (comparisonVersion) {
+    $('after-label').textContent = `${next ? '反映後' : '変更前'}　${versionLabel(comparisonVersion)}${comparisonLabels ? '　' + (next ? comparisonLabels.afterLabel : comparisonLabels.beforeLabel) : ''}`;
+    const url = safeUrl(comparisonVersion.image);
+    comparisonImage.hidden = !url;
+    if (url) { comparisonImage.src = url; comparisonImage.alt = `${versionLabel(comparisonVersion)} ${recordName(comparisonVersion)}のゲーム画面`; }
+    else comparisonImage.removeAttribute('src');
+    $('comparison-caption').textContent = comparisonVersion.caption || '';
+    $('play-comparison').textContent = `${versionLabel(comparisonVersion)}を遊ぶ`;
+    $('play-comparison').disabled = !safeUrl(comparisonVersion.playUrl);
+  }
   renderTransition(selected, next); renderEvidence(selected);
   $('previous-version').disabled = !previous; $('next-version').disabled = !next;
   $('previous-version').querySelector('b').textContent = previous ? optionName(previous) : '';
@@ -187,13 +206,15 @@ $('next-version').addEventListener('click', () => selectRecord(mode, index + 1))
 $('transition-next').addEventListener('click', () => selectRecord(mode, index + 1));
 window.addEventListener('popstate', selectFromUrl);
 const dialog = $('game-dialog'), frame = $('game-frame'); let gameOpener;
-$('play-version').addEventListener('click', () => {
-  const url = safeUrl(selected?.playUrl); if (!url) return;
-  gameOpener = document.activeElement; $('game-dialog-version').textContent = versionLabel(selected);
-  $('game-dialog-title').textContent = recordName(selected); frame.title = `${optionName(selected)}のゲーム`;
+function playRecord(record) {
+  const url = safeUrl(record?.playUrl); if (!url) return;
+  gameOpener = document.activeElement; $('game-dialog-version').textContent = versionLabel(record);
+  $('game-dialog-title').textContent = recordName(record); frame.title = `${optionName(record)}のゲーム`;
   $('game-new-tab').href = url; dialog.showModal(); document.body.style.overflow = 'hidden'; frame.src = url;
   $('close-game').focus();
-});
+}
+$('play-version').addEventListener('click', () => playRecord(selected));
+$('play-comparison').addEventListener('click', () => playRecord(comparisonVersion));
 function closeGame() { frame.src = 'about:blank'; dialog.close(); document.body.style.overflow = ''; gameOpener?.focus(); window.dispatchEvent(new Event('history-game-closed')); }
 $('close-game').addEventListener('click', closeGame);
 // Esc belongs to the game while it has focus (including pointer-lock release).

@@ -218,7 +218,7 @@ public partial class OrbitGame
         if (surveyOpen) hasOpenedSurvey = true;
         if (Event.current.type == EventType.Repaint && !surveyOpen) DrawMatchHud(w, h, false);
         if (surveyOpen) DrawSurvey(w, h);
-        if (!locked && !surveyOpen && DrawFieldLink(new Rect(w - 156, 24, 135, 28), "提案と変更の記録", "play-improvements")) OpenImprovements(false);
+        if (!locked && !surveyOpen && DrawFieldLink(new Rect(w - 170, h - 108, 150, 28), "提案と変更の記録", "play-improvements")) OpenImprovements(false);
     }
 
     private void InitHudStyles()

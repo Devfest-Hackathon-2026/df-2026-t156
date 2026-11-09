@@ -18,3 +18,33 @@
 .transition-next{min-height:44px;display:block;padding:8px 0;border:0;background:transparent;font-size:.875rem;font-weight:700;color:var(--leaf);text-decoration:underline;text-underline-offset:4px}
 
 .screen.is-empty{aspect-ratio:auto;min-height:clamp(160px,22vw,260px);background:transparent;border-color:var(--line)}.screen.is-empty p{color:var(--muted)}
+
+/* Keep the opinion and both real builds together, including after closing play. */
+.story-grid{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:24px 32px}
+.game-stage,.comparison-stage{min-width:0;order:0}.comparison-stage[hidden]{display:none}
+.comparison-label{font-size:.8125rem;font-weight:700;line-height:1.5;margin-bottom:10px;color:var(--forest)}
+.story-grid .transition{grid-column:1/-1;order:2;border-left:0;border-top:1px solid var(--line);padding:20px 0 0;margin-top:0}
+.story-grid[data-final=true] .game-stage{order:1}
+.transition-destination{float:right;margin-left:20px}.transition h3{font-size:.875rem;color:var(--forest);font-weight:700}
+.change-pair{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:32px;padding-bottom:16px}
+.change-pair .change-label{margin-top:0}.change-pair .idea-text{font-size:1rem;line-height:1.75}.change-text{font-size:.9375rem;line-height:1.75}
+.play-line{margin-top:10px;gap:10px}.play-line .button{min-height:44px;font-size:.875rem;padding:9px 16px}
+.game-figure figcaption{font-size:.6875rem;line-height:1.6}.story-heading{margin-bottom:18px}.page-heading{margin-bottom:24px}
+.evidence{margin-top:10px}.version-navigation{margin-top:20px;padding-top:16px}.history-section{padding-bottom:32px}
+@media(min-width:1600px){.story-grid{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:24px 36px}.history-section{padding-top:32px}}
+@media(max-width:760px){.story-grid{display:flex;flex-direction:column;gap:24px}.game-stage,.comparison-stage{width:100%}.story-grid .transition{width:100%;padding-top:18px}.change-pair{grid-template-columns:minmax(0,1fr);gap:14px}.comparison-label{margin-bottom:8px}.transition-destination{float:none;margin:0 0 6px}.play-note{font-size:.6875rem}.game-figure figcaption{font-size:.6875rem}}
+
+@media(min-width:761px){
+.site-header{min-height:60px;padding-block:10px}.brand,.brand img{width:176px}
+.history-section{padding-top:20px}.page-heading{margin-bottom:16px;align-items:center}h1{font-size:1.5rem;line-height:1.25}.page-heading p{font-size:.75rem;margin-top:3px}
+.story-heading{margin-bottom:12px;gap:28px}.story-heading h2{font-size:1.25rem}.version-meta{font-size:.75rem;margin-bottom:2px}.generation-summary{font-size:.8125rem;line-height:1.6;max-width:480px}
+.comparison-label{font-size:.75rem;margin-bottom:6px}.game-figure figcaption{min-height:0;margin-top:6px}.play-line{margin-top:8px}.story-grid{row-gap:16px}
+.story-grid .transition{padding-top:14px}.transition h3{margin-bottom:8px}.change-pair{padding-bottom:4px}.change-pair .idea-text{font-size:.9375rem}.change-text{font-size:.875rem}.transition-next{min-height:32px;padding-block:4px}
+.evidence{margin-top:4px}.evidence summary{padding-block:5px}
+}
+
+.story-grid .transition{order:-1;border-top:0;border-bottom:1px solid var(--line);padding:0 0 12px}
+.transition-next{display:inline-block}.transition h3{margin-bottom:6px}
+@media(min-width:761px){.story-grid{row-gap:14px}.story-grid .transition{padding:0 0 8px}.transition-next{min-height:28px;font-size:.8125rem}.change-pair .idea-text{font-size:.9375rem}.comparison-label{margin-top:0}}
+
+@media(min-width:761px){.screen{max-height:31vh}}

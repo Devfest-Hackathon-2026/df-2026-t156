@@ -12,3 +12,5 @@ Unity 2022.3.22f1、Built-in Render Pipeline、WebGL Build Supportを使用し�
 素材の出典とライセンスは各Resources下のLICENSES.md、およびNoto Sans JP/題字のOFLを参照してください。Unity自体は各自の正規インストールが必要です。
 
 改善案の入口は入坑前と精算画面です。実行時の履歴リンクは同originの /history/ を開きます。WebGLの自由記述は日本語IMEに対応するブラウザーtextareaを使用し、開いている間はゲーム入力を止めます。EditorはGUI.TextAreaとPlayerPrefsを使います。UnitySkillsで本プロジェクトを照合し、コンパイル・WebGL実ビルド・Play反映を行っています。
+
+履歴の前後比較では39の実版を保ち、全個別画像を参加後の実画面へ揃えました。現在のWebGLではゲーム内の改善案入口を右下へ移し、金の方角案内との重なりを解消しています。UnitySkills build_player によるWebGL実ビルドは成功。保存版の全試合を追加QAしたものではありません。

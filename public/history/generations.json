@@ -16,14 +16,14 @@
         },
         {
           "idea": "まず軽い試作品を作り、ブラウザで実際に遊んで方向を決めたい。",
-          "change": "Unity WebGLと権威サーバーを用意し、Cloud Run上で遊べる最初の版を公開した。"
+          "change": "宇宙船でコアを集め、荷物を切り合いながら中央へ届ける最初の対戦ゲームになった。"
         }
       ],
       "evidence": [
         "git:406efa4 Unity・オンラインサーバー・最初の公開試作"
       ],
-      "image": "generation-media/g01.webp",
-      "caption": "初期の宇宙回収競争。保存された当時のゲーム画面。",
+      "image": "generation-media/r03-play.webp",
+      "caption": "宇宙船と2隻のNPC、コアを中央へ運ぶ試作。r03の保存版で参加し、操縦した画面。",
       "versionIds": [
         "r01",
         "r02",
@@ -52,8 +52,8 @@
         "git:d59415c 谷の景観",
         "git:afbe677 一人称操作と共有地形・公開4"
       ],
-      "image": "generation-media/g02.webp",
-      "caption": "自然の谷へ移した初期版。一人称の道具と、谷の小屋・人物が見える。",
+      "image": "generation-media/r04.webp",
+      "caption": "鉱石を拾って運ぶ谷。一人称になったr04で、まだ鉱脈を掘る方式ではない。",
       "versionIds": [
         "r04"
       ],
@@ -89,8 +89,8 @@
         "git:497f1d1 売店と運搬経路・公開6",
         "git:e698e9a 道具と採掘表示の調整・公開7"
       ],
-      "image": "generation-media/g03.webp",
-      "caption": "採掘・袋・複数売店が入った時期の実画面。",
+      "image": "generation-media/r07-play.webp",
+      "caption": "公開7で鉱石を掘り、袋へ入った場面。",
       "versionIds": [
         "r05",
         "r06",
@@ -125,8 +125,8 @@
         "git:1ed866a 公開8",
         "git:cf5d315 金鉱と運搬の公開9"
       ],
-      "image": "generation-media/g04.webp",
-      "caption": "当時の強化・運搬の動作確認。小屋でピックに投資した場面。",
+      "image": "generation-media/r09-play.webp",
+      "caption": "公開9で銅を換金し、鋼のピックへ強化した場面。",
       "versionIds": [
         "r08",
         "r09"
@@ -171,8 +171,8 @@
         "git:46849d7 差分配信の滞留を抑制",
         "git:826300d 公開12"
       ],
-      "image": "generation-media/g05.webp",
-      "caption": "公開12の再戦画面。硬い鉱石と採掘条件の表示がある。",
+      "image": "generation-media/r12-play.webp",
+      "caption": "鉱脈へ続けてピックを振った場面。r12の保存版を通常入力で再生。",
       "versionIds": [
         "r10",
         "r11",
@@ -208,8 +208,8 @@
         "git:652ea68 実景を使う開始画面",
         "git:3a86332 公開15"
       ],
-      "image": "generation-media/g06.webp",
-      "caption": "券を外した後のタイトル。ゲーム内の谷を背景に、名前と参加操作を置いた。",
+      "image": "generation-media/r15-play.webp",
+      "caption": "公開15では、目の前の大岩を叩いても鉱石を採れなかった。次の版でこの岩も採掘対象になった。",
       "versionIds": [
         "r13",
         "r14",
@@ -244,8 +244,8 @@
         "git:df08573 岩肌と欠け跡の仕上げ",
         "git:3624ea1 公開16"
       ],
-      "image": "generation-media/g07.webp",
-      "caption": "岩の崩壊後、開いた通路を通り抜けた当時の動作確認画面。",
+      "image": "generation-media/r16-play.webp",
+      "caption": "公開16で、景観だった大岩の側面を削って銅を採った場面。",
       "versionIds": [
         "r16"
       ],
@@ -278,8 +278,8 @@
         "git:8fc03e1 移動中の人物と近接判定",
         "git:7bd2b5e 公開18"
       ],
-      "image": "generation-media/g08.webp",
-      "caption": "公開18に向け、移動する相手への命中を確認した専用局面。",
+      "image": "generation-media/r18-play.webp",
+      "caption": "公開18で、動く相手へ通常入力で近接を当てた場面。",
       "versionIds": [
         "r17",
         "r18"
@@ -312,8 +312,8 @@
         "git:cd0d2af 奪い返しの表示",
         "git:8ae772a 公開19"
       ],
-      "image": "generation-media/g09.webp",
-      "caption": "通常の試合でNPCとの取り返しを確認した当時の画面。",
+      "image": "generation-media/r19-play.webp",
+      "caption": "公開19で、相手と鉱石を取り返し合った場面。",
       "versionIds": [
         "r19"
       ],
@@ -343,8 +343,8 @@
         "git:c294730 NPCの開始15秒の人間への射撃猶予",
         "git:6f3b273 公開21"
       ],
-      "image": "generation-media/g10.webp",
-      "caption": "弩で遠距離から鉱石を奪った導入時の確認画面。",
+      "image": "generation-media/r21-play.webp",
+      "caption": "弩へ持ち替えたr21。装填済みの弩を撃つ方式で、次のr22では引いて放つ弓になる。",
       "versionIds": [
         "r20",
         "r21"
@@ -385,8 +385,8 @@
         "git:e22d1ef 相手の構えとNPCの視認",
         "git:7b2e90a 公開26"
       ],
-      "image": "generation-media/g11.webp",
-      "caption": "公開26の弓。引いている弦と矢が手元に見える。",
+      "image": "generation-media/r26-play.webp",
+      "caption": "公開26で採った鉱石を持ち帰った場面。この時点では売却と保護の境界が別にあった。",
       "versionIds": [
         "r22",
         "r23",
@@ -423,8 +423,8 @@
         "git:7437921 1・2の持ち物欄",
         "git:66b3ef2 公開27"
       ],
-      "image": "generation-media/g12.webp",
-      "caption": "公開27。一つになった店の円と、画面下のピック・弓の持ち物欄。",
+      "image": "generation-media/r27-play.webp",
+      "caption": "公開27の売店。売却と保護の円が一本になった。",
       "versionIds": [
         "r27"
       ],
@@ -457,8 +457,8 @@
         "git:a822a75 遠くの金鉱の反射",
         "git:85e847f 公開29"
       ],
-      "image": "generation-media/g13.webp",
-      "caption": "公開29。遠方の金鉱の場所が分かるようになった谷。",
+      "image": "generation-media/r29-play.webp",
+      "caption": "公開29の金鉱。昼の谷でも遠くから光を探せるようになった。",
       "versionIds": [
         "r28",
         "r29"
@@ -495,8 +495,8 @@
         "git:4a95304 単純化したルールの仕上げ",
         "git:2d7ca6a 公開32"
       ],
-      "image": "generation-media/g14.webp",
-      "caption": "公開32の高値売店。この時点の2倍表示は、後に1.5倍へ変更した。",
+      "image": "generation-media/r32-play.webp",
+      "caption": "公開32で、期限で消えなくなった金鉱を掘る場面。",
       "versionIds": [
         "r31",
         "r32"
@@ -517,7 +517,7 @@
         },
         {
           "idea": "全体的に解像度が低く、見た目の体験が悪い。",
-          "change": "WebGLの描画サイズとDPR、UIのCSS寸法、文字のラスタ設定を見直し、文字・道具・地形の明瞭さを改善した。"
+          "change": "画面と文字の描き方を見直し、道具・地形・文字の輪郭を鮮明にした。"
         },
         {
           "idea": "説明が多く、何が大事か分かりにくい。内容を減らすより、強弱をつけてシンプルにしたい。",
@@ -536,8 +536,8 @@
         "git:fb74ddd 実景タイトルの調整",
         "git:7960bd6 公開37"
       ],
-      "image": "generation-media/g15.webp",
-      "caption": "公開37の売店。プレイ画面に常設する説明と帯を減らした。",
+      "image": "generation-media/r37-play.webp",
+      "caption": "公開37の売店。数字看板をなくし、灯具と手元の売値で分かる形にした。",
       "versionIds": [
         "r34",
         "r36",
@@ -571,8 +571,8 @@
         "git:239a404 買取台・アンビルとNPCの接近",
         "git:729a756 候補40の記録"
       ],
-      "image": "generation-media/g16.webp",
-      "caption": "当時の公開確認画面。持ち物欄にピック・弓・袋の3枠が並ぶ。",
+      "image": "generation-media/r40-play.webp",
+      "caption": "この時点は買取台へ向けて使う操作。r40保存版の売店で、次のr41は円へ入るだけになる。",
       "versionIds": [
         "r39",
         "r40"
@@ -606,8 +606,8 @@
         "git:bc7ff8b 買取台の撤去と中央アンビル",
         "git:104182e 公開42の操作記録"
       ],
-      "image": "generation-media/g17.webp",
-      "caption": "当時の専用確認局面。荷物を自動売却後、中央のアンビルを1回押してピックを強化した。",
+      "image": "generation-media/r43-play.webp",
+      "caption": "買取台がなくなり、小屋の中央にアンビルが置かれた（r43の操作確認）。",
       "versionIds": [
         "r41",
         "r43"
@@ -635,8 +635,8 @@
         "git:3ae2534 人物の横幅と近接命中後の加速",
         "git:617fc62 公開44"
       ],
-      "image": "generation-media/g18.webp",
-      "caption": "公開44に向けた専用局面。近接命中後の短い加速を確認した画面。",
+      "image": "generation-media/r44-play.webp",
+      "caption": "空袋の相手に当てても、押し返した直後は加速する（r44・2人の初期位置と試合時間だけを揃えた操作確認）。",
       "versionIds": [
         "r44"
       ],
@@ -672,7 +672,7 @@
       },
       "title": "最初の宇宙試作",
       "period": "配布版1",
-      "summary": "Unity WebGLの三人称宇宙ゲームを配布。コアを連結して中央へ届け、レーザーで他船の荷物を切る120秒の試作。",
+      "summary": "宇宙船でコアを連結して中央へ届け、レーザーで他船の荷物を切る120秒の試作。",
       "generationId": "g01",
       "relatedProposalIds": [
         "p12",
@@ -705,7 +705,7 @@
       "examples": [
         {
           "idea": "軽量でシンプルなオンライン3Dの試作を、ブラウザで実際に遊べる形にしたい。必要ならGCPを使ってよい。",
-          "change": "Unity WebGLの三人称宇宙ゲームを配布。コアを連結して中央へ届け、レーザーで他船の荷物を切る120秒の試作。",
+          "change": "宇宙船でコアを連結して中央へ届け、レーザーで他船の荷物を切る120秒の試作。",
           "proposalId": "p12",
           "attribution": "本人の要望を受けた制作側の具体実装。版ごとに新しい本人入力があったという意味ではありません。"
         }
@@ -718,7 +718,7 @@
       "nextVersionId": "r02",
       "feedbackUntilNextVersionIds": [],
       "image": "generation-media/r01.webp",
-      "caption": "配布1の履歴再生実画面。宇宙を三人称で操縦する最初のUnity WebGL試作。",
+      "caption": "コアを連結して運び、相手の荷物を切る最初の宇宙試作。r01の保存版を参加後に撮影。",
       "imageRepresents": "この配布版そのものの実行画面。ゲーム画面のみ、合成・ゲーム内容の加工なし。"
     },
     {
@@ -774,9 +774,14 @@
       "previousVersionId": "r01",
       "nextVersionId": "r03",
       "feedbackUntilNextVersionIds": [],
-      "image": "generation-media/r02.webp",
-      "caption": "配布2の保存WebGLと当時のゲーム処理を、2026年11月9日に履歴再生した参加画面。",
-      "imageRepresents": "この配布版そのものの実行画面。ゲーム画面のみ、合成・ゲーム内容の加工なし。"
+      "image": "generation-media/r02-play.webp",
+      "caption": "コアと中央のリングへ向けて宇宙船を操縦。r02の保存版を通常入力で再生。",
+      "imageRepresents": "この配布版そのものの実行画面。ゲーム画面のみ、合成・ゲーム内容の加工なし。",
+      "imageSource": {
+        "versionId": "r02",
+        "capture": "history-r02-in-play.png",
+        "kind": "retained-version-play"
+      }
     },
     {
       "number": 3,
@@ -799,10 +804,10 @@
       },
       "title": "宇宙回収競争の初期完成",
       "period": "配布版3",
-      "summary": "同じ宇宙ルールの最終WebGLを再生成して配布。2人の同時接続と、結果から次ラウンドへの継続を当時確認。",
+      "summary": "宇宙船でコアを連結して運ぶ試作。開始位置や結果からの再戦を調整した版で、基本の遊びはr02と同じ。",
       "generationId": "g01",
-      "image": "generation-media/r03.webp",
-      "caption": "配布3の保存WebGLと当時のゲーム処理を、2026年11月9日に履歴再生した参加画面。",
+      "image": "generation-media/r03-play.webp",
+      "caption": "宇宙船と2隻のNPC、コアを中央へ運ぶ試作。r03の保存版で参加し、操縦した画面。",
       "imageRepresents": "この配布版そのものの実行画面。ゲーム画面のみ、合成・ゲーム内容の加工なし。",
       "relatedProposalIds": [
         "p12",
@@ -822,7 +827,7 @@
       "examples": [
         {
           "idea": "軽量でシンプルなオンライン3Dの試作を、ブラウザで実際に遊べる形にしたい。必要ならGCPを使ってよい。",
-          "change": "同じ宇宙ルールの最終WebGLを再生成して配布。2人の同時接続と、結果から次ラウンドへの継続を当時確認。",
+          "change": "宇宙船でコアを連結して運ぶ試作。開始位置や結果からの再戦を調整した版で、基本の遊びはr02と同じ。",
           "proposalId": "p12",
           "attribution": "本人の要望を受けた制作側の具体実装。版ごとに新しい本人入力があったという意味ではありません。"
         }
@@ -847,7 +852,16 @@
       "nextVersionId": "r04",
       "feedbackUntilNextVersionIds": [
         "p13"
-      ]
+      ],
+      "imageSource": {
+        "versionId": "r03",
+        "capture": "history-r03-in-play.png",
+        "kind": "retained-version-play"
+      },
+      "comparison": {
+        "beforeLabel": "宇宙船で飛ぶ",
+        "afterLabel": "谷を一人称で歩く"
+      }
     },
     {
       "number": 4,
@@ -874,7 +888,7 @@
       "summary": "自然の谷へ舞台を変更。一人称・WASDで歩き、共有地形上で荷物を回収して小屋へ運ぶ形になった。まだ鉱脈を掘る方式ではない。",
       "generationId": "g02",
       "image": "generation-media/r04.webp",
-      "caption": "配布4の履歴再生実画面。自然の谷・一人称へ変更。まだ鉱石を拾って運ぶ方式。",
+      "caption": "鉱石を拾って運ぶ谷。一人称になったr04で、まだ鉱脈を掘る方式ではない。",
       "imageRepresents": "この配布版そのものの実行画面。ゲーム画面のみ、合成・ゲーム内容の加工なし。",
       "relatedProposalIds": [
         "p13"
@@ -911,7 +925,11 @@
       "nextVersionId": "r05",
       "feedbackUntilNextVersionIds": [
         "p14"
-      ]
+      ],
+      "comparison": {
+        "beforeLabel": "落ちている鉱石を拾う",
+        "afterLabel": "鉱脈へピックを振る"
+      }
     },
     {
       "number": 5,
@@ -972,9 +990,14 @@
       "feedbackUntilNextVersionIds": [
         "p15"
       ],
-      "image": "generation-media/r05.webp",
-      "caption": "配布5の保存WebGLと当時のゲーム処理を、2026年11月9日に履歴再生した参加画面。",
-      "imageRepresents": "この配布版そのものの実行画面。ゲーム画面のみ、合成・ゲーム内容の加工なし。"
+      "image": "generation-media/r05-play.webp",
+      "caption": "鉱脈をピックで掘り、袋へ銅2個を採った。r05の保存版を通常入力で再生。",
+      "imageRepresents": "この配布版そのものの実行画面。ゲーム画面のみ、合成・ゲーム内容の加工なし。",
+      "imageSource": {
+        "versionId": "r05",
+        "capture": "history-r05-in-play.png",
+        "kind": "retained-version-play"
+      }
     },
     {
       "number": 6,
@@ -1036,9 +1059,14 @@
       "feedbackUntilNextVersionIds": [
         "p16"
       ],
-      "image": "generation-media/r06.webp",
-      "caption": "配布6の保存WebGLと当時のゲーム処理を、2026年11月9日に履歴再生した参加画面。",
-      "imageRepresents": "この配布版そのものの実行画面。ゲーム画面のみ、合成・ゲーム内容の加工なし。"
+      "image": "generation-media/r06-play.webp",
+      "caption": "3つの売店の価格を見比べながら掘る。r06の保存版を通常入力で再生。",
+      "imageRepresents": "この配布版そのものの実行画面。ゲーム画面のみ、合成・ゲーム内容の加工なし。",
+      "imageSource": {
+        "versionId": "r06",
+        "capture": "history-r06-in-play.png",
+        "kind": "retained-version-play"
+      }
     },
     {
       "number": 7,
@@ -1101,9 +1129,14 @@
       "feedbackUntilNextVersionIds": [
         "p17"
       ],
-      "image": "generation-media/r07.webp",
-      "caption": "配布7の保存WebGLと当時のゲーム処理を、2026年11月9日に履歴再生した参加画面。",
-      "imageRepresents": "この配布版そのものの実行画面。ゲーム画面のみ、合成・ゲーム内容の加工なし。"
+      "image": "generation-media/r07-play.webp",
+      "caption": "公開7で鉱石を掘り、袋へ入った場面。",
+      "imageRepresents": "この配布版そのものの実行画面。ゲーム画面のみ、合成・ゲーム内容の加工なし。",
+      "imageSource": {
+        "versionId": "r07",
+        "capture": "mining-hud-public-harvest.png",
+        "kind": "original-public-play"
+      }
     },
     {
       "number": 8,
@@ -1162,9 +1195,14 @@
       "previousVersionId": "r07",
       "nextVersionId": "r09",
       "feedbackUntilNextVersionIds": [],
-      "image": "generation-media/r08.webp",
-      "caption": "配布8の保存WebGLと当時のゲーム処理を、2026年11月9日に履歴再生した参加画面。",
-      "imageRepresents": "この配布版そのものの実行画面。ゲーム画面のみ、合成・ゲーム内容の加工なし。"
+      "image": "generation-media/r08-play.webp",
+      "caption": "公開8で中央売店へ運び、E長押しで売却した場面。",
+      "imageRepresents": "この配布版そのものの実行画面。ゲーム画面のみ、合成・ゲーム内容の加工なし。",
+      "imageSource": {
+        "versionId": "r08",
+        "capture": "public-release8-sold.png",
+        "kind": "original-public-play"
+      }
     },
     {
       "number": 9,
@@ -1224,9 +1262,14 @@
         "p18",
         "p19"
       ],
-      "image": "generation-media/r09.webp",
-      "caption": "配布9の保存WebGLと当時のゲーム処理を、2026年11月9日に履歴再生した参加画面。",
-      "imageRepresents": "この配布版そのものの実行画面。ゲーム画面のみ、合成・ゲーム内容の加工なし。"
+      "image": "generation-media/r09-play.webp",
+      "caption": "公開9で銅を換金し、鋼のピックへ強化した場面。",
+      "imageRepresents": "この配布版そのものの実行画面。ゲーム画面のみ、合成・ゲーム内容の加工なし。",
+      "imageSource": {
+        "versionId": "r09",
+        "capture": "public9-upgraded-central.png",
+        "kind": "original-public-play"
+      }
     },
     {
       "number": 10,
@@ -1292,9 +1335,14 @@
       "previousVersionId": "r09",
       "nextVersionId": "r11",
       "feedbackUntilNextVersionIds": [],
-      "image": "generation-media/r10.webp",
-      "caption": "配布10の保存WebGLと当時のゲーム処理を、2026年11月9日に履歴再生した参加画面。",
-      "imageRepresents": "この配布版そのものの実行画面。ゲーム画面のみ、合成・ゲーム内容の加工なし。"
+      "image": "generation-media/r10-play.webp",
+      "caption": "公開10で旧Java式の移動を操作した場面。",
+      "imageRepresents": "この配布版そのものの実行画面。ゲーム画面のみ、合成・ゲーム内容の加工なし。",
+      "imageSource": {
+        "versionId": "r10",
+        "capture": "public-release10-movement.png",
+        "kind": "original-public-play"
+      }
     },
     {
       "number": 11,
@@ -1357,9 +1405,14 @@
         "p20",
         "p21"
       ],
-      "image": "generation-media/r11.webp",
-      "caption": "配布11の保存WebGLと当時のゲーム処理を、2026年11月9日に履歴再生した参加画面。",
-      "imageRepresents": "この配布版そのものの実行画面。ゲーム画面のみ、合成・ゲーム内容の加工なし。"
+      "image": "generation-media/r11-play.webp",
+      "caption": "NPCが歩く鉱区と、当時の採掘表示。r11の保存版で参加して撮影。",
+      "imageRepresents": "この配布版そのものの実行画面。ゲーム画面のみ、合成・ゲーム内容の加工なし。",
+      "imageSource": {
+        "versionId": "r11",
+        "capture": "history-r11-in-play.png",
+        "kind": "retained-version-play"
+      }
     },
     {
       "number": 12,
@@ -1382,7 +1435,7 @@
       },
       "title": "連打中の同期を改善",
       "period": "配布版12",
-      "summary": "消費済み状態のACKと上限3枚の差分配信へ変更。連打後の通信滞留を抑制。Shiftダッシュ、下り坂の接地と晶鉱6本も統合。",
+      "summary": "連打した後も時間と移動が遅れにくくなるよう、受信の滞留を抑えた。Shiftで走り、下り坂に足がつくよう修正。晶鉱も6本へ増やした。",
       "generationId": "g05",
       "relatedProposalIds": [
         "p19",
@@ -1427,9 +1480,14 @@
       "feedbackUntilNextVersionIds": [
         "p22"
       ],
-      "image": "generation-media/r12.webp",
-      "caption": "配布12の保存WebGLと当時のゲーム処理を、2026年11月9日に履歴再生した参加画面。",
-      "imageRepresents": "この配布版そのものの実行画面。ゲーム画面のみ、合成・ゲーム内容の加工なし。"
+      "image": "generation-media/r12-play.webp",
+      "caption": "鉱脈へ続けてピックを振った場面。r12の保存版を通常入力で再生。",
+      "imageRepresents": "この配布版そのものの実行画面。ゲーム画面のみ、合成・ゲーム内容の加工なし。",
+      "imageSource": {
+        "versionId": "r12",
+        "capture": "history-r12-in-play.png",
+        "kind": "retained-version-play"
+      }
     },
     {
       "number": 13,
@@ -1492,9 +1550,14 @@
       "previousVersionId": "r12",
       "nextVersionId": "r14",
       "feedbackUntilNextVersionIds": [],
-      "image": "generation-media/r13.webp",
-      "caption": "配布13の保存WebGLと当時のゲーム処理を、2026年11月9日に履歴再生した参加画面。",
-      "imageRepresents": "この配布版そのものの実行画面。ゲーム画面のみ、合成・ゲーム内容の加工なし。"
+      "image": "generation-media/r13-play.webp",
+      "caption": "価格行から直接行先を選べるようになる前の測量図。r13の保存版を参加後に撮影。",
+      "imageRepresents": "この配布版そのものの実行画面。ゲーム画面のみ、合成・ゲーム内容の加工なし。",
+      "imageSource": {
+        "versionId": "r13",
+        "capture": "history-r13-in-play.png",
+        "kind": "retained-version-play"
+      }
     },
     {
       "number": 14,
@@ -1557,9 +1620,14 @@
         "p23",
         "p24"
       ],
-      "image": "generation-media/r14.webp",
-      "caption": "配布14の保存WebGLと当時のゲーム処理を、2026年11月9日に履歴再生した参加画面。",
-      "imageRepresents": "この配布版そのものの実行画面。ゲーム画面のみ、合成・ゲーム内容の加工なし。"
+      "image": "generation-media/r14-play.webp",
+      "caption": "公開14の測量図。売店の価格行から行先を選べるようになった。",
+      "imageRepresents": "この配布版そのものの実行画面。ゲーム画面のみ、合成・ゲーム内容の加工なし。",
+      "imageSource": {
+        "versionId": "r14",
+        "capture": "public14-survey-prices.png",
+        "kind": "original-public-play"
+      }
     },
     {
       "number": 15,
@@ -1628,9 +1696,18 @@
         "p26",
         "p27"
       ],
-      "image": "generation-media/r15.webp",
-      "caption": "配布15の保存WebGLと当時のゲーム処理を、2026年11月9日に履歴再生した参加画面。",
-      "imageRepresents": "この配布版そのものの実行画面。ゲーム画面のみ、合成・ゲーム内容の加工なし。"
+      "image": "generation-media/r15-play.webp",
+      "caption": "公開15では、目の前の大岩を叩いても鉱石を採れなかった。次の版でこの岩も採掘対象になった。",
+      "imageRepresents": "この配布版そのものの実行画面。ゲーム画面のみ、合成・ゲーム内容の加工なし。",
+      "imageSource": {
+        "versionId": "r15",
+        "capture": "feel-baseline-public-boulder.png",
+        "kind": "original-public-play"
+      },
+      "comparison": {
+        "beforeLabel": "景観だけの大岩",
+        "afterLabel": "大岩も削って採れる"
+      }
     },
     {
       "number": 16,
@@ -1700,9 +1777,14 @@
       "feedbackUntilNextVersionIds": [
         "p28"
       ],
-      "image": "generation-media/r16.webp",
-      "caption": "配布16の保存WebGLと当時のゲーム処理を、2026年11月9日に履歴再生した参加画面。",
-      "imageRepresents": "この配布版そのものの実行画面。ゲーム画面のみ、合成・ゲーム内容の加工なし。"
+      "image": "generation-media/r16-play.webp",
+      "caption": "公開16で、景観だった大岩の側面を削って銅を採った場面。",
+      "imageRepresents": "この配布版そのものの実行画面。ゲーム画面のみ、合成・ゲーム内容の加工なし。",
+      "imageSource": {
+        "versionId": "r16",
+        "capture": "public16-boulder-mining.png",
+        "kind": "original-public-play"
+      }
     },
     {
       "number": 17,
@@ -1768,9 +1850,14 @@
       "feedbackUntilNextVersionIds": [
         "p29"
       ],
-      "image": "generation-media/r17.webp",
-      "caption": "配布17の保存WebGLと当時のゲーム処理を、2026年11月9日に履歴再生した参加画面。",
-      "imageRepresents": "この配布版そのものの実行画面。ゲーム画面のみ、合成・ゲーム内容の加工なし。"
+      "image": "generation-media/r17-play.webp",
+      "caption": "公開17で、Eを先に保持して円内へ入り、移動しながら売った場面。",
+      "imageRepresents": "この配布版そのものの実行画面。ゲーム画面のみ、合成・ゲーム内容の加工なし。",
+      "imageSource": {
+        "versionId": "r17",
+        "capture": "public17-moving-sale.png",
+        "kind": "original-public-play"
+      }
     },
     {
       "number": 18,
@@ -1837,9 +1924,18 @@
       "feedbackUntilNextVersionIds": [
         "p30"
       ],
-      "image": "generation-media/r18.webp",
-      "caption": "配布18の保存WebGLと当時のゲーム処理を、2026年11月9日に履歴再生した参加画面。",
-      "imageRepresents": "この配布版そのものの実行画面。ゲーム画面のみ、合成・ゲーム内容の加工なし。"
+      "image": "generation-media/r18-play.webp",
+      "caption": "公開18で、動く相手へ通常入力で近接を当てた場面。",
+      "imageRepresents": "この配布版そのものの実行画面。ゲーム画面のみ、合成・ゲーム内容の加工なし。",
+      "imageSource": {
+        "versionId": "r18",
+        "capture": "feel18-moving-hit.png",
+        "kind": "original-public-play"
+      },
+      "comparison": {
+        "beforeLabel": "最後の1個は奪えない",
+        "afterLabel": "最後の1個も取り返せる"
+      }
     },
     {
       "number": 19,
@@ -1905,9 +2001,14 @@
       "feedbackUntilNextVersionIds": [
         "p31"
       ],
-      "image": "generation-media/r19.webp",
-      "caption": "配布19の保存WebGLと当時のゲーム処理を、2026年11月9日に履歴再生した参加画面。",
-      "imageRepresents": "この配布版そのものの実行画面。ゲーム画面のみ、合成・ゲーム内容の加工なし。"
+      "image": "generation-media/r19-play.webp",
+      "caption": "公開19で、相手と鉱石を取り返し合った場面。",
+      "imageRepresents": "この配布版そのものの実行画面。ゲーム画面のみ、合成・ゲーム内容の加工なし。",
+      "imageSource": {
+        "versionId": "r19",
+        "capture": "public19-counter.png",
+        "kind": "original-public-play"
+      }
     },
     {
       "number": 20,
@@ -1972,9 +2073,14 @@
       "previousVersionId": "r19",
       "nextVersionId": "r21",
       "feedbackUntilNextVersionIds": [],
-      "image": "generation-media/r20.webp",
-      "caption": "配布20の保存WebGLと当時のゲーム処理を、2026年11月9日に履歴再生した参加画面。",
-      "imageRepresents": "この配布版そのものの実行画面。ゲーム画面のみ、合成・ゲーム内容の加工なし。"
+      "image": "generation-media/r20-play.webp",
+      "caption": "公開20で弩の射線を通し、通常入力の相手から鉱石を奪った場面。",
+      "imageRepresents": "この配布版そのものの実行画面。ゲーム画面のみ、合成・ゲーム内容の加工なし。",
+      "imageSource": {
+        "versionId": "r20",
+        "capture": "public20-ranged-hit.png",
+        "kind": "original-public-play"
+      }
     },
     {
       "number": 21,
@@ -1997,7 +2103,7 @@
       },
       "title": "NPCの開始直後の射撃を調整",
       "period": "配布版21",
-      "summary": "20と同じWebGLに、試合開始15秒はNPCの弩が人間を選ばないサーバー調整を追加。",
+      "summary": "遊び始めの15秒はNPCの弩に狙われなくなった。画面と操作はr20と同じ。",
       "generationId": "g10",
       "relatedProposalIds": [
         "p31"
@@ -2006,7 +2112,7 @@
       "examples": [
         {
           "idea": "近接だけでなく、弓や銃のような遠くから奪う手段がほしい。ピックの強化上限も高くしたい。",
-          "change": "20と同じWebGLに、試合開始15秒はNPCの弩が人間を選ばないサーバー調整を追加。",
+          "change": "遊び始めの15秒はNPCの弩に狙われなくなった。画面と操作はr20と同じ。",
           "proposalId": "p31",
           "attribution": "本人の要望を受けた制作側の具体実装。版ごとに新しい本人入力があったという意味ではありません。"
         }
@@ -2041,9 +2147,18 @@
         "p33",
         "p34"
       ],
-      "image": "generation-media/r21.webp",
-      "caption": "配布21の保存WebGLと当時のゲーム処理を、2026年11月9日に履歴再生した参加画面。",
-      "imageRepresents": "この配布版そのものの実行画面。ゲーム画面のみ、合成・ゲーム内容の加工なし。"
+      "image": "generation-media/r21-play.webp",
+      "caption": "弩へ持ち替えたr21。装填済みの弩を撃つ方式で、次のr22では引いて放つ弓になる。",
+      "imageRepresents": "この配布版そのものの実行画面。ゲーム画面のみ、合成・ゲーム内容の加工なし。",
+      "imageSource": {
+        "versionId": "r21",
+        "capture": "history-r21-in-play.png",
+        "kind": "retained-version-play"
+      },
+      "comparison": {
+        "beforeLabel": "装填した弩を撃つ",
+        "afterLabel": "引いて離す弓"
+      }
     },
     {
       "number": 22,
@@ -2112,9 +2227,14 @@
       "previousVersionId": "r21",
       "nextVersionId": "r23",
       "feedbackUntilNextVersionIds": [],
-      "image": "generation-media/r22.webp",
-      "caption": "配布22の保存WebGLと当時のゲーム処理を、2026年11月9日に履歴再生した参加画面。",
-      "imageRepresents": "この配布版そのものの実行画面。ゲーム画面のみ、合成・ゲーム内容の加工なし。"
+      "image": "generation-media/r22-play.webp",
+      "caption": "公開22の弓。押して引き、離して矢を放つようになった。",
+      "imageRepresents": "この配布版そのものの実行画面。ゲーム画面のみ、合成・ゲーム内容の加工なし。",
+      "imageSource": {
+        "versionId": "r22",
+        "capture": "java189-public22-bow.png",
+        "kind": "original-public-play"
+      }
     },
     {
       "number": 23,
@@ -2179,9 +2299,14 @@
       "previousVersionId": "r22",
       "nextVersionId": "r24",
       "feedbackUntilNextVersionIds": [],
-      "image": "generation-media/r23.webp",
-      "caption": "配布23の保存WebGLと当時のゲーム処理を、2026年11月9日に履歴再生した参加画面。",
-      "imageRepresents": "この配布版そのものの実行画面。ゲーム画面のみ、合成・ゲーム内容の加工なし。"
+      "image": "generation-media/r23-play.webp",
+      "caption": "公開23で弓を構え、通常入力の相手と撃ち合った場面。",
+      "imageRepresents": "この配布版そのものの実行画面。ゲーム画面のみ、合成・ゲーム内容の加工なし。",
+      "imageSource": {
+        "versionId": "r23",
+        "capture": "combined23-public-counter.png",
+        "kind": "original-public-play"
+      }
     },
     {
       "number": 24,
@@ -2246,9 +2371,14 @@
       "previousVersionId": "r23",
       "nextVersionId": "r25",
       "feedbackUntilNextVersionIds": [],
-      "image": "generation-media/r24.webp",
-      "caption": "配布24の保存WebGLと当時のゲーム処理を、2026年11月9日に履歴再生した参加画面。",
-      "imageRepresents": "この配布版そのものの実行画面。ゲーム画面のみ、合成・ゲーム内容の加工なし。"
+      "image": "generation-media/r24-play.webp",
+      "caption": "公開24で持ち帰った鉱石を売った場面。",
+      "imageRepresents": "この配布版そのものの実行画面。ゲーム画面のみ、合成・ゲーム内容の加工なし。",
+      "imageSource": {
+        "versionId": "r24",
+        "capture": "final24-public-sale.png",
+        "kind": "original-public-play"
+      }
     },
     {
       "number": 25,
@@ -2271,7 +2401,7 @@
       },
       "title": "岩沿いの移動補正を修正",
       "period": "配布版25",
-      "summary": "24と同じWebGLのまま、岩の張り出し沿いに上昇する移動のサーバー検証を修正。",
+      "summary": "岩の張り出し沿いで、正しく走り跳びしているのに戻される2つの条件を修正。見た目と操作はr24と同じ。",
       "generationId": "g11",
       "relatedProposalIds": [
         "p34",
@@ -2282,7 +2412,7 @@
       "examples": [
         {
           "idea": "移動・戦闘・弓をJava版1.8.9の操作感へ深く近づけたい。ダッシュジャンプも速く、動きをシャキッとさせたい。",
-          "change": "24と同じWebGLのまま、岩の張り出し沿いに上昇する移動のサーバー検証を修正。",
+          "change": "岩の張り出し沿いで、正しく走り跳びしているのに戻される2つの条件を修正。見た目と操作はr24と同じ。",
           "proposalId": "p34",
           "attribution": "本人の要望を受けた制作側の具体実装。版ごとに新しい本人入力があったという意味ではありません。"
         }
@@ -2313,9 +2443,14 @@
       "previousVersionId": "r24",
       "nextVersionId": "r26",
       "feedbackUntilNextVersionIds": [],
-      "image": "generation-media/r25.webp",
-      "caption": "配布25の保存WebGLと当時のゲーム処理を、2026年11月9日に履歴再生した参加画面。",
-      "imageRepresents": "この配布版そのものの実行画面。ゲーム画面のみ、合成・ゲーム内容の加工なし。"
+      "image": "generation-media/r25-play.webp",
+      "caption": "公開25で、岩の張り出し沿いの走り跳びを確認した場面。",
+      "imageRepresents": "この配布版そのものの実行画面。ゲーム画面のみ、合成・ゲーム内容の加工なし。",
+      "imageSource": {
+        "versionId": "r25",
+        "capture": "motion25-public-rock.png",
+        "kind": "original-public-play"
+      }
     },
     {
       "number": 26,
@@ -2338,7 +2473,7 @@
       },
       "title": "操作案内と連続ジャンプ",
       "period": "配布版26",
-      "summary": "25のサーバーを保ち、ダッシュ中のSpace長押しで跳び続ける操作案内を追加。",
+      "summary": "走りながらSpaceを長押しすると跳び続けられることを、操作方法へ追加。ゲームのルールはr25と同じ。",
       "generationId": "g11",
       "relatedProposalIds": [
         "p34",
@@ -2382,9 +2517,14 @@
       "feedbackUntilNextVersionIds": [
         "p35"
       ],
-      "image": "generation-media/r26.webp",
-      "caption": "配布26の保存WebGLと当時のゲーム処理を、2026年11月9日に履歴再生した参加画面。",
-      "imageRepresents": "この配布版そのものの実行画面。ゲーム画面のみ、合成・ゲーム内容の加工なし。"
+      "image": "generation-media/r26-play.webp",
+      "caption": "公開26で採った鉱石を持ち帰った場面。この時点では売却と保護の境界が別にあった。",
+      "imageRepresents": "この配布版そのものの実行画面。ゲーム画面のみ、合成・ゲーム内容の加工なし。",
+      "imageSource": {
+        "versionId": "r26",
+        "capture": "final26-normal-sale.png",
+        "kind": "original-public-play"
+      }
     },
     {
       "number": 27,
@@ -2452,9 +2592,14 @@
         "p36",
         "p37"
       ],
-      "image": "generation-media/r27.webp",
-      "caption": "配布27の保存WebGLと当時のゲーム処理を、2026年11月9日に履歴再生した参加画面。",
-      "imageRepresents": "この配布版そのものの実行画面。ゲーム画面のみ、合成・ゲーム内容の加工なし。"
+      "image": "generation-media/r27-play.webp",
+      "caption": "公開27の売店。売却と保護の円が一本になった。",
+      "imageRepresents": "この配布版そのものの実行画面。ゲーム画面のみ、合成・ゲーム内容の加工なし。",
+      "imageSource": {
+        "versionId": "r27",
+        "capture": "shops27-public-one-ring.png",
+        "kind": "original-public-play"
+      }
     },
     {
       "number": 28,
@@ -2477,7 +2622,7 @@
       },
       "title": "銀・紅晶とホイール切替",
       "period": "配布版28",
-      "summary": "銀と紅晶の鉱区を追加し、金鉱の遠方の目印を試行。ホイールによる持ち替えも統合。",
+      "summary": "銀と硬い紅晶の鉱区が増えた。金を遠くから探せる光と、ホイールでの持ち替えも入った。",
       "generationId": "g13",
       "relatedProposalIds": [
         "p37",
@@ -2521,9 +2666,14 @@
       "previousVersionId": "r27",
       "nextVersionId": "r29",
       "feedbackUntilNextVersionIds": [],
-      "image": "generation-media/r28.webp",
-      "caption": "配布28の保存WebGLと当時のゲーム処理を、2026年11月9日に履歴再生した参加画面。",
-      "imageRepresents": "この配布版そのものの実行画面。ゲーム画面のみ、合成・ゲーム内容の加工なし。"
+      "image": "generation-media/r28-play.webp",
+      "caption": "銀と紅晶が加わった鉱区を測量図で確かめる。r28の保存版を通常入力で再生。",
+      "imageRepresents": "この配布版そのものの実行画面。ゲーム画面のみ、合成・ゲーム内容の加工なし。",
+      "imageSource": {
+        "versionId": "r28",
+        "capture": "history-r28-in-play.png",
+        "kind": "retained-version-play"
+      }
     },
     {
       "number": 29,
@@ -2546,10 +2696,10 @@
       },
       "title": "遠くから読める金鉱",
       "period": "配布版29",
-      "summary": "28から金鉱の昼光での反射と遠方の見え方を調整し、採用版を配布。",
+      "summary": "昼の谷で金鉱の場所に気付きやすいよう、遠くに見える光を調整。ルールはr28と同じ。",
       "generationId": "g13",
-      "image": "generation-media/r29.webp",
-      "caption": "配布29の保存WebGLと当時のゲーム処理を、2026年11月9日に履歴再生した参加画面。",
+      "image": "generation-media/r29-play.webp",
+      "caption": "公開29の金鉱。昼の谷でも遠くから光を探せるようになった。",
       "imageRepresents": "この配布版そのものの実行画面。ゲーム画面のみ、合成・ゲーム内容の加工なし。",
       "relatedProposalIds": [
         "p37",
@@ -2559,7 +2709,7 @@
       "examples": [
         {
           "idea": "ホイールで装備を切り替えたい。鉱石を増やし、希少な金鉱は遠くから目立たせ、硬く高価な種類も増やしたい。",
-          "change": "28から金鉱の昼光での反射と遠方の見え方を調整し、採用版を配布。",
+          "change": "昼の谷で金鉱の場所に気付きやすいよう、遠くに見える光を調整。ルールはr28と同じ。",
           "proposalId": "p37",
           "attribution": "本人の要望を受けた制作側の具体実装。版ごとに新しい本人入力があったという意味ではありません。"
         }
@@ -2592,7 +2742,12 @@
       "feedbackUntilNextVersionIds": [
         "p38",
         "p39"
-      ]
+      ],
+      "imageSource": {
+        "versionId": "r29",
+        "capture": "ores29-public-gold-distance.png",
+        "kind": "original-public-play"
+      }
     },
     {
       "number": 31,
@@ -2615,7 +2770,7 @@
       },
       "title": "条件を減らすルール候補",
       "period": "配布版31",
-      "summary": "金鉱の期限と指定品の先着注文を外す候補。30秒交代の全品高値買取、硬いダイヤ、独立した袋強化を追加。",
+      "summary": "金は採り尽くすまで消えず、先着の指定品注文をなくした。灯る売店の全品高値買取、硬いダイヤ、袋を広げる選択を加えた版。",
       "generationId": "g14",
       "relatedProposalIds": [
         "p39",
@@ -2659,9 +2814,14 @@
       "previousVersionId": "r29",
       "nextVersionId": "r32",
       "feedbackUntilNextVersionIds": [],
-      "image": "generation-media/r31.webp",
-      "caption": "配布31の保存WebGLと当時のゲーム処理を、2026年11月9日に履歴再生した参加画面。",
-      "imageRepresents": "この配布版そのものの実行画面。ゲーム画面のみ、合成・ゲーム内容の加工なし。"
+      "image": "generation-media/r31-play.webp",
+      "caption": "ダイヤと袋の拡張が入ったr31の測量図。先着注文をなくし、光る店の高値買取へまとめた。",
+      "imageRepresents": "この配布版そのものの実行画面。ゲーム画面のみ、合成・ゲーム内容の加工なし。",
+      "imageSource": {
+        "versionId": "r31",
+        "capture": "history-r31-in-play.png",
+        "kind": "retained-version-play"
+      }
     },
     {
       "number": 32,
@@ -2684,10 +2844,10 @@
       },
       "title": "消えない金・高値売店・袋",
       "period": "配布版32",
-      "summary": "単純化したルールを採用し、高値売店の表示を仕上げ。この時点は全品2倍。取り残した鉱片の保持も整備。",
+      "summary": "r31と同じルールで、灯る売店の見え方を調整。この時点は全品2倍で売れ、取り残した鉱片も岩に残る。",
       "generationId": "g14",
-      "image": "generation-media/r32.webp",
-      "caption": "配布32の保存WebGLと当時のゲーム処理を、2026年11月9日に履歴再生した参加画面。",
+      "image": "generation-media/r32-play.webp",
+      "caption": "公開32で、期限で消えなくなった金鉱を掘る場面。",
       "imageRepresents": "この配布版そのものの実行画面。ゲーム画面のみ、合成・ゲーム内容の加工なし。",
       "relatedProposalIds": [
         "p39",
@@ -2730,7 +2890,12 @@
       "feedbackUntilNextVersionIds": [
         "p40",
         "p41"
-      ]
+      ],
+      "imageSource": {
+        "versionId": "r32",
+        "capture": "simple32-public-gold-work.png",
+        "kind": "original-public-play"
+      }
     },
     {
       "number": 34,
@@ -2799,9 +2964,14 @@
       "feedbackUntilNextVersionIds": [
         "p42"
       ],
-      "image": "generation-media/r34.webp",
-      "caption": "配布34の保存WebGLと当時のゲーム処理を、2026年11月9日に履歴再生した参加画面。",
-      "imageRepresents": "この配布版そのものの実行画面。ゲーム画面のみ、合成・ゲーム内容の加工なし。"
+      "image": "generation-media/r34-play.webp",
+      "caption": "公開34で、自由カーソルのまま移動し、視点を戻した場面。",
+      "imageRepresents": "この配布版そのものの実行画面。ゲーム画面のみ、合成・ゲーム内容の加工なし。",
+      "imageSource": {
+        "versionId": "r34",
+        "capture": "input34-public-free-return.png",
+        "kind": "original-public-play"
+      }
     },
     {
       "number": 36,
@@ -2824,7 +2994,7 @@
       },
       "title": "売店の灯と画面の整理候補",
       "period": "配布版36",
-      "summary": "売店を灯具と石灰線で表し、常設説明とHUDの帯を減らす候補を配布。遠景岩の変更も含む比較候補。",
+      "summary": "売店の数字看板を外し、灯具と石灰線で表した版。画面の帯や常設説明も減らした。遠景の岩は、この後r37で元に戻した。",
       "generationId": "g15",
       "relatedProposalIds": [
         "p41",
@@ -2837,7 +3007,7 @@
       "examples": [
         {
           "idea": "ゲームは面白いが、見た目・UIが粗い。フィールドへ直接倍率の文字を浮かべず、光で示したい。低解像度を直し、情報の重要度を分け、説明を減らしたい。",
-          "change": "売店を灯具と石灰線で表し、常設説明とHUDの帯を減らす候補を配布。遠景岩の変更も含む比較候補。",
+          "change": "売店の数字看板を外し、灯具と石灰線で表した版。画面の帯や常設説明も減らした。遠景の岩は、この後r37で元に戻した。",
           "proposalId": "p42",
           "attribution": "本人の要望を受けた制作側の具体実装。版ごとに新しい本人入力があったという意味ではありません。"
         }
@@ -2868,9 +3038,14 @@
       "previousVersionId": "r34",
       "nextVersionId": "r37",
       "feedbackUntilNextVersionIds": [],
-      "image": "generation-media/r36.webp",
-      "caption": "配布36の保存WebGLと当時のゲーム処理を、2026年11月9日に履歴再生した参加画面。",
-      "imageRepresents": "この配布版そのものの実行画面。ゲーム画面のみ、合成・ゲーム内容の加工なし。"
+      "image": "generation-media/r36-play.webp",
+      "caption": "画面の帯と常設説明を減らしたr36の参加後。この版の遠景変更は、次のr37で元へ戻した。",
+      "imageRepresents": "この配布版そのものの実行画面。ゲーム画面のみ、合成・ゲーム内容の加工なし。",
+      "imageSource": {
+        "versionId": "r36",
+        "capture": "history-r36-in-play.png",
+        "kind": "retained-version-play"
+      }
     },
     {
       "number": 37,
@@ -2893,10 +3068,10 @@
       },
       "title": "説明を減らし、画面を明瞭に",
       "period": "配布版37",
-      "summary": "遠景変更を戻した上で、実景タイトルと売買表示を整理。WebGLの描画密度・文字と輪郭を改善。",
+      "summary": "数字看板をなくし、谷の景色と必要な売買情報を見せる形に整理。輪郭と文字を鮮明にし、遠景の岩は従来の配置へ戻した。",
       "generationId": "g15",
-      "image": "generation-media/r37.webp",
-      "caption": "配布37の保存WebGLと当時のゲーム処理を、2026年11月9日に履歴再生した参加画面。",
+      "image": "generation-media/r37-play.webp",
+      "caption": "公開37の売店。数字看板をなくし、灯具と手元の売値で分かる形にした。",
       "imageRepresents": "この配布版そのものの実行画面。ゲーム画面のみ、合成・ゲーム内容の加工なし。",
       "relatedProposalIds": [
         "p41",
@@ -2907,7 +3082,7 @@
       "examples": [
         {
           "idea": "ゲームは面白いが、見た目・UIが粗い。フィールドへ直接倍率の文字を浮かべず、光で示したい。低解像度を直し、情報の重要度を分け、説明を減らしたい。",
-          "change": "遠景変更を戻した上で、実景タイトルと売買表示を整理。WebGLの描画密度・文字と輪郭を改善。",
+          "change": "数字看板をなくし、谷の景色と必要な売買情報を見せる形に整理。輪郭と文字を鮮明にし、遠景の岩は従来の配置へ戻した。",
           "proposalId": "p42",
           "attribution": "本人の要望を受けた制作側の具体実装。版ごとに新しい本人入力があったという意味ではありません。"
         }
@@ -2939,7 +3114,12 @@
       "nextVersionId": "r39",
       "feedbackUntilNextVersionIds": [
         "p43"
-      ]
+      ],
+      "imageSource": {
+        "versionId": "r37",
+        "capture": "quiet37-public-sale.png",
+        "kind": "original-public-play"
+      }
     },
     {
       "number": 39,
@@ -3005,9 +3185,14 @@
       "previousVersionId": "r37",
       "nextVersionId": "r40",
       "feedbackUntilNextVersionIds": [],
-      "image": "generation-media/r39.webp",
-      "caption": "配布39の保存WebGLと当時のゲーム処理を、2026年11月9日に履歴再生した参加画面。",
-      "imageRepresents": "この配布版そのものの実行画面。ゲーム画面のみ、合成・ゲーム内容の加工なし。"
+      "image": "generation-media/r39-play.webp",
+      "caption": "公開候補39で銅を掘った場面。ピック・弓・袋の3枠になった。",
+      "imageRepresents": "この配布版そのものの実行画面。ゲーム画面のみ、合成・ゲーム内容の加工なし。",
+      "imageSource": {
+        "versionId": "r39",
+        "capture": "workshop-public-mined.png",
+        "kind": "original-public-play"
+      }
     },
     {
       "number": 40,
@@ -3032,8 +3217,8 @@
       "period": "配布版40",
       "summary": "39の長押し売買を保ち、NPCが実際の買取台へ近づいて換金するよう調整。",
       "generationId": "g16",
-      "image": "generation-media/r40.webp",
-      "caption": "配布40の保存WebGLと当時のゲーム処理を、2026年11月9日に履歴再生した参加画面。",
+      "image": "generation-media/r40-play.webp",
+      "caption": "この時点は買取台へ向けて使う操作。r40保存版の売店で、次のr41は円へ入るだけになる。",
       "imageRepresents": "この配布版そのものの実行画面。ゲーム画面のみ、合成・ゲーム内容の加工なし。",
       "relatedProposalIds": [
         "p43"
@@ -3075,7 +3260,16 @@
       "nextVersionId": "r41",
       "feedbackUntilNextVersionIds": [
         "p44"
-      ]
+      ],
+      "imageSource": {
+        "versionId": "r40",
+        "capture": "history-r40-in-play.png",
+        "kind": "retained-version-play"
+      },
+      "comparison": {
+        "beforeLabel": "買取台を狙って長押し",
+        "afterLabel": "円へ入るだけで換金"
+      }
     },
     {
       "number": 41,
@@ -3143,9 +3337,18 @@
       "feedbackUntilNextVersionIds": [
         "p45"
       ],
-      "image": "generation-media/r41.webp",
-      "caption": "配布41の保存WebGLと当時のゲーム処理を、2026年11月9日に履歴再生した参加画面。",
-      "imageRepresents": "この配布版そのものの実行画面。ゲーム画面のみ、合成・ゲーム内容の加工なし。"
+      "image": "generation-media/r41-play.webp",
+      "caption": "円へ入って自動換金し、袋を1クリックで広げた場面（r41・開始時の荷物だけを揃えた操作確認）。",
+      "imageRepresents": "この配布版そのものの実行画面。ゲーム画面のみ、合成・ゲーム内容の加工なし。",
+      "imageSource": {
+        "versionId": "r41",
+        "capture": "shop-auto-instant-bag.png",
+        "kind": "local-adopted-build"
+      },
+      "comparison": {
+        "beforeLabel": "買取台が残る売店",
+        "afterLabel": "中央のアンビルへ"
+      }
     },
     {
       "number": 43,
@@ -3170,8 +3373,8 @@
       "period": "配布版43",
       "summary": "不要になった買取台を撤去し、小屋の中央へアンビルを移動。自動換金とクリック強化は維持。",
       "generationId": "g17",
-      "image": "generation-media/r43.webp",
-      "caption": "配布43の保存WebGLと当時のゲーム処理を、2026年11月9日に履歴再生した参加画面。",
+      "image": "generation-media/r43-play.webp",
+      "caption": "買取台がなくなり、小屋の中央にアンビルが置かれた（r43の操作確認）。",
       "imageRepresents": "この配布版そのものの実行画面。ゲーム画面のみ、合成・ゲーム内容の加工なし。",
       "relatedProposalIds": [
         "p44",
@@ -3216,7 +3419,16 @@
       "nextVersionId": "r44",
       "feedbackUntilNextVersionIds": [
         "p46"
-      ]
+      ],
+      "imageSource": {
+        "versionId": "r43",
+        "capture": "central-anvil-click.png",
+        "kind": "local-adopted-build"
+      },
+      "comparison": {
+        "beforeLabel": "近接で押し返す",
+        "afterLabel": "命中後に短く加速"
+      }
     },
     {
       "number": 44,
@@ -3242,8 +3454,8 @@
       "period": "配布版44",
       "summary": "人物の見た目と命中判定を横へ拡張。有効な近接命中後は2秒間1.4倍に加速し、空袋の相手への命中にも利点を追加。",
       "generationId": "g18",
-      "image": "generation-media/r44.webp",
-      "caption": "配布44の保存WebGLと当時のゲーム処理を、2026年11月9日に履歴再生した参加画面。",
+      "image": "generation-media/r44-play.webp",
+      "caption": "空袋の相手に当てても、押し返した直後は加速する（r44・2人の初期位置と試合時間だけを揃えた操作確認）。",
       "imageRepresents": "この配布版そのものの実行画面。ゲーム画面のみ、合成・ゲーム内容の加工なし。",
       "relatedProposalIds": [
         "p46"
@@ -3285,7 +3497,12 @@
       "sourceCommit": "3ae2534",
       "previousVersionId": "r43",
       "nextVersionId": null,
-      "feedbackUntilNextVersionIds": []
+      "feedbackUntilNextVersionIds": [],
+      "imageSource": {
+        "versionId": "r44",
+        "capture": "wide-speed-active.png",
+        "kind": "local-adopted-build"
+      }
     }
   ],
   "proposals": [

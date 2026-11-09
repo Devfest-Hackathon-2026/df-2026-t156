@@ -27,9 +27,14 @@
         <div class="story-heading"><div><p class="version-meta" id="version-meta"></p><h2 id="generation-title" tabindex="-1"></h2></div><p class="generation-summary" id="generation-summary"></p></div>
         <div class="story-grid">
           <div class="game-stage">
-            <figure class="game-figure"><div class="screen"><img id="game-image" alt="" decoding="async"><p id="image-empty" hidden>この版の画像はまだありません。</p></div><figcaption id="game-caption"></figcaption></figure>
+            <p class="comparison-label" id="before-label"></p><figure class="game-figure"><div class="screen"><img id="game-image" alt="" decoding="async"><p id="image-empty" hidden>この版の画像はまだありません。</p></div><figcaption id="game-caption"></figcaption></figure>
             <div class="play-line"><button class="button button-primary" id="play-version" type="button"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M6 3.5v13l11-6.5z" fill="currentColor"/></svg><span>この版を遊ぶ</span></button><span id="play-note" class="play-note"></span><a id="source-link" class="quiet-link" hidden>当時のソース<span aria-hidden="true"> ↓</span></a></div>
             <details class="evidence" id="evidence" hidden><summary>意見と記録を読む</summary><ul id="evidence-list"></ul></details>
+          </div>
+          <div class="comparison-stage" id="comparison-stage" hidden>
+            <p class="comparison-label" id="after-label"></p>
+            <figure class="game-figure"><div class="screen"><img id="comparison-image" alt="" decoding="async"></div><figcaption id="comparison-caption"></figcaption></figure>
+            <div class="play-line"><button class="button button-primary" id="play-comparison" type="button"></button><span class="play-note">過去の版は一人で試せます</span></div>
           </div>
           <aside class="transition" aria-labelledby="transition-title"><p class="transition-destination" id="transition-destination"></p><h3 id="transition-title">この時の意見</h3><div id="transition-content"></div><button class="transition-next" id="transition-next" type="button">次の版を見る →</button><a class="ideas-jump" id="latest-ideas" href="#ideas" hidden>次の改善案を見る <span aria-hidden="true">↓</span></a></aside>
         </div>

@@ -6,7 +6,7 @@ Node.js 22以上、依存はws。`npm ci` → `npm start` でルートbuild-web�
 
 既存のCloud Run配布はルート `scripts/deploy-prototype.sh`。GCP_PROJECTで自分の既存projectを指定し、認証済みgcloudを用います。既定のservice/repository/regionはスクリプトを参照してください。認証・秘密値は含めません。`GCP_NO_TRAFFIC=1 GCP_REVISION_TAG=review` で候補を先に配備し、稼働中のプレイヤーを切らずに確認できます。明示のrevisionへトラフィックを切り替えます。
 
-`scripts/verify-webgl.mjs URL build-web` で配信data/framework/wasmの復号SHA256・HEAD・MIMEを照合します。静的配信はgzipを事前生成し、WebSocketと同じポートで提供します。試験は `node --test`。公開44時点の弓試験には、自動売却前の袋/sellProgress期待に由来する既知の5失敗があり、近接/移動/通信の関連42件は成功しています。
+`scripts/verify-webgl.mjs URL build-web` で配信data/framework/wasmの復号SHA256・HEAD・MIMEを照合します。静的配信はgzipを事前生成し、WebSocketと同じポートで提供します。試験は `node --test`。弓の旧5期待は自動売却後の実入金・袋・引きとの独立へ更新し、28件成功。近接/移動/通信の既存確認は42件成功です。
 
 投稿・投票は `feedback.js` が確定順位から権利を発行します。`GET /api/feedback` は匿名でも閲覧でき、`POST /api/feedback` の提案・投票は同originのブラウザー保存鍵をBearerで照合します。鍵をURLや公開JSONへ出しません。Unityの既存PlayerPrefsキーがあればWebのlocalStorageへ移行します。
 
@@ -18,3 +18,11 @@ Node.js 22以上、依存はws。`npm ci` → `npm start` でルートbuild-web�
 
 公開46では実Cloud Runのラウンド確定後にCloud Storageへのgrant1件の書込を確認し、Unityから履歴ページに移って同じ投票権が表示されました。本番の提案/票は0件で、確認用の文は投入していません。ローカルの実投稿・共有票と、公開の権利/永続化確認を区別しています。
 
+
+### ゲーム内の提案を、実際の次版へ結ぶ
+
+投稿APIの `id`（UUID）と `basedOnVersion`（実Cloud Run revisionから付くr番号）をそのまま対応に使います。投稿本文と作者・得票は `GET /api/feedback` の公開項目から取得でき、保存鍵/owner hashは移しません。採用前に履歴の「反映済み」へ入れません。
+
+実際に改修・公開できた時だけ、`public/history/generations.json` の `proposals[]` へ同じidと本文を追加します。本文は `originalText`、`originalWording: "ゲーム内の投稿"` とし、要約は別の `text` に置きます。直前の実版の `feedbackUntilNextVersionIds` と、反映された実版の `inputProposalIds` がそのidを参照し、反映版の `examples[].proposalId` にも同じid、`idea` に要約、`change` に実際に変わったことを書きます。`basedOnVersion` は意見が書かれた版として保持し、改修版へ書き換えません。
+
+版のid/playUrl/対応する画面と、公開された公式commitの証拠を揃えてから取り込みます。公開番号の飛びを新しい章番号で埋めません。新しい試合の投稿は動的な掲示板に残り、静的履歴には確認済みの実例だけを置きます。AIの自動実装・本番再配備をつなぐ仕組みは追加していません。
