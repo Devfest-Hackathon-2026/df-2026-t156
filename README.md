@@ -4,6 +4,22 @@
 
 [最新版を遊ぶ](https://orbit-salvage-prototype-905974313870.asia-northeast1.run.app/) · [ゲームの履歴](https://orbit-salvage-prototype-905974313870.asia-northeast1.run.app/history/) · [次の改善案](https://orbit-salvage-prototype-905974313870.asia-northeast1.run.app/history/#ideas)
 
+## 技術構成
+
+| 技術 | 役割・選んだ理由 |
+| --- | --- |
+| Unity 2022.3 / C# / WebGL | 3Dの描画・操作・手応えをUnityで作り、インストールなしでブラウザから参加できる形に。 |
+| Node.js 22系 / WebSocket | 移動・採掘・命中・得点をサーバーで判定し、同じフィールドの状態を全員へ共有。 |
+| Google Cloud Run | 最新版の共有対戦と、ゲーム・履歴ページ・投稿/投票APIを同じoriginで配信。参加から改善案まで一つのURLでつなぐ。 |
+| Google Cloud Storage | 39版のWebGL素材を内容ごとに共通化して配信。改善案・票・試合結果に基づく投稿/投票権を、再配備後も残す。 |
+| ブラウザのWeb Worker | 各版の当時のルールをブラウザ内で動かし、NPC戦として再生。旧版ごとの常設対戦サーバーを用意せず、実物を遊び比べる。 |
+
+人が版ごとに分散せず、同じルールで競えるよう、共有対戦は最新版へ集約しています。過去の39版は一人用のNPC戦として残しています。
+
+開発ではCodexによる実装支援と、UnitySkillsによるEditorの状態確認・操作・WebGLビルドを利用しています。実行時の対戦・旧版再生は、上表のC#・Node.js・Workerが担当します。
+
+## 体験と改善の記録
+
 比較から見るなら、[宇宙船から自然の谷へ](https://orbit-salvage-prototype-905974313870.asia-northeast1.run.app/history/?version=r03)、[拾うから掘るへ](https://orbit-salvage-prototype-905974313870.asia-northeast1.run.app/history/?version=r04)、[景観の大岩も採れる](https://orbit-salvage-prototype-905974313870.asia-northeast1.run.app/history/?version=r15)、[円に入るだけの売却へ](https://orbit-salvage-prototype-905974313870.asia-northeast1.run.app/history/?version=r40)。意見のそばで前後の実版をそのまま遊べます。
 
 過去の実例は、開発中の本人の意見をCodexが実装してきた記録です。新しい投稿・投票とは分けて表示し、自動実装・自動再配備は接続していません。
