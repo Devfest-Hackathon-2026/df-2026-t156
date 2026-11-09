@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>谷の採鉱競争</title>
+  <style>
+    html,body { margin:0; width:100%; height:100%; overflow:hidden; background:#141c1d; font:15px 'Noto Sans JP','Yu Gothic UI',system-ui,sans-serif; color:#f2f5ef }
+    canvas { width:100%; height:100%; display:block; outline:0 }
+    #load { position:absolute; inset:0; background:#141c1d url('../../assets/ac51a875f1bdcb97ba5c367bba9f89e39e78d05f8938994e5a30c5d2bf6d70f1.jpg') center/cover no-repeat }
+    #load::before { content:""; position:absolute; inset:0; background:linear-gradient(90deg,#000a,transparent 72%) }
+    .loading { position:absolute; left:48px; bottom:56px; width:min(420px,calc(100% - 96px)) }
+    h1 { position:fixed; left:calc(45px * var(--ui-scale,1)); top:calc(53px * var(--ui-scale,1)); width:calc(355px * var(--ui-scale,1)); margin:0 }
+    h1 img { display:block; width:100%; height:auto; filter:drop-shadow(0 1px 1px #0009) }
+    .progress-label { display:flex; justify-content:space-between; margin:0 0 13px; font-size:14px; color:#b6c1ba }
+    #percent { font-variant-numeric:tabular-nums }
+    progress { display:block; width:100%; height:2px; border:0; appearance:none; overflow:hidden; background:#ffffff26; color:#d0d8d0 }
+    progress::-webkit-progress-bar { background:#ffffff26 }
+    progress::-webkit-progress-value { background:#d0d8d0 }
+    progress::-moz-progress-bar { background:#d0d8d0 }
+    #error { white-space:pre-wrap; line-height:1.6; color:#f2b1a1; font-size:14px; overflow-wrap:anywhere }
+    #error:empty { display:none }
+    @media(max-width:520px) { .loading{left:24px;bottom:32px;width:calc(100% - 48px)}h1{font-size:25px} }
+  </style>
+</head>
+<body>
+  <canvas id="unity-canvas" tabindex="0"></canvas>
+  <div id="load">
+    <div class="loading">
+      <h1><img src="../../assets/5df659d8a608216b96750e66a1c65c67961580d16df676f036a0724f32dc54c9.png" alt="谷の採鉱競争"></h1>
+      <p class="progress-label"><span id="load-label">読み込み中</span><span id="percent">0%</span></p>
+      <progress id="progress" max="1" value="0" aria-label="ゲームの読み込み"></progress>
+      <p id="error" role="alert"></p>
+    </div>
+  </div>
+  <script src="../../runtime/history-bridge.js" data-version="r40"></script><script>
+    const canvas = document.getElementById('unity-canvas');
+
+
+    function resizeRenderBuffer() {
+      const width = canvas.clientWidth || 1280;
+      const height = canvas.clientHeight || 720;
+      document.documentElement.style.setProperty("--ui-scale", Math.min(width / 1000, height / 680));
+      // Honour display density without letting 4K/retina allocate an unbounded
+      // framebuffer. Wide displays no longer inherit a 1920px width cap.
+      const density = Math.min(window.devicePixelRatio || 1, 2);
+      const ratio = Math.min(density, 4096 / width, 4096 / height,
+        Math.sqrt((2560 * 1440) / (width * height)));
+      const targetWidth = Math.max(1, Math.round(width * ratio));
+      const targetHeight = Math.max(1, Math.round(height * ratio));
+      if (canvas.width !== targetWidth) canvas.width = targetWidth;
+      if (canvas.height !== targetHeight) canvas.height = targetHeight;
+    }
+    new ResizeObserver(resizeRenderBuffer).observe(canvas);
+    window.addEventListener('resize', resizeRenderBuffer);
+    document.addEventListener('fullscreenchange', resizeRenderBuffer);
+    // DPR may change without a ResizeObserver notification (monitor/zoom).
+    // Only the cheap density check runs each frame; layout is read on change.
+    let lastDensity = window.devicePixelRatio;
+    function watchDisplayDensity() {
+      const density = window.devicePixelRatio;
+      if (density !== lastDensity) { lastDensity = density; resizeRenderBuffer(); }
+      requestAnimationFrame(watchDisplayDensity);
+    }
+    requestAnimationFrame(watchDisplayDensity);
+    resizeRenderBuffer();
+
+    const config = {
+      dataUrl: window.historyAssetUrls["b55ba3fdb1139d8771497ae19db277ee51d855aae13e3b61b9e77a1d1ca337d0.data"],
+      frameworkUrl: '../../assets/d3f88c4344a6db82e7122d1008539e3d3cf067c43978b21023e2b6cea5aa8d08.js',
+      codeUrl: window.historyAssetUrls["68703c1958d4322a45c420222b85c1773bb4b73cf354e98189372178d0754b62.wasm"],
+      streamingAssetsUrl: 'StreamingAssets',
+      companyName: 'Pichu',
+      productName: '谷の採鉱競争',
+      productVersion: '0.2',
+      matchWebGLToCanvasSize: false,
+      showBanner(message, type) {
+        if (type === 'error') document.getElementById('error').textContent = message;
+      }
+    };
+    const loader = document.createElement('script');
+    loader.src = '../../assets/8c7a9e4b2538dab3353b31f3894d51b38781580a059cbae2a67c6ca092fa7bf2.js';
+    loader.onload = () => {
+      createUnityInstance(canvas, config, value => {
+        document.getElementById('progress').value = value;
+        document.getElementById('percent').textContent = Math.round(value * 100) + '%';
+      }).then(instance => {
+        window.orbitUnity = instance;
+        document.getElementById('load').style.display = 'none';
+
+        canvas.focus();
+      }).catch(error => {
+        document.getElementById('error').textContent = '読み込めませんでした。ページを再読み込みしてください。\n' + error;
+      });
+    };
+    document.body.appendChild(loader);
+  </script>
+</body>
+</html>

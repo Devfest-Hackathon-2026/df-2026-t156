@@ -1,0 +1,3883 @@
+{
+  "generations": [
+    {
+      "id": "g01",
+      "title": "みんなで育てるゲーム、その最初の試作",
+      "period": "企画〜公開1〜3",
+      "summary": "自由な改善案で一つのゲームを育てる構想から、ブラウザで遊べるオンライン3D試作へ。最初の舞台は宇宙だった。",
+      "examples": [
+        {
+          "idea": "用意された選択肢だけでなく、遊んだ人が自由に改善案を出せるゲームにしたい。",
+          "change": "まず提案の土台になる共通のゲームを制作。この時点の改善は本人の試遊と制作側の実装によるもので、投票・定期自動改修はまだ実装していない。"
+        },
+        {
+          "idea": "小さなカジュアルゲームで終わらせず、競技性のあるUnity製3Dオンラインゲームにしたい。",
+          "change": "対戦形式を比較し、制作側が宇宙の回収競争『ORBIT / SALVAGE』を試作。複数人とNPCが同じ場で荷物を回収・換金する形にした。"
+        },
+        {
+          "idea": "まず軽い試作品を作り、ブラウザで実際に遊んで方向を決めたい。",
+          "change": "Unity WebGLと権威サーバーを用意し、Cloud Run上で遊べる最初の版を公開した。"
+        }
+      ],
+      "evidence": [
+        "git:406efa4 Unity・オンラインサーバー・最初の公開試作"
+      ],
+      "image": "generation-media/g01.webp",
+      "caption": "初期の宇宙回収競争。保存された当時のゲーム画面。",
+      "versionIds": [
+        "r01",
+        "r02",
+        "r03"
+      ],
+      "groupingStatus": "draft",
+      "playUrl": "/history-play/play/r03/",
+      "sourceUrl": "/history-play/sources/r03.zip"
+    },
+    {
+      "id": "g02",
+      "title": "宇宙から、歩いて回る自然の谷へ",
+      "period": "公開4",
+      "summary": "サイバーな見た目より、自然の中を一人称で動く体験がよい、という試遊の意見で舞台と操作を作り直した。",
+      "examples": [
+        {
+          "idea": "サイバーなフィールドではなく、自然のある、ゲームの世界らしい場所で遊びたい。",
+          "change": "宇宙の舞台を山に囲まれた谷へ変更。地形・岩・木・小屋を置き、移動する場所として作り直した。"
+        },
+        {
+          "idea": "WASDで動く一人称の方が体験がよさそう。",
+          "change": "一人称視点とWASD移動へ変更。クライアントとサーバーが共通の地形で位置を扱うようにした。"
+        }
+      ],
+      "evidence": [
+        "git:d59415c 谷の景観",
+        "git:afbe677 一人称操作と共有地形・公開4"
+      ],
+      "image": "generation-media/g02.webp",
+      "caption": "自然の谷へ移した初期版。一人称の道具と、谷の小屋・人物が見える。",
+      "versionIds": [
+        "r04"
+      ],
+      "groupingStatus": "draft",
+      "playUrl": "/history-play/play/r04/",
+      "sourceUrl": "/history-play/sources/r04.zip"
+    },
+    {
+      "id": "g03",
+      "title": "落ちている物を拾うより、岩を掘りたい",
+      "period": "公開5〜7",
+      "summary": "ピッケルを持つ意味がない、という指摘から採掘ゲームへ。掘る・運ぶ・売るという、現在につながる基本の流れができた。",
+      "examples": [
+        {
+          "idea": "ピッケルなのに床の物を拾うだけではつまらない。鉱石を掘りたい。",
+          "change": "鉱脈を叩いて鉱石を袋に入れ、売店へ運んで換金する遊びへ変更した。"
+        },
+        {
+          "idea": "攻撃が遠くまで届き、中央で待つだけになる。ゲームとして調整してほしい。",
+          "change": "近距離の採掘・対人判定を整え、複数の鉱区と売店を巡る構成にした。"
+        },
+        {
+          "idea": "掘って売るだけの単純作業ではなく、鉱脈や帰り道の選び方で上手さを出したい。",
+          "change": "鉱種ごとの価値と売店の買取差を設け、どこを掘り、どこへ運ぶかを選べるようにした。"
+        },
+        {
+          "idea": "ちゃんと作られたゲームとして、手応えやエフェクトも整えてほしい。",
+          "change": "手元のピッケル、鉱石の形、採掘の反応、売却表示とHUDを改良した。"
+        }
+      ],
+      "evidence": [
+        "git:3a954d1 採掘と売却へ変更・公開5",
+        "git:497f1d1 売店と運搬経路・公開6",
+        "git:e698e9a 道具と採掘表示の調整・公開7"
+      ],
+      "image": "generation-media/g03.webp",
+      "caption": "採掘・袋・複数売店が入った時期の実画面。",
+      "versionIds": [
+        "r05",
+        "r06",
+        "r07"
+      ],
+      "groupingStatus": "draft",
+      "playUrl": "/history-play/play/r07/",
+      "sourceUrl": "/history-play/sources/r07.zip"
+    },
+    {
+      "id": "g04",
+      "title": "3分の中で、強化と稼ぎを選ぶ",
+      "period": "公開8〜9",
+      "summary": "いつまで投資し、いつから得点を残すか。既存の3分の試合に、道具の強化と高価な鉱石を巡る競争を加えた。",
+      "examples": [
+        {
+          "idea": "1試合は3分くらい。掘って強化し、さらに価値の高い鉱石を売る形にしたい。",
+          "change": "既存の180秒の試合に、残高を使うピック強化を追加。硬い鉱石を速く掘り、さらに高価な鉱石を狙えるようにした。"
+        },
+        {
+          "idea": "いつまで強化し、いつから稼ぐかという駆け引きがほしい。",
+          "change": "順位は試合終了時の残高で決定。強化に使ったお金は残高から減るため、強化の時機が勝ち方に関わるようになった。"
+        },
+        {
+          "idea": "高価な鉱石は競争になりやすい場所に置くと面白そう。",
+          "change": "高価な金鉱と、それを狙うNPCを追加。制作側では金鉱の層や取得条件も試し、通常の採掘と競争を組み合わせた。"
+        }
+      ],
+      "evidence": [
+        "git:1b00112 残高への再投資と金鉱",
+        "git:580c862 採用ルールと精算",
+        "git:1ed866a 公開8",
+        "git:cf5d315 金鉱と運搬の公開9"
+      ],
+      "image": "generation-media/g04.webp",
+      "caption": "当時の強化・運搬の動作確認。小屋でピックに投資した場面。",
+      "versionIds": [
+        "r08",
+        "r09"
+      ],
+      "groupingStatus": "draft",
+      "playUrl": "/history-play/play/r09/",
+      "sourceUrl": "/history-play/sources/r09.zip"
+    },
+    {
+      "id": "g05",
+      "title": "巻き戻らず、狙って動けるように",
+      "period": "公開10〜12",
+      "summary": "対戦が成立していても、移動の巻き戻りや連打中の停止がストレスになる。操作と通信の土台を調整した。",
+      "examples": [
+        {
+          "idea": "立ち止まっていても位置が補正されて動く。自分の操作を優先してほしい。",
+          "change": "クライアントでの移動とサーバーの検証・補正を整理し、他人の移動表示も調整した。"
+        },
+        {
+          "idea": "対人戦はJava版1.8の連打・ダッシュの感覚に近づけたい。",
+          "change": "近接の射程、連打とノックバックを見直し、以前の一律な待ち時間を整理した。"
+        },
+        {
+          "idea": "弱いピックでも硬い鉱石を削り、一発逆転を狙えるようにしたい。",
+          "change": "弱いピックでも硬い鉱石へダメージを与えられるように変更。削った貢献も取り分に反映するようにした。"
+        },
+        {
+          "idea": "攻撃を連打すると時計やNPCが止まる。ダッシュはShiftがよい。",
+          "change": "差分配信と確認応答の溜まり方を修正し、連打時の通信負荷を抑えた。ダッシュキーをShiftへ変更した。"
+        },
+        {
+          "idea": "硬い鉱石を増やしてほしい。",
+          "change": "晶鉱を増やし、NPCが谷の鉱区へ移動する経路も調整した。"
+        }
+      ],
+      "evidence": [
+        "git:7b46ba4 移動と同期の調整",
+        "git:782bc5c 近接とノックバック",
+        "git:0c9854c 弱いピックの採掘貢献",
+        "git:caa2f28 晶鉱とNPC経路",
+        "git:31b5d92 Shiftダッシュ",
+        "git:46849d7 差分配信の滞留を抑制",
+        "git:826300d 公開12"
+      ],
+      "image": "generation-media/g05.webp",
+      "caption": "公開12の再戦画面。硬い鉱石と採掘条件の表示がある。",
+      "versionIds": [
+        "r10",
+        "r11",
+        "r12"
+      ],
+      "groupingStatus": "draft",
+      "playUrl": "/history-play/play/r12/",
+      "sourceUrl": "/history-play/sources/r12.zip"
+    },
+    {
+      "id": "g06",
+      "title": "情報を整理し、谷そのものを入口に",
+      "period": "公開13〜15",
+      "summary": "情報の優先順位がなく、文面も見た目もAIっぽい。装飾の多い案を試した後、実際の谷を見せるタイトルへ作り直した。",
+      "examples": [
+        {
+          "idea": "UIが安っぽく、情報量が多い。重要なものが分かる、初心者にも分かりやすい見た目にしたい。",
+          "change": "プレイHUD、任意で開く測量図、開始・精算画面を整理。袋の中身、残高、時計と、詳しい地図情報を分けた。"
+        },
+        {
+          "idea": "文面やUIがかなりAIっぽい。特に最初に開くタイトルが気になる。",
+          "change": "いったん制作した大きな券と版画中心の画面を撤回。実際の谷のカメラ構図、題字、名前欄と参加ボタンを中心に作り直した。"
+        },
+        {
+          "idea": "単純作業だけではない駆け引きを、品質重視で増やしてほしい。",
+          "change": "制作側の試行として先着注文を追加。この仕組みは、後に『条件が複雑』という意見を受けて公開32で撤去した。"
+        }
+      ],
+      "evidence": [
+        "git:1740e73 HUDの情報整理",
+        "git:876d983 開始・測量図・精算の初稿",
+        "git:b1a7aea 先着注文の試行",
+        "git:652ea68 実景を使う開始画面",
+        "git:3a86332 公開15"
+      ],
+      "image": "generation-media/g06.webp",
+      "caption": "券を外した後のタイトル。ゲーム内の谷を背景に、名前と参加操作を置いた。",
+      "versionIds": [
+        "r13",
+        "r14",
+        "r15"
+      ],
+      "groupingStatus": "draft",
+      "playUrl": "/history-play/play/r15/",
+      "sourceUrl": "/history-play/sources/r15.zip"
+    },
+    {
+      "id": "g07",
+      "title": "景色の大岩も掘り、近道を開く",
+      "period": "公開16",
+      "summary": "目の前の大きな岩が掘れない、という素直な疑問から、景観の岩にも採掘と崩壊を実装した。",
+      "examples": [
+        {
+          "idea": "大きい岩が掘れないのが気になる。岩を削り取る感じにしたい。",
+          "change": "景観の大岩14個を採掘可能に。実際の岩肌に沿った判定で、低価値の鉱石を削り取れるようにした。"
+        },
+        {
+          "idea": "岩全体が崩れて、遠くへ行けるようになっても面白そう。",
+          "change": "2か所の岩は削り切ると崩れ、その試合中の近道になるようにした。衝突、射線、NPCの経路にも開通を反映し、次の試合で元へ戻す。"
+        },
+        {
+          "idea": "分かりにくさや理不尽さをなくし、ゲームとしての質感を整えたい。",
+          "change": "売店へ近づく案内や長押しの反応を調整。大岩は同じ場所に留まり続けるより、別の岩へ移る理由がある削り方にした。"
+        }
+      ],
+      "evidence": [
+        "git:47d8205 売店の範囲と売買の反応",
+        "git:7297086 景観岩の採掘と通路の崩壊",
+        "git:df08573 岩肌と欠け跡の仕上げ",
+        "git:3624ea1 公開16"
+      ],
+      "image": "generation-media/g07.webp",
+      "caption": "岩の崩壊後、開いた通路を通り抜けた当時の動作確認画面。",
+      "versionIds": [
+        "r16"
+      ],
+      "groupingStatus": "draft",
+      "playUrl": "/history-play/play/r16/",
+      "sourceUrl": "/history-play/sources/r16.zip"
+    },
+    {
+      "id": "g08",
+      "title": "移動しながら売る。押した一打を届かせる",
+      "period": "公開17〜18",
+      "summary": "売却のために停止する負担を減らし、短いクリックや動く相手への一打を取りこぼす経路も見直した。",
+      "examples": [
+        {
+          "idea": "売るときに止まるのがストレス。移動中も売れ、Eを押している間は入力が続いてほしい。",
+          "change": "売却の静止条件を撤去。Eを押したまま売り場へ入ると受付し、円内で1秒経つと売却。後から届いた荷物も、Eを離さず次の売却へ回せるようにした。"
+        },
+        {
+          "idea": "似た操作のストレスも、一般的なゲームのように減らしてほしい。",
+          "change": "当時のQ強化は一回の保持につき一段へ整理。売却可能な場所以外では、Eの保持が採掘を妨げないようにした。"
+        },
+        {
+          "idea": "狙った岩や相手に当たらない、押したのに反応しない所を実際に遊んで直してほしい。",
+          "change": "押下時の目と狙いを一打として送信し、遅れて別の対象へ二重発火する経路を修正。動く人物の描画時刻と判定も揃え、空振り後の狙い直しを通すようにした。"
+        }
+      ],
+      "evidence": [
+        "git:6ac4ab8 移動売却とE保持の継続受付",
+        "git:3d86524 押下時の採掘と二重発火の修正",
+        "git:8fc03e1 移動中の人物と近接判定",
+        "git:7bd2b5e 公開18"
+      ],
+      "image": "generation-media/g08.webp",
+      "caption": "公開18に向け、移動する相手への命中を確認した専用局面。",
+      "versionIds": [
+        "r17",
+        "r18"
+      ],
+      "groupingStatus": "draft",
+      "playUrl": "/history-play/play/r18/",
+      "sourceUrl": "/history-play/sources/r18.zip"
+    },
+    {
+      "id": "g09",
+      "title": "奪われても、その場で取り返せる",
+      "period": "公開19",
+      "summary": "一人で最適化するだけでなく、他人とのやり取りを増やしたい。盗み専用の長い待ち時間と最後の1個の保護を外した。",
+      "examples": [
+        {
+          "idea": "他人との相互作用が弱い。盗むクールタイムが長く、殴り返す利点も薄い。",
+          "change": "成立した打撃ごとに鉱石1個を移すルールへ。盗み専用2.5秒の待ち時間を撤去し、通常の被弾待ち0.5秒で追撃できるようにした。"
+        },
+        {
+          "idea": "殴る回数を増やせば奪えるなど、対人の駆け引きを作りたい。",
+          "change": "最後の1個も奪い返せるよう変更。満袋で奪われた直後にも、空いた枠で取り返せるようになった。"
+        },
+        {
+          "idea": "他人と関わることが、実際の試合で増える形にしたい。",
+          "change": "NPCも奪った相手への取り返しや、進路が交差する相手への短い仕掛けを選ぶよう調整した。"
+        }
+      ],
+      "evidence": [
+        "git:be73add 最後の1個の奪取とNPCの取り返し",
+        "git:cd0d2af 奪い返しの表示",
+        "git:8ae772a 公開19"
+      ],
+      "image": "generation-media/g09.webp",
+      "caption": "通常の試合でNPCとの取り返しを確認した当時の画面。",
+      "versionIds": [
+        "r19"
+      ],
+      "groupingStatus": "draft",
+      "playUrl": "/history-play/play/r19/",
+      "sourceUrl": "/history-play/sources/r19.zip"
+    },
+    {
+      "id": "g10",
+      "title": "遠くからも奪う。ピックもさらに育てる",
+      "period": "候補20・公開21",
+      "summary": "近接だけでは追いつけない相手へ、遠距離から狙う手段を追加。最初は手製の弩として試し、次の世代で弓へ作り替えた。",
+      "examples": [
+        {
+          "idea": "近づかないと奪えないだけでは単純。弓や銃のような遠距離の手段があってもよい。",
+          "change": "全員が使える手製の弩を追加。実際に飛ぶ弾が人へ命中すると、近接と同じく鉱石1個を移すようにした。遮蔽と安全圏もサーバーで判定する。"
+        },
+        {
+          "idea": "強化の幅が少ない。ピッケルのレベル上限をもっと高くしたい。",
+          "change": "ピックの強化をLv8まで拡張し、上位の見た目・採掘力・費用を追加した。"
+        }
+      ],
+      "evidence": [
+        "git:039fe8f ピックLv8",
+        "git:cf3aa0f 権威サーバーの弩と実弾道",
+        "git:657b9b6 弩の操作と外観",
+        "git:c294730 NPCの開始15秒の人間への射撃猶予",
+        "git:6f3b273 公開21"
+      ],
+      "image": "generation-media/g10.webp",
+      "caption": "弩で遠距離から鉱石を奪った導入時の確認画面。",
+      "versionIds": [
+        "r20",
+        "r21"
+      ],
+      "groupingStatus": "draft",
+      "playUrl": "/history-play/play/r21/",
+      "sourceUrl": "/history-play/sources/r21.zip"
+    },
+    {
+      "id": "g11",
+      "title": "弓を引いて放す、旧版Minecraftの操作感へ",
+      "period": "公開22〜26",
+      "summary": "ただ遠くへ攻撃できるだけでは足りない。Java版1.8.9を参照し、引き時間・弾道・移動・オンラインの射出感を作り直した。",
+      "examples": [
+        {
+          "idea": "戦闘と移動を、Java版1.8.9のマイクラの感覚へ深く近づけたい。",
+          "change": "右押しで引き、離すと発射する弓へ変更。20tickを基準に引き時間で初速が変わり、重力と空気抵抗で落ちる弾道にした。"
+        },
+        {
+          "idea": "移動が遅い。ダッシュジャンプを含め、シャキッと動けるようにしたい。",
+          "change": "移動の加速、摩擦、ジャンプとダッシュ、被弾時の押し出しを調整。弓を引く間は歩行が遅くなるようにした。"
+        },
+        {
+          "idea": "広い視野で、揺れなしがよい。空振り後も合わせ直したらすぐ当てたい。",
+          "change": "広角・カメラ揺れなしを採用。使用中の両ボタン入力や、空振り後に次の対象へ合わせ直す処理を整理した。"
+        },
+        {
+          "idea": "戦闘の体験をもっとよくしてほしい。",
+          "change": "実ブラウザで見つかった弱い矢の地面すり抜けを修正。放した直後の飛翔とサーバー弾の引継ぎ、相手が振り向いて構える姿や引き音も調整した。"
+        }
+      ],
+      "evidence": [
+        "git:de66c45 20tick基準の移動",
+        "git:a2b067c 被弾とノックバック",
+        "git:f5c0501 引いて放す弓",
+        "git:f6214c5 弱い矢と実地表の交差",
+        "git:e773cf2 発射直後の飛翔と権威弾の引継ぎ",
+        "git:e22d1ef 相手の構えとNPCの視認",
+        "git:7b2e90a 公開26"
+      ],
+      "image": "generation-media/g11.webp",
+      "caption": "公開26の弓。引いている弦と矢が手元に見える。",
+      "versionIds": [
+        "r22",
+        "r23",
+        "r24",
+        "r25",
+        "r26"
+      ],
+      "groupingStatus": "draft",
+      "playUrl": "/history-play/play/r26/",
+      "sourceUrl": "/history-play/sources/r26.zip"
+    },
+    {
+      "id": "g12",
+      "title": "円を一つに。矢と持ち物を見える形に",
+      "period": "公開27",
+      "summary": "二つの円で分かりにくかった売却と保護の境界を一本化。矢が飛ぶ道筋と、現在の装備も見えるようにした。",
+      "examples": [
+        {
+          "idea": "売却範囲と安全地帯を同じにしたい。円が二つだと分かりにくい。",
+          "change": "半径4.5mの一つの円に統一し、見た目と売却・保護の判定を揃えた。"
+        },
+        {
+          "idea": "矢の軌道が分かりにくい。安全地帯を横切るだけで矢が消える必要はない。",
+          "change": "実際の飛翔経路に沿った矢と尾を描画。安全地帯の境界では矢を消さず、円内の人物だけを命中対象から外すようにした。"
+        },
+        {
+          "idea": "弓を持っていることが分かりにくい。ホットバーと1・2キーで切り替えたい。",
+          "change": "ピックと弓を画面下の持ち物欄に表示し、1・2で選ぶ操作へ変更した。"
+        }
+      ],
+      "evidence": [
+        "git:95916b2 売却と保護の円を一本化",
+        "git:0789e9e 矢の尾と安全地帯の通過",
+        "git:7437921 1・2の持ち物欄",
+        "git:66b3ef2 公開27"
+      ],
+      "image": "generation-media/g12.webp",
+      "caption": "公開27。一つになった店の円と、画面下のピック・弓の持ち物欄。",
+      "versionIds": [
+        "r27"
+      ],
+      "groupingStatus": "draft",
+      "playUrl": "/history-play/play/r27/",
+      "sourceUrl": "/history-play/sources/r27.zip"
+    },
+    {
+      "id": "g13",
+      "title": "鉱脈を増やし、争う場所を作る",
+      "period": "公開28〜29",
+      "summary": "鉱石が少なく、価値の高い場所も分かりにくい。友達同士で読み合えるよう、谷の採掘先と遠くからの手掛かりを増やした。",
+      "examples": [
+        {
+          "idea": "鉱石が少なく、金鉱のような希少で高価な鉱石の場所をもっと目立たせたい。",
+          "change": "銀や高価で硬い赤晶の鉱脈を増設。金鉱は遠くからも反射や目印を見つけられるようにした。"
+        },
+        {
+          "idea": "もっと希少で高価な鉱石など、種類があってもよい。友達2〜4人で読み合う場を面白くしたい。",
+          "change": "鉱区ごとの硬さと価値を増やし、強化して狙う場所と人が集まる場所を作った。"
+        },
+        {
+          "idea": "1・2キーだけでなく、マウスホイールでも道具を切り替えたい。",
+          "change": "ホイールで持ち物欄を切り替える操作を追加した。"
+        }
+      ],
+      "evidence": [
+        "git:de306ac 銀・赤晶と金鉱の目印",
+        "git:a811e1b ホイールで装備切替",
+        "git:a822a75 遠くの金鉱の反射",
+        "git:85e847f 公開29"
+      ],
+      "image": "generation-media/g13.webp",
+      "caption": "公開29。遠方の金鉱の場所が分かるようになった谷。",
+      "versionIds": [
+        "r28",
+        "r29"
+      ],
+      "groupingStatus": "draft",
+      "playUrl": "/history-play/play/r29/",
+      "sourceUrl": "/history-play/sources/r29.zip"
+    },
+    {
+      "id": "g14",
+      "title": "複雑な条件を、見て分かる競争へ",
+      "period": "配布31〜32",
+      "summary": "楽しさは残しつつ、説明がないと分からない条件を減らす。期限付き金鉱と先着注文を外し、光る売店の高値買取へまとめた。",
+      "examples": [
+        {
+          "idea": "金鉱の時間制限はなくてよい。先着ポイントなど、分かりにくい仕様を減らしたい。",
+          "change": "金鉱の消滅期限と、指定鉱石を先に届ける注文を撤去した。"
+        },
+        {
+          "idea": "30秒ごとに売店が光り、そこへ持って行けば高く売れる方が分かりやすく、争いも起きそう。",
+          "change": "一つの売店が30秒間、荷物全体を高く買うルールへ変更。この時点は2倍で、後に1.5倍へ調整した。"
+        },
+        {
+          "idea": "ダイヤのように硬く、たくさん落ちる鉱石がほしい。",
+          "change": "硬いダイヤ鉱脈を追加し、掘り切ると複数の鉱石を得られるようにした。"
+        },
+        {
+          "idea": "袋はピックと別に強化したい。",
+          "change": "袋の容量を8→12→16個へ独立して強化できるようにした。"
+        }
+      ],
+      "evidence": [
+        "git:b893d2d 金鉱の期限撤去・高値売店・袋・ダイヤ",
+        "git:4a95304 単純化したルールの仕上げ",
+        "git:2d7ca6a 公開32"
+      ],
+      "image": "generation-media/g14.webp",
+      "caption": "公開32の高値売店。この時点の2倍表示は、後に1.5倍へ変更した。",
+      "versionIds": [
+        "r31",
+        "r32"
+      ],
+      "groupingStatus": "draft",
+      "playUrl": "/history-play/play/r32/",
+      "sourceUrl": "/history-play/sources/r32.zip"
+    },
+    {
+      "id": "g15",
+      "title": "見やすさと、カーソルの安心感",
+      "period": "配布34・36〜37",
+      "summary": "遊びは面白くなった一方で、低解像度や情報の圧が気になる。視点が突然跳ぶ問題と、画面全体の見え方を整えた。",
+      "examples": [
+        {
+          "idea": "自由カーソルの時、視点が突然別の方向へ向く。どのウィンドウ状態でもちゃんと遊びたい。",
+          "change": "マウス捕捉の切替、最初の移動量とボタン入力を整理し、復帰時の視点の跳びを修正した。"
+        },
+        {
+          "idea": "全体的に解像度が低く、見た目の体験が悪い。",
+          "change": "WebGLの描画サイズとDPR、UIのCSS寸法、文字のラスタ設定を見直し、文字・道具・地形の明瞭さを改善した。"
+        },
+        {
+          "idea": "説明が多く、何が大事か分かりにくい。内容を減らすより、強弱をつけてシンプルにしたい。",
+          "change": "画面を覆う帯や常設チップを減らし、主額・選択中の操作・詳しい地図情報の表示を整理した。"
+        },
+        {
+          "idea": "フィールドに倍率の文字が浮くのは不自然。明かりなど、景色に合う形で示したい。",
+          "change": "売店の明かりと布の表現へ寄せ、景色の上へ直接大きく数字を浮かべる表示を整理した。"
+        }
+      ],
+      "evidence": [
+        "git:fef716b 自由カーソルと復帰入力",
+        "git:2694e0b 売店の灯と境界",
+        "git:a85d24b HUDの優先順位",
+        "git:2d17b95 WebGL解像度・文字・輪郭",
+        "git:fb74ddd 実景タイトルの調整",
+        "git:7960bd6 公開37"
+      ],
+      "image": "generation-media/g15.webp",
+      "caption": "公開37の売店。プレイ画面に常設する説明と帯を減らした。",
+      "versionIds": [
+        "r34",
+        "r36",
+        "r37"
+      ],
+      "groupingStatus": "draft",
+      "playUrl": "/history-play/play/r37/",
+      "sourceUrl": "/history-play/sources/r37.zip"
+    },
+    {
+      "id": "g16",
+      "title": "持っている道具を、店で使う",
+      "period": "配布39〜40",
+      "summary": "将来のスマホ操作も考え、売却や強化の専用キーを減らす。道具を選び、対象へ使う操作へ揃えた。",
+      "examples": [
+        {
+          "idea": "使うキーをなるべく減らし、移動・持ち物選択・持った物を使う操作にしたい。",
+          "change": "袋も持ち物欄に追加。ピック・弓・袋を選び、店の対象へクリックして使う操作にまとめた。"
+        },
+        {
+          "idea": "売ることや、ピック・袋を強化することがもっと直感的に分かるとよい。",
+          "change": "この段階では買取台を狙って売却し、アンビルで選択中の道具を強化する形にした。まだ長押しが残り、次の意見でさらに簡略化した。"
+        },
+        {
+          "idea": "明かりは全体を大きめに。買取は2倍より1.5倍くらいがよさそう。",
+          "change": "売店の灯を明るく調整し、高値買取を1.5倍へ変更した。"
+        }
+      ],
+      "evidence": [
+        "git:1874191 持ち物3枠と対象へ使う操作",
+        "git:239a404 買取台・アンビルとNPCの接近",
+        "git:729a756 候補40の記録"
+      ],
+      "image": "generation-media/g16.webp",
+      "caption": "当時の公開確認画面。持ち物欄にピック・弓・袋の3枠が並ぶ。",
+      "versionIds": [
+        "r39",
+        "r40"
+      ],
+      "groupingStatus": "draft",
+      "playUrl": "/history-play/play/r40/",
+      "sourceUrl": "/history-play/sources/r40.zip"
+    },
+    {
+      "id": "g17",
+      "title": "売るのは入るだけ。強化は1クリック",
+      "period": "配布41・43",
+      "summary": "基本動作を簡単にして、採掘や対戦へ時間を使えるように。売却の長押しと、強化の待ち時間を取り除いた。",
+      "examples": [
+        {
+          "idea": "円の中に入ったら自動で売るくらいでよい。売却はもっと簡単にしたい。",
+          "change": "買取台へ照準を合わせて長押しする操作を撤去。鉱石を持って白い円へ入ると、自動で残高へ入金するようにした。"
+        },
+        {
+          "idea": "強化もあまり時間をかけず、すぐできる形にしたい。",
+          "change": "アンビルを1クリックすると、選んでいるピックか袋を一段強化するよう変更。待ち時間をなくした。"
+        },
+        {
+          "idea": "自動売却ならカウンターは不要。中央へアンビルを置くとよい。",
+          "change": "不要になった買取カウンターを外し、小屋の中央へアンビルを移した。"
+        }
+      ],
+      "evidence": [
+        "git:9dfb421 円内の自動売却とクリック強化",
+        "git:eb6eb3c 公開41",
+        "git:bc7ff8b 買取台の撤去と中央アンビル",
+        "git:104182e 公開42の操作記録"
+      ],
+      "image": "generation-media/g17.webp",
+      "caption": "当時の専用確認局面。荷物を自動売却後、中央のアンビルを1回押してピックを強化した。",
+      "versionIds": [
+        "r41",
+        "r43"
+      ],
+      "groupingStatus": "draft",
+      "playUrl": "/history-play/play/r43/",
+      "sourceUrl": "/history-play/sources/r43.zip"
+    },
+    {
+      "id": "g18",
+      "title": "狙いやすく、殴ることにも利点を",
+      "period": "配布44",
+      "summary": "人へ攻撃を当てる難しさと、近づいて殴る利点を調整。体の見た目と判定を広げ、命中後の短い加速を加えた。",
+      "examples": [
+        {
+          "idea": "攻撃を当てるのが難しい。キャラクターを少し大きくし、判定も広げたい。",
+          "change": "人物の横幅を見た目と命中判定の両方で広げた。見える体へ狙った一打が届くよう調整した。"
+        },
+        {
+          "idea": "敵を殴ると少し移動速度が上がるなど、近づくメリットがほしい。",
+          "change": "成立した近接命中の後、2秒間、移動速度が1.4倍になる効果を追加。相手が空袋でも命中すれば発動し、追撃・離脱へ使えるようにした。"
+        }
+      ],
+      "evidence": [
+        "git:3ae2534 人物の横幅と近接命中後の加速",
+        "git:617fc62 公開44"
+      ],
+      "image": "generation-media/g18.webp",
+      "caption": "公開44に向けた専用局面。近接命中後の短い加速を確認した画面。",
+      "versionIds": [
+        "r44"
+      ],
+      "groupingStatus": "draft",
+      "playUrl": "/history-play/play/r44/",
+      "sourceUrl": "/history-play/sources/r44.zip"
+    }
+  ],
+  "schemaVersion": 2,
+  "groupingStatus": "draft",
+  "groupingNote": "章立ては仮案です。versionsとproposalsが個別の事実で、後から並べ替え・グループ化できます。",
+  "scope": "企画から配布44まで。ここでの意見は本人の開発チャット入力で、新しい提案・投票UIの記録ではありません。",
+  "versions": [
+    {
+      "number": 1,
+      "id": "r01",
+      "revision": "orbit-salvage-prototype-00001-8b7",
+      "imageDigest": "sha256:28f58a581973f6d34456e341142f6c8cc607d6ef109d3077e90f73e0a35ae788",
+      "createdAt": "2026-11-06T21:11:00.825014Z",
+      "runtimeExtracted": true,
+      "webglRetained": true,
+      "playUrl": "/history-play/play/r01/",
+      "sourceUrl": "/history-play/sources/r01.zip",
+      "playback": {
+        "mode": "browser-local-original-world",
+        "status": "browser-loaded-world-verified",
+        "multiplayer": false,
+        "note": "当時のWebGLと当時のルールを使用。このタブ内でNPCと対戦し、現在のオンラインへ接続しません。",
+        "worldVerified": true,
+        "browserLoadVerified": true,
+        "browserVerification": "元のWebGLをChromeで起動し参加画面を撮影。各版のWorldは別に40tick進行を確認。全版の通し試合を確認した意味ではありません。",
+        "joinedInBrowser": true
+      },
+      "title": "最初の宇宙試作",
+      "period": "配布版1",
+      "summary": "Unity WebGLの三人称宇宙ゲームを配布。コアを連結して中央へ届け、レーザーで他船の荷物を切る120秒の試作。",
+      "generationId": "g01",
+      "relatedProposalIds": [
+        "p12",
+        "p11",
+        "p10",
+        "p09",
+        "p08",
+        "p07",
+        "p06",
+        "p05",
+        "p04",
+        "p03",
+        "p02",
+        "p01"
+      ],
+      "inputProposalIds": [
+        "p01",
+        "p02",
+        "p03",
+        "p04",
+        "p05",
+        "p06",
+        "p07",
+        "p08",
+        "p09",
+        "p10",
+        "p11",
+        "p12"
+      ],
+      "examples": [
+        {
+          "idea": "軽量でシンプルなオンライン3Dの試作を、ブラウザで実際に遊べる形にしたい。必要ならGCPを使ってよい。",
+          "change": "Unity WebGLの三人称宇宙ゲームを配布。コアを連結して中央へ届け、レーザーで他船の荷物を切る120秒の試作。",
+          "proposalId": "p12",
+          "attribution": "本人の要望を受けた制作側の具体実装。版ごとに新しい本人入力があったという意味ではありません。"
+        }
+      ],
+      "evidence": [
+        "container:sha256:28f58a581973f6d34456e341142f6c8cc607d6ef109d3077e90f73e0a35ae788 当時のWebGL・ゲーム処理・設定を保持"
+      ],
+      "sourceKind": "当時の配布コンテナから回収した実行サーバーのソース",
+      "previousVersionId": null,
+      "nextVersionId": "r02",
+      "feedbackUntilNextVersionIds": [],
+      "image": "generation-media/r01.webp",
+      "caption": "配布1の履歴再生実画面。宇宙を三人称で操縦する最初のUnity WebGL試作。",
+      "imageRepresents": "この配布版そのものの実行画面。ゲーム画面のみ、合成・ゲーム内容の加工なし。"
+    },
+    {
+      "number": 2,
+      "id": "r02",
+      "revision": "orbit-salvage-prototype-00002-pfb",
+      "imageDigest": "sha256:1bab198f40d394235a23e83cc1a1691bf263ce32fb3c85b10a21b1b83a67e047",
+      "createdAt": "2026-11-06T21:14:49.472521Z",
+      "runtimeExtracted": true,
+      "webglRetained": true,
+      "playUrl": "/history-play/play/r02/",
+      "sourceUrl": "/history-play/sources/r02.zip",
+      "playback": {
+        "mode": "browser-local-original-world",
+        "status": "browser-loaded-world-verified",
+        "multiplayer": false,
+        "note": "当時のWebGLと当時のルールを使用。このタブ内でNPCと対戦し、現在のオンラインへ接続しません。",
+        "worldVerified": true,
+        "browserLoadVerified": true,
+        "browserVerification": "元のWebGLをChromeで起動し参加画面を撮影。各版のWorldは別に40tick進行を確認。全版の通し試合を確認した意味ではありません。"
+      },
+      "title": "宇宙試作の調整",
+      "period": "配布版2",
+      "summary": "宇宙試作の開始位置を整理。荷物による減速を外し、まとめて届けると得点が増えるように変更。全員退出後の初期化も追加。",
+      "generationId": "g01",
+      "relatedProposalIds": [
+        "p12",
+        "p11",
+        "p10",
+        "p09",
+        "p08",
+        "p07",
+        "p06",
+        "p05",
+        "p04",
+        "p03",
+        "p02",
+        "p01"
+      ],
+      "inputProposalIds": [],
+      "examples": [
+        {
+          "idea": "軽量でシンプルなオンライン3Dの試作を、ブラウザで実際に遊べる形にしたい。必要ならGCPを使ってよい。",
+          "change": "宇宙試作の開始位置を整理。荷物による減速を外し、まとめて届けると得点が増えるように変更。全員退出後の初期化も追加。",
+          "proposalId": "p12",
+          "attribution": "本人の要望を受けた制作側の具体実装。版ごとに新しい本人入力があったという意味ではありません。"
+        }
+      ],
+      "evidence": [
+        "container:sha256:1bab198f40d394235a23e83cc1a1691bf263ce32fb3c85b10a21b1b83a67e047 当時のWebGL・ゲーム処理・設定を保持"
+      ],
+      "sourceKind": "当時の配布コンテナから回収した実行サーバーのソース",
+      "previousVersionId": "r01",
+      "nextVersionId": "r03",
+      "feedbackUntilNextVersionIds": [],
+      "image": "generation-media/r02.webp",
+      "caption": "配布2の保存WebGLと当時のゲーム処理を、2026年11月9日に履歴再生した参加画面。",
+      "imageRepresents": "この配布版そのものの実行画面。ゲーム画面のみ、合成・ゲーム内容の加工なし。"
+    },
+    {
+      "number": 3,
+      "id": "r03",
+      "revision": "orbit-salvage-prototype-00003-8v8",
+      "imageDigest": "sha256:2cecd7a1962ae6e706db66f8bc3dca7d77b50312a34c194051f723e18eb66353",
+      "createdAt": "2026-11-06T21:18:07.865117Z",
+      "runtimeExtracted": true,
+      "webglRetained": true,
+      "playUrl": "/history-play/play/r03/",
+      "sourceUrl": "/history-play/sources/r03.zip",
+      "playback": {
+        "mode": "browser-local-original-world",
+        "status": "browser-loaded-world-verified",
+        "multiplayer": false,
+        "note": "当時のWebGLと当時のルールを使用。このタブ内でNPCと対戦し、現在のオンラインへ接続しません。",
+        "worldVerified": true,
+        "browserLoadVerified": true,
+        "browserVerification": "元のWebGLをChromeで起動し参加画面を撮影。各版のWorldは別に40tick進行を確認。全版の通し試合を確認した意味ではありません。"
+      },
+      "title": "宇宙回収競争の初期完成",
+      "period": "配布版3",
+      "summary": "同じ宇宙ルールの最終WebGLを再生成して配布。2人の同時接続と、結果から次ラウンドへの継続を当時確認。",
+      "generationId": "g01",
+      "image": "generation-media/r03.webp",
+      "caption": "配布3の保存WebGLと当時のゲーム処理を、2026年11月9日に履歴再生した参加画面。",
+      "imageRepresents": "この配布版そのものの実行画面。ゲーム画面のみ、合成・ゲーム内容の加工なし。",
+      "relatedProposalIds": [
+        "p12",
+        "p11",
+        "p10",
+        "p09",
+        "p08",
+        "p07",
+        "p06",
+        "p05",
+        "p04",
+        "p03",
+        "p02",
+        "p01"
+      ],
+      "inputProposalIds": [],
+      "examples": [
+        {
+          "idea": "軽量でシンプルなオンライン3Dの試作を、ブラウザで実際に遊べる形にしたい。必要ならGCPを使ってよい。",
+          "change": "同じ宇宙ルールの最終WebGLを再生成して配布。2人の同時接続と、結果から次ラウンドへの継続を当時確認。",
+          "proposalId": "p12",
+          "attribution": "本人の要望を受けた制作側の具体実装。版ごとに新しい本人入力があったという意味ではありません。"
+        }
+      ],
+      "evidence": [
+        "container:sha256:2cecd7a1962ae6e706db66f8bc3dca7d77b50312a34c194051f723e18eb66353 当時のWebGL・ゲーム処理・設定を保持",
+        "git:406efa4 関連する実装・配布記録（実行JS一致）"
+      ],
+      "sourceKind": "当時の配布コンテナから回収した実行サーバーのソース",
+      "relatedCommit": "406efa4",
+      "runtimeSourceComparison": {
+        "comparedFiles": [
+          "game.js",
+          "index.js",
+          "static.js"
+        ],
+        "differentFiles": [],
+        "lineEndingsNormalized": true
+      },
+      "sourceCommit": "406efa4",
+      "previousVersionId": "r02",
+      "nextVersionId": "r04",
+      "feedbackUntilNextVersionIds": [
+        "p13"
+      ]
+    },
+    {
+      "number": 4,
+      "id": "r04",
+      "revision": "orbit-salvage-prototype-00004-tjp",
+      "imageDigest": "sha256:a64797e0e2eccfe42ac7c66af09b2cb1b396ff91c802649f905ffcc3342c2d2b",
+      "createdAt": "2026-11-06T21:56:57.655442Z",
+      "runtimeExtracted": true,
+      "webglRetained": true,
+      "playUrl": "/history-play/play/r04/",
+      "sourceUrl": "/history-play/sources/r04.zip",
+      "playback": {
+        "mode": "browser-local-original-world",
+        "status": "browser-loaded-world-verified",
+        "multiplayer": false,
+        "note": "当時のWebGLと当時のルールを使用。このタブ内でNPCと対戦し、現在のオンラインへ接続しません。",
+        "worldVerified": true,
+        "browserLoadVerified": true,
+        "browserVerification": "元のWebGLをChromeで起動し参加画面を撮影。各版のWorldは別に40tick進行を確認。全版の通し試合を確認した意味ではありません。",
+        "joinedInBrowser": true
+      },
+      "title": "自然の谷と一人称",
+      "period": "配布版4",
+      "summary": "自然の谷へ舞台を変更。一人称・WASDで歩き、共有地形上で荷物を回収して小屋へ運ぶ形になった。まだ鉱脈を掘る方式ではない。",
+      "generationId": "g02",
+      "image": "generation-media/r04.webp",
+      "caption": "配布4の履歴再生実画面。自然の谷・一人称へ変更。まだ鉱石を拾って運ぶ方式。",
+      "imageRepresents": "この配布版そのものの実行画面。ゲーム画面のみ、合成・ゲーム内容の加工なし。",
+      "relatedProposalIds": [
+        "p13"
+      ],
+      "inputProposalIds": [
+        "p13"
+      ],
+      "examples": [
+        {
+          "idea": "サイバーな舞台より、自然でオープンワールドのような谷を、一人称・WASDで歩きたい。",
+          "change": "自然の谷へ舞台を変更。一人称・WASDで歩き、共有地形上で荷物を回収して小屋へ運ぶ形になった。まだ鉱脈を掘る方式ではない。",
+          "proposalId": "p13",
+          "attribution": "本人の要望を受けた制作側の具体実装。版ごとに新しい本人入力があったという意味ではありません。"
+        }
+      ],
+      "evidence": [
+        "container:sha256:a64797e0e2eccfe42ac7c66af09b2cb1b396ff91c802649f905ffcc3342c2d2b 当時のWebGL・ゲーム処理・設定を保持",
+        "git:afbe677 関連する実装・配布記録（実行JS一致）"
+      ],
+      "sourceKind": "当時の配布コンテナから回収した実行サーバーのソース",
+      "relatedCommit": "afbe677",
+      "runtimeSourceComparison": {
+        "comparedFiles": [
+          "game.js",
+          "index.js",
+          "static.js",
+          "valley.js"
+        ],
+        "differentFiles": [],
+        "lineEndingsNormalized": true
+      },
+      "sourceCommit": "afbe677",
+      "previousVersionId": "r03",
+      "nextVersionId": "r05",
+      "feedbackUntilNextVersionIds": [
+        "p14"
+      ]
+    },
+    {
+      "number": 5,
+      "id": "r05",
+      "revision": "orbit-salvage-prototype-00005-27s",
+      "imageDigest": "sha256:68a648d34dd011aaf9312025dfb6371d8862a57745c6ab991ed94703313527bd",
+      "createdAt": "2026-11-07T08:27:42.197752Z",
+      "runtimeExtracted": true,
+      "webglRetained": true,
+      "playUrl": "/history-play/play/r05/",
+      "sourceUrl": "/history-play/sources/r05.zip",
+      "playback": {
+        "mode": "browser-local-original-world",
+        "status": "browser-loaded-world-verified",
+        "multiplayer": false,
+        "note": "当時のWebGLと当時のルールを使用。このタブ内でNPCと対戦し、現在のオンラインへ接続しません。",
+        "worldVerified": true,
+        "browserLoadVerified": true,
+        "browserVerification": "元のWebGLをChromeで起動し参加画面を撮影。各版のWorldは別に40tick進行を確認。全版の通し試合を確認した意味ではありません。"
+      },
+      "title": "鉱石を掘って売る",
+      "period": "配布版5",
+      "summary": "地面の荷物を拾う方式から、ピックで鉱脈を叩き、袋の鉱石を売る方式へ変更。",
+      "generationId": "g03",
+      "relatedProposalIds": [
+        "p14"
+      ],
+      "inputProposalIds": [
+        "p14"
+      ],
+      "examples": [
+        {
+          "idea": "遠すぎる攻撃や中央の待ち伏せを直したい。ピッケルなのだから、道の物を拾うより鉱石を掘りたい。手応えも作り込んでほしい。",
+          "change": "地面の荷物を拾う方式から、ピックで鉱脈を叩き、袋の鉱石を売る方式へ変更。",
+          "proposalId": "p14",
+          "attribution": "本人の要望を受けた制作側の具体実装。版ごとに新しい本人入力があったという意味ではありません。"
+        }
+      ],
+      "evidence": [
+        "container:sha256:68a648d34dd011aaf9312025dfb6371d8862a57745c6ab991ed94703313527bd 当時のWebGL・ゲーム処理・設定を保持",
+        "git:3a954d1 関連する実装・配布記録（実行JS一致）"
+      ],
+      "sourceKind": "当時の配布コンテナから回収した実行サーバーのソース",
+      "relatedCommit": "3a954d1",
+      "runtimeSourceComparison": {
+        "comparedFiles": [
+          "game.js",
+          "index.js",
+          "static.js",
+          "valley.js"
+        ],
+        "differentFiles": [],
+        "lineEndingsNormalized": true
+      },
+      "sourceCommit": "3a954d1",
+      "previousVersionId": "r04",
+      "nextVersionId": "r06",
+      "feedbackUntilNextVersionIds": [
+        "p15"
+      ],
+      "image": "generation-media/r05.webp",
+      "caption": "配布5の保存WebGLと当時のゲーム処理を、2026年11月9日に履歴再生した参加画面。",
+      "imageRepresents": "この配布版そのものの実行画面。ゲーム画面のみ、合成・ゲーム内容の加工なし。"
+    },
+    {
+      "number": 6,
+      "id": "r06",
+      "revision": "orbit-salvage-prototype-00006-4bm",
+      "imageDigest": "sha256:47dc208eb54cb69d204a81394a510046cca4023acf0539e6d43ea421ad9fb9ea",
+      "createdAt": "2026-11-07T09:52:20.254252Z",
+      "runtimeExtracted": true,
+      "webglRetained": true,
+      "playUrl": "/history-play/play/r06/",
+      "sourceUrl": "/history-play/sources/r06.zip",
+      "playback": {
+        "mode": "browser-local-original-world",
+        "status": "browser-loaded-world-verified",
+        "multiplayer": false,
+        "note": "当時のWebGLと当時のルールを使用。このタブ内でNPCと対戦し、現在のオンラインへ接続しません。",
+        "worldVerified": true,
+        "browserLoadVerified": true,
+        "browserVerification": "元のWebGLをChromeで起動し参加画面を撮影。各版のWorldは別に40tick進行を確認。全版の通し試合を確認した意味ではありません。"
+      },
+      "title": "鉱区と帰り道を選ぶ",
+      "period": "配布版6",
+      "summary": "複数の売店と上乗せ買取を追加。鉱種と帰路を選ぶ理由を作った。",
+      "generationId": "g03",
+      "relatedProposalIds": [
+        "p14",
+        "p15"
+      ],
+      "inputProposalIds": [
+        "p15"
+      ],
+      "examples": [
+        {
+          "idea": "掘って売るだけの単純作業ではなく、鉱脈・帰り道・他プレイヤーとの駆け引きで上手さを出し、もう一試合遊びたくしたい。",
+          "change": "複数の売店と上乗せ買取を追加。鉱種と帰路を選ぶ理由を作った。",
+          "proposalId": "p15",
+          "attribution": "本人の要望を受けた制作側の具体実装。版ごとに新しい本人入力があったという意味ではありません。"
+        }
+      ],
+      "evidence": [
+        "container:sha256:47dc208eb54cb69d204a81394a510046cca4023acf0539e6d43ea421ad9fb9ea 当時のWebGL・ゲーム処理・設定を保持",
+        "git:497f1d1 関連する実装・配布記録（実行JS一致）"
+      ],
+      "sourceKind": "当時の配布コンテナから回収した実行サーバーのソース",
+      "relatedCommit": "497f1d1",
+      "runtimeSourceComparison": {
+        "comparedFiles": [
+          "game.js",
+          "index.js",
+          "static.js",
+          "valley.js"
+        ],
+        "differentFiles": [],
+        "lineEndingsNormalized": true
+      },
+      "sourceCommit": "497f1d1",
+      "previousVersionId": "r05",
+      "nextVersionId": "r07",
+      "feedbackUntilNextVersionIds": [
+        "p16"
+      ],
+      "image": "generation-media/r06.webp",
+      "caption": "配布6の保存WebGLと当時のゲーム処理を、2026年11月9日に履歴再生した参加画面。",
+      "imageRepresents": "この配布版そのものの実行画面。ゲーム画面のみ、合成・ゲーム内容の加工なし。"
+    },
+    {
+      "number": 7,
+      "id": "r07",
+      "revision": "orbit-salvage-prototype-00007-j4r",
+      "imageDigest": "sha256:80146253fb79427d6843721df7d786c43f76a0337f917e577302225bcbab334e",
+      "createdAt": "2026-11-07T12:10:27.484543Z",
+      "runtimeExtracted": true,
+      "webglRetained": true,
+      "playUrl": "/history-play/play/r07/",
+      "sourceUrl": "/history-play/sources/r07.zip",
+      "playback": {
+        "mode": "browser-local-original-world",
+        "status": "browser-loaded-world-verified",
+        "multiplayer": false,
+        "note": "当時のWebGLと当時のルールを使用。このタブ内でNPCと対戦し、現在のオンラインへ接続しません。",
+        "worldVerified": true,
+        "browserLoadVerified": true,
+        "browserVerification": "元のWebGLをChromeで起動し参加画面を撮影。各版のWorldは別に40tick進行を確認。全版の通し試合を確認した意味ではありません。"
+      },
+      "title": "道具と採掘の手応え",
+      "period": "配布版7",
+      "summary": "ピックの握り・振り下ろし、人物の装いと歩行、採掘の反応と画面表示を調整。",
+      "generationId": "g03",
+      "relatedProposalIds": [
+        "p14",
+        "p15",
+        "p16"
+      ],
+      "inputProposalIds": [
+        "p16"
+      ],
+      "examples": [
+        {
+          "idea": "安っぽくAIっぽい細部を、時間をかけて作り込んでほしい。",
+          "change": "ピックの握り・振り下ろし、人物の装いと歩行、採掘の反応と画面表示を調整。",
+          "proposalId": "p16",
+          "attribution": "本人の要望を受けた制作側の具体実装。版ごとに新しい本人入力があったという意味ではありません。"
+        }
+      ],
+      "evidence": [
+        "container:sha256:80146253fb79427d6843721df7d786c43f76a0337f917e577302225bcbab334e 当時のWebGL・ゲーム処理・設定を保持",
+        "git:e698e9a 関連する実装・配布記録（実行JS一致）"
+      ],
+      "sourceKind": "当時の配布コンテナから回収した実行サーバーのソース",
+      "relatedCommit": "e698e9a",
+      "runtimeSourceComparison": {
+        "comparedFiles": [
+          "game.js",
+          "index.js",
+          "static.js",
+          "valley.js"
+        ],
+        "differentFiles": [],
+        "lineEndingsNormalized": true
+      },
+      "sourceCommit": "e698e9a",
+      "previousVersionId": "r06",
+      "nextVersionId": "r08",
+      "feedbackUntilNextVersionIds": [
+        "p17"
+      ],
+      "image": "generation-media/r07.webp",
+      "caption": "配布7の保存WebGLと当時のゲーム処理を、2026年11月9日に履歴再生した参加画面。",
+      "imageRepresents": "この配布版そのものの実行画面。ゲーム画面のみ、合成・ゲーム内容の加工なし。"
+    },
+    {
+      "number": 8,
+      "id": "r08",
+      "revision": "orbit-salvage-prototype-00008-w8f",
+      "imageDigest": "sha256:f4fa5dedc7fdd21614e5a3d705d8b94702c46f851842a07dfbe4d1ab8044db16",
+      "createdAt": "2026-11-07T16:18:35.757167Z",
+      "runtimeExtracted": true,
+      "webglRetained": true,
+      "playUrl": "/history-play/play/r08/",
+      "sourceUrl": "/history-play/sources/r08.zip",
+      "playback": {
+        "mode": "browser-local-original-world",
+        "status": "browser-loaded-world-verified",
+        "multiplayer": false,
+        "note": "当時のWebGLと当時のルールを使用。このタブ内でNPCと対戦し、現在のオンラインへ接続しません。",
+        "worldVerified": true,
+        "browserLoadVerified": true,
+        "browserVerification": "元のWebGLをChromeで起動し参加画面を撮影。各版のWorldは別に40tick進行を確認。全版の通し試合を確認した意味ではありません。"
+      },
+      "title": "3分の投資と金鉱争奪",
+      "period": "配布版8",
+      "summary": "既存の180秒の試合に、残高を使うピック強化を追加。金鉱の予告・表層と芯・採掘貢献、確定した精算を統合。",
+      "generationId": "g04",
+      "relatedProposalIds": [
+        "p17"
+      ],
+      "inputProposalIds": [
+        "p17"
+      ],
+      "examples": [
+        {
+          "idea": "1試合を3分にし、掘って強化して高価な鉱石を争う形にしたい。いつまで投資し、いつから稼ぐかの判断がほしい。",
+          "change": "既存の180秒の試合に、残高を使うピック強化を追加。金鉱の予告・表層と芯・採掘貢献、確定した精算を統合。",
+          "proposalId": "p17",
+          "attribution": "本人の要望を受けた制作側の具体実装。版ごとに新しい本人入力があったという意味ではありません。"
+        }
+      ],
+      "evidence": [
+        "container:sha256:f4fa5dedc7fdd21614e5a3d705d8b94702c46f851842a07dfbe4d1ab8044db16 当時のWebGL・ゲーム処理・設定を保持",
+        "git:1ed866a 関連する実装・配布記録（実行JS一致）"
+      ],
+      "sourceKind": "当時の配布コンテナから回収した実行サーバーのソース",
+      "relatedCommit": "1ed866a",
+      "runtimeSourceComparison": {
+        "comparedFiles": [
+          "game.js",
+          "index.js",
+          "static.js",
+          "valley.js"
+        ],
+        "differentFiles": [],
+        "lineEndingsNormalized": true
+      },
+      "sourceCommit": "1ed866a",
+      "previousVersionId": "r07",
+      "nextVersionId": "r09",
+      "feedbackUntilNextVersionIds": [],
+      "image": "generation-media/r08.webp",
+      "caption": "配布8の保存WebGLと当時のゲーム処理を、2026年11月9日に履歴再生した参加画面。",
+      "imageRepresents": "この配布版そのものの実行画面。ゲーム画面のみ、合成・ゲーム内容の加工なし。"
+    },
+    {
+      "number": 9,
+      "id": "r09",
+      "revision": "orbit-salvage-prototype-00009-7pq",
+      "imageDigest": "sha256:445d57591dcf3ff7fdae7a49641aaa2ced97701ce393bcc9996ef7ac552c1d04",
+      "createdAt": "2026-11-07T16:46:29.745555Z",
+      "runtimeExtracted": true,
+      "webglRetained": true,
+      "playUrl": "/history-play/play/r09/",
+      "sourceUrl": "/history-play/sources/r09.zip",
+      "playback": {
+        "mode": "browser-local-original-world",
+        "status": "browser-loaded-world-verified",
+        "multiplayer": false,
+        "note": "当時のWebGLと当時のルールを使用。このタブ内でNPCと対戦し、現在のオンラインへ接続しません。",
+        "worldVerified": true,
+        "browserLoadVerified": true,
+        "browserVerification": "元のWebGLをChromeで起動し参加画面を撮影。各版のWorldは別に40tick進行を確認。全版の通し試合を確認した意味ではありません。"
+      },
+      "title": "金の芯と運ぶ袋",
+      "period": "配布版9",
+      "summary": "金の芯の筋と手元・背中の袋を調整。1個を運ぶか、追加で掘るかを表示。",
+      "generationId": "g04",
+      "relatedProposalIds": [
+        "p17"
+      ],
+      "inputProposalIds": [],
+      "examples": [
+        {
+          "idea": "1試合を3分にし、掘って強化して高価な鉱石を争う形にしたい。いつまで投資し、いつから稼ぐかの判断がほしい。",
+          "change": "金の芯の筋と手元・背中の袋を調整。1個を運ぶか、追加で掘るかを表示。",
+          "proposalId": "p17",
+          "attribution": "本人の要望を受けた制作側の具体実装。版ごとに新しい本人入力があったという意味ではありません。"
+        }
+      ],
+      "evidence": [
+        "container:sha256:445d57591dcf3ff7fdae7a49641aaa2ced97701ce393bcc9996ef7ac552c1d04 当時のWebGL・ゲーム処理・設定を保持",
+        "git:6734651 関連する実装・配布記録（実行JS一致）"
+      ],
+      "sourceKind": "当時の配布コンテナから回収した実行サーバーのソース",
+      "relatedCommit": "6734651",
+      "runtimeSourceComparison": {
+        "comparedFiles": [
+          "game.js",
+          "index.js",
+          "static.js",
+          "valley.js"
+        ],
+        "differentFiles": [],
+        "lineEndingsNormalized": true
+      },
+      "sourceCommit": "6734651",
+      "previousVersionId": "r08",
+      "nextVersionId": "r10",
+      "feedbackUntilNextVersionIds": [
+        "p18",
+        "p19"
+      ],
+      "image": "generation-media/r09.webp",
+      "caption": "配布9の保存WebGLと当時のゲーム処理を、2026年11月9日に履歴再生した参加画面。",
+      "imageRepresents": "この配布版そのものの実行画面。ゲーム画面のみ、合成・ゲーム内容の加工なし。"
+    },
+    {
+      "number": 10,
+      "id": "r10",
+      "revision": "orbit-salvage-prototype-00010-727",
+      "imageDigest": "sha256:7ac4512affc55f1d652d4b1e19cf656c69451a4ffb61aeb5c62079d6f91a9ef8",
+      "createdAt": "2026-11-07T17:35:11.687428Z",
+      "runtimeExtracted": true,
+      "webglRetained": true,
+      "playUrl": "/history-play/play/r10/",
+      "sourceUrl": "/history-play/sources/r10.zip",
+      "playback": {
+        "mode": "browser-local-original-world",
+        "status": "browser-loaded-world-verified",
+        "multiplayer": false,
+        "note": "当時のWebGLと当時のルールを使用。このタブ内でNPCと対戦し、現在のオンラインへ接続しません。",
+        "worldVerified": true,
+        "browserLoadVerified": true,
+        "browserVerification": "元のWebGLをChromeで起動し参加画面を撮影。各版のWorldは別に40tick進行を確認。全版の通し試合を確認した意味ではありません。"
+      },
+      "title": "移動と近接の変更",
+      "period": "配布版10",
+      "summary": "Java版1.8系を参照した移動と近接へ変更。全装備で硬い鉱石へ参加し、削った貢献も扱うようになった。",
+      "generationId": "g05",
+      "relatedProposalIds": [
+        "p19",
+        "p18"
+      ],
+      "inputProposalIds": [
+        "p18",
+        "p19"
+      ],
+      "examples": [
+        {
+          "idea": "移動が巻き戻るのを直し、自分の操作を優先したい。対人の当てやすさや、弱いピックでも高価な鉱石へ参加できる形も整えたい。",
+          "change": "Java版1.8系を参照した移動と近接へ変更。全装備で硬い鉱石へ参加し、削った貢献も扱うようになった。",
+          "proposalId": "p19",
+          "attribution": "本人の要望を受けた制作側の具体実装。版ごとに新しい本人入力があったという意味ではありません。"
+        }
+      ],
+      "evidence": [
+        "container:sha256:7ac4512affc55f1d652d4b1e19cf656c69451a4ffb61aeb5c62079d6f91a9ef8 当時のWebGL・ゲーム処理・設定を保持",
+        "git:75c2b23 関連する実装・配布記録（配布実物は同梱ソースを正本とする）"
+      ],
+      "sourceKind": "当時の配布コンテナから回収した実行サーバーのソース",
+      "relatedCommit": "75c2b23",
+      "runtimeSourceComparison": {
+        "comparedFiles": [
+          "game.js",
+          "index.js",
+          "melee.js",
+          "motion.js",
+          "static.js",
+          "valley.js"
+        ],
+        "differentFiles": [
+          "game.js",
+          "motion.js",
+          "valley.js"
+        ],
+        "lineEndingsNormalized": true
+      },
+      "previousVersionId": "r09",
+      "nextVersionId": "r11",
+      "feedbackUntilNextVersionIds": [],
+      "image": "generation-media/r10.webp",
+      "caption": "配布10の保存WebGLと当時のゲーム処理を、2026年11月9日に履歴再生した参加画面。",
+      "imageRepresents": "この配布版そのものの実行画面。ゲーム画面のみ、合成・ゲーム内容の加工なし。"
+    },
+    {
+      "number": 11,
+      "id": "r11",
+      "revision": "orbit-salvage-prototype-00011-8m9",
+      "imageDigest": "sha256:8b96f23713594bfd91649f28156501c2c3e59ce9bcbc4b310f460234926d5cf9",
+      "createdAt": "2026-11-07T17:41:14.929615Z",
+      "runtimeExtracted": true,
+      "webglRetained": true,
+      "playUrl": "/history-play/play/r11/",
+      "sourceUrl": "/history-play/sources/r11.zip",
+      "playback": {
+        "mode": "browser-local-original-world",
+        "status": "browser-loaded-world-verified",
+        "multiplayer": false,
+        "note": "当時のWebGLと当時のルールを使用。このタブ内でNPCと対戦し、現在のオンラインへ接続しません。",
+        "worldVerified": true,
+        "browserLoadVerified": true,
+        "browserVerification": "元のWebGLをChromeで起動し参加画面を撮影。各版のWorldは別に40tick進行を確認。全版の通し試合を確認した意味ではありません。"
+      },
+      "title": "着地と命中の見え方",
+      "period": "配布版11",
+      "summary": "低い障害物への着地と、成立した命中の身体色を調整。命中額と鉱価の表示重なりも修正。",
+      "generationId": "g05",
+      "relatedProposalIds": [
+        "p19",
+        "p18"
+      ],
+      "inputProposalIds": [],
+      "examples": [
+        {
+          "idea": "移動が巻き戻るのを直し、自分の操作を優先したい。対人の当てやすさや、弱いピックでも高価な鉱石へ参加できる形も整えたい。",
+          "change": "低い障害物への着地と、成立した命中の身体色を調整。命中額と鉱価の表示重なりも修正。",
+          "proposalId": "p19",
+          "attribution": "本人の要望を受けた制作側の具体実装。版ごとに新しい本人入力があったという意味ではありません。"
+        }
+      ],
+      "evidence": [
+        "container:sha256:8b96f23713594bfd91649f28156501c2c3e59ce9bcbc4b310f460234926d5cf9 当時のWebGL・ゲーム処理・設定を保持",
+        "git:f1e10dc 関連する実装・配布記録（実行JS一致）"
+      ],
+      "sourceKind": "当時の配布コンテナから回収した実行サーバーのソース",
+      "relatedCommit": "f1e10dc",
+      "runtimeSourceComparison": {
+        "comparedFiles": [
+          "game.js",
+          "index.js",
+          "melee.js",
+          "motion.js",
+          "static.js",
+          "valley.js"
+        ],
+        "differentFiles": [],
+        "lineEndingsNormalized": true
+      },
+      "sourceCommit": "f1e10dc",
+      "previousVersionId": "r10",
+      "nextVersionId": "r12",
+      "feedbackUntilNextVersionIds": [
+        "p20",
+        "p21"
+      ],
+      "image": "generation-media/r11.webp",
+      "caption": "配布11の保存WebGLと当時のゲーム処理を、2026年11月9日に履歴再生した参加画面。",
+      "imageRepresents": "この配布版そのものの実行画面。ゲーム画面のみ、合成・ゲーム内容の加工なし。"
+    },
+    {
+      "number": 12,
+      "id": "r12",
+      "revision": "orbit-salvage-prototype-00012-rjt",
+      "imageDigest": "sha256:4c2e5252458bb454e99bb106ad93f7e954c4b1159466e99e5245aef80fc00211",
+      "createdAt": "2026-11-07T18:34:15.295492Z",
+      "runtimeExtracted": true,
+      "webglRetained": true,
+      "playUrl": "/history-play/play/r12/",
+      "sourceUrl": "/history-play/sources/r12.zip",
+      "playback": {
+        "mode": "browser-local-original-world",
+        "status": "browser-loaded-world-verified",
+        "multiplayer": false,
+        "note": "当時のWebGLと当時のルールを使用。このタブ内でNPCと対戦し、現在のオンラインへ接続しません。",
+        "worldVerified": true,
+        "browserLoadVerified": true,
+        "browserVerification": "元のWebGLをChromeで起動し参加画面を撮影。各版のWorldは別に40tick進行を確認。全版の通し試合を確認した意味ではありません。"
+      },
+      "title": "連打中の同期を改善",
+      "period": "配布版12",
+      "summary": "消費済み状態のACKと上限3枚の差分配信へ変更。連打後の通信滞留を抑制。Shiftダッシュ、下り坂の接地と晶鉱6本も統合。",
+      "generationId": "g05",
+      "relatedProposalIds": [
+        "p19",
+        "p18",
+        "p21",
+        "p20"
+      ],
+      "inputProposalIds": [
+        "p20",
+        "p21"
+      ],
+      "examples": [
+        {
+          "idea": "後半のラグや同期が致命的。ダッシュはShiftへ変え、硬い鉱石も増やしたい。",
+          "change": "消費済み状態のACKと上限3枚の差分配信へ変更。連打後の通信滞留を抑制。Shiftダッシュ、下り坂の接地と晶鉱6本も統合。",
+          "proposalId": "p21",
+          "attribution": "本人の要望を受けた制作側の具体実装。版ごとに新しい本人入力があったという意味ではありません。"
+        }
+      ],
+      "evidence": [
+        "container:sha256:4c2e5252458bb454e99bb106ad93f7e954c4b1159466e99e5245aef80fc00211 当時のWebGL・ゲーム処理・設定を保持",
+        "git:373850c 関連する実装・配布記録（実行JS一致）"
+      ],
+      "sourceKind": "当時の配布コンテナから回収した実行サーバーのソース",
+      "relatedCommit": "373850c",
+      "runtimeSourceComparison": {
+        "comparedFiles": [
+          "game.js",
+          "index.js",
+          "melee.js",
+          "motion.js",
+          "static.js",
+          "stream.js",
+          "valley.js"
+        ],
+        "differentFiles": [],
+        "lineEndingsNormalized": true
+      },
+      "sourceCommit": "373850c",
+      "previousVersionId": "r11",
+      "nextVersionId": "r13",
+      "feedbackUntilNextVersionIds": [
+        "p22"
+      ],
+      "image": "generation-media/r12.webp",
+      "caption": "配布12の保存WebGLと当時のゲーム処理を、2026年11月9日に履歴再生した参加画面。",
+      "imageRepresents": "この配布版そのものの実行画面。ゲーム画面のみ、合成・ゲーム内容の加工なし。"
+    },
+    {
+      "number": 13,
+      "id": "r13",
+      "revision": "orbit-salvage-prototype-00013-wnq",
+      "imageDigest": "sha256:030189ccf19680445f02992d69188d0f78e23e5b1d7d5a4e6a765fef7050817b",
+      "createdAt": "2026-11-07T21:59:00.800510Z",
+      "runtimeExtracted": true,
+      "webglRetained": true,
+      "playUrl": "/history-play/play/r13/",
+      "sourceUrl": "/history-play/sources/r13.zip",
+      "playback": {
+        "mode": "browser-local-original-world",
+        "status": "browser-loaded-world-verified",
+        "multiplayer": false,
+        "note": "当時のWebGLと当時のルールを使用。このタブ内でNPCと対戦し、現在のオンラインへ接続しません。",
+        "worldVerified": true,
+        "browserLoadVerified": true,
+        "browserVerification": "元のWebGLをChromeで起動し参加画面を撮影。各版のWorldは別に40tick進行を確認。全版の通し試合を確認した意味ではありません。",
+        "joinedInBrowser": true
+      },
+      "title": "HUD・測量図と先着注文",
+      "period": "配布版13",
+      "summary": "HUD・入坑券・測量図・精算画面を刷新。制作側の試行として指定鉱石2個の先着注文と、荷札を読むNPCを追加。",
+      "generationId": "g06",
+      "relatedProposalIds": [
+        "p22"
+      ],
+      "inputProposalIds": [
+        "p22"
+      ],
+      "examples": [
+        {
+          "idea": "かなり面白くなったが、UIが安っぽく情報の重要度が分からない。初心者にも分かりやすくし、ジレンマや駆け引きも増やしたい。",
+          "change": "HUD・入坑券・測量図・精算画面を刷新。制作側の試行として指定鉱石2個の先着注文と、荷札を読むNPCを追加。",
+          "proposalId": "p22",
+          "attribution": "本人の要望を受けた制作側の具体実装。版ごとに新しい本人入力があったという意味ではありません。"
+        }
+      ],
+      "evidence": [
+        "container:sha256:030189ccf19680445f02992d69188d0f78e23e5b1d7d5a4e6a765fef7050817b 当時のWebGL・ゲーム処理・設定を保持",
+        "git:aa2109a 関連する実装・配布記録（実行JS一致）"
+      ],
+      "sourceKind": "当時の配布コンテナから回収した実行サーバーのソース",
+      "relatedCommit": "aa2109a",
+      "runtimeSourceComparison": {
+        "comparedFiles": [
+          "game.js",
+          "index.js",
+          "melee.js",
+          "motion.js",
+          "static.js",
+          "stream.js",
+          "valley.js"
+        ],
+        "differentFiles": [],
+        "lineEndingsNormalized": true
+      },
+      "sourceCommit": "aa2109a",
+      "previousVersionId": "r12",
+      "nextVersionId": "r14",
+      "feedbackUntilNextVersionIds": [],
+      "image": "generation-media/r13.webp",
+      "caption": "配布13の保存WebGLと当時のゲーム処理を、2026年11月9日に履歴再生した参加画面。",
+      "imageRepresents": "この配布版そのものの実行画面。ゲーム画面のみ、合成・ゲーム内容の加工なし。"
+    },
+    {
+      "number": 14,
+      "id": "r14",
+      "revision": "orbit-salvage-prototype-00014-ws6",
+      "imageDigest": "sha256:f50440876a782a17259029b2ad15d8f0f39971c703f8aaaa7dad6c5813c23d32",
+      "createdAt": "2026-11-07T22:10:24.914330Z",
+      "runtimeExtracted": true,
+      "webglRetained": true,
+      "playUrl": "/history-play/play/r14/",
+      "sourceUrl": "/history-play/sources/r14.zip",
+      "playback": {
+        "mode": "browser-local-original-world",
+        "status": "browser-loaded-world-verified",
+        "multiplayer": false,
+        "note": "当時のWebGLと当時のルールを使用。このタブ内でNPCと対戦し、現在のオンラインへ接続しません。",
+        "worldVerified": true,
+        "browserLoadVerified": true,
+        "browserVerification": "元のWebGLをChromeで起動し参加画面を撮影。各版のWorldは別に40tick進行を確認。全版の通し試合を確認した意味ではありません。"
+      },
+      "title": "地図から売店を選ぶ",
+      "period": "配布版14",
+      "summary": "測量図の価格行をクリックまたは1〜3キーで選択可能に。行先のチェックと注文成立の案内を追加。",
+      "generationId": "g06",
+      "relatedProposalIds": [
+        "p22"
+      ],
+      "inputProposalIds": [],
+      "examples": [
+        {
+          "idea": "かなり面白くなったが、UIが安っぽく情報の重要度が分からない。初心者にも分かりやすくし、ジレンマや駆け引きも増やしたい。",
+          "change": "測量図の価格行をクリックまたは1〜3キーで選択可能に。行先のチェックと注文成立の案内を追加。",
+          "proposalId": "p22",
+          "attribution": "本人の要望を受けた制作側の具体実装。版ごとに新しい本人入力があったという意味ではありません。"
+        }
+      ],
+      "evidence": [
+        "container:sha256:f50440876a782a17259029b2ad15d8f0f39971c703f8aaaa7dad6c5813c23d32 当時のWebGL・ゲーム処理・設定を保持",
+        "git:ab6dbe8 関連する実装・配布記録（実行JS一致）"
+      ],
+      "sourceKind": "当時の配布コンテナから回収した実行サーバーのソース",
+      "relatedCommit": "ab6dbe8",
+      "runtimeSourceComparison": {
+        "comparedFiles": [
+          "game.js",
+          "index.js",
+          "melee.js",
+          "motion.js",
+          "static.js",
+          "stream.js",
+          "valley.js"
+        ],
+        "differentFiles": [],
+        "lineEndingsNormalized": true
+      },
+      "sourceCommit": "ab6dbe8",
+      "previousVersionId": "r13",
+      "nextVersionId": "r15",
+      "feedbackUntilNextVersionIds": [
+        "p23",
+        "p24"
+      ],
+      "image": "generation-media/r14.webp",
+      "caption": "配布14の保存WebGLと当時のゲーム処理を、2026年11月9日に履歴再生した参加画面。",
+      "imageRepresents": "この配布版そのものの実行画面。ゲーム画面のみ、合成・ゲーム内容の加工なし。"
+    },
+    {
+      "number": 15,
+      "id": "r15",
+      "revision": "orbit-salvage-prototype-00015-m59",
+      "imageDigest": "sha256:c1c11aecdb04350494ab887465f0dbfa5e98c247dba1332ec89002bec3befe25",
+      "createdAt": "2026-11-07T22:48:33.113381Z",
+      "runtimeExtracted": true,
+      "webglRetained": true,
+      "playUrl": "/history-play/play/r15/",
+      "sourceUrl": "/history-play/sources/r15.zip",
+      "playback": {
+        "mode": "browser-local-original-world",
+        "status": "browser-loaded-world-verified",
+        "multiplayer": false,
+        "note": "当時のWebGLと当時のルールを使用。このタブ内でNPCと対戦し、現在のオンラインへ接続しません。",
+        "worldVerified": true,
+        "browserLoadVerified": true,
+        "browserVerification": "元のWebGLをChromeで起動し参加画面を撮影。各版のWorldは別に40tick進行を確認。全版の通し試合を確認した意味ではありません。"
+      },
+      "title": "実際の谷を見せるタイトル",
+      "period": "配布版15",
+      "summary": "券と大版画の入口を外し、実際の谷を大きく見せるタイトルへ変更。地図と順位表も再構成。",
+      "generationId": "g06",
+      "relatedProposalIds": [
+        "p22",
+        "p24",
+        "p23"
+      ],
+      "inputProposalIds": [
+        "p23",
+        "p24"
+      ],
+      "examples": [
+        {
+          "idea": "文面やUIに出ているAIっぽさをできるだけ撤廃したい。",
+          "change": "券と大版画の入口を外し、実際の谷を大きく見せるタイトルへ変更。地図と順位表も再構成。",
+          "proposalId": "p24",
+          "attribution": "本人の要望を受けた制作側の具体実装。版ごとに新しい本人入力があったという意味ではありません。"
+        }
+      ],
+      "evidence": [
+        "container:sha256:c1c11aecdb04350494ab887465f0dbfa5e98c247dba1332ec89002bec3befe25 当時のWebGL・ゲーム処理・設定を保持",
+        "git:652ea68 関連する実装・配布記録（実行JS一致）"
+      ],
+      "sourceKind": "当時の配布コンテナから回収した実行サーバーのソース",
+      "relatedCommit": "652ea68",
+      "runtimeSourceComparison": {
+        "comparedFiles": [
+          "game.js",
+          "index.js",
+          "melee.js",
+          "motion.js",
+          "static.js",
+          "stream.js",
+          "valley.js"
+        ],
+        "differentFiles": [],
+        "lineEndingsNormalized": true
+      },
+      "sourceCommit": "652ea68",
+      "previousVersionId": "r14",
+      "nextVersionId": "r16",
+      "feedbackUntilNextVersionIds": [
+        "p25",
+        "p26",
+        "p27"
+      ],
+      "image": "generation-media/r15.webp",
+      "caption": "配布15の保存WebGLと当時のゲーム処理を、2026年11月9日に履歴再生した参加画面。",
+      "imageRepresents": "この配布版そのものの実行画面。ゲーム画面のみ、合成・ゲーム内容の加工なし。"
+    },
+    {
+      "number": 16,
+      "id": "r16",
+      "revision": "orbit-salvage-prototype-00016-pfg",
+      "imageDigest": "sha256:ef6ad1ffcb6a75394958826d874e5457c5d2ff989117604a2c217805d3ab2481",
+      "createdAt": "2026-11-08T00:06:19.144657Z",
+      "runtimeExtracted": true,
+      "webglRetained": true,
+      "playUrl": "/history-play/play/r16/",
+      "sourceUrl": "/history-play/sources/r16.zip",
+      "playback": {
+        "mode": "browser-local-original-world",
+        "status": "browser-loaded-world-verified",
+        "multiplayer": false,
+        "note": "当時のWebGLと当時のルールを使用。このタブ内でNPCと対戦し、現在のオンラインへ接続しません。",
+        "worldVerified": true,
+        "browserLoadVerified": true,
+        "browserVerification": "元のWebGLをChromeで起動し参加画面を撮影。各版のWorldは別に40tick進行を確認。全版の通し試合を確認した意味ではありません。"
+      },
+      "title": "大岩を掘り、近道を開く",
+      "period": "配布版16",
+      "summary": "景観の大岩14個を実際に採掘可能にし、うち2個は崩れて通路になる。売店の境界・長押しと、競合した採掘の反応も調整。",
+      "generationId": "g07",
+      "relatedProposalIds": [
+        "p27",
+        "p26",
+        "p25"
+      ],
+      "inputProposalIds": [
+        "p25",
+        "p26",
+        "p27"
+      ],
+      "examples": [
+        {
+          "idea": "質感と楽しさをさらに整え、理不尽な所や分からない所をなくしたい。",
+          "change": "景観の大岩14個を実際に採掘可能にし、うち2個は崩れて通路になる。売店の境界・長押しと、競合した採掘の反応も調整。",
+          "proposalId": "p27",
+          "attribution": "本人の要望を受けた制作側の具体実装。版ごとに新しい本人入力があったという意味ではありません。"
+        }
+      ],
+      "evidence": [
+        "container:sha256:ef6ad1ffcb6a75394958826d874e5457c5d2ff989117604a2c217805d3ab2481 当時のWebGL・ゲーム処理・設定を保持",
+        "git:df08573 関連する実装・配布記録（実行JS一致）"
+      ],
+      "sourceKind": "当時の配布コンテナから回収した実行サーバーのソース",
+      "relatedCommit": "df08573",
+      "runtimeSourceComparison": {
+        "comparedFiles": [
+          "game.js",
+          "index.js",
+          "melee.js",
+          "motion.js",
+          "scenery-mining.js",
+          "scenery-shape.js",
+          "static.js",
+          "stream.js",
+          "valley.js"
+        ],
+        "differentFiles": [],
+        "lineEndingsNormalized": true
+      },
+      "sourceCommit": "df08573",
+      "previousVersionId": "r15",
+      "nextVersionId": "r17",
+      "feedbackUntilNextVersionIds": [
+        "p28"
+      ],
+      "image": "generation-media/r16.webp",
+      "caption": "配布16の保存WebGLと当時のゲーム処理を、2026年11月9日に履歴再生した参加画面。",
+      "imageRepresents": "この配布版そのものの実行画面。ゲーム画面のみ、合成・ゲーム内容の加工なし。"
+    },
+    {
+      "number": 17,
+      "id": "r17",
+      "revision": "orbit-salvage-prototype-00017-vd8",
+      "imageDigest": "sha256:aa789e5b5cbfefa5bafba6e6e59ec839d16679f466af0fe7c21c27fe68b8dae9",
+      "createdAt": "2026-11-08T00:31:25.089163Z",
+      "runtimeExtracted": true,
+      "webglRetained": true,
+      "playUrl": "/history-play/play/r17/",
+      "sourceUrl": "/history-play/sources/r17.zip",
+      "playback": {
+        "mode": "browser-local-original-world",
+        "status": "browser-loaded-world-verified",
+        "multiplayer": false,
+        "note": "当時のWebGLと当時のルールを使用。このタブ内でNPCと対戦し、現在のオンラインへ接続しません。",
+        "worldVerified": true,
+        "browserLoadVerified": true,
+        "browserVerification": "元のWebGLをChromeで起動し参加画面を撮影。各版のWorldは別に40tick進行を確認。全版の通し試合を確認した意味ではありません。"
+      },
+      "title": "移動中の売却とE保持",
+      "period": "配布版17",
+      "summary": "Eを保持したまま範囲へ入り、移動中にも1秒で売却できるように変更。後着の荷物も次の受付へ回す。短押しジャンプも保持。",
+      "generationId": "g08",
+      "relatedProposalIds": [
+        "p28"
+      ],
+      "inputProposalIds": [
+        "p28"
+      ],
+      "examples": [
+        {
+          "idea": "移動しながら売りたい。Eを押している間は売る入力が続くようにし、似た操作の負担も減らしたい。",
+          "change": "Eを保持したまま範囲へ入り、移動中にも1秒で売却できるように変更。後着の荷物も次の受付へ回す。短押しジャンプも保持。",
+          "proposalId": "p28",
+          "attribution": "本人の要望を受けた制作側の具体実装。版ごとに新しい本人入力があったという意味ではありません。"
+        }
+      ],
+      "evidence": [
+        "container:sha256:aa789e5b5cbfefa5bafba6e6e59ec839d16679f466af0fe7c21c27fe68b8dae9 当時のWebGL・ゲーム処理・設定を保持",
+        "git:6ac4ab8 関連する実装・配布記録（実行JS一致）"
+      ],
+      "sourceKind": "当時の配布コンテナから回収した実行サーバーのソース",
+      "relatedCommit": "6ac4ab8",
+      "runtimeSourceComparison": {
+        "comparedFiles": [
+          "game.js",
+          "index.js",
+          "melee.js",
+          "motion.js",
+          "scenery-mining.js",
+          "scenery-shape.js",
+          "static.js",
+          "stream.js",
+          "valley.js"
+        ],
+        "differentFiles": [],
+        "lineEndingsNormalized": true
+      },
+      "sourceCommit": "6ac4ab8",
+      "previousVersionId": "r16",
+      "nextVersionId": "r18",
+      "feedbackUntilNextVersionIds": [
+        "p29"
+      ],
+      "image": "generation-media/r17.webp",
+      "caption": "配布17の保存WebGLと当時のゲーム処理を、2026年11月9日に履歴再生した参加画面。",
+      "imageRepresents": "この配布版そのものの実行画面。ゲーム画面のみ、合成・ゲーム内容の加工なし。"
+    },
+    {
+      "number": 18,
+      "id": "r18",
+      "revision": "orbit-salvage-prototype-00018-tkz",
+      "imageDigest": "sha256:9d572e0cc23b418685d52389a93a864284a24c598d9b370eb3105a13f2604916",
+      "createdAt": "2026-11-08T00:57:36.456304Z",
+      "runtimeExtracted": true,
+      "webglRetained": true,
+      "playUrl": "/history-play/play/r18/",
+      "sourceUrl": "/history-play/sources/r18.zip",
+      "playback": {
+        "mode": "browser-local-original-world",
+        "status": "browser-loaded-world-verified",
+        "multiplayer": false,
+        "note": "当時のWebGLと当時のルールを使用。このタブ内でNPCと対戦し、現在のオンラインへ接続しません。",
+        "worldVerified": true,
+        "browserLoadVerified": true,
+        "browserVerification": "元のWebGLをChromeで起動し参加画面を撮影。各版のWorldは別に40tick進行を確認。全版の通し試合を確認した意味ではありません。"
+      },
+      "title": "押した一打を判定へ",
+      "period": "配布版18",
+      "summary": "押下時の岩と照準を一打として保持。空振り後の狙い直しを受付し、移動する相手の描画位置と命中判定の時刻を調整。",
+      "generationId": "g08",
+      "relatedProposalIds": [
+        "p28",
+        "p29"
+      ],
+      "inputProposalIds": [
+        "p29"
+      ],
+      "examples": [
+        {
+          "idea": "3分通して試し、狙った岩や相手に当たらない、押したのに反応しないストレスを直したい。",
+          "change": "押下時の岩と照準を一打として保持。空振り後の狙い直しを受付し、移動する相手の描画位置と命中判定の時刻を調整。",
+          "proposalId": "p29",
+          "attribution": "本人の要望を受けた制作側の具体実装。版ごとに新しい本人入力があったという意味ではありません。"
+        }
+      ],
+      "evidence": [
+        "container:sha256:9d572e0cc23b418685d52389a93a864284a24c598d9b370eb3105a13f2604916 当時のWebGL・ゲーム処理・設定を保持",
+        "git:8fc03e1 関連する実装・配布記録（実行JS一致）"
+      ],
+      "sourceKind": "当時の配布コンテナから回収した実行サーバーのソース",
+      "relatedCommit": "8fc03e1",
+      "runtimeSourceComparison": {
+        "comparedFiles": [
+          "game.js",
+          "index.js",
+          "melee.js",
+          "motion.js",
+          "scenery-mining.js",
+          "scenery-shape.js",
+          "static.js",
+          "stream.js",
+          "valley.js"
+        ],
+        "differentFiles": [],
+        "lineEndingsNormalized": true
+      },
+      "sourceCommit": "8fc03e1",
+      "previousVersionId": "r17",
+      "nextVersionId": "r19",
+      "feedbackUntilNextVersionIds": [
+        "p30"
+      ],
+      "image": "generation-media/r18.webp",
+      "caption": "配布18の保存WebGLと当時のゲーム処理を、2026年11月9日に履歴再生した参加画面。",
+      "imageRepresents": "この配布版そのものの実行画面。ゲーム画面のみ、合成・ゲーム内容の加工なし。"
+    },
+    {
+      "number": 19,
+      "id": "r19",
+      "revision": "orbit-salvage-prototype-00019-xd5",
+      "imageDigest": "sha256:617cf658a24151744027448b850deedb9a67faac2de905358ba9451bb1d70447",
+      "createdAt": "2026-11-08T02:03:54.447351Z",
+      "runtimeExtracted": true,
+      "webglRetained": true,
+      "playUrl": "/history-play/play/r19/",
+      "sourceUrl": "/history-play/sources/r19.zip",
+      "playback": {
+        "mode": "browser-local-original-world",
+        "status": "browser-loaded-world-verified",
+        "multiplayer": false,
+        "note": "当時のWebGLと当時のルールを使用。このタブ内でNPCと対戦し、現在のオンラインへ接続しません。",
+        "worldVerified": true,
+        "browserLoadVerified": true,
+        "browserVerification": "元のWebGLをChromeで起動し参加画面を撮影。各版のWorldは別に40tick進行を確認。全版の通し試合を確認した意味ではありません。"
+      },
+      "title": "最後の1個も取り返す",
+      "period": "配布版19",
+      "summary": "最後の鉱石1個も奪い返せるようにし、奪取専用2.5秒の待ち時間を撤去。NPCの短い仕掛けと取り返しを追加。",
+      "generationId": "g09",
+      "relatedProposalIds": [
+        "p30"
+      ],
+      "inputProposalIds": [
+        "p30"
+      ],
+      "examples": [
+        {
+          "idea": "一人で最適化するだけでなく、他人との相互作用を強くしたい。盗みの長い待ち時間を減らし、殴り返す利点を作りたい。",
+          "change": "最後の鉱石1個も奪い返せるようにし、奪取専用2.5秒の待ち時間を撤去。NPCの短い仕掛けと取り返しを追加。",
+          "proposalId": "p30",
+          "attribution": "本人の要望を受けた制作側の具体実装。版ごとに新しい本人入力があったという意味ではありません。"
+        }
+      ],
+      "evidence": [
+        "container:sha256:617cf658a24151744027448b850deedb9a67faac2de905358ba9451bb1d70447 当時のWebGL・ゲーム処理・設定を保持",
+        "git:f337896 関連する実装・配布記録（実行JS一致）"
+      ],
+      "sourceKind": "当時の配布コンテナから回収した実行サーバーのソース",
+      "relatedCommit": "f337896",
+      "runtimeSourceComparison": {
+        "comparedFiles": [
+          "game.js",
+          "index.js",
+          "melee.js",
+          "motion.js",
+          "scenery-mining.js",
+          "scenery-shape.js",
+          "static.js",
+          "stream.js",
+          "valley.js"
+        ],
+        "differentFiles": [],
+        "lineEndingsNormalized": true
+      },
+      "sourceCommit": "f337896",
+      "previousVersionId": "r18",
+      "nextVersionId": "r20",
+      "feedbackUntilNextVersionIds": [
+        "p31"
+      ],
+      "image": "generation-media/r19.webp",
+      "caption": "配布19の保存WebGLと当時のゲーム処理を、2026年11月9日に履歴再生した参加画面。",
+      "imageRepresents": "この配布版そのものの実行画面。ゲーム画面のみ、合成・ゲーム内容の加工なし。"
+    },
+    {
+      "number": 20,
+      "id": "r20",
+      "revision": "orbit-salvage-prototype-00020-6nd",
+      "imageDigest": "sha256:45fb495a8df903e02a050599d26080fc1d553074920877e946bac74643ff4b02",
+      "createdAt": "2026-11-08T02:54:17.494808Z",
+      "runtimeExtracted": true,
+      "webglRetained": true,
+      "playUrl": "/history-play/play/r20/",
+      "sourceUrl": "/history-play/sources/r20.zip",
+      "playback": {
+        "mode": "browser-local-original-world",
+        "status": "browser-loaded-world-verified",
+        "multiplayer": false,
+        "note": "当時のWebGLと当時のルールを使用。このタブ内でNPCと対戦し、現在のオンラインへ接続しません。",
+        "worldVerified": true,
+        "browserLoadVerified": true,
+        "browserVerification": "元のWebGLをChromeで起動し参加画面を撮影。各版のWorldは別に40tick進行を確認。全版の通し試合を確認した意味ではありません。"
+      },
+      "title": "弩とピックLv8",
+      "period": "配布版20",
+      "summary": "ピックをLv8まで拡張し、Rで持ち替える手製の弩を追加。実際に飛ぶ弾が当たると鉱石1個を移す。",
+      "generationId": "g10",
+      "relatedProposalIds": [
+        "p31"
+      ],
+      "inputProposalIds": [
+        "p31"
+      ],
+      "examples": [
+        {
+          "idea": "近接だけでなく、弓や銃のような遠くから奪う手段がほしい。ピックの強化上限も高くしたい。",
+          "change": "ピックをLv8まで拡張し、Rで持ち替える手製の弩を追加。実際に飛ぶ弾が当たると鉱石1個を移す。",
+          "proposalId": "p31",
+          "attribution": "本人の要望を受けた制作側の具体実装。版ごとに新しい本人入力があったという意味ではありません。"
+        }
+      ],
+      "evidence": [
+        "container:sha256:45fb495a8df903e02a050599d26080fc1d553074920877e946bac74643ff4b02 当時のWebGL・ゲーム処理・設定を保持",
+        "git:47c79b3 関連する実装・配布記録（実行JS一致）"
+      ],
+      "sourceKind": "当時の配布コンテナから回収した実行サーバーのソース",
+      "relatedCommit": "47c79b3",
+      "runtimeSourceComparison": {
+        "comparedFiles": [
+          "crossbow.js",
+          "game.js",
+          "index.js",
+          "melee.js",
+          "motion.js",
+          "scenery-mining.js",
+          "scenery-shape.js",
+          "static.js",
+          "stream.js",
+          "valley.js"
+        ],
+        "differentFiles": [],
+        "lineEndingsNormalized": true
+      },
+      "sourceCommit": "47c79b3",
+      "previousVersionId": "r19",
+      "nextVersionId": "r21",
+      "feedbackUntilNextVersionIds": [],
+      "image": "generation-media/r20.webp",
+      "caption": "配布20の保存WebGLと当時のゲーム処理を、2026年11月9日に履歴再生した参加画面。",
+      "imageRepresents": "この配布版そのものの実行画面。ゲーム画面のみ、合成・ゲーム内容の加工なし。"
+    },
+    {
+      "number": 21,
+      "id": "r21",
+      "revision": "orbit-salvage-prototype-00021-8jb",
+      "imageDigest": "sha256:9ca0f11c8213cfa9fd2ecfdf9935bc7c367a1ba5ebe6fec242fb56fd9c01a7d4",
+      "createdAt": "2026-11-08T03:03:41.436015Z",
+      "runtimeExtracted": true,
+      "webglRetained": true,
+      "playUrl": "/history-play/play/r21/",
+      "sourceUrl": "/history-play/sources/r21.zip",
+      "playback": {
+        "mode": "browser-local-original-world",
+        "status": "browser-loaded-world-verified",
+        "multiplayer": false,
+        "note": "当時のWebGLと当時のルールを使用。このタブ内でNPCと対戦し、現在のオンラインへ接続しません。",
+        "worldVerified": true,
+        "browserLoadVerified": true,
+        "browserVerification": "元のWebGLをChromeで起動し参加画面を撮影。各版のWorldは別に40tick進行を確認。全版の通し試合を確認した意味ではありません。"
+      },
+      "title": "NPCの開始直後の射撃を調整",
+      "period": "配布版21",
+      "summary": "20と同じWebGLに、試合開始15秒はNPCの弩が人間を選ばないサーバー調整を追加。",
+      "generationId": "g10",
+      "relatedProposalIds": [
+        "p31"
+      ],
+      "inputProposalIds": [],
+      "examples": [
+        {
+          "idea": "近接だけでなく、弓や銃のような遠くから奪う手段がほしい。ピックの強化上限も高くしたい。",
+          "change": "20と同じWebGLに、試合開始15秒はNPCの弩が人間を選ばないサーバー調整を追加。",
+          "proposalId": "p31",
+          "attribution": "本人の要望を受けた制作側の具体実装。版ごとに新しい本人入力があったという意味ではありません。"
+        }
+      ],
+      "evidence": [
+        "container:sha256:9ca0f11c8213cfa9fd2ecfdf9935bc7c367a1ba5ebe6fec242fb56fd9c01a7d4 当時のWebGL・ゲーム処理・設定を保持",
+        "git:c294730 関連する実装・配布記録（実行JS一致）"
+      ],
+      "sourceKind": "当時の配布コンテナから回収した実行サーバーのソース",
+      "relatedCommit": "c294730",
+      "runtimeSourceComparison": {
+        "comparedFiles": [
+          "crossbow.js",
+          "game.js",
+          "index.js",
+          "melee.js",
+          "motion.js",
+          "scenery-mining.js",
+          "scenery-shape.js",
+          "static.js",
+          "stream.js",
+          "valley.js"
+        ],
+        "differentFiles": [],
+        "lineEndingsNormalized": true
+      },
+      "sourceCommit": "c294730",
+      "previousVersionId": "r20",
+      "nextVersionId": "r22",
+      "feedbackUntilNextVersionIds": [
+        "p32",
+        "p33",
+        "p34"
+      ],
+      "image": "generation-media/r21.webp",
+      "caption": "配布21の保存WebGLと当時のゲーム処理を、2026年11月9日に履歴再生した参加画面。",
+      "imageRepresents": "この配布版そのものの実行画面。ゲーム画面のみ、合成・ゲーム内容の加工なし。"
+    },
+    {
+      "number": 22,
+      "id": "r22",
+      "revision": "orbit-salvage-prototype-00022-nqt",
+      "imageDigest": "sha256:5cdeac411a2963c8020dfbed5f298600b2ce80bb2f3df3da44a777e6b25a393b",
+      "createdAt": "2026-11-08T09:40:06.634554Z",
+      "runtimeExtracted": true,
+      "webglRetained": true,
+      "playUrl": "/history-play/play/r22/",
+      "sourceUrl": "/history-play/sources/r22.zip",
+      "playback": {
+        "mode": "browser-local-original-world",
+        "status": "browser-loaded-world-verified",
+        "multiplayer": false,
+        "note": "当時のWebGLと当時のルールを使用。このタブ内でNPCと対戦し、現在のオンラインへ接続しません。",
+        "worldVerified": true,
+        "browserLoadVerified": true,
+        "browserVerification": "元のWebGLをChromeで起動し参加画面を撮影。各版のWorldは別に40tick進行を確認。全版の通し試合を確認した意味ではありません。"
+      },
+      "title": "引いて放す弓と旧Java式移動",
+      "period": "配布版22",
+      "summary": "弩を、右で引き離して放つ弓へ変更。引き時間と20tick基準の初速・重力・抵抗を採用。移動・近接も旧Java式へ調整し、弱い矢の地面すり抜けを修正。",
+      "generationId": "g11",
+      "relatedProposalIds": [
+        "p34",
+        "p33",
+        "p32"
+      ],
+      "inputProposalIds": [
+        "p32",
+        "p33",
+        "p34"
+      ],
+      "examples": [
+        {
+          "idea": "移動・戦闘・弓をJava版1.8.9の操作感へ深く近づけたい。ダッシュジャンプも速く、動きをシャキッとさせたい。",
+          "change": "弩を、右で引き離して放つ弓へ変更。引き時間と20tick基準の初速・重力・抵抗を採用。移動・近接も旧Java式へ調整し、弱い矢の地面すり抜けを修正。",
+          "proposalId": "p34",
+          "attribution": "本人の要望を受けた制作側の具体実装。版ごとに新しい本人入力があったという意味ではありません。"
+        }
+      ],
+      "evidence": [
+        "container:sha256:5cdeac411a2963c8020dfbed5f298600b2ce80bb2f3df3da44a777e6b25a393b 当時のWebGL・ゲーム処理・設定を保持",
+        "git:f6214c5 関連する実装・配布記録（実行JS一致）"
+      ],
+      "sourceKind": "当時の配布コンテナから回収した実行サーバーのソース",
+      "relatedCommit": "f6214c5",
+      "runtimeSourceComparison": {
+        "comparedFiles": [
+          "crossbow.js",
+          "game.js",
+          "index.js",
+          "melee.js",
+          "motion.js",
+          "scenery-mining.js",
+          "scenery-shape.js",
+          "static.js",
+          "stream.js",
+          "valley.js"
+        ],
+        "differentFiles": [],
+        "lineEndingsNormalized": true
+      },
+      "sourceCommit": "f6214c5",
+      "previousVersionId": "r21",
+      "nextVersionId": "r23",
+      "feedbackUntilNextVersionIds": [],
+      "image": "generation-media/r22.webp",
+      "caption": "配布22の保存WebGLと当時のゲーム処理を、2026年11月9日に履歴再生した参加画面。",
+      "imageRepresents": "この配布版そのものの実行画面。ゲーム画面のみ、合成・ゲーム内容の加工なし。"
+    },
+    {
+      "number": 23,
+      "id": "r23",
+      "revision": "orbit-salvage-prototype-00023-h27",
+      "imageDigest": "sha256:469c748c20fd007ec95f4b02b5bd9c4474f256f5decf237ccea667fed1b4f69d",
+      "createdAt": "2026-11-08T10:45:05.296427Z",
+      "runtimeExtracted": true,
+      "webglRetained": true,
+      "playUrl": "/history-play/play/r23/",
+      "sourceUrl": "/history-play/sources/r23.zip",
+      "playback": {
+        "mode": "browser-local-original-world",
+        "status": "browser-loaded-world-verified",
+        "multiplayer": false,
+        "note": "当時のWebGLと当時のルールを使用。このタブ内でNPCと対戦し、現在のオンラインへ接続しません。",
+        "worldVerified": true,
+        "browserLoadVerified": true,
+        "browserVerification": "元のWebGLをChromeで起動し参加画面を撮影。各版のWorldは別に40tick進行を確認。全版の通し試合を確認した意味ではありません。"
+      },
+      "title": "放した直後の矢を表示",
+      "period": "配布版23",
+      "summary": "放した直後のローカル飛翔を権威矢へ引き継ぐ表示を追加。右押しの捕捉、感度設定、斜め連跳と岩沿いの移動も調整。",
+      "generationId": "g11",
+      "relatedProposalIds": [
+        "p34",
+        "p33",
+        "p32"
+      ],
+      "inputProposalIds": [],
+      "examples": [
+        {
+          "idea": "移動・戦闘・弓をJava版1.8.9の操作感へ深く近づけたい。ダッシュジャンプも速く、動きをシャキッとさせたい。",
+          "change": "放した直後のローカル飛翔を権威矢へ引き継ぐ表示を追加。右押しの捕捉、感度設定、斜め連跳と岩沿いの移動も調整。",
+          "proposalId": "p34",
+          "attribution": "本人の要望を受けた制作側の具体実装。版ごとに新しい本人入力があったという意味ではありません。"
+        }
+      ],
+      "evidence": [
+        "container:sha256:469c748c20fd007ec95f4b02b5bd9c4474f256f5decf237ccea667fed1b4f69d 当時のWebGL・ゲーム処理・設定を保持",
+        "git:95cf668 関連する実装・配布記録（実行JS一致）"
+      ],
+      "sourceKind": "当時の配布コンテナから回収した実行サーバーのソース",
+      "relatedCommit": "95cf668",
+      "runtimeSourceComparison": {
+        "comparedFiles": [
+          "crossbow.js",
+          "game.js",
+          "index.js",
+          "melee.js",
+          "motion.js",
+          "scenery-mining.js",
+          "scenery-shape.js",
+          "static.js",
+          "stream.js",
+          "valley.js"
+        ],
+        "differentFiles": [],
+        "lineEndingsNormalized": true
+      },
+      "sourceCommit": "95cf668",
+      "previousVersionId": "r22",
+      "nextVersionId": "r24",
+      "feedbackUntilNextVersionIds": [],
+      "image": "generation-media/r23.webp",
+      "caption": "配布23の保存WebGLと当時のゲーム処理を、2026年11月9日に履歴再生した参加画面。",
+      "imageRepresents": "この配布版そのものの実行画面。ゲーム画面のみ、合成・ゲーム内容の加工なし。"
+    },
+    {
+      "number": 24,
+      "id": "r24",
+      "revision": "orbit-salvage-prototype-00024-nlr",
+      "imageDigest": "sha256:8d3f68364f10f96d36791a7774e0ccab1d5bfd93c9af4971e301780ab19cb23d",
+      "createdAt": "2026-11-08T11:02:40.674366Z",
+      "runtimeExtracted": true,
+      "webglRetained": true,
+      "playUrl": "/history-play/play/r24/",
+      "sourceUrl": "/history-play/sources/r24.zip",
+      "playback": {
+        "mode": "browser-local-original-world",
+        "status": "browser-loaded-world-verified",
+        "multiplayer": false,
+        "note": "当時のWebGLと当時のルールを使用。このタブ内でNPCと対戦し、現在のオンラインへ接続しません。",
+        "worldVerified": true,
+        "browserLoadVerified": true,
+        "browserVerification": "元のWebGLをChromeで起動し参加画面を撮影。各版のWorldは別に40tick進行を確認。全版の通し試合を確認した意味ではありません。"
+      },
+      "title": "相手の構えとNPCの気付き",
+      "period": "配布版24",
+      "summary": "相手が振り向いて弓を構える姿とNPCの視認を調整。近接の消費ACKと頭上名札、時刻境界の判定も修正。",
+      "generationId": "g11",
+      "relatedProposalIds": [
+        "p34",
+        "p33",
+        "p32"
+      ],
+      "inputProposalIds": [],
+      "examples": [
+        {
+          "idea": "移動・戦闘・弓をJava版1.8.9の操作感へ深く近づけたい。ダッシュジャンプも速く、動きをシャキッとさせたい。",
+          "change": "相手が振り向いて弓を構える姿とNPCの視認を調整。近接の消費ACKと頭上名札、時刻境界の判定も修正。",
+          "proposalId": "p34",
+          "attribution": "本人の要望を受けた制作側の具体実装。版ごとに新しい本人入力があったという意味ではありません。"
+        }
+      ],
+      "evidence": [
+        "container:sha256:8d3f68364f10f96d36791a7774e0ccab1d5bfd93c9af4971e301780ab19cb23d 当時のWebGL・ゲーム処理・設定を保持",
+        "git:0cda0d2 関連する実装・配布記録（実行JS一致）"
+      ],
+      "sourceKind": "当時の配布コンテナから回収した実行サーバーのソース",
+      "relatedCommit": "0cda0d2",
+      "runtimeSourceComparison": {
+        "comparedFiles": [
+          "crossbow.js",
+          "game.js",
+          "index.js",
+          "melee.js",
+          "motion.js",
+          "scenery-mining.js",
+          "scenery-shape.js",
+          "static.js",
+          "stream.js",
+          "valley.js"
+        ],
+        "differentFiles": [],
+        "lineEndingsNormalized": true
+      },
+      "sourceCommit": "0cda0d2",
+      "previousVersionId": "r23",
+      "nextVersionId": "r25",
+      "feedbackUntilNextVersionIds": [],
+      "image": "generation-media/r24.webp",
+      "caption": "配布24の保存WebGLと当時のゲーム処理を、2026年11月9日に履歴再生した参加画面。",
+      "imageRepresents": "この配布版そのものの実行画面。ゲーム画面のみ、合成・ゲーム内容の加工なし。"
+    },
+    {
+      "number": 25,
+      "id": "r25",
+      "revision": "orbit-salvage-prototype-00025-mkk",
+      "imageDigest": "sha256:211e9e2092068fa8c61e4dfc798d8320c42e4431bb676a4e389636a8e751fa74",
+      "createdAt": "2026-11-08T11:14:46.974938Z",
+      "runtimeExtracted": true,
+      "webglRetained": true,
+      "playUrl": "/history-play/play/r25/",
+      "sourceUrl": "/history-play/sources/r25.zip",
+      "playback": {
+        "mode": "browser-local-original-world",
+        "status": "browser-loaded-world-verified",
+        "multiplayer": false,
+        "note": "当時のWebGLと当時のルールを使用。このタブ内でNPCと対戦し、現在のオンラインへ接続しません。",
+        "worldVerified": true,
+        "browserLoadVerified": true,
+        "browserVerification": "元のWebGLをChromeで起動し参加画面を撮影。各版のWorldは別に40tick進行を確認。全版の通し試合を確認した意味ではありません。"
+      },
+      "title": "岩沿いの移動補正を修正",
+      "period": "配布版25",
+      "summary": "24と同じWebGLのまま、岩の張り出し沿いに上昇する移動のサーバー検証を修正。",
+      "generationId": "g11",
+      "relatedProposalIds": [
+        "p34",
+        "p33",
+        "p32"
+      ],
+      "inputProposalIds": [],
+      "examples": [
+        {
+          "idea": "移動・戦闘・弓をJava版1.8.9の操作感へ深く近づけたい。ダッシュジャンプも速く、動きをシャキッとさせたい。",
+          "change": "24と同じWebGLのまま、岩の張り出し沿いに上昇する移動のサーバー検証を修正。",
+          "proposalId": "p34",
+          "attribution": "本人の要望を受けた制作側の具体実装。版ごとに新しい本人入力があったという意味ではありません。"
+        }
+      ],
+      "evidence": [
+        "container:sha256:211e9e2092068fa8c61e4dfc798d8320c42e4431bb676a4e389636a8e751fa74 当時のWebGL・ゲーム処理・設定を保持",
+        "git:ebf54b0 関連する実装・配布記録（実行JS一致）"
+      ],
+      "sourceKind": "当時の配布コンテナから回収した実行サーバーのソース",
+      "relatedCommit": "ebf54b0",
+      "runtimeSourceComparison": {
+        "comparedFiles": [
+          "crossbow.js",
+          "game.js",
+          "index.js",
+          "melee.js",
+          "motion.js",
+          "scenery-mining.js",
+          "scenery-shape.js",
+          "static.js",
+          "stream.js",
+          "valley.js"
+        ],
+        "differentFiles": [],
+        "lineEndingsNormalized": true
+      },
+      "sourceCommit": "ebf54b0",
+      "previousVersionId": "r24",
+      "nextVersionId": "r26",
+      "feedbackUntilNextVersionIds": [],
+      "image": "generation-media/r25.webp",
+      "caption": "配布25の保存WebGLと当時のゲーム処理を、2026年11月9日に履歴再生した参加画面。",
+      "imageRepresents": "この配布版そのものの実行画面。ゲーム画面のみ、合成・ゲーム内容の加工なし。"
+    },
+    {
+      "number": 26,
+      "id": "r26",
+      "revision": "orbit-salvage-prototype-00026-php",
+      "imageDigest": "sha256:0c067f67dae5943c2fb6f75c83141e4f8ff77910fa0b2d145ff94486904c81c7",
+      "createdAt": "2026-11-08T11:20:26.438430Z",
+      "runtimeExtracted": true,
+      "webglRetained": true,
+      "playUrl": "/history-play/play/r26/",
+      "sourceUrl": "/history-play/sources/r26.zip",
+      "playback": {
+        "mode": "browser-local-original-world",
+        "status": "browser-loaded-world-verified",
+        "multiplayer": false,
+        "note": "当時のWebGLと当時のルールを使用。このタブ内でNPCと対戦し、現在のオンラインへ接続しません。",
+        "worldVerified": true,
+        "browserLoadVerified": true,
+        "browserVerification": "元のWebGLをChromeで起動し参加画面を撮影。各版のWorldは別に40tick進行を確認。全版の通し試合を確認した意味ではありません。"
+      },
+      "title": "操作案内と連続ジャンプ",
+      "period": "配布版26",
+      "summary": "25のサーバーを保ち、ダッシュ中のSpace長押しで跳び続ける操作案内を追加。",
+      "generationId": "g11",
+      "relatedProposalIds": [
+        "p34",
+        "p33",
+        "p32"
+      ],
+      "inputProposalIds": [],
+      "examples": [
+        {
+          "idea": "移動・戦闘・弓をJava版1.8.9の操作感へ深く近づけたい。ダッシュジャンプも速く、動きをシャキッとさせたい。",
+          "change": "25のサーバーを保ち、ダッシュ中のSpace長押しで跳び続ける操作案内を追加。",
+          "proposalId": "p34",
+          "attribution": "本人の要望を受けた制作側の具体実装。版ごとに新しい本人入力があったという意味ではありません。"
+        }
+      ],
+      "evidence": [
+        "container:sha256:0c067f67dae5943c2fb6f75c83141e4f8ff77910fa0b2d145ff94486904c81c7 当時のWebGL・ゲーム処理・設定を保持",
+        "git:873d030 関連する実装・配布記録（実行JS一致）"
+      ],
+      "sourceKind": "当時の配布コンテナから回収した実行サーバーのソース",
+      "relatedCommit": "873d030",
+      "runtimeSourceComparison": {
+        "comparedFiles": [
+          "crossbow.js",
+          "game.js",
+          "index.js",
+          "melee.js",
+          "motion.js",
+          "scenery-mining.js",
+          "scenery-shape.js",
+          "static.js",
+          "stream.js",
+          "valley.js"
+        ],
+        "differentFiles": [],
+        "lineEndingsNormalized": true
+      },
+      "sourceCommit": "873d030",
+      "previousVersionId": "r25",
+      "nextVersionId": "r27",
+      "feedbackUntilNextVersionIds": [
+        "p35"
+      ],
+      "image": "generation-media/r26.webp",
+      "caption": "配布26の保存WebGLと当時のゲーム処理を、2026年11月9日に履歴再生した参加画面。",
+      "imageRepresents": "この配布版そのものの実行画面。ゲーム画面のみ、合成・ゲーム内容の加工なし。"
+    },
+    {
+      "number": 27,
+      "id": "r27",
+      "revision": "orbit-salvage-prototype-00027-fmt",
+      "imageDigest": "sha256:0a078eb1fc4af70a6d846ebdc5b66d834b3c2f3a05d78457e20b801529b8f014",
+      "createdAt": "2026-11-08T12:53:14.051833Z",
+      "runtimeExtracted": true,
+      "webglRetained": true,
+      "playUrl": "/history-play/play/r27/",
+      "sourceUrl": "/history-play/sources/r27.zip",
+      "playback": {
+        "mode": "browser-local-original-world",
+        "status": "browser-loaded-world-verified",
+        "multiplayer": false,
+        "note": "当時のWebGLと当時のルールを使用。このタブ内でNPCと対戦し、現在のオンラインへ接続しません。",
+        "worldVerified": true,
+        "browserLoadVerified": true,
+        "browserVerification": "元のWebGLをChromeで起動し参加画面を撮影。各版のWorldは別に40tick進行を確認。全版の通し試合を確認した意味ではありません。"
+      },
+      "title": "一つの円・矢の尾・持ち物欄",
+      "period": "配布版27",
+      "summary": "売却と保護を半径4.5mの一本線へ統一。矢は境界で消さず保護中の人物を通過。実軌道の尾と1・2の持ち物欄を追加。",
+      "generationId": "g12",
+      "relatedProposalIds": [
+        "p35"
+      ],
+      "inputProposalIds": [
+        "p35"
+      ],
+      "examples": [
+        {
+          "idea": "売却と安全地帯の円を一つに。矢の軌道を見やすくし、安全地帯の境界で矢を消さず中の敵だけ命中対象外にしたい。1・2の装備欄もほしい。",
+          "change": "売却と保護を半径4.5mの一本線へ統一。矢は境界で消さず保護中の人物を通過。実軌道の尾と1・2の持ち物欄を追加。",
+          "proposalId": "p35",
+          "attribution": "本人の要望を受けた制作側の具体実装。版ごとに新しい本人入力があったという意味ではありません。"
+        }
+      ],
+      "evidence": [
+        "container:sha256:0a078eb1fc4af70a6d846ebdc5b66d834b3c2f3a05d78457e20b801529b8f014 当時のWebGL・ゲーム処理・設定を保持",
+        "git:b43d682 関連する実装・配布記録（実行JS一致）"
+      ],
+      "sourceKind": "当時の配布コンテナから回収した実行サーバーのソース",
+      "relatedCommit": "b43d682",
+      "runtimeSourceComparison": {
+        "comparedFiles": [
+          "crossbow.js",
+          "game.js",
+          "index.js",
+          "melee.js",
+          "motion.js",
+          "scenery-mining.js",
+          "scenery-shape.js",
+          "static.js",
+          "stream.js",
+          "valley.js"
+        ],
+        "differentFiles": [],
+        "lineEndingsNormalized": true
+      },
+      "sourceCommit": "b43d682",
+      "previousVersionId": "r26",
+      "nextVersionId": "r28",
+      "feedbackUntilNextVersionIds": [
+        "p36",
+        "p37"
+      ],
+      "image": "generation-media/r27.webp",
+      "caption": "配布27の保存WebGLと当時のゲーム処理を、2026年11月9日に履歴再生した参加画面。",
+      "imageRepresents": "この配布版そのものの実行画面。ゲーム画面のみ、合成・ゲーム内容の加工なし。"
+    },
+    {
+      "number": 28,
+      "id": "r28",
+      "revision": "orbit-salvage-prototype-00028-ful",
+      "imageDigest": "sha256:c9e3338854ae71eecac74c64b4db09d1f4a398e4857f2fb4a30d05a79b167e15",
+      "createdAt": "2026-11-08T14:25:06.062335Z",
+      "runtimeExtracted": true,
+      "webglRetained": true,
+      "playUrl": "/history-play/play/r28/",
+      "sourceUrl": "/history-play/sources/r28.zip",
+      "playback": {
+        "mode": "browser-local-original-world",
+        "status": "browser-loaded-world-verified",
+        "multiplayer": false,
+        "note": "当時のWebGLと当時のルールを使用。このタブ内でNPCと対戦し、現在のオンラインへ接続しません。",
+        "worldVerified": true,
+        "browserLoadVerified": true,
+        "browserVerification": "元のWebGLをChromeで起動し参加画面を撮影。各版のWorldは別に40tick進行を確認。全版の通し試合を確認した意味ではありません。"
+      },
+      "title": "銀・紅晶とホイール切替",
+      "period": "配布版28",
+      "summary": "銀と紅晶の鉱区を追加し、金鉱の遠方の目印を試行。ホイールによる持ち替えも統合。",
+      "generationId": "g13",
+      "relatedProposalIds": [
+        "p37",
+        "p36"
+      ],
+      "inputProposalIds": [
+        "p36",
+        "p37"
+      ],
+      "examples": [
+        {
+          "idea": "ホイールで装備を切り替えたい。鉱石を増やし、希少な金鉱は遠くから目立たせ、硬く高価な種類も増やしたい。",
+          "change": "銀と紅晶の鉱区を追加し、金鉱の遠方の目印を試行。ホイールによる持ち替えも統合。",
+          "proposalId": "p37",
+          "attribution": "本人の要望を受けた制作側の具体実装。版ごとに新しい本人入力があったという意味ではありません。"
+        }
+      ],
+      "evidence": [
+        "container:sha256:c9e3338854ae71eecac74c64b4db09d1f4a398e4857f2fb4a30d05a79b167e15 当時のWebGL・ゲーム処理・設定を保持",
+        "git:3590629 関連する実装・配布記録（実行JS一致）"
+      ],
+      "sourceKind": "当時の配布コンテナから回収した実行サーバーのソース",
+      "relatedCommit": "3590629",
+      "runtimeSourceComparison": {
+        "comparedFiles": [
+          "crossbow.js",
+          "game.js",
+          "index.js",
+          "melee.js",
+          "motion.js",
+          "scenery-mining.js",
+          "scenery-shape.js",
+          "static.js",
+          "stream.js",
+          "valley.js"
+        ],
+        "differentFiles": [],
+        "lineEndingsNormalized": true
+      },
+      "sourceCommit": "3590629",
+      "previousVersionId": "r27",
+      "nextVersionId": "r29",
+      "feedbackUntilNextVersionIds": [],
+      "image": "generation-media/r28.webp",
+      "caption": "配布28の保存WebGLと当時のゲーム処理を、2026年11月9日に履歴再生した参加画面。",
+      "imageRepresents": "この配布版そのものの実行画面。ゲーム画面のみ、合成・ゲーム内容の加工なし。"
+    },
+    {
+      "number": 29,
+      "id": "r29",
+      "revision": "orbit-salvage-prototype-00029-np5",
+      "imageDigest": "sha256:b9ff15a6b229af85757d363b1bbaee243da6e162fe15c06e3132ca52dd1776b4",
+      "createdAt": "2026-11-08T14:37:58.947616Z",
+      "runtimeExtracted": true,
+      "webglRetained": true,
+      "playUrl": "/history-play/play/r29/",
+      "sourceUrl": "/history-play/sources/r29.zip",
+      "playback": {
+        "mode": "browser-local-original-world",
+        "status": "browser-loaded-world-verified",
+        "multiplayer": false,
+        "note": "当時のWebGLと当時のルールを使用。このタブ内でNPCと対戦し、現在のオンラインへ接続しません。",
+        "worldVerified": true,
+        "browserLoadVerified": true,
+        "browserVerification": "元のWebGLをChromeで起動し参加画面を撮影。各版のWorldは別に40tick進行を確認。全版の通し試合を確認した意味ではありません。"
+      },
+      "title": "遠くから読める金鉱",
+      "period": "配布版29",
+      "summary": "28から金鉱の昼光での反射と遠方の見え方を調整し、採用版を配布。",
+      "generationId": "g13",
+      "image": "generation-media/r29.webp",
+      "caption": "配布29の保存WebGLと当時のゲーム処理を、2026年11月9日に履歴再生した参加画面。",
+      "imageRepresents": "この配布版そのものの実行画面。ゲーム画面のみ、合成・ゲーム内容の加工なし。",
+      "relatedProposalIds": [
+        "p37",
+        "p36"
+      ],
+      "inputProposalIds": [],
+      "examples": [
+        {
+          "idea": "ホイールで装備を切り替えたい。鉱石を増やし、希少な金鉱は遠くから目立たせ、硬く高価な種類も増やしたい。",
+          "change": "28から金鉱の昼光での反射と遠方の見え方を調整し、採用版を配布。",
+          "proposalId": "p37",
+          "attribution": "本人の要望を受けた制作側の具体実装。版ごとに新しい本人入力があったという意味ではありません。"
+        }
+      ],
+      "evidence": [
+        "container:sha256:b9ff15a6b229af85757d363b1bbaee243da6e162fe15c06e3132ca52dd1776b4 当時のWebGL・ゲーム処理・設定を保持",
+        "git:a822a75 関連する実装・配布記録（実行JS一致）"
+      ],
+      "sourceKind": "当時の配布コンテナから回収した実行サーバーのソース",
+      "relatedCommit": "a822a75",
+      "runtimeSourceComparison": {
+        "comparedFiles": [
+          "crossbow.js",
+          "game.js",
+          "index.js",
+          "melee.js",
+          "motion.js",
+          "scenery-mining.js",
+          "scenery-shape.js",
+          "static.js",
+          "stream.js",
+          "valley.js"
+        ],
+        "differentFiles": [],
+        "lineEndingsNormalized": true
+      },
+      "sourceCommit": "a822a75",
+      "previousVersionId": "r28",
+      "nextVersionId": "r31",
+      "feedbackUntilNextVersionIds": [
+        "p38",
+        "p39"
+      ]
+    },
+    {
+      "number": 31,
+      "id": "r31",
+      "revision": "orbit-salvage-prototype-00031-fej",
+      "imageDigest": "sha256:8c5a72fe6f13507d96ea2cf500a1412a83c3ecd1eb3139e895c6a386153f8c58",
+      "createdAt": "2026-11-08T17:02:16.929665Z",
+      "runtimeExtracted": true,
+      "webglRetained": true,
+      "playUrl": "/history-play/play/r31/",
+      "sourceUrl": "/history-play/sources/r31.zip",
+      "playback": {
+        "mode": "browser-local-original-world",
+        "status": "browser-loaded-world-verified",
+        "multiplayer": false,
+        "note": "当時のWebGLと当時のルールを使用。このタブ内でNPCと対戦し、現在のオンラインへ接続しません。",
+        "worldVerified": true,
+        "browserLoadVerified": true,
+        "browserVerification": "元のWebGLをChromeで起動し参加画面を撮影。各版のWorldは別に40tick進行を確認。全版の通し試合を確認した意味ではありません。"
+      },
+      "title": "条件を減らすルール候補",
+      "period": "配布版31",
+      "summary": "金鉱の期限と指定品の先着注文を外す候補。30秒交代の全品高値買取、硬いダイヤ、独立した袋強化を追加。",
+      "generationId": "g14",
+      "relatedProposalIds": [
+        "p39",
+        "p38"
+      ],
+      "inputProposalIds": [
+        "p38",
+        "p39"
+      ],
+      "examples": [
+        {
+          "idea": "金鉱の時間制限と複雑な先着条件を減らしたい。硬く多く採れるダイヤや、ピックと独立した袋の強化を加えたい。",
+          "change": "金鉱の期限と指定品の先着注文を外す候補。30秒交代の全品高値買取、硬いダイヤ、独立した袋強化を追加。",
+          "proposalId": "p39",
+          "attribution": "本人の要望を受けた制作側の具体実装。版ごとに新しい本人入力があったという意味ではありません。"
+        }
+      ],
+      "evidence": [
+        "container:sha256:8c5a72fe6f13507d96ea2cf500a1412a83c3ecd1eb3139e895c6a386153f8c58 当時のWebGL・ゲーム処理・設定を保持",
+        "git:971d1ce 関連する実装・配布記録（実行JS一致）"
+      ],
+      "sourceKind": "当時の配布コンテナから回収した実行サーバーのソース",
+      "relatedCommit": "971d1ce",
+      "runtimeSourceComparison": {
+        "comparedFiles": [
+          "crossbow.js",
+          "game.js",
+          "index.js",
+          "melee.js",
+          "motion.js",
+          "scenery-mining.js",
+          "scenery-shape.js",
+          "static.js",
+          "stream.js",
+          "valley.js"
+        ],
+        "differentFiles": [],
+        "lineEndingsNormalized": true
+      },
+      "sourceCommit": "971d1ce",
+      "previousVersionId": "r29",
+      "nextVersionId": "r32",
+      "feedbackUntilNextVersionIds": [],
+      "image": "generation-media/r31.webp",
+      "caption": "配布31の保存WebGLと当時のゲーム処理を、2026年11月9日に履歴再生した参加画面。",
+      "imageRepresents": "この配布版そのものの実行画面。ゲーム画面のみ、合成・ゲーム内容の加工なし。"
+    },
+    {
+      "number": 32,
+      "id": "r32",
+      "revision": "orbit-salvage-prototype-00032-yak",
+      "imageDigest": "sha256:94252b6e579db24b80fb523ef78b079d119ce4348405438d0ffddc9b8e59e00d",
+      "createdAt": "2026-11-08T17:06:38.498679Z",
+      "runtimeExtracted": true,
+      "webglRetained": true,
+      "playUrl": "/history-play/play/r32/",
+      "sourceUrl": "/history-play/sources/r32.zip",
+      "playback": {
+        "mode": "browser-local-original-world",
+        "status": "browser-loaded-world-verified",
+        "multiplayer": false,
+        "note": "当時のWebGLと当時のルールを使用。このタブ内でNPCと対戦し、現在のオンラインへ接続しません。",
+        "worldVerified": true,
+        "browserLoadVerified": true,
+        "browserVerification": "元のWebGLをChromeで起動し参加画面を撮影。各版のWorldは別に40tick進行を確認。全版の通し試合を確認した意味ではありません。"
+      },
+      "title": "消えない金・高値売店・袋",
+      "period": "配布版32",
+      "summary": "単純化したルールを採用し、高値売店の表示を仕上げ。この時点は全品2倍。取り残した鉱片の保持も整備。",
+      "generationId": "g14",
+      "image": "generation-media/r32.webp",
+      "caption": "配布32の保存WebGLと当時のゲーム処理を、2026年11月9日に履歴再生した参加画面。",
+      "imageRepresents": "この配布版そのものの実行画面。ゲーム画面のみ、合成・ゲーム内容の加工なし。",
+      "relatedProposalIds": [
+        "p39",
+        "p38"
+      ],
+      "inputProposalIds": [],
+      "examples": [
+        {
+          "idea": "金鉱の時間制限と複雑な先着条件を減らしたい。硬く多く採れるダイヤや、ピックと独立した袋の強化を加えたい。",
+          "change": "単純化したルールを採用し、高値売店の表示を仕上げ。この時点は全品2倍。取り残した鉱片の保持も整備。",
+          "proposalId": "p39",
+          "attribution": "本人の要望を受けた制作側の具体実装。版ごとに新しい本人入力があったという意味ではありません。"
+        }
+      ],
+      "evidence": [
+        "container:sha256:94252b6e579db24b80fb523ef78b079d119ce4348405438d0ffddc9b8e59e00d 当時のWebGL・ゲーム処理・設定を保持",
+        "git:e33f1b0 関連する実装・配布記録（実行JS一致）"
+      ],
+      "sourceKind": "当時の配布コンテナから回収した実行サーバーのソース",
+      "relatedCommit": "e33f1b0",
+      "runtimeSourceComparison": {
+        "comparedFiles": [
+          "crossbow.js",
+          "game.js",
+          "index.js",
+          "melee.js",
+          "motion.js",
+          "scenery-mining.js",
+          "scenery-shape.js",
+          "static.js",
+          "stream.js",
+          "valley.js"
+        ],
+        "differentFiles": [],
+        "lineEndingsNormalized": true
+      },
+      "sourceCommit": "e33f1b0",
+      "previousVersionId": "r31",
+      "nextVersionId": "r34",
+      "feedbackUntilNextVersionIds": [
+        "p40",
+        "p41"
+      ]
+    },
+    {
+      "number": 34,
+      "id": "r34",
+      "revision": "orbit-salvage-prototype-00034-tum",
+      "imageDigest": "sha256:3b8ce8a163e0683de4da493674461185f2605fdd7a4f38a66957e50743bc730c",
+      "createdAt": "2026-11-08T20:19:48.581569Z",
+      "runtimeExtracted": true,
+      "webglRetained": true,
+      "playUrl": "/history-play/play/r34/",
+      "sourceUrl": "/history-play/sources/r34.zip",
+      "playback": {
+        "mode": "browser-local-original-world",
+        "status": "browser-loaded-world-verified",
+        "multiplayer": false,
+        "note": "当時のWebGLと当時のルールを使用。このタブ内でNPCと対戦し、現在のオンラインへ接続しません。",
+        "worldVerified": true,
+        "browserLoadVerified": true,
+        "browserVerification": "元のWebGLをChromeで起動し参加画面を撮影。各版のWorldは別に40tick進行を確認。全版の通し試合を確認した意味ではありません。"
+      },
+      "title": "自由カーソルの急回転を修正",
+      "period": "配布版34",
+      "summary": "自由カーソルの解放漏れと、画面へ戻った際の急回転を修正。ゲームのルールは32を維持。",
+      "generationId": "g15",
+      "relatedProposalIds": [
+        "p41",
+        "p40"
+      ],
+      "inputProposalIds": [
+        "p40",
+        "p41"
+      ],
+      "examples": [
+        {
+          "idea": "自由カーソルの時に画面が急に跳ぶ問題を直し、どのウィンドウ状態でも遊べるようにしたい。",
+          "change": "自由カーソルの解放漏れと、画面へ戻った際の急回転を修正。ゲームのルールは32を維持。",
+          "proposalId": "p41",
+          "attribution": "本人の要望を受けた制作側の具体実装。版ごとに新しい本人入力があったという意味ではありません。"
+        }
+      ],
+      "evidence": [
+        "container:sha256:3b8ce8a163e0683de4da493674461185f2605fdd7a4f38a66957e50743bc730c 当時のWebGL・ゲーム処理・設定を保持",
+        "git:fef716b 関連する実装・配布記録（実行JS一致）"
+      ],
+      "sourceKind": "当時の配布コンテナから回収した実行サーバーのソース",
+      "relatedCommit": "fef716b",
+      "runtimeSourceComparison": {
+        "comparedFiles": [
+          "crossbow.js",
+          "game.js",
+          "index.js",
+          "melee.js",
+          "motion.js",
+          "scenery-mining.js",
+          "scenery-shape.js",
+          "static.js",
+          "stream.js",
+          "valley.js"
+        ],
+        "differentFiles": [],
+        "lineEndingsNormalized": true
+      },
+      "sourceCommit": "fef716b",
+      "previousVersionId": "r32",
+      "nextVersionId": "r36",
+      "feedbackUntilNextVersionIds": [
+        "p42"
+      ],
+      "image": "generation-media/r34.webp",
+      "caption": "配布34の保存WebGLと当時のゲーム処理を、2026年11月9日に履歴再生した参加画面。",
+      "imageRepresents": "この配布版そのものの実行画面。ゲーム画面のみ、合成・ゲーム内容の加工なし。"
+    },
+    {
+      "number": 36,
+      "id": "r36",
+      "revision": "orbit-salvage-prototype-00036-zil",
+      "imageDigest": "sha256:04ec5fb31728dff0d1b7aa044de49b6cea2d6db6feb6916da18de5473e8c38d4",
+      "createdAt": "2026-11-08T21:24:25.090275Z",
+      "runtimeExtracted": true,
+      "webglRetained": true,
+      "playUrl": "/history-play/play/r36/",
+      "sourceUrl": "/history-play/sources/r36.zip",
+      "playback": {
+        "mode": "browser-local-original-world",
+        "status": "browser-loaded-world-verified",
+        "multiplayer": false,
+        "note": "当時のWebGLと当時のルールを使用。このタブ内でNPCと対戦し、現在のオンラインへ接続しません。",
+        "worldVerified": true,
+        "browserLoadVerified": true,
+        "browserVerification": "元のWebGLをChromeで起動し参加画面を撮影。各版のWorldは別に40tick進行を確認。全版の通し試合を確認した意味ではありません。"
+      },
+      "title": "売店の灯と画面の整理候補",
+      "period": "配布版36",
+      "summary": "売店を灯具と石灰線で表し、常設説明とHUDの帯を減らす候補を配布。遠景岩の変更も含む比較候補。",
+      "generationId": "g15",
+      "relatedProposalIds": [
+        "p41",
+        "p40",
+        "p42"
+      ],
+      "inputProposalIds": [
+        "p42"
+      ],
+      "examples": [
+        {
+          "idea": "ゲームは面白いが、見た目・UIが粗い。フィールドへ直接倍率の文字を浮かべず、光で示したい。低解像度を直し、情報の重要度を分け、説明を減らしたい。",
+          "change": "売店を灯具と石灰線で表し、常設説明とHUDの帯を減らす候補を配布。遠景岩の変更も含む比較候補。",
+          "proposalId": "p42",
+          "attribution": "本人の要望を受けた制作側の具体実装。版ごとに新しい本人入力があったという意味ではありません。"
+        }
+      ],
+      "evidence": [
+        "container:sha256:04ec5fb31728dff0d1b7aa044de49b6cea2d6db6feb6916da18de5473e8c38d4 当時のWebGL・ゲーム処理・設定を保持",
+        "git:badd994 関連する実装・配布記録（実行JS一致）"
+      ],
+      "sourceKind": "当時の配布コンテナから回収した実行サーバーのソース",
+      "relatedCommit": "badd994",
+      "runtimeSourceComparison": {
+        "comparedFiles": [
+          "crossbow.js",
+          "game.js",
+          "index.js",
+          "melee.js",
+          "motion.js",
+          "scenery-mining.js",
+          "scenery-shape.js",
+          "static.js",
+          "stream.js",
+          "valley.js"
+        ],
+        "differentFiles": [],
+        "lineEndingsNormalized": true
+      },
+      "sourceCommit": "badd994",
+      "previousVersionId": "r34",
+      "nextVersionId": "r37",
+      "feedbackUntilNextVersionIds": [],
+      "image": "generation-media/r36.webp",
+      "caption": "配布36の保存WebGLと当時のゲーム処理を、2026年11月9日に履歴再生した参加画面。",
+      "imageRepresents": "この配布版そのものの実行画面。ゲーム画面のみ、合成・ゲーム内容の加工なし。"
+    },
+    {
+      "number": 37,
+      "id": "r37",
+      "revision": "orbit-salvage-prototype-00037-ful",
+      "imageDigest": "sha256:97a093da0f4699688ef4771bc238fdfa3030f57dcf12f1131be20dfe46796faa",
+      "createdAt": "2026-11-08T21:41:49.233533Z",
+      "runtimeExtracted": true,
+      "webglRetained": true,
+      "playUrl": "/history-play/play/r37/",
+      "sourceUrl": "/history-play/sources/r37.zip",
+      "playback": {
+        "mode": "browser-local-original-world",
+        "status": "browser-loaded-world-verified",
+        "multiplayer": false,
+        "note": "当時のWebGLと当時のルールを使用。このタブ内でNPCと対戦し、現在のオンラインへ接続しません。",
+        "worldVerified": true,
+        "browserLoadVerified": true,
+        "browserVerification": "元のWebGLをChromeで起動し参加画面を撮影。各版のWorldは別に40tick進行を確認。全版の通し試合を確認した意味ではありません。"
+      },
+      "title": "説明を減らし、画面を明瞭に",
+      "period": "配布版37",
+      "summary": "遠景変更を戻した上で、実景タイトルと売買表示を整理。WebGLの描画密度・文字と輪郭を改善。",
+      "generationId": "g15",
+      "image": "generation-media/r37.webp",
+      "caption": "配布37の保存WebGLと当時のゲーム処理を、2026年11月9日に履歴再生した参加画面。",
+      "imageRepresents": "この配布版そのものの実行画面。ゲーム画面のみ、合成・ゲーム内容の加工なし。",
+      "relatedProposalIds": [
+        "p41",
+        "p40",
+        "p42"
+      ],
+      "inputProposalIds": [],
+      "examples": [
+        {
+          "idea": "ゲームは面白いが、見た目・UIが粗い。フィールドへ直接倍率の文字を浮かべず、光で示したい。低解像度を直し、情報の重要度を分け、説明を減らしたい。",
+          "change": "遠景変更を戻した上で、実景タイトルと売買表示を整理。WebGLの描画密度・文字と輪郭を改善。",
+          "proposalId": "p42",
+          "attribution": "本人の要望を受けた制作側の具体実装。版ごとに新しい本人入力があったという意味ではありません。"
+        }
+      ],
+      "evidence": [
+        "container:sha256:97a093da0f4699688ef4771bc238fdfa3030f57dcf12f1131be20dfe46796faa 当時のWebGL・ゲーム処理・設定を保持",
+        "git:fb74ddd 関連する実装・配布記録（実行JS一致）"
+      ],
+      "sourceKind": "当時の配布コンテナから回収した実行サーバーのソース",
+      "relatedCommit": "fb74ddd",
+      "runtimeSourceComparison": {
+        "comparedFiles": [
+          "crossbow.js",
+          "game.js",
+          "index.js",
+          "melee.js",
+          "motion.js",
+          "scenery-mining.js",
+          "scenery-shape.js",
+          "static.js",
+          "stream.js",
+          "valley.js"
+        ],
+        "differentFiles": [],
+        "lineEndingsNormalized": true
+      },
+      "sourceCommit": "fb74ddd",
+      "previousVersionId": "r36",
+      "nextVersionId": "r39",
+      "feedbackUntilNextVersionIds": [
+        "p43"
+      ]
+    },
+    {
+      "number": 39,
+      "id": "r39",
+      "revision": "orbit-salvage-prototype-00039-zux",
+      "imageDigest": "sha256:cd2e2878f874af5f3354b4bd95f5aae54f96e10a89df160c44faff9c2bf5412a",
+      "createdAt": "2026-11-08T22:37:44.863745Z",
+      "runtimeExtracted": true,
+      "webglRetained": true,
+      "playUrl": "/history-play/play/r39/",
+      "sourceUrl": "/history-play/sources/r39.zip",
+      "playback": {
+        "mode": "browser-local-original-world",
+        "status": "browser-loaded-world-verified",
+        "multiplayer": false,
+        "note": "当時のWebGLと当時のルールを使用。このタブ内でNPCと対戦し、現在のオンラインへ接続しません。",
+        "worldVerified": true,
+        "browserLoadVerified": true,
+        "browserVerification": "元のWebGLをChromeで起動し参加画面を撮影。各版のWorldは別に40tick進行を確認。全版の通し試合を確認した意味ではありません。"
+      },
+      "title": "持ち物を使う売買操作の候補",
+      "period": "配布版39",
+      "summary": "ピック・弓・袋の3枠へ拡張。持った道具を買取台・アンビルへ使う操作にまとめ、高値買取を1.5倍へ変更。",
+      "generationId": "g16",
+      "relatedProposalIds": [
+        "p43"
+      ],
+      "inputProposalIds": [
+        "p43"
+      ],
+      "examples": [
+        {
+          "idea": "ランタンを大きく明るくし、高値買取は2倍から1.5倍にしたい。将来のスマホも考え、移動・持ち物選択・使用へ操作を絞りたい。",
+          "change": "ピック・弓・袋の3枠へ拡張。持った道具を買取台・アンビルへ使う操作にまとめ、高値買取を1.5倍へ変更。",
+          "proposalId": "p43",
+          "attribution": "本人の要望を受けた制作側の具体実装。版ごとに新しい本人入力があったという意味ではありません。"
+        }
+      ],
+      "evidence": [
+        "container:sha256:cd2e2878f874af5f3354b4bd95f5aae54f96e10a89df160c44faff9c2bf5412a 当時のWebGL・ゲーム処理・設定を保持",
+        "git:1874191 関連する実装・配布記録（実行JS一致）"
+      ],
+      "sourceKind": "当時の配布コンテナから回収した実行サーバーのソース",
+      "relatedCommit": "1874191",
+      "runtimeSourceComparison": {
+        "comparedFiles": [
+          "crossbow.js",
+          "game.js",
+          "index.js",
+          "melee.js",
+          "motion.js",
+          "scenery-mining.js",
+          "scenery-shape.js",
+          "static.js",
+          "station-use.js",
+          "stream.js",
+          "valley.js"
+        ],
+        "differentFiles": [],
+        "lineEndingsNormalized": true
+      },
+      "sourceCommit": "1874191",
+      "previousVersionId": "r37",
+      "nextVersionId": "r40",
+      "feedbackUntilNextVersionIds": [],
+      "image": "generation-media/r39.webp",
+      "caption": "配布39の保存WebGLと当時のゲーム処理を、2026年11月9日に履歴再生した参加画面。",
+      "imageRepresents": "この配布版そのものの実行画面。ゲーム画面のみ、合成・ゲーム内容の加工なし。"
+    },
+    {
+      "number": 40,
+      "id": "r40",
+      "revision": "orbit-salvage-prototype-00040-zus",
+      "imageDigest": "sha256:267869187bd086517f1c88000f23129d22c37c625afcf4f287fe3bde04d3169e",
+      "createdAt": "2026-11-08T22:41:26.563790Z",
+      "runtimeExtracted": true,
+      "webglRetained": true,
+      "playUrl": "/history-play/play/r40/",
+      "sourceUrl": "/history-play/sources/r40.zip",
+      "playback": {
+        "mode": "browser-local-original-world",
+        "status": "browser-loaded-world-verified",
+        "multiplayer": false,
+        "note": "当時のWebGLと当時のルールを使用。このタブ内でNPCと対戦し、現在のオンラインへ接続しません。",
+        "worldVerified": true,
+        "browserLoadVerified": true,
+        "browserVerification": "元のWebGLをChromeで起動し参加画面を撮影。各版のWorldは別に40tick進行を確認。全版の通し試合を確認した意味ではありません。"
+      },
+      "title": "NPCも買取台へ移動",
+      "period": "配布版40",
+      "summary": "39の長押し売買を保ち、NPCが実際の買取台へ近づいて換金するよう調整。",
+      "generationId": "g16",
+      "image": "generation-media/r40.webp",
+      "caption": "配布40の保存WebGLと当時のゲーム処理を、2026年11月9日に履歴再生した参加画面。",
+      "imageRepresents": "この配布版そのものの実行画面。ゲーム画面のみ、合成・ゲーム内容の加工なし。",
+      "relatedProposalIds": [
+        "p43"
+      ],
+      "inputProposalIds": [],
+      "examples": [
+        {
+          "idea": "ランタンを大きく明るくし、高値買取は2倍から1.5倍にしたい。将来のスマホも考え、移動・持ち物選択・使用へ操作を絞りたい。",
+          "change": "39の長押し売買を保ち、NPCが実際の買取台へ近づいて換金するよう調整。",
+          "proposalId": "p43",
+          "attribution": "本人の要望を受けた制作側の具体実装。版ごとに新しい本人入力があったという意味ではありません。"
+        }
+      ],
+      "evidence": [
+        "container:sha256:267869187bd086517f1c88000f23129d22c37c625afcf4f287fe3bde04d3169e 当時のWebGL・ゲーム処理・設定を保持",
+        "git:239a404 関連する実装・配布記録（実行JS一致）"
+      ],
+      "sourceKind": "当時の配布コンテナから回収した実行サーバーのソース",
+      "relatedCommit": "239a404",
+      "runtimeSourceComparison": {
+        "comparedFiles": [
+          "crossbow.js",
+          "game.js",
+          "index.js",
+          "melee.js",
+          "motion.js",
+          "scenery-mining.js",
+          "scenery-shape.js",
+          "static.js",
+          "station-use.js",
+          "stream.js",
+          "valley.js"
+        ],
+        "differentFiles": [],
+        "lineEndingsNormalized": true
+      },
+      "sourceCommit": "239a404",
+      "previousVersionId": "r39",
+      "nextVersionId": "r41",
+      "feedbackUntilNextVersionIds": [
+        "p44"
+      ]
+    },
+    {
+      "number": 41,
+      "id": "r41",
+      "revision": "orbit-salvage-prototype-00041-bes",
+      "imageDigest": "sha256:fec4b554fbfc3d928f9d6ba619fdf6dfac78b9baecf4e7d4d4f86ad104059dca",
+      "createdAt": "2026-11-08T23:35:31.387417Z",
+      "runtimeExtracted": true,
+      "webglRetained": true,
+      "playUrl": "/history-play/play/r41/",
+      "sourceUrl": "/history-play/sources/r41.zip",
+      "playback": {
+        "mode": "browser-local-original-world",
+        "status": "browser-loaded-world-verified",
+        "multiplayer": false,
+        "note": "当時のWebGLと当時のルールを使用。このタブ内でNPCと対戦し、現在のオンラインへ接続しません。",
+        "worldVerified": true,
+        "browserLoadVerified": true,
+        "browserVerification": "元のWebGLをChromeで起動し参加画面を撮影。各版のWorldは別に40tick進行を確認。全版の通し試合を確認した意味ではありません。"
+      },
+      "title": "円内で自動売却・即時強化",
+      "period": "配布版41",
+      "summary": "買取台へ狙って長押しする売却を撤去し、円内へ入るだけの自動換金へ。強化もアンビルへの1クリックで即時に一段購入。",
+      "generationId": "g17",
+      "relatedProposalIds": [
+        "p44"
+      ],
+      "inputProposalIds": [
+        "p44"
+      ],
+      "examples": [
+        {
+          "idea": "売却をもっと簡単に。円に入ったら自動で売り、強化も時間をかけずすぐできる形にしたい。",
+          "change": "買取台へ狙って長押しする売却を撤去し、円内へ入るだけの自動換金へ。強化もアンビルへの1クリックで即時に一段購入。",
+          "proposalId": "p44",
+          "attribution": "本人の要望を受けた制作側の具体実装。版ごとに新しい本人入力があったという意味ではありません。"
+        }
+      ],
+      "evidence": [
+        "container:sha256:fec4b554fbfc3d928f9d6ba619fdf6dfac78b9baecf4e7d4d4f86ad104059dca 当時のWebGL・ゲーム処理・設定を保持",
+        "git:9dfb421 関連する実装・配布記録（実行JS一致）"
+      ],
+      "sourceKind": "当時の配布コンテナから回収した実行サーバーのソース",
+      "relatedCommit": "9dfb421",
+      "runtimeSourceComparison": {
+        "comparedFiles": [
+          "crossbow.js",
+          "game.js",
+          "index.js",
+          "melee.js",
+          "motion.js",
+          "scenery-mining.js",
+          "scenery-shape.js",
+          "static.js",
+          "station-use.js",
+          "stream.js",
+          "valley.js"
+        ],
+        "differentFiles": [],
+        "lineEndingsNormalized": true
+      },
+      "sourceCommit": "9dfb421",
+      "previousVersionId": "r40",
+      "nextVersionId": "r43",
+      "feedbackUntilNextVersionIds": [
+        "p45"
+      ],
+      "image": "generation-media/r41.webp",
+      "caption": "配布41の保存WebGLと当時のゲーム処理を、2026年11月9日に履歴再生した参加画面。",
+      "imageRepresents": "この配布版そのものの実行画面。ゲーム画面のみ、合成・ゲーム内容の加工なし。"
+    },
+    {
+      "number": 43,
+      "id": "r43",
+      "revision": "orbit-salvage-prototype-00043-yed",
+      "imageDigest": "sha256:f8ccb284ab73478d4010177b8253d71935f1eb9983f8effda7d039f00fb9eb7f",
+      "createdAt": "2026-11-09T00:04:39.028761Z",
+      "runtimeExtracted": true,
+      "webglRetained": true,
+      "playUrl": "/history-play/play/r43/",
+      "sourceUrl": "/history-play/sources/r43.zip",
+      "playback": {
+        "mode": "browser-local-original-world",
+        "status": "browser-loaded-world-verified",
+        "multiplayer": false,
+        "note": "当時のWebGLと当時のルールを使用。このタブ内でNPCと対戦し、現在のオンラインへ接続しません。",
+        "worldVerified": true,
+        "browserLoadVerified": true,
+        "browserVerification": "元のWebGLをChromeで起動し参加画面を撮影。各版のWorldは別に40tick進行を確認。全版の通し試合を確認した意味ではありません。"
+      },
+      "title": "買取台を外し中央アンビルへ",
+      "period": "配布版43",
+      "summary": "不要になった買取台を撤去し、小屋の中央へアンビルを移動。自動換金とクリック強化は維持。",
+      "generationId": "g17",
+      "image": "generation-media/r43.webp",
+      "caption": "配布43の保存WebGLと当時のゲーム処理を、2026年11月9日に履歴再生した参加画面。",
+      "imageRepresents": "この配布版そのものの実行画面。ゲーム画面のみ、合成・ゲーム内容の加工なし。",
+      "relatedProposalIds": [
+        "p44",
+        "p45"
+      ],
+      "inputProposalIds": [
+        "p45"
+      ],
+      "examples": [
+        {
+          "idea": "自動売却なら買取台は不要。中央にアンビルを置きたい。UnitySkillsも適切に使ってほしい。",
+          "change": "不要になった買取台を撤去し、小屋の中央へアンビルを移動。自動換金とクリック強化は維持。",
+          "proposalId": "p45",
+          "attribution": "本人の要望を受けた制作側の具体実装。版ごとに新しい本人入力があったという意味ではありません。"
+        }
+      ],
+      "evidence": [
+        "container:sha256:f8ccb284ab73478d4010177b8253d71935f1eb9983f8effda7d039f00fb9eb7f 当時のWebGL・ゲーム処理・設定を保持",
+        "git:bc7ff8b 関連する実装・配布記録（実行JS一致）"
+      ],
+      "sourceKind": "当時の配布コンテナから回収した実行サーバーのソース",
+      "relatedCommit": "bc7ff8b",
+      "runtimeSourceComparison": {
+        "comparedFiles": [
+          "crossbow.js",
+          "game.js",
+          "index.js",
+          "melee.js",
+          "motion.js",
+          "scenery-mining.js",
+          "scenery-shape.js",
+          "static.js",
+          "station-use.js",
+          "stream.js",
+          "valley.js"
+        ],
+        "differentFiles": [],
+        "lineEndingsNormalized": true
+      },
+      "sourceCommit": "bc7ff8b",
+      "previousVersionId": "r41",
+      "nextVersionId": "r44",
+      "feedbackUntilNextVersionIds": [
+        "p46"
+      ]
+    },
+    {
+      "number": 44,
+      "id": "r44",
+      "revision": "orbit-salvage-prototype-00044-neq",
+      "imageDigest": "sha256:7715ef89fda8f85528712664078b8ad8be8c9a3661f60451b6bb897df83ea07e",
+      "createdAt": "2026-11-09T00:37:50.186025Z",
+      "runtimeExtracted": true,
+      "webglRetained": true,
+      "playUrl": "/history-play/play/r44/",
+      "sourceUrl": "/history-play/sources/r44.zip",
+      "playback": {
+        "mode": "browser-local-original-world",
+        "status": "browser-loaded-world-verified",
+        "multiplayer": false,
+        "note": "当時のWebGLと当時のルールを使用。このタブ内でNPCと対戦し、現在のオンラインへ接続しません。",
+        "worldVerified": true,
+        "browserLoadVerified": true,
+        "browserVerification": "元のWebGLをChromeで起動し参加画面を撮影。各版のWorldは別に40tick進行を確認。全版の通し試合を確認した意味ではありません。",
+        "joinedInBrowser": true
+      },
+      "title": "人物の横幅と近接後の加速",
+      "period": "配布版44",
+      "summary": "人物の見た目と命中判定を横へ拡張。有効な近接命中後は2秒間1.4倍に加速し、空袋の相手への命中にも利点を追加。",
+      "generationId": "g18",
+      "image": "generation-media/r44.webp",
+      "caption": "配布44の保存WebGLと当時のゲーム処理を、2026年11月9日に履歴再生した参加画面。",
+      "imageRepresents": "この配布版そのものの実行画面。ゲーム画面のみ、合成・ゲーム内容の加工なし。",
+      "relatedProposalIds": [
+        "p46"
+      ],
+      "inputProposalIds": [
+        "p46"
+      ],
+      "examples": [
+        {
+          "idea": "人物の見た目と当たり判定を横に広げ、殴ると短時間速く動ける利点を付けたい。",
+          "change": "人物の見た目と命中判定を横へ拡張。有効な近接命中後は2秒間1.4倍に加速し、空袋の相手への命中にも利点を追加。",
+          "proposalId": "p46",
+          "attribution": "本人の要望を受けた制作側の具体実装。版ごとに新しい本人入力があったという意味ではありません。"
+        }
+      ],
+      "evidence": [
+        "container:sha256:7715ef89fda8f85528712664078b8ad8be8c9a3661f60451b6bb897df83ea07e 当時のWebGL・ゲーム処理・設定を保持",
+        "git:3ae2534 関連する実装・配布記録（実行JS一致）"
+      ],
+      "sourceKind": "当時の配布コンテナから回収した実行サーバーのソース",
+      "relatedCommit": "3ae2534",
+      "runtimeSourceComparison": {
+        "comparedFiles": [
+          "crossbow.js",
+          "game.js",
+          "index.js",
+          "melee.js",
+          "motion.js",
+          "scenery-mining.js",
+          "scenery-shape.js",
+          "static.js",
+          "station-use.js",
+          "stream.js",
+          "valley.js"
+        ],
+        "differentFiles": [],
+        "lineEndingsNormalized": true
+      },
+      "sourceCommit": "3ae2534",
+      "previousVersionId": "r43",
+      "nextVersionId": null,
+      "feedbackUntilNextVersionIds": []
+    }
+  ],
+  "proposals": [
+    {
+      "id": "p01",
+      "text": "まずDevFestの現状・期限を調べ、何を作るか一緒に考えたい。",
+      "kind": "planning",
+      "wording": "本人入力の要約",
+      "source": "開発チャット",
+      "sourceTurnStartedAt": "2026-11-06T18:00:29+00:00",
+      "timestampPrecision": "turn",
+      "originalIndex": 51
+    },
+    {
+      "id": "p02",
+      "text": "VRに限らず、ハッカソンのテーマや条件と本人の得意分野を踏まえて、広く案を考えたい。",
+      "kind": "planning",
+      "wording": "本人入力の要約",
+      "source": "開発チャット",
+      "sourceTurnStartedAt": "2026-11-06T18:08:56+00:00",
+      "timestampPrecision": "turn",
+      "originalIndex": 50
+    },
+    {
+      "id": "p03",
+      "text": "Googleの技術を使う、技術的にも面白い案をもっと考えたい。",
+      "kind": "planning",
+      "wording": "本人入力の要約",
+      "source": "開発チャット",
+      "sourceTurnStartedAt": "2026-11-06T18:15:09+00:00",
+      "timestampPrecision": "turn",
+      "originalIndex": 49
+    },
+    {
+      "id": "p04",
+      "text": "全員が同じゲームを触り、自由に改善案を入力し、選ばれた案をAIで反映する「ユーザーがゲームを作るゲーム」を考えたい。",
+      "kind": "planning",
+      "wording": "要約（原文付き）",
+      "source": "開発チャット",
+      "sourceTurnStartedAt": "2026-11-06T18:21:12+00:00",
+      "timestampPrecision": "turn",
+      "originalIndex": 48,
+      "originalText": "他にも自分が思いついているのは、ひとつはユーザーがゲームを作るゲームみたいな概念を実現してみたい。\n全員が同じゲームを触り、改善案を入力できる場所がある。改善案を入力した後は投票かランダムか任意の方法で何個かを選び、AIを用いてその改善案を実装して反映する。これをずっと繰り返せば面白いゲームができるんじゃないかみたいなことをよく考えるのでそういう実装をしてみたかったり、VRChatで何か面白いゲームを作っても良い(ランキングなどをサーバーを用いて実装するくらいにはなってしまうが......)\n他にもチームメンバーには競技プログラミングで世界上位の人がいたり、ゲームにめちゃくちゃ詳しいオタクが居たりします。",
+      "originalWording": "ゲーム要望部分の逐語抜粋"
+    },
+    {
+      "id": "p05",
+      "text": "AIの用意済みの選択肢を選ぶだけでなく、思いつかなかった遊びも実装できる形にしたい。",
+      "kind": "planning",
+      "wording": "要約（原文付き）",
+      "source": "開発チャット",
+      "sourceTurnStartedAt": "2026-11-06T18:42:58+00:00",
+      "timestampPrecision": "turn",
+      "originalIndex": 47,
+      "originalText": "みんなで遊びながらゲーム自体を作り変えていく方向、もっと詰めたいです。カメラを使う案も含めて、最初はどんなゲームだと改善案が自然に出てきそう？AIが用意済みの選択肢を選ぶだけじゃなく、こっちも思いつかなかった遊びを実装できる感じにしたい。また、先ほども言ったように今回のハッカソンはGoogleの基盤を使うことが求められているので、それを活用する案やそれを活用することで実現できることも考えたい。また、前も言ったように面白いものを実現したいしその場でリアルタイムで動くものを出せたら面白いとは思う。\n開発期間が10日までのはずで、それまでに作りきったうえで、SNSとかに公表して実際にプロダクトを運用するのはありなのかな？",
+      "originalWording": "本人メッセージの原文"
+    },
+    {
+      "id": "p06",
+      "text": "遊んだ人から自然に改善案が出て、実装したら元と違う遊びへ育つゲームがよい。一つのゲームをみんなで改善する形を考えたい。",
+      "kind": "planning",
+      "wording": "要約（原文付き）",
+      "source": "開発チャット",
+      "sourceTurnStartedAt": "2026-11-06T18:54:08+00:00",
+      "timestampPrecision": "turn",
+      "originalIndex": 46,
+      "originalText": "みんなでゲームを作り変えていく方向は良さそうです。最初のゲームは手のひら宅配便以外にも考えたい。カメラありきにせず、遊んだ人から「こうしたら面白くない？」が自然に出て、その案を実装したら元とは全然違う遊びに育ちそうなものを、具体的な変化の例つきでいくつか提案してほしい。または全員が一つのゲームをどんどん改善していく(投票制とか)は結構よいかなと考えているのですがどうでしょうか？枝分かれしたり数個同時に候補を作って、どっちが良いかみたいなものを選ばせるのも悪くはないとは思うけどどうなんだろう。",
+      "originalWording": "本人メッセージの原文"
+    },
+    {
+      "id": "p07",
+      "text": "オンラインにするかも含め、プレイヤーがルールを作って育てるゲームの案を考えたい。",
+      "kind": "planning",
+      "wording": "要約（原文付き）",
+      "source": "開発チャット",
+      "sourceTurnStartedAt": "2026-11-06T19:02:52+00:00",
+      "timestampPrecision": "turn",
+      "originalIndex": 45,
+      "originalText": "また、ゲームの案に関してはオンラインゲームにするかはまず悩みますね。みんなが同じブラウザゲームを遊ぶだけでも良いし、オンラインゲームで勝利条件とかが特にない状態から始まってプレイヤーがどんどんルールを制定して面白くしていくとかでも良いかもしれない。",
+      "originalWording": "ゲーム要望部分の逐語抜粋"
+    },
+    {
+      "id": "p08",
+      "text": "自由に投稿した改善案を選び、AIが一定の間隔で一つずつ実装し、全員が同じ最新のゲームを遊ぶ形を考えたい。先例も調べたい。",
+      "kind": "planning",
+      "wording": "要約（原文付き）",
+      "source": "開発チャット",
+      "sourceTurnStartedAt": "2026-11-06T19:10:52+00:00",
+      "timestampPrecision": "turn",
+      "originalIndex": 44,
+      "originalText": "ちなみに、似たような事例が既に存在しないかどうかも調べて欲しい。似たようなものがあればそこから知見をかなり吸収できると思います。\n自分の考えでは、6時間に1回とかのペースかそれ以下のペースで投票か何らかの手段で選ばれた1つの改善案(ユーザーが入力して投稿できる感じ)をGeminiか何かに改善させ、そのウェブサイトにアクセスしたときにデフォルトで表示されるものはその改善されたゲーム(基本的には常にみんな最新のゲームを遊ぶ)という感じだが、過去のゲームや履歴も全部遡れるような景気にできたら技術的に面白そうと思う。",
+      "originalWording": "本人メッセージの原文"
+    },
+    {
+      "id": "p09",
+      "text": "全員が同じ最新版を遊び、過去版へも戻れる、一つの高品質なゲームを育てたい。最初のゲームと数世代先の変化を比較したい。",
+      "kind": "planning",
+      "wording": "要約（原文付き）",
+      "source": "開発チャット",
+      "sourceTurnStartedAt": "2026-11-06T19:39:25+00:00",
+      "timestampPrecision": "turn",
+      "originalIndex": 43,
+      "originalText": "先例を踏まえて、今回ならではの面白さをもう少し詰めたいです。6時間ごとに最大1案をGeminiが実装して、全員が同じ最新版を遊べて過去版にも戻れる形にするとして、最初のゲームは何が一番良さそう？実際に最初の数世代でどう遊びが変わりそうか、具体例を見て決めたい。\n複数のゲームを同時にリリースすると人口が分散しそうなので、ひとつの高品質なゲームを遊べるような感じをイメージしたい。ただ、ブラウザで遊べる程度の小さなゲームで終わらせるのではなく、こちらの環境はちゃんとUnityなどゲームエンジンを用いてWebGLなどで適切にビルドしたものを遊ばせ、かつ高品質なAI Agentを用いて確実にかつ高品質な実装を目指したい。\nまた、他社製AIを使うのは禁止されてるの？",
+      "originalWording": "本人メッセージの原文"
+    },
+    {
+      "id": "p10",
+      "text": "単純なカジュアルゲームではなく、最初からある程度品質が高く、競争したくなる3Dオンラインゲームを作りたい。",
+      "kind": "planning",
+      "wording": "要約（原文付き）",
+      "source": "開発チャット",
+      "sourceTurnStartedAt": "2026-11-06T19:55:00+00:00",
+      "timestampPrecision": "turn",
+      "originalIndex": 42,
+      "originalText": "せっかくUnityなどの高度なゲームエンジンを使うなら、より競争力を掻き立てるようなゲームにしたい。単純なゲームとかカジュアルゲームとかだと、最初のデフォルトの状態を見てプレイヤーがやる気をなくす、面白くなる未来が見えなくて萎えるなどの行動が起きるはずです。最初からある程度品質の高い3Dゲームを作るべきだと思う。例えばFPSなどのシューターゲームで、かつサーバーがあってオンラインで遊べるなどの要素があると面白そう。",
+      "originalWording": "本人メッセージの原文"
+    },
+    {
+      "id": "p11",
+      "text": "1対1FPSだけに決めず、Unityの競技性ある3Dオンラインゲームを比較したい。FFAや.ioのような形式も考えたい。",
+      "kind": "planning",
+      "wording": "要約（原文付き）",
+      "source": "開発チャット",
+      "sourceTurnStartedAt": "2026-11-06T20:00:43+00:00",
+      "timestampPrecision": "turn",
+      "originalIndex": 41,
+      "originalText": "RIVETは面白そうですね。ただ、最初から1対1のFPSに絞るのが一番良いかはまだ悩んでいます。Unityで作る競技性の高い3Dオンラインゲームという軸で、チーム戦なども含めてあと2〜3案、初代だけで何が面白くて、プレイヤーの提案でどう化けるかをRIVETと比較してほしい。チーム戦というよりは、FFAみたいな形も面白いかなと考えていて、.io系のゲームとかが参考になるかもしれない。",
+      "originalWording": "本人メッセージの原文"
+    },
+    {
+      "id": "p12",
+      "text": "軽量でシンプルなオンライン3Dの試作を、ブラウザで実際に遊べる形にしたい。必要ならGCPを使ってよい。",
+      "kind": "request",
+      "wording": "要約（原文付き）",
+      "source": "開発チャット",
+      "sourceTurnStartedAt": "2026-11-06T21:03:46+00:00",
+      "timestampPrecision": "turn",
+      "originalIndex": 40,
+      "originalText": "とりあえず試作を作ってみたいと思います。軽量でシンプルなオンライン3Dゲーム(FPSなど何でもよい)を前提としたい。ブラウザで遊べることを前提に、試作を作って欲しい。必要であればGCPなど用いて良い。\n要件がまだ全然固まっていないと思うので、何を作るか分からなければ質問形式ですり合わせを行ってほしい。\nそれらを通して試作を完成させましょう。",
+      "originalWording": "本人メッセージの原文"
+    },
+    {
+      "id": "p13",
+      "text": "サイバーな舞台より、自然でオープンワールドのような谷を、一人称・WASDで歩きたい。",
+      "kind": "request",
+      "wording": "要約（原文付き）",
+      "source": "開発チャット",
+      "sourceTurnStartedAt": "2026-11-06T21:32:58+00:00",
+      "timestampPrecision": "turn",
+      "originalIndex": 39,
+      "originalText": "フィールドはこういうサイバーな形というよりは、自然でまるでオープンワールドの世界みたいなそういうちゃんとしたリアリティある(ゲームっぽい表現で良い)感じにして欲しい。\nある程度ちゃんと自然なフィールドで、かつWASDだったり1人称だったりすると体験がよさそう。そういう前提で作り直して。",
+      "originalWording": "本人メッセージの原文"
+    },
+    {
+      "id": "p14",
+      "text": "遠すぎる攻撃や中央の待ち伏せを直したい。ピッケルなのだから、道の物を拾うより鉱石を掘りたい。手応えも作り込んでほしい。",
+      "kind": "request",
+      "wording": "要約（原文付き）",
+      "source": "開発チャット",
+      "sourceTurnStartedAt": "2026-11-07T07:48:20+00:00",
+      "timestampPrecision": "turn",
+      "originalIndex": 38,
+      "originalText": "フィールドの見た目は悪くないですが、現状全く面白くありません。特に攻撃が遠くまで届くのと、真ん中で出待ちが可能であること、ピッケルがあるのに道に落ちているのを拾うだけなど、ゲームバランスもひどく面白くない。さらに調整を繰り返してほしい。ゲームとして楽しく遊べるかつ、見た目的にもエフェクトや手ごたえなどが良く凝っているちゃんとしたゲームを作って欲しい。ピッケルがあるんだから鉱石を見つけて掘るべき。",
+      "originalWording": "本人メッセージの原文"
+    },
+    {
+      "id": "p15",
+      "text": "掘って売るだけの単純作業ではなく、鉱脈・帰り道・他プレイヤーとの駆け引きで上手さを出し、もう一試合遊びたくしたい。",
+      "kind": "request",
+      "wording": "要約（原文付き）",
+      "source": "開発チャット",
+      "sourceTurnStartedAt": "2026-11-07T09:25:12+00:00",
+      "timestampPrecision": "turn",
+      "originalIndex": 37,
+      "originalText": "採掘して売る流れは良さそうですが、それだけだと単調な作業になりそうです。鉱脈や帰り道の選び方、他のプレイヤーとの駆け引きで上手さが出て、もう一試合遊びたくなるように、実際に何試合か遊びながらさらに調整してほしい。",
+      "originalWording": "本人メッセージの原文"
+    },
+    {
+      "id": "p16",
+      "text": "安っぽくAIっぽい細部を、時間をかけて作り込んでほしい。",
+      "kind": "request",
+      "wording": "要約（原文付き）",
+      "source": "開発チャット",
+      "sourceTurnStartedAt": "2026-11-07T11:37:47+00:00",
+      "timestampPrecision": "turn",
+      "originalIndex": 36,
+      "originalText": "今から40分程度さらに作りこんで欲しい。やすっぽくAIっぽい箇所がかなり多いので、より体験が良くなるように細かい所の修正を繰り返してほしい。",
+      "originalWording": "本人メッセージの原文"
+    },
+    {
+      "id": "p17",
+      "text": "1試合を3分にし、掘って強化して高価な鉱石を争う形にしたい。いつまで投資し、いつから稼ぐかの判断がほしい。",
+      "kind": "request",
+      "wording": "要約（原文付き）",
+      "source": "開発チャット",
+      "sourceTurnStartedAt": "2026-11-07T13:00:57+00:00",
+      "timestampPrecision": "turn",
+      "originalIndex": 35,
+      "originalText": "競争的な概念はあるのは良いが、現地点じゃ大分遊ぶ楽しさがまだ薄いですね。1回の試合時間の長さは3分くらいとして、その間で鉱石を掘って強化してを繰り返し、最終的により高い価値の鉱石を売って稼ぎたいが、その高い価値のある鉱石は競争になりやすいみたいな形にすると競技性があっても良いかもしれませんね。また、いつまで強化していつから稼ぎに行くかみたいな駆け引きのようなゲーム性が生まれて面白そうです。駆け引きを大事にするためにそういう概念を強く考え、かつゲームとしての見た目の品質やゲーム体験として楽しめる形を維持してほしい。この前提で今から4時間ほど開発を進めてください。",
+      "originalWording": "本人メッセージの原文"
+    },
+    {
+      "id": "p18",
+      "text": "対人戦の基準はJava版1.8の連打・ダッシュ。",
+      "kind": "selection",
+      "wording": "要約（原文付き）",
+      "source": "開発チャット",
+      "sourceTurnStartedAt": "2026-11-07T17:05:15+00:00",
+      "timestampPrecision": "turn",
+      "originalIndex": 34,
+      "originalText": "Java版 1.8系（連打とダッシュ攻撃を重視）",
+      "originalQuestion": "対人戦で特に再現したいマイクラの操作感は、どの版に近いですか？　ひとまず現在のJava版サバイバルを基準に進めています。",
+      "originalWording": "選択回答の原文"
+    },
+    {
+      "id": "p19",
+      "text": "移動が巻き戻るのを直し、自分の操作を優先したい。対人の当てやすさや、弱いピックでも高価な鉱石へ参加できる形も整えたい。",
+      "kind": "request",
+      "wording": "要約（原文付き）",
+      "source": "開発チャット",
+      "sourceTurnStartedAt": "2026-11-07T17:05:15+00:00",
+      "timestampPrecision": "turn",
+      "originalIndex": 33,
+      "originalText": "現状遊んだ体験は「鉱石掘って売ってピッケル強化してより良い鉱石取って奪い合いながら3分以内に最大点数を目指すゲーム」ですね、オンラインゲームとして成り立ってるのは悪くない一方で、良くロルバはするしクライアント側ではなくサーバー側の位置に補正されるから動いていなくてもいきなり動いたりして奇妙ですね。操作感はほぼマイクラみたいな感じになるようにしたい。クライアント側の処理を優先しつつ、他人を攻撃するのもやりやすくしたい。現状他人を攻撃しても全然当たらない感じがする。戦闘面は届く距離やノックバックとかそういう概念まで完璧にマイクラと挙動がお内示になるように調整してほしい。マイクラの操作感は良いことが保証されているので、あの形に合わせることで操作感がかなり良くなるはず。\nゲーム性としては、とりあえず良い鉱石を探しながらピッケルを強化するだけになっていますね。もうちょっと競い合いとして面白くしたくはある。鉱石のリポップは結構遅いし近づかないと何の鉱石かが分かりにくい。レアな鉱石はかなり固くて高得点で遠くからでもわかるみたいにすると競争できそうだし、強い鉱石も弱いピッケルで少ないダメージで与えられるようにすれば、漁夫の利みたいなことができて面白いかもしれない。もちろん強いピッケルを作った方が鉱石は取りやすいが、そうでなくても取れる可能性があるバランスにしたい。そうでないと逆転ができる余地がない。こういうことを踏まえて、さらに捜査の体験が良くなることを最優先に、その次にゲーム性として面白くなるように整えて欲しい。",
+      "originalWording": "本人メッセージの原文"
+    },
+    {
+      "id": "p20",
+      "text": "攻撃の連打後、時計が止まる・位置が戻る・NPCが遅くなるのが特に困る。",
+      "kind": "selection",
+      "wording": "要約（原文付き）",
+      "source": "開発チャット",
+      "sourceTurnStartedAt": "2026-11-07T18:04:14+00:00",
+      "timestampPrecision": "turn",
+      "originalIndex": 32,
+      "originalText": "時間が全然進まなくなり、自分は毎回ロルバするしNPCも遅い。攻撃を連打してからそういう挙動になった。",
+      "originalQuestion": "後半に遊べなくなった時の見え方で、一番近いものはどれですか？　こちらでも3分間の試遊と計測を進めています。",
+      "originalWording": "選択回答の原文"
+    },
+    {
+      "id": "p21",
+      "text": "後半のラグや同期が致命的。ダッシュはShiftへ変え、硬い鉱石も増やしたい。",
+      "kind": "request",
+      "wording": "要約（原文付き）",
+      "source": "開発チャット",
+      "sourceTurnStartedAt": "2026-11-07T18:04:14+00:00",
+      "timestampPrecision": "turn",
+      "originalIndex": 31,
+      "originalText": "実際に遊んだところ、かなり面白くはなってきたものの、雑な部分が多く後半はまともに遊べませんでした。\nまずダッシュはShiftにしましょう。Ctrl+Wでとじてしまうので。より硬い鉱石が沢山ないと競技性があんまり生まれなさそう。他の人を殴る体験は悪くないが、今回一番致命的なのはラグや同期まわりの最適化だと思います。\nオンラインゲームとして適切な最適化を施し、それこそマイクラの通信まわりを参考にオンラインゲームとして自然でバグなくラグもあんまりなく楽しく遊べる体験になるように作りこんで欲しい。",
+      "originalWording": "本人メッセージの原文"
+    },
+    {
+      "id": "p22",
+      "text": "かなり面白くなったが、UIが安っぽく情報の重要度が分からない。初心者にも分かりやすくし、ジレンマや駆け引きも増やしたい。",
+      "kind": "request",
+      "wording": "要約（原文付き）",
+      "source": "開発チャット",
+      "sourceTurnStartedAt": "2026-11-07T21:00:35+00:00",
+      "timestampPrecision": "turn",
+      "originalIndex": 30,
+      "originalText": "現地点でかなり面白く遊べます！改善点がパッとは思い浮かばない程良くできたゲームと言えそう。\n自分が思いつく改善点と言えば、UIが安っぽく情報量が多い、情報の重要度による優劣がUIにあまり感じない、などUI周りが良く思いつきます。また、ゲーム性、すなわちジレンマや駆け引きを生む概念をもう少し追加したい。\n現状3分の中で最適な行動を探し続けるタイプのゲームと言えます。同時にオンラインゲームなので友達にちょっかいをだして楽しめるゲームでもあります。今のバランスだと他の人から奪うよりも黙々と掘る方が強いため、基本的に近くに誰かが居ればちょっかいをだすが、深追いはしないのがベストというわバランスになっていますね。\nUIを整え情報量に優劣をつけ、より洗練された遊びやすく初心者にも分かりやすいUIを目指し、かつモダンな見た目のUIにしたいが、同時にシステマティックすぎずゲームのデザインに合うような、遊び心のあるUIを目指してほしい。そしてさらに駆け引きやジレンマなどのゲーム性をより増やし、より競技性があり楽しく遊べるゲームに仕立て上げて欲しい。いまから長い時間をかけ、品質を最重視しながらここに挙げた改善案を考え、設計やデザインも良く考えた上で楽しく遊べる競技性のあり友達とも楽しく遊べUIが洗練された遊びやすく楽しいゲームを完成させてください。",
+      "originalWording": "本人メッセージの原文"
+    },
+    {
+      "id": "p23",
+      "text": "特に、最初にゲームを開いた時のタイトルが気になる。",
+      "kind": "selection",
+      "wording": "要約（原文付き）",
+      "source": "開発チャット",
+      "sourceTurnStartedAt": "2026-11-07T22:22:51+00:00",
+      "timestampPrecision": "turn",
+      "originalIndex": 29,
+      "originalText": "まずはゲームを開いたときのタイトルが特に強い",
+      "originalQuestion": "特に「ここがAIっぽい」と感じた画面や言い回しがあれば教えてください。今は、開始時の大きな入坑券、プレイ中の説明口調、売店と成績で似た形の枠が続くところから直しています。",
+      "originalWording": "選択回答の原文"
+    },
+    {
+      "id": "p24",
+      "text": "文面やUIに出ているAIっぽさをできるだけ撤廃したい。",
+      "kind": "request",
+      "wording": "要約（原文付き）",
+      "source": "開発チャット",
+      "sourceTurnStartedAt": "2026-11-07T22:22:51+00:00",
+      "timestampPrecision": "turn",
+      "originalIndex": 28,
+      "originalText": "文面やUIの見た目にかなりAIっぽさが出ていて微妙なので、そういうのをできるだけ撤廃するような形でyomiyasuやAIっぽさを極力なくすものになるようにしてください。",
+      "originalWording": "本人メッセージの原文"
+    },
+    {
+      "id": "p25",
+      "text": "岩を削り取るイメージ。岩全体が崩れて遠くへ行けるようになっても面白そう。",
+      "kind": "selection",
+      "wording": "要約（原文付き）",
+      "source": "開発チャット",
+      "sourceTurnStartedAt": "2026-11-07T23:00:51+00:00",
+      "timestampPrecision": "turn",
+      "originalIndex": 27,
+      "originalText": "削り取るイメージだが、岩全体が崩れて遠くに行けるようになっても面白そうではある。",
+      "originalQuestion": "大岩を掘り切ったときの手応えは、どちらがイメージに近いですか？　どちらでも、初期ピッケルで岩肌を叩くと欠けて資源が取れるように進めます。",
+      "originalWording": "選択回答の原文"
+    },
+    {
+      "id": "p26",
+      "text": "特に、大きな岩を掘れないことが気になる。",
+      "kind": "selection",
+      "wording": "要約（原文付き）",
+      "source": "開発チャット",
+      "sourceTurnStartedAt": "2026-11-07T23:00:51+00:00",
+      "timestampPrecision": "turn",
+      "originalIndex": 26,
+      "originalText": "大きい岩が掘れないこと",
+      "originalQuestion": "直近の試合で「今のは納得できない」「何が起きたか分からない」と感じた場面があれば、一つ教えてください。こちらでは鉱脈の取り合いと、売店に着いてからの判定を遊びながら調べています。",
+      "originalWording": "選択回答の原文"
+    },
+    {
+      "id": "p27",
+      "text": "質感と楽しさをさらに整え、理不尽な所や分からない所をなくしたい。",
+      "kind": "request",
+      "wording": "要約（原文付き）",
+      "source": "開発チャット",
+      "sourceTurnStartedAt": "2026-11-07T23:00:51+00:00",
+      "timestampPrecision": "turn",
+      "originalIndex": 25,
+      "originalText": "さらにゲームとしての質感や楽しさを追求してもっと整えて。見た目もや体験でも理不尽だったり分からない部分を無くしてほしい。",
+      "originalWording": "本人メッセージの原文"
+    },
+    {
+      "id": "p28",
+      "text": "移動しながら売りたい。Eを押している間は売る入力が続くようにし、似た操作の負担も減らしたい。",
+      "kind": "request",
+      "wording": "要約（原文付き）",
+      "source": "開発チャット",
+      "sourceTurnStartedAt": "2026-11-08T00:15:26+00:00",
+      "timestampPrecision": "turn",
+      "originalIndex": 24,
+      "originalText": "良い感じになってきましたね、さらに整えていきたい。鉱石を売るときとかEキーを長押しすると思うんだけど、動きながら売れないのがストレスなので動きながらでも売れるし、Eキーを入力していたら自動的に売る入力が入り続ける感じにしたい。そういう感じに操作の面でストレスを感じるポイントを完全になくしたい。工夫したりゲームとしての良くあるUX工場の手段などを考えてどんどん取り入れて欲しい。",
+      "originalWording": "本人メッセージの原文"
+    },
+    {
+      "id": "p29",
+      "text": "3分通して試し、狙った岩や相手に当たらない、押したのに反応しないストレスを直したい。",
+      "kind": "request",
+      "wording": "要約（原文付き）",
+      "source": "開発チャット",
+      "sourceTurnStartedAt": "2026-11-08T00:37:24+00:00",
+      "timestampPrecision": "turn",
+      "originalIndex": 23,
+      "originalText": "良いですね。次は採掘と対人戦の操作感も整えてほしい。実際に3分通して遊んでみて、狙った岩や相手に当たらない、押したのに反応しないみたいなストレスが残っていないか確かめつつ、気づいたところはどんどん改善してほしい。",
+      "originalWording": "本人メッセージの原文"
+    },
+    {
+      "id": "p30",
+      "text": "一人で最適化するだけでなく、他人との相互作用を強くしたい。盗みの長い待ち時間を減らし、殴り返す利点を作りたい。",
+      "kind": "request",
+      "wording": "要約（原文付き）",
+      "source": "開発チャット",
+      "sourceTurnStartedAt": "2026-11-08T01:27:05+00:00",
+      "timestampPrecision": "turn",
+      "originalIndex": 22,
+      "originalText": "今の体験はひたすら最適化するだけであんまり他人との相互作用がありません。\n他人との相互作用をかなり強くしたゲームにしたい。現状他人との相互作用が無いのは、盗むのにかなり長いクールタイムがあり、殴り返すメリットがそこまでないからです。殴った回数だけ盗めるようにするなどの手法で、一気に対人っぽさが出るのではないかなと考えています。そういう試行錯誤をしてもっと面白いゲームにして欲しい。",
+      "originalWording": "本人メッセージの原文"
+    },
+    {
+      "id": "p31",
+      "text": "近接だけでなく、弓や銃のような遠くから奪う手段がほしい。ピックの強化上限も高くしたい。",
+      "kind": "request",
+      "wording": "要約（原文付き）",
+      "source": "開発チャット",
+      "sourceTurnStartedAt": "2026-11-08T02:21:20+00:00",
+      "timestampPrecision": "turn",
+      "originalIndex": 21,
+      "originalText": "近づかないと攻撃できない、というのはわかりやすい一方で奪う手段としては乏しいですよね。\n弓や銃みたいな概念があっても良いと思う。また、強化の幅も小さすぎる。ピッケルのレベル上限はもっと高いべき。ここら辺の改善を進めてください。",
+      "originalWording": "本人メッセージの原文"
+    },
+    {
+      "id": "p32",
+      "text": "空振り直後でも、次の相手へ狙いを合わせ直したらすぐ当たる方がよい。",
+      "kind": "selection",
+      "wording": "要約（原文付き）",
+      "source": "開発チャット",
+      "sourceTurnStartedAt": "2026-11-08T08:46:51+00:00",
+      "timestampPrecision": "turn",
+      "originalIndex": 20,
+      "originalText": "1.8.9でもすぐ当たる仕様だと思う。すぐ当たる方で良い",
+      "originalQuestion": "近接で一つ、以前のご希望と素の1.8.9で操作感が分かれます。何もない空間を殴った直後、すぐ敵へ照準を合わせ直してクリックした場合は、どちらにしますか？　岩の採掘は引き続き狙い直せます。",
+      "originalWording": "選択回答の原文"
+    },
+    {
+      "id": "p33",
+      "text": "広い視野で、揺れなしがよい。",
+      "kind": "selection",
+      "wording": "要約（原文付き）",
+      "source": "開発チャット",
+      "sourceTurnStartedAt": "2026-11-08T08:46:51+00:00",
+      "timestampPrecision": "turn",
+      "originalIndex": 18,
+      "originalText": "広い視野・揺れなし",
+      "originalQuestion": "視野角は速さの体感に大きく効きます。手元のMinecraft共通設定は広い視野・視野変化なし・歩行時の画面揺れなしでした。1.8.9で遊んでいた時は、どの見え方が近いですか？",
+      "originalWording": "選択回答の原文"
+    },
+    {
+      "id": "p34",
+      "text": "移動・戦闘・弓をJava版1.8.9の操作感へ深く近づけたい。ダッシュジャンプも速く、動きをシャキッとさせたい。",
+      "kind": "request",
+      "wording": "要約（原文付き）",
+      "source": "開発チャット",
+      "sourceTurnStartedAt": "2026-11-08T08:46:51+00:00",
+      "timestampPrecision": "turn",
+      "originalIndex": 17,
+      "originalText": "悪くないですが、もっと戦闘の体験を良くしたい。戦闘体験をV1.8.9のころのマイクラと完全に同じ感じにしたい。\n今のこのゲームは移動速度が遅く、かつマイクラであればジャンプダッシュが1番早いのでそれも再現し、移動の感じもシャキッと動けるようになってほしい。他にも弓の仕様が現状使い肉すぎるので、これもやはりV1.8.9の頃の弓と全く同じ挙動にして欲しい。マイクラと同じく矢の速度は結構早めで良い。\n操作感をもっとV1.8.9のマイクラと完全に一致するように、かなり時間をかけて深く調整を行ってほしい。",
+      "originalWording": "本人メッセージの原文"
+    },
+    {
+      "id": "p35",
+      "text": "売却と安全地帯の円を一つに。矢の軌道を見やすくし、安全地帯の境界で矢を消さず中の敵だけ命中対象外にしたい。1・2の装備欄もほしい。",
+      "kind": "request",
+      "wording": "要約（原文付き）",
+      "source": "開発チャット",
+      "sourceTurnStartedAt": "2026-11-08T12:17:21+00:00",
+      "timestampPrecision": "turn",
+      "originalIndex": 16,
+      "originalText": "売る範囲と安全地帯の範囲を同じにしたい。現状円が二個あるせいで情報量が多く分かりにくい。\n弓に関して、矢の軌道が見えにくい。もっとわかりやすくしたい。また、安全地帯に入って消えるの範囲がでかすぎそう。あくまで安全地帯にいる敵には当たらないだけで矢自体は消さなくてよいと思う。\nまた、弓があることがかなり分かりずらい。やはりマイクラのようにホットバーのようなものを下に表示して、分かりやすくすると良さそう。1キーと2キーで切り替え可能って感じで。\nUIやUXもさらに考え、これらの修正を完遂してください。",
+      "originalWording": "本人メッセージの原文"
+    },
+    {
+      "id": "p36",
+      "text": "鉱脈の競争では、特に友達2〜4人で読み合う対戦を面白くしたい。",
+      "kind": "selection",
+      "wording": "要約（原文付き）",
+      "source": "開発チャット",
+      "sourceTurnStartedAt": "2026-11-08T13:49:22+00:00",
+      "timestampPrecision": "turn",
+      "originalIndex": 15,
+      "originalText": "友達2〜4人の読み合いを重視",
+      "originalQuestion": "今回の鉱脈争いで、特に面白くしたい対戦状況はどれですか？　未指定なら、普段の「1人＋BOT 2体」でも争いが起き、友達が入っても同じルールで駆け引きできるように調整します。",
+      "originalWording": "選択回答の原文"
+    },
+    {
+      "id": "p37",
+      "text": "ホイールで装備を切り替えたい。鉱石を増やし、希少な金鉱は遠くから目立たせ、硬く高価な種類も増やしたい。",
+      "kind": "request",
+      "wording": "要約（原文付き）",
+      "source": "開発チャット",
+      "sourceTurnStartedAt": "2026-11-08T13:49:22+00:00",
+      "timestampPrecision": "turn",
+      "originalIndex": 14,
+      "originalText": "ホットバーはマイクラと同じように、1・2キーに加えてマウスホイールでもピックと弓を切り替えられるようにしてほしい。また、鉱石の数が少なく競技性としてやや微妙なのと、今の金鉱脈みたいなレアで高得点の概念があるならもっと遠くからでも目立つように光らせるなどの工夫をして競争や奪い合いの形になるようにしたいし、他にもレアな鉱石や固く価値の高い鉱石など色んな種類があっても良いと思います。\n体験を考えより面白くなるように品質を重視しながら長い時間をかけ調整と改善を繰り返してください。",
+      "originalWording": "本人メッセージの原文"
+    },
+    {
+      "id": "p38",
+      "text": "先着注文より、30秒ごとに売店が光り、そこへ行けば高く売れる競争の方が分かりやすい。",
+      "kind": "selection",
+      "wording": "要約（原文付き）",
+      "source": "開発チャット",
+      "sourceTurnStartedAt": "2026-11-08T16:06:22+00:00",
+      "timestampPrecision": "turn",
+      "originalIndex": 13,
+      "originalText": "「指定鉱石を最初に届ける」という行動自体が複雑度が高く、UIなしで直感的に分かる形なら良いと思うが、やや微妙に思える。例えばあるお店だけが30秒ほど光り、その間そのお店は全部高めで売れるみたいなイベントがあるとかなら、そのお店に集まる都合上戦いも起きやすくて面白いかなとは思う。そういう直感的に理解できかつ複雑ではない体験を追求したい。",
+      "originalQuestion": "先着ポイントは、どんな駆け引きとして残したいですか？　今は「指定店に指定鉱石を2個、最初に届けた人だけ＋12点」で、掘る・売る以外に覚える条件が三つあります。",
+      "originalWording": "選択回答の原文"
+    },
+    {
+      "id": "p39",
+      "text": "金鉱の時間制限と複雑な先着条件を減らしたい。硬く多く採れるダイヤや、ピックと独立した袋の強化を加えたい。",
+      "kind": "request",
+      "wording": "要約（原文付き）",
+      "source": "開発チャット",
+      "sourceTurnStartedAt": "2026-11-08T16:06:22+00:00",
+      "timestampPrecision": "turn",
+      "originalIndex": 12,
+      "originalText": "金鉱脈に時間制限は無くて良いと思う。他にも先着だけポイントが付くとか、直感的には分かりにくく複雑な仕様がやや多いのが気になる。そもそもこれはAIに改善させる元のシンプルなゲーム(とはいえ競技性がありある程度面白い基盤から始めたい)の作成の段階なので、非直感的で分かりにくい要素はなるべく排除したい。\nとはいえ全体的に体験が良いのでほとんどの体験は残しつつ、金鉱脈の時間制限の撤廃や先着ポイント(これに関してはわかりやすくなれば良い)の見た目の見直しなどをして欲しい。\nさらに、ダイヤモンドなどかなり固くて希少で量も落とすみたいな概念があっても面白いし、他にはピッケルの容量とは別に枠の数を増やせるアップグレードがあっても良いかなとか思ったりはします。\nそういうゲーム性の部分を突き詰めつつ調整を繰り返してほしい。",
+      "originalWording": "本人メッセージの原文"
+    },
+    {
+      "id": "p40",
+      "text": "「ガクッ」は処理の停止より、視点が急に別方向へ向くこと。",
+      "kind": "selection",
+      "wording": "要約（原文付き）",
+      "source": "開発チャット",
+      "sourceTurnStartedAt": "2026-11-08T19:15:38+00:00",
+      "timestampPrecision": "turn",
+      "originalIndex": 11,
+      "originalText": "視点が急に別の方向を向く",
+      "originalQuestion": "「ガクッ」となった瞬間の見え方は、どれに一番近いですか？　こちらでは通常ウィンドウの自由カーソルで再現を進めています。",
+      "originalWording": "選択回答の原文"
+    },
+    {
+      "id": "p41",
+      "text": "自由カーソルの時に画面が急に跳ぶ問題を直し、どのウィンドウ状態でも遊べるようにしたい。",
+      "kind": "request",
+      "wording": "要約（原文付き）",
+      "source": "開発チャット",
+      "sourceTurnStartedAt": "2026-11-08T19:15:38+00:00",
+      "timestampPrecision": "turn",
+      "originalIndex": 10,
+      "originalText": "レビューは次の修正をしてから仕様かなと思います。\nフルスクリーンになっておらずマウスカーソルが動く状態の時に、画面がいきなりガクッとなることがあるのを直したい。どんな状態でもちゃんと遊べる形にしたい。",
+      "originalWording": "本人メッセージの原文"
+    },
+    {
+      "id": "p42",
+      "text": "ゲームは面白いが、見た目・UIが粗い。フィールドへ直接倍率の文字を浮かべず、光で示したい。低解像度を直し、情報の重要度を分け、説明を減らしたい。",
+      "kind": "request",
+      "wording": "要約（原文付き）",
+      "source": "開発チャット",
+      "sourceTurnStartedAt": "2026-11-08T20:44:43+00:00",
+      "timestampPrecision": "turn",
+      "originalIndex": 9,
+      "originalText": "ゲームとしての体験は悪くない一方で、UIのUXや見た目などがかなり粗悪で体験が悪いです。2倍と直接書いたりすると、かなりリアリティ感が薄いですよね。Unityっぽさを前面に出してしまうというか、ゲーム的表現が強すぎます。基本的にフィールドに直接文字を置くなどは避け、フィールドはあくまで基本的にリアルな感じを強くしたい。なので、2倍の箇所の表現は薄く光らせるとかそれくらいで良いと思う。他にも全体的に解像度が低く感じるし、見た目の体験が悪い。不要な情報量の表示も多く、全てを説明しすぎている。ゲームとしてのコンテンツ量は大体このままで、体験がよりシンプルですべてを説明しすぎているのをやめ、情報量に優劣をつけUIのUXを飛躍的に向上させる改善のループをこなしてほしい。",
+      "originalWording": "ゲーム要望部分の逐語抜粋"
+    },
+    {
+      "id": "p43",
+      "text": "ランタンを大きく明るくし、高値買取は2倍から1.5倍にしたい。将来のスマホも考え、移動・持ち物選択・使用へ操作を絞りたい。",
+      "kind": "request",
+      "wording": "要約（原文付き）",
+      "source": "開発チャット",
+      "sourceTurnStartedAt": "2026-11-08T22:12:13+00:00",
+      "timestampPrecision": "turn",
+      "originalIndex": 8,
+      "originalText": "ランタンの明かりが小さすぎると見えにくいので、全体が大分明るめに光るようにした方が良い。また、2倍ではなく1.5倍程度にするとバランスは良さそう。\nUIはだいぶすっきりしましたね。次はフィールド自体の見た目をもう少し整えたいです。\n特に安全地帯の中で売るのはわかるのですが、ピッケルの強化及びバッグの強化がかなり分かりにくいですね。\n未来的にスマホ対応などもしたいことを考えると、使うキーや操作もできるだけ少ない方がよさそう。\n現状必要な操作は「移動」「ピッケルと弓の切り替え(ホットバーの切り替え)」「持っているアイテムを使う」だけのはずです。持っているアイテムを使うをアンビルに対して行うことで、そのアイテムを強化するという形にするとシンプルで良さそう。そういう意味ではバッグをホットバーに入れることで解決しそうですね。そこまでの体験が直感的に分かるように導線を工夫して作って欲しい。",
+      "originalWording": "本人メッセージの原文"
+    },
+    {
+      "id": "p44",
+      "text": "売却をもっと簡単に。円に入ったら自動で売り、強化も時間をかけずすぐできる形にしたい。",
+      "kind": "request",
+      "wording": "要約（原文付き）",
+      "source": "開発チャット",
+      "sourceTurnStartedAt": "2026-11-08T23:24:04+00:00",
+      "timestampPrecision": "turn",
+      "originalIndex": 7,
+      "originalText": "もうちょっとお店の体験を向上してほしいです。売るや強化はこのゲームの基本なので、クリックで売るとかクリックで強化とかそういうのは書くべきかも。\nでもシンプルな操作感にしたい都合上、そもそも円の中に入ったら自動で売るとかそれくらいしても良いかもしれない。強化もあんまり時間をかけずにすぐできる形にしよう。",
+      "originalWording": "本人メッセージの原文"
+    },
+    {
+      "id": "p45",
+      "text": "自動売却なら買取台は不要。中央にアンビルを置きたい。UnitySkillsも適切に使ってほしい。",
+      "kind": "request",
+      "wording": "要約（原文付き）",
+      "source": "開発チャット",
+      "sourceTurnStartedAt": "2026-11-08T23:52:26+00:00",
+      "timestampPrecision": "turn",
+      "originalIndex": 6,
+      "originalText": "かなり体験が良くなりました！そうならそもそも買取台は要らないですよね。代わりに中央に強化台(アンビル)を置くと良さそうです。",
+      "originalWording": "ゲーム要望部分の逐語抜粋"
+    },
+    {
+      "id": "p46",
+      "text": "人物の見た目と当たり判定を横に広げ、殴ると短時間速く動ける利点を付けたい。",
+      "kind": "request",
+      "wording": "要約（原文付き）",
+      "source": "開発チャット",
+      "sourceTurnStartedAt": "2026-11-09T00:23:34+00:00",
+      "timestampPrecision": "turn",
+      "originalIndex": 5,
+      "originalText": "攻撃を当てるのがやや難しいので、各キャラクターの見た目を調整し、横に少し大きくして当たり判定を大きくしたい。また、敵を殴ると少しの間移動速度が少し上がるなどのメリットを付けることで、常に殴るメリットがあるようにしたい。マイクラの移動速度上昇2くらいを想定しています。",
+      "originalWording": "本人メッセージの原文"
+    }
+  ],
+  "unverifiedRevisionNumbers": [
+    {
+      "number": 30,
+      "status": "not-retained-not-confirmed",
+      "note": "現在のCloud Run revision一覧・元image一覧にありません。成功配布版だったか未確認。近い版をこの番号として置換しません。"
+    },
+    {
+      "number": 33,
+      "status": "not-retained-not-confirmed",
+      "note": "現在のCloud Run revision一覧・元image一覧にありません。成功配布版だったか未確認。近い版をこの番号として置換しません。"
+    },
+    {
+      "number": 35,
+      "status": "not-retained-not-confirmed",
+      "note": "現在のCloud Run revision一覧・元image一覧にありません。成功配布版だったか未確認。近い版をこの番号として置換しません。"
+    },
+    {
+      "number": 38,
+      "status": "not-retained-not-confirmed",
+      "note": "現在のCloud Run revision一覧・元image一覧にありません。成功配布版だったか未確認。近い版をこの番号として置換しません。"
+    },
+    {
+      "number": 42,
+      "status": "not-retained-not-confirmed",
+      "note": "現在のCloud Run revision一覧・元image一覧にありません。成功配布版だったか未確認。近い版をこの番号として置換しません。"
+    }
+  ],
+  "fieldMeaning": {
+    "inputProposalIds": "前の配布版から、この配布版の作成までに入力された本人の要望。ターン開始時刻を使用。",
+    "relatedProposalIds": "この配布版より前の、実装に関係する本人の要望。新規入力とは限らない。",
+    "feedbackUntilNextVersionIds": "この配布版から次の配布版までの本人入力。次版のinputProposalIdsと同じ。",
+    "examples": "本人の要望を受けたこの版の変更。全変更が本人の具体案そのものという意味ではない。",
+    "originalText": "本人メッセージの原文またはゲーム要望部分の逐語抜粋。originalWordingに区分。"
+  }
+}

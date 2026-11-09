@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import http from 'node:http';
 import { gzipSync, gunzipSync } from 'node:zlib';
-import { mkdtemp, writeFile, rm, utimes } from 'node:fs/promises';
+import { mkdtemp, writeFile, rm, utimes, mkdir } from 'node:fs/promises';
 import os from 'node:os';
 import path from 'node:path';
 import { serveBuild } from './static.js';
@@ -70,4 +70,17 @@ test('a replaced raw build cannot accidentally serve an older gzip sidecar', asy
   const response = await f.request('gzip');
   assert.equal(response.headers['content-encoding'], undefined);
   assert.deepEqual(response.body, next);
+});
+
+test('raw Git bundles are not public archive downloads, even if accidentally copied or URL encoded', async t => {
+  const f = await fixture(t);
+  const sources = path.join(f.dir, 'history-play', 'sources');
+  await mkdir(sources, { recursive: true });
+  await writeFile(path.join(sources, 'private.bundle'), 'private history fixture');
+  await writeFile(path.join(sources, 'runtime.zip'), 'public runtime fixture');
+  for (const name of ['private.bundle', 'private%2ebundle']) {
+    const response = await fetch(new URL('/history-play/sources/' + name, f.url));
+    assert.equal(response.status, 404);
+  }
+  assert.equal((await fetch(new URL('/history-play/sources/runtime.zip', f.url))).status, 200);
 });

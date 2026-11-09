@@ -68,9 +68,9 @@ public partial class OrbitGame : MonoBehaviour {
      if (captured) { pointerLockUnavailable = false; pointerAcquireBlocked = false; }
  }
  void OnApplicationFocus(bool value){focused=value;if(!value&&started)Unlock();}
- public void SocketOpened(string unused){connected=true;Send("{\"type\":\"join\",\"protocol\":2,\"name\":\""+nameInput.Replace("\\","").Replace("\"","").Replace("\n","").Replace("\r","")+"\"}");}
+ public void SocketOpened(string unused){connected=true;Send(JsonUtility.ToJson(new ImprovementJoin {name=nameInput,feedbackKey=ImprovementKey}));}
  public void SocketClosed(string reason){connected=false;joined=false;status="接続が切れました　Rで再接続";Unlock();}
- public void SocketMessage(string json){try{var s=JsonUtility.FromJson<OrbitState>(json);if(s.type=="welcome"){localId=s.id;joined=true;hasLocal=false;ResetNetworkSession();return;}if(s.type=="state"){state=s;Apply(s);}if(s.type=="frame")ReceiveNetworkFrame(s);}catch(Exception e){Debug.LogWarning(e.Message);}}
+ public void SocketMessage(string json){try{var s=JsonUtility.FromJson<OrbitState>(json);if(s.type=="feedback"){ReceiveImprovement(s.feedback);return;}if(s.type=="welcome"){localId=s.id;joined=true;hasLocal=false;ResetNetworkSession();return;}if(s.type=="state"){state=s;Apply(s);}if(s.type=="frame")ReceiveNetworkFrame(s);}catch(Exception e){Debug.LogWarning(e.Message);}}
  void Styles(){if(title!=null)return;title=new GUIStyle{font=font,fontSize=36,fontStyle=FontStyle.Bold,normal={textColor=new Color(.98f,.97f,.89f)}};text=new GUIStyle{font=font,fontSize=18,normal={textColor=new Color(.96f,.96f,.9f)}};small=new GUIStyle(text){fontSize=14};bold=new GUIStyle(text){fontStyle=FontStyle.Bold,fontSize=23};button=new GUIStyle(GUI.skin.button){font=font,fontSize=20};}
  void Panel(float x,float y,float w,float h,float alpha=.83f){GUI.color=new Color(.10f,.16f,.13f,alpha);GUI.DrawTexture(new Rect(x,y,w,h),pixel);GUI.color=Color.white;}
  void Text(float x,float y,string value,GUIStyle style,float width=800){var tint=GUI.color;GUI.color=new Color(.02f,.025f,.02f,.88f);GUI.Label(new Rect(x+1,y+1,width,140),value,style);GUI.color=tint;GUI.Label(new Rect(x,y,width,140),value,style);}

@@ -230,3 +230,17 @@ input.weaponはpick/bow/bag。input.use（主操作の保持）とuseId（押下
 ### 対人の横幅と命中加速（2026-11-09）
 
 共有valley.jsonのcombatが正本。人物はX/Zのみ1.2倍、Yと足元は維持。対人のbody halfWidth=.36m、近接border=.1m・reach=3m・高さ1.8m、弓は既存border=.3mを同じbodyへ適用する。地形衝突の半径は変更しない。有効な近接hitだけ、空袋の相手でも攻撃者のmeleeBoostUntil=serverTime+2。入力加速度1.4倍、再命中は期限更新で加算しない。guarded/protected/miss/mining/矢は付与しない。playerとprotocol2 local pose差分にmeleeBoostUntilを含み、クライアントは推定サーバー時計で失効、再戦で0へ戻す。ジャンプ高/KB/視野は変えず、失効後の慣性だけ既存摩擦で減速する。
+
+### 提案・投票（公開44より後の追加）
+
+joinに任意のfeedbackKey（ブラウザ内に保存したランダム64桁hex）を付ける。サーバーはSHA256のみ保存し、公開viewへkey/hashを返さない。匿名のブラウザ単位であり、本人認証や複数ブラウザからの参加防止ではない。
+
+試合終了の確定standingsで、BOT以外の首位（同率含む）へ1案の投稿権、首位以外へ1票の投票権を付与。各ブラウザ・試合で1回、後の試合では新しい権利。投稿前は候補0件でもよく、実際の勝者が投稿した案だけを共有する。実装済みの開発履歴は投票候補とは別に扱う。
+
+client→ {type:'feedback', action:'view'|'propose'|'vote', text?:string, proposalId?:string}。server→ {type:'feedback', feedback:{storage:'cloud'|'file'|'memory', permission:{role:'winner'|'voter',used,roundKey}|null, proposals:[{id,text,author,votes,status:'proposed',isOwn,createdAt}],notice,unavailable?}}。最大180文字、制御文字除去、UIではrich text無効、HTMLへ文字を差し込まない。自身の提案への投票・重複権利使用・BOTの権利を拒否する。
+
+Cloud Runは既存サービスのidentityで既存Cloud Storage bucketの専用objectへ保存する。権限追加/公開化/新規DBは行わない。各read結果とそのgenerationを組にし、ifGenerationMatch付き更新・競合時の再読込で票の喪失を防ぐ。ローカルはFEEDBACK_FILEを指定した場合にファイルへ原子的に保存し、指定なしは一時メモリであると表示する。再戦は既存8秒後のまま進み、記録画面中は本人の移動/攻撃入力を止める。AIの自動実装・配備はこの機能に含めない。
+
+履歴サイトとの共通APIは GET /api/feedback（boardそのもの）、POST /api/feedback に {action:'propose',text} / {action:'vote',proposalId}。Authorization: Bearer <64hex key> を使用し、鍵をURLへ載せない。匿名GETは一覧のみでpermission=null、POSTの認証不足401・不正入力400・連打429・保存障害503等は {error:'短い日本語'} を返す。同originのPOSTのみ受け付け、HTTPの参照はgame WSへjoinしないのでhuman人数を増やさない。body上限2048byte、権利/文字数/自票/重複票はWSと同じFeedbackBoardで判定する。
+
+WebGLは localStorage['valley-improvement-key'] を独立ページと共有し、既存PlayerPrefsの同名keyがあればその獲得済み権利を保つ値へ移行する。EditorはPlayerPrefsのまま。/history/ は public/history/ の相対資産を配信し、配備stageではpublic/を静的配信rootへ重ねる。通常の入口とゲーム内から同originの/history/へ移動し、ブラウザの前後移動と最新版へのリンクで戻る。新投稿は『これからの案』であり、開発中の本人提案に対する過去の反映記録とはデータ上も分離している。

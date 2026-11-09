@@ -79,6 +79,7 @@ using UnityEngine;
 }
 [Serializable] public class OrbitState
 {
+    public ImprovementBoard feedback;
     public BowType bow;
     public OrbitBolt[] bolts;
     public string[] removedBolts;

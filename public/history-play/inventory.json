@@ -1,0 +1,1535 @@
+{
+  "versions": [
+    {
+      "number": 1,
+      "id": "r01",
+      "revision": "orbit-salvage-prototype-00001-8b7",
+      "imageDigest": "sha256:28f58a581973f6d34456e341142f6c8cc607d6ef109d3077e90f73e0a35ae788",
+      "createdAt": "2026-11-06T21:11:00.825014Z",
+      "sourceDirectory": "history-source/r01",
+      "layers": [
+        "sha256:071409a402546fea9e56af710d951a9e0c9bb205e4b1186811677d2c9dcad115",
+        "sha256:0ee29ad7e997edf8bef8c029c99dd73c9e5ffb14f71ce8d89d0917d76769e6eb",
+        "sha256:8a75a65626e0a995705d2325a1992001dbe0655b591130d0f1231f32a9b8ef44",
+        "sha256:fb6a40df95d3b35f9e9c978c17ab1fd5e69626365c5a5799dc52cce1d3cdba94",
+        "sha256:7b4c49f8841eb8e6434eb4aa7f5c75b425dd995b66f97d1b122ef3fa4a33fb96"
+      ],
+      "runtimeExtracted": true,
+      "webglRetained": true,
+      "playUrl": "/history-play/play/r01/",
+      "sourceUrl": "/history-play/sources/r01.zip",
+      "assetMapping": {
+        ".wh..wh..opq": "../../assets/e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.opq",
+        "Build/build-web.data": "../../assets/d0bc188b88992d0b1a0d84c948813f7cf1f4f0d3f0b0969c73340976477d903f.data",
+        "Build/build-web.framework.js": "../../assets/f7e3d0a76337e23d819578f464d7ac6c4fd249a9c73cda90ceb1bbf4e1a2de61.js",
+        "Build/build-web.loader.js": "../../assets/8c7a9e4b2538dab3353b31f3894d51b38781580a059cbae2a67c6ca092fa7bf2.js",
+        "Build/build-web.wasm": "../../assets/60fe17253786c647b03d22d92f44ee77356d0497ec497083c1de93b675792249.wasm"
+      },
+      "playback": {
+        "mode": "browser-local-original-world",
+        "status": "browser-loaded-world-verified",
+        "multiplayer": false,
+        "note": "当時のWebGLと当時のルールを使用。このタブ内でNPCと対戦し、現在のオンラインへ接続しません。",
+        "worldVerified": true,
+        "browserLoadVerified": true,
+        "browserVerification": "元のWebGLをChromeで起動し参加画面を撮影。各版のWorldは別に40tick進行を確認。全版の通し試合を確認した意味ではありません。",
+        "joinedInBrowser": true
+      }
+    },
+    {
+      "number": 2,
+      "id": "r02",
+      "revision": "orbit-salvage-prototype-00002-pfb",
+      "imageDigest": "sha256:1bab198f40d394235a23e83cc1a1691bf263ce32fb3c85b10a21b1b83a67e047",
+      "createdAt": "2026-11-06T21:14:49.472521Z",
+      "sourceDirectory": "history-source/r02",
+      "layers": [
+        "sha256:071409a402546fea9e56af710d951a9e0c9bb205e4b1186811677d2c9dcad115",
+        "sha256:9810b3722ad76f1f1352852ff6ed544f3f247db0f9e354900b1d8c7faa8983b4",
+        "sha256:4835cde5922ed4c2a65ee7c8d82a3e8af5cb5fa0991e47a21b71981dd5fe3da3",
+        "sha256:2d89a19550fb9a157ad56833810ad7e3946962968497a25db325b1c7a80f3c52",
+        "sha256:8c71f13292f0c92814941556a4d8472c41ea6aa679eb3d8d97062f010aec0d2d"
+      ],
+      "runtimeExtracted": true,
+      "webglRetained": true,
+      "playUrl": "/history-play/play/r02/",
+      "sourceUrl": "/history-play/sources/r02.zip",
+      "assetMapping": {
+        ".wh..wh..opq": "../../assets/e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.opq",
+        "Build/build-web.data": "../../assets/fcbf53470fd63cc81060a5c98609b856abc74a4ba7e07d4655331e169e798a8b.data",
+        "Build/build-web.framework.js": "../../assets/8c4e3ee8fdef4ba1e7bd718362c4d8ff13be81366b75ca1af5db6701cc4437c0.js",
+        "Build/build-web.loader.js": "../../assets/8c7a9e4b2538dab3353b31f3894d51b38781580a059cbae2a67c6ca092fa7bf2.js",
+        "Build/build-web.wasm": "../../assets/3f36bac50b1ce72863215bc8bd77b80423c88280b79bc5e2337c255dd00df644.wasm"
+      },
+      "playback": {
+        "mode": "browser-local-original-world",
+        "status": "browser-loaded-world-verified",
+        "multiplayer": false,
+        "note": "当時のWebGLと当時のルールを使用。このタブ内でNPCと対戦し、現在のオンラインへ接続しません。",
+        "worldVerified": true,
+        "browserLoadVerified": true,
+        "browserVerification": "元のWebGLをChromeで起動し参加画面を撮影。各版のWorldは別に40tick進行を確認。全版の通し試合を確認した意味ではありません。"
+      }
+    },
+    {
+      "number": 3,
+      "id": "r03",
+      "revision": "orbit-salvage-prototype-00003-8v8",
+      "imageDigest": "sha256:2cecd7a1962ae6e706db66f8bc3dca7d77b50312a34c194051f723e18eb66353",
+      "createdAt": "2026-11-06T21:18:07.865117Z",
+      "sourceDirectory": "history-source/r03",
+      "layers": [
+        "sha256:071409a402546fea9e56af710d951a9e0c9bb205e4b1186811677d2c9dcad115",
+        "sha256:44b88f35a6f741d26277c5b0bd45ecc7b6482f2f957a9dce8e2b16677201a7e9",
+        "sha256:23c7326568e05524d2b311d4c079cfee51dfd33752c8b5d464ba3dcb755ead60",
+        "sha256:ccbb839331577e118146989bf7e693528c3b63830198e65926d46d5ca782fe15",
+        "sha256:e545e41ffb3630b3e93a0d2d287d0f1796be38ab9acaa502f359ef9c5409f32d"
+      ],
+      "runtimeExtracted": true,
+      "webglRetained": true,
+      "playUrl": "/history-play/play/r03/",
+      "sourceUrl": "/history-play/sources/r03.zip",
+      "assetMapping": {
+        ".wh..wh..opq": "../../assets/e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.opq",
+        "Build/build-web.data": "../../assets/93e137aece805479379db8491afec29412bd984b3d27878d5a098c6d8a4f4b5e.data",
+        "Build/build-web.framework.js": "../../assets/8c4e3ee8fdef4ba1e7bd718362c4d8ff13be81366b75ca1af5db6701cc4437c0.js",
+        "Build/build-web.loader.js": "../../assets/8c7a9e4b2538dab3353b31f3894d51b38781580a059cbae2a67c6ca092fa7bf2.js",
+        "Build/build-web.wasm": "../../assets/854fd8b230dccc4272ba76d9625e359c2f06055f31adfd246f395f49f73bd9a1.wasm"
+      },
+      "playback": {
+        "mode": "browser-local-original-world",
+        "status": "browser-loaded-world-verified",
+        "multiplayer": false,
+        "note": "当時のWebGLと当時のルールを使用。このタブ内でNPCと対戦し、現在のオンラインへ接続しません。",
+        "worldVerified": true,
+        "browserLoadVerified": true,
+        "browserVerification": "元のWebGLをChromeで起動し参加画面を撮影。各版のWorldは別に40tick進行を確認。全版の通し試合を確認した意味ではありません。"
+      }
+    },
+    {
+      "number": 4,
+      "id": "r04",
+      "revision": "orbit-salvage-prototype-00004-tjp",
+      "imageDigest": "sha256:a64797e0e2eccfe42ac7c66af09b2cb1b396ff91c802649f905ffcc3342c2d2b",
+      "createdAt": "2026-11-06T21:56:57.655442Z",
+      "sourceDirectory": "history-source/r04",
+      "layers": [
+        "sha256:071409a402546fea9e56af710d951a9e0c9bb205e4b1186811677d2c9dcad115",
+        "sha256:c28e9aae2ac0dd9355eb82bef0ab96043a6d65b3c31e4deae606c3b9c8d5020a",
+        "sha256:4d69a0daf68aaec3c4a930733eed510d294f1f8ab4288304c1fd935e64ccc6ee",
+        "sha256:a68a35fd3f735fbf786af3d091d8824e495fd6bee897be760b29bbe0bb1e3f43",
+        "sha256:8554fcf0f2c1b247a29d9f55c0386edb4e5d43c6a8bc6c77c79016ed3b4a8bb2",
+        "sha256:301986663872586068d75cb9de8c79f8c80117abd37228ca7a524b36c90e114a"
+      ],
+      "runtimeExtracted": true,
+      "webglRetained": true,
+      "playUrl": "/history-play/play/r04/",
+      "sourceUrl": "/history-play/sources/r04.zip",
+      "assetMapping": {
+        ".wh..wh..opq": "../../assets/e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.opq",
+        "Build/build-web.data": "../../assets/3993b4a51aab7200a6f7df1b05d93f0be7296b9265de0dd64bfee6a17cdb4547.data",
+        "Build/build-web.framework.js": "../../assets/2e701ac360643655c9d352365eb7b359c92ba30d4f93f21e86ef55c4192bd12d.js",
+        "Build/build-web.loader.js": "../../assets/8c7a9e4b2538dab3353b31f3894d51b38781580a059cbae2a67c6ca092fa7bf2.js",
+        "Build/build-web.wasm": "../../assets/7f1b9c2f4a59f747d8010cde897cbc79d9f67203a0aef1b673ed39a90358ef63.wasm"
+      },
+      "playback": {
+        "mode": "browser-local-original-world",
+        "status": "browser-loaded-world-verified",
+        "multiplayer": false,
+        "note": "当時のWebGLと当時のルールを使用。このタブ内でNPCと対戦し、現在のオンラインへ接続しません。",
+        "worldVerified": true,
+        "browserLoadVerified": true,
+        "browserVerification": "元のWebGLをChromeで起動し参加画面を撮影。各版のWorldは別に40tick進行を確認。全版の通し試合を確認した意味ではありません。",
+        "joinedInBrowser": true
+      }
+    },
+    {
+      "number": 5,
+      "id": "r05",
+      "revision": "orbit-salvage-prototype-00005-27s",
+      "imageDigest": "sha256:68a648d34dd011aaf9312025dfb6371d8862a57745c6ab991ed94703313527bd",
+      "createdAt": "2026-11-07T08:27:42.197752Z",
+      "sourceDirectory": "history-source/r05",
+      "layers": [
+        "sha256:071409a402546fea9e56af710d951a9e0c9bb205e4b1186811677d2c9dcad115",
+        "sha256:2a086b4c4c8aa89a29b3b0fedf6d64aa7702932327b53523364ab7b5f676bc4a",
+        "sha256:0abde77e22fa77ab4313d956afa1b50c28f077b3bcf4412ad6cf34e91c41e1f0",
+        "sha256:946f5a3df6034c80a71546acc41c214d04944f89ebeb5b48abf3576aebc8063a",
+        "sha256:dec766ab8eee34b662a472fd80a6d3b99fe2091380420094cbdc3066e881ae93",
+        "sha256:46fb4efcda2181a8ed78163c81053f1cfb2ea424d732d2d5c7e9ae3055932149"
+      ],
+      "runtimeExtracted": true,
+      "webglRetained": true,
+      "playUrl": "/history-play/play/r05/",
+      "sourceUrl": "/history-play/sources/r05.zip",
+      "assetMapping": {
+        ".wh..wh..opq": "../../assets/e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.opq",
+        "Build/build-web.data": "../../assets/61f5e9368be5575aaabfd9317c8c592cf65851b6266e3925ba3e78459d4c4b12.data",
+        "Build/build-web.framework.js": "../../assets/8330fc8a5a9c22ed44ba2c6812e2a797426af13f9e80b52875cb4a0ef9c3bc2c.js",
+        "Build/build-web.loader.js": "../../assets/8c7a9e4b2538dab3353b31f3894d51b38781580a059cbae2a67c6ca092fa7bf2.js",
+        "Build/build-web.wasm": "../../assets/6aed98ee62706593be4004faea4f811610f5ed5e62bd363b3106d0873853de38.wasm"
+      },
+      "playback": {
+        "mode": "browser-local-original-world",
+        "status": "browser-loaded-world-verified",
+        "multiplayer": false,
+        "note": "当時のWebGLと当時のルールを使用。このタブ内でNPCと対戦し、現在のオンラインへ接続しません。",
+        "worldVerified": true,
+        "browserLoadVerified": true,
+        "browserVerification": "元のWebGLをChromeで起動し参加画面を撮影。各版のWorldは別に40tick進行を確認。全版の通し試合を確認した意味ではありません。"
+      }
+    },
+    {
+      "number": 6,
+      "id": "r06",
+      "revision": "orbit-salvage-prototype-00006-4bm",
+      "imageDigest": "sha256:47dc208eb54cb69d204a81394a510046cca4023acf0539e6d43ea421ad9fb9ea",
+      "createdAt": "2026-11-07T09:52:20.254252Z",
+      "sourceDirectory": "history-source/r06",
+      "layers": [
+        "sha256:071409a402546fea9e56af710d951a9e0c9bb205e4b1186811677d2c9dcad115",
+        "sha256:35d7d44fd5312b7c15c906429facb1356c27c1bd2d5995ea77e36a681b2fb911",
+        "sha256:d3ba556595f3cf6febb830ee51e2bbaa53ebe078d322a3a70dec1880f3bc577a",
+        "sha256:742be8e730338dacde90937065c3a702daaaced38f1f5f6e259a868a29a5323a",
+        "sha256:e7990db1d5c055b8001295bcaddf669f8af6d7c896f311d98f25e73e4033c109",
+        "sha256:795e53a0ff693aaf2b46ed621c9d89dc85252d6c490d0cdd1d0cf7dad0cfa1f5"
+      ],
+      "runtimeExtracted": true,
+      "webglRetained": true,
+      "playUrl": "/history-play/play/r06/",
+      "sourceUrl": "/history-play/sources/r06.zip",
+      "assetMapping": {
+        ".wh..wh..opq": "../../assets/e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.opq",
+        "Build/build-web.data": "../../assets/75fa52e0e883f0f55e3348e04acb4f64e00ed7525111af081dd42921b9ad64ce.data",
+        "Build/build-web.framework.js": "../../assets/d6c09544e1ae512629367d15dc5e79033ed8a4419403c8afeaf3621d366b2e17.js",
+        "Build/build-web.loader.js": "../../assets/8c7a9e4b2538dab3353b31f3894d51b38781580a059cbae2a67c6ca092fa7bf2.js",
+        "Build/build-web.wasm": "../../assets/44f14d0a473a9732fb0f5720815ef1d0fd178528fd79c493596354bb4694002f.wasm"
+      },
+      "playback": {
+        "mode": "browser-local-original-world",
+        "status": "browser-loaded-world-verified",
+        "multiplayer": false,
+        "note": "当時のWebGLと当時のルールを使用。このタブ内でNPCと対戦し、現在のオンラインへ接続しません。",
+        "worldVerified": true,
+        "browserLoadVerified": true,
+        "browserVerification": "元のWebGLをChromeで起動し参加画面を撮影。各版のWorldは別に40tick進行を確認。全版の通し試合を確認した意味ではありません。"
+      }
+    },
+    {
+      "number": 7,
+      "id": "r07",
+      "revision": "orbit-salvage-prototype-00007-j4r",
+      "imageDigest": "sha256:80146253fb79427d6843721df7d786c43f76a0337f917e577302225bcbab334e",
+      "createdAt": "2026-11-07T12:10:27.484543Z",
+      "sourceDirectory": "history-source/r07",
+      "layers": [
+        "sha256:071409a402546fea9e56af710d951a9e0c9bb205e4b1186811677d2c9dcad115",
+        "sha256:4600cfa7fa47e57280ba6cb4bace1db8231c18485135d9d683725bb0cb63f3e2",
+        "sha256:58085964a3bf703dd9c704886f6209d9200633e70db38259d6c66675ef0ee4e0",
+        "sha256:873482a7d3a76f33ad5f5720f6afc218c93f1662a044d6c0fd0d33df63bc7286",
+        "sha256:491ecada5ca9c5fac61dbbd83881137b1c282f5232444a12da2906af65b2819d",
+        "sha256:e016d6d4cf66f14dd1dd4818e4a363bb8814c09aa6c4960c547bda0143c7b6dc"
+      ],
+      "runtimeExtracted": true,
+      "webglRetained": true,
+      "playUrl": "/history-play/play/r07/",
+      "sourceUrl": "/history-play/sources/r07.zip",
+      "assetMapping": {
+        ".wh..wh..opq": "../../assets/e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.opq",
+        "Build/build-web.data": "../../assets/9470926130ca5f9eea190471a0f1fca32953eb909aa33f1954433f3b67e38c8e.data",
+        "Build/build-web.framework.js": "../../assets/5ec241e926c7a17e6b8e2d6a3938f9a7ca2b05c4788199e44daedfaeff886090.js",
+        "Build/build-web.loader.js": "../../assets/8c7a9e4b2538dab3353b31f3894d51b38781580a059cbae2a67c6ca092fa7bf2.js",
+        "Build/build-web.wasm": "../../assets/d90078818ad5a36e40f1a81f2a5a2a441174c10efde2e8ef414e9b2662e5ce58.wasm"
+      },
+      "playback": {
+        "mode": "browser-local-original-world",
+        "status": "browser-loaded-world-verified",
+        "multiplayer": false,
+        "note": "当時のWebGLと当時のルールを使用。このタブ内でNPCと対戦し、現在のオンラインへ接続しません。",
+        "worldVerified": true,
+        "browserLoadVerified": true,
+        "browserVerification": "元のWebGLをChromeで起動し参加画面を撮影。各版のWorldは別に40tick進行を確認。全版の通し試合を確認した意味ではありません。"
+      }
+    },
+    {
+      "number": 8,
+      "id": "r08",
+      "revision": "orbit-salvage-prototype-00008-w8f",
+      "imageDigest": "sha256:f4fa5dedc7fdd21614e5a3d705d8b94702c46f851842a07dfbe4d1ab8044db16",
+      "createdAt": "2026-11-07T16:18:35.757167Z",
+      "sourceDirectory": "history-source/r08",
+      "layers": [
+        "sha256:071409a402546fea9e56af710d951a9e0c9bb205e4b1186811677d2c9dcad115",
+        "sha256:bc319e9ef7572276846011b2a7cb030c17a0b1cdd05f77128a9e012dfe6955ba",
+        "sha256:ed8fb50dfd86ad025bdc28a29d23d4782faa83841a0e7cc4bbb606e399217bf2",
+        "sha256:4eb0126ce74ff32943734916c8a57814768c57d14acb2c0b51d86a91229dcd19",
+        "sha256:ed27d97d4dd15edde25d6e6745397a4ce051076bde914aa264388dcfdbfa0361",
+        "sha256:cbe53356fb717ede3fbf28e7bbe8dc76e4730da3354a9a380644875b2bc51e2b"
+      ],
+      "runtimeExtracted": true,
+      "webglRetained": true,
+      "playUrl": "/history-play/play/r08/",
+      "sourceUrl": "/history-play/sources/r08.zip",
+      "assetMapping": {
+        ".wh..wh..opq": "../../assets/e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.opq",
+        "Build/build-web.data": "../../assets/0228f4c8019f77d22dd2afad5cedb78e00e1edc5b4f4974a85a2f96bb68b3a6a.data",
+        "Build/build-web.framework.js": "../../assets/5460a2b35a55d46d3ebdd3d24c6f8e24e20b5cec82d658dd40c70c2dd4a947c0.js",
+        "Build/build-web.loader.js": "../../assets/8c7a9e4b2538dab3353b31f3894d51b38781580a059cbae2a67c6ca092fa7bf2.js",
+        "Build/build-web.wasm": "../../assets/609bca6f1eadff4264bc119494c344367593bb33e1196acaeee052b084943c76.wasm"
+      },
+      "playback": {
+        "mode": "browser-local-original-world",
+        "status": "browser-loaded-world-verified",
+        "multiplayer": false,
+        "note": "当時のWebGLと当時のルールを使用。このタブ内でNPCと対戦し、現在のオンラインへ接続しません。",
+        "worldVerified": true,
+        "browserLoadVerified": true,
+        "browserVerification": "元のWebGLをChromeで起動し参加画面を撮影。各版のWorldは別に40tick進行を確認。全版の通し試合を確認した意味ではありません。"
+      }
+    },
+    {
+      "number": 9,
+      "id": "r09",
+      "revision": "orbit-salvage-prototype-00009-7pq",
+      "imageDigest": "sha256:445d57591dcf3ff7fdae7a49641aaa2ced97701ce393bcc9996ef7ac552c1d04",
+      "createdAt": "2026-11-07T16:46:29.745555Z",
+      "sourceDirectory": "history-source/r09",
+      "layers": [
+        "sha256:071409a402546fea9e56af710d951a9e0c9bb205e4b1186811677d2c9dcad115",
+        "sha256:4d2937bebb95d7979a48c15a2ae27e8e5b29238e8643ad5ad2ce8c571e736346",
+        "sha256:98d951f72b976e586264da3fcb1852c9256d8c8a643ff2f7bc7a846c735b3295",
+        "sha256:a1e206b2b3e373ddd8ca2b3d348c5d77baef013593f566de88d8491f5757b96e",
+        "sha256:e7331a8e048b761daa01546950f3d691b13e7769e9989661bb9ac538ec175f60",
+        "sha256:4050e040569e912f625f4b92debe453a96509dc51b489c6b138e93df86c93bc9"
+      ],
+      "runtimeExtracted": true,
+      "webglRetained": true,
+      "playUrl": "/history-play/play/r09/",
+      "sourceUrl": "/history-play/sources/r09.zip",
+      "assetMapping": {
+        ".wh..wh..opq": "../../assets/e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.opq",
+        "Build/build-web.data": "../../assets/e6889522ac5d6b9702b9c8a7ca1302f6e7e740b785dc2d4805538d5c5fcbd581.data",
+        "Build/build-web.framework.js": "../../assets/b004515e2c558a8695551fded6c7a6c045033d9ef6ce1acfbe31b34a01e79e74.js",
+        "Build/build-web.loader.js": "../../assets/8c7a9e4b2538dab3353b31f3894d51b38781580a059cbae2a67c6ca092fa7bf2.js",
+        "Build/build-web.wasm": "../../assets/b672e8ef8d119daef9d70cd04eb920d7444407d343c1effe2b2d2f3c838fcab9.wasm"
+      },
+      "playback": {
+        "mode": "browser-local-original-world",
+        "status": "browser-loaded-world-verified",
+        "multiplayer": false,
+        "note": "当時のWebGLと当時のルールを使用。このタブ内でNPCと対戦し、現在のオンラインへ接続しません。",
+        "worldVerified": true,
+        "browserLoadVerified": true,
+        "browserVerification": "元のWebGLをChromeで起動し参加画面を撮影。各版のWorldは別に40tick進行を確認。全版の通し試合を確認した意味ではありません。"
+      }
+    },
+    {
+      "number": 10,
+      "id": "r10",
+      "revision": "orbit-salvage-prototype-00010-727",
+      "imageDigest": "sha256:7ac4512affc55f1d652d4b1e19cf656c69451a4ffb61aeb5c62079d6f91a9ef8",
+      "createdAt": "2026-11-07T17:35:11.687428Z",
+      "sourceDirectory": "history-source/r10",
+      "layers": [
+        "sha256:071409a402546fea9e56af710d951a9e0c9bb205e4b1186811677d2c9dcad115",
+        "sha256:36335f8fa4e5bf3abe59bf96e3c14abaf889167ebae56b7369688a8a1572748c",
+        "sha256:1a153610ba20f8b8900f508ba6ab489fd56148dc5bd28c8e5919d976d8084d28",
+        "sha256:fa361de72bc8c21df7831b66d0eee2c8b1b165456e882a5c7586a1db679abfc6",
+        "sha256:235a55880c57fa609a8214775a2216cdb31d4a1055bc5d6d628d3197c8a7d054",
+        "sha256:a3d1436198d4ba3c6bcbcd7b2189784dc58465636acacc8302ce0706987d0951"
+      ],
+      "runtimeExtracted": true,
+      "webglRetained": true,
+      "playUrl": "/history-play/play/r10/",
+      "sourceUrl": "/history-play/sources/r10.zip",
+      "assetMapping": {
+        ".wh..wh..opq": "../../assets/e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.opq",
+        "Build/build-web.data": "../../assets/19c2f4b316ce2e185c1f173000af61510c9b70efe64a74f9e43a1b9bce983531.data",
+        "Build/build-web.framework.js": "../../assets/6113366115dcd18f1fe8cfdcbb068f5c5f41beeeb11a5b328d2af6a7ca951a10.js",
+        "Build/build-web.loader.js": "../../assets/8c7a9e4b2538dab3353b31f3894d51b38781580a059cbae2a67c6ca092fa7bf2.js",
+        "Build/build-web.wasm": "../../assets/9569dab8ba7b1ee5a606769d912dda6d85b1a9dd0a1113bd4bf1e5a3fe33f97a.wasm"
+      },
+      "playback": {
+        "mode": "browser-local-original-world",
+        "status": "browser-loaded-world-verified",
+        "multiplayer": false,
+        "note": "当時のWebGLと当時のルールを使用。このタブ内でNPCと対戦し、現在のオンラインへ接続しません。",
+        "worldVerified": true,
+        "browserLoadVerified": true,
+        "browserVerification": "元のWebGLをChromeで起動し参加画面を撮影。各版のWorldは別に40tick進行を確認。全版の通し試合を確認した意味ではありません。"
+      }
+    },
+    {
+      "number": 11,
+      "id": "r11",
+      "revision": "orbit-salvage-prototype-00011-8m9",
+      "imageDigest": "sha256:8b96f23713594bfd91649f28156501c2c3e59ce9bcbc4b310f460234926d5cf9",
+      "createdAt": "2026-11-07T17:41:14.929615Z",
+      "sourceDirectory": "history-source/r11",
+      "layers": [
+        "sha256:071409a402546fea9e56af710d951a9e0c9bb205e4b1186811677d2c9dcad115",
+        "sha256:972b9c50d31347d7644d2ece74a58e7b2d1534bf1c51c7ec5db871192abbe82c",
+        "sha256:72851318e937750a1db15add04c8cd0c00301f856cdbc5355366ff8ca3c87010",
+        "sha256:552ea7527d7c71590e701f14b98ce512191865abd109b4a3a18801e11f73834b",
+        "sha256:d7d974f5f869f1aaafba29aae296103909de1fe8befeeab8743b57e3eb7f3de2",
+        "sha256:44ebc69a91d6f256cb7ddec67d99916cc0f6a4c68df07f1e98d4e8f42e38892b"
+      ],
+      "runtimeExtracted": true,
+      "webglRetained": true,
+      "playUrl": "/history-play/play/r11/",
+      "sourceUrl": "/history-play/sources/r11.zip",
+      "assetMapping": {
+        ".wh..wh..opq": "../../assets/e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.opq",
+        "Build/build-web.data": "../../assets/2f01cc6b74da7454e9af01ec0f6c755b8dce8159f830a1e992c6e3ad052a4af0.data",
+        "Build/build-web.framework.js": "../../assets/808e9a30365c0829a7c4ae2a2e7103697e371ec67a7f0ef35e4a83acf69baf00.js",
+        "Build/build-web.loader.js": "../../assets/8c7a9e4b2538dab3353b31f3894d51b38781580a059cbae2a67c6ca092fa7bf2.js",
+        "Build/build-web.wasm": "../../assets/868aaa04960883dae59e921b06451cbb9d073761f4d050e3b76bbeeccddccae1.wasm"
+      },
+      "playback": {
+        "mode": "browser-local-original-world",
+        "status": "browser-loaded-world-verified",
+        "multiplayer": false,
+        "note": "当時のWebGLと当時のルールを使用。このタブ内でNPCと対戦し、現在のオンラインへ接続しません。",
+        "worldVerified": true,
+        "browserLoadVerified": true,
+        "browserVerification": "元のWebGLをChromeで起動し参加画面を撮影。各版のWorldは別に40tick進行を確認。全版の通し試合を確認した意味ではありません。"
+      }
+    },
+    {
+      "number": 12,
+      "id": "r12",
+      "revision": "orbit-salvage-prototype-00012-rjt",
+      "imageDigest": "sha256:4c2e5252458bb454e99bb106ad93f7e954c4b1159466e99e5245aef80fc00211",
+      "createdAt": "2026-11-07T18:34:15.295492Z",
+      "sourceDirectory": "history-source/r12",
+      "layers": [
+        "sha256:071409a402546fea9e56af710d951a9e0c9bb205e4b1186811677d2c9dcad115",
+        "sha256:b219610f14eeba0f74f780c06aeb01a0c0f07d7dc1e58ddf93c56b8944294298",
+        "sha256:bc4ffe303ee6954e578adcd58e620eb6bfd9b5f62bcfefdce11ae386c3d1a4dd",
+        "sha256:f14802254e9c9b7a9f01ee8cb8cef542efede7f17503a8b708b1a21fb679a085",
+        "sha256:156c6e3a5381bab5959e696447ae81bb46a4763c232384b2318803492d410645",
+        "sha256:5c6b01f3b26e96f71b3c9efc4f6df304bdb0e662d7641d67d185a8e4dacc6888"
+      ],
+      "runtimeExtracted": true,
+      "webglRetained": true,
+      "playUrl": "/history-play/play/r12/",
+      "sourceUrl": "/history-play/sources/r12.zip",
+      "assetMapping": {
+        ".wh..wh..opq": "../../assets/e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.opq",
+        "Build/build-web.data": "../../assets/2ad83302b887af7a892e35f685fabbecad55084c8ff0d5b5a59493d9e0f565ad.data",
+        "Build/build-web.framework.js": "../../assets/ea4faf868437cf2618eb3388b550807a2678b8033e4311549dd1108b09f6d28e.js",
+        "Build/build-web.loader.js": "../../assets/8c7a9e4b2538dab3353b31f3894d51b38781580a059cbae2a67c6ca092fa7bf2.js",
+        "Build/build-web.wasm": "../../assets/df11f62eda435652f39c751ae8e9da15f70124c05bee34f4d8a8d776808c3995.wasm"
+      },
+      "playback": {
+        "mode": "browser-local-original-world",
+        "status": "browser-loaded-world-verified",
+        "multiplayer": false,
+        "note": "当時のWebGLと当時のルールを使用。このタブ内でNPCと対戦し、現在のオンラインへ接続しません。",
+        "worldVerified": true,
+        "browserLoadVerified": true,
+        "browserVerification": "元のWebGLをChromeで起動し参加画面を撮影。各版のWorldは別に40tick進行を確認。全版の通し試合を確認した意味ではありません。"
+      }
+    },
+    {
+      "number": 13,
+      "id": "r13",
+      "revision": "orbit-salvage-prototype-00013-wnq",
+      "imageDigest": "sha256:030189ccf19680445f02992d69188d0f78e23e5b1d7d5a4e6a765fef7050817b",
+      "createdAt": "2026-11-07T21:59:00.800510Z",
+      "sourceDirectory": "history-source/r13",
+      "layers": [
+        "sha256:071409a402546fea9e56af710d951a9e0c9bb205e4b1186811677d2c9dcad115",
+        "sha256:d80a3301a7234c640b61bface7e8918c4bad5088f08e342fb61cfaed3de2ef47",
+        "sha256:59ec784ab0fa355e60e119c5ad7903ef661f8041a6b67b1817cf9b589c0d78ae",
+        "sha256:35f5f6389834d326c00a4ce85d0306e1b19c701b0e9f2923c90a93c98bcae991",
+        "sha256:bac58feab47db12dad7b6cdae2b566061bab428f286a79c914dfa30dfaabc359",
+        "sha256:3d697668f1337fd875c71c3273f6d7dac7397255f1c872505d969770638789cd"
+      ],
+      "runtimeExtracted": true,
+      "webglRetained": true,
+      "playUrl": "/history-play/play/r13/",
+      "sourceUrl": "/history-play/sources/r13.zip",
+      "assetMapping": {
+        ".wh..wh..opq": "../../assets/e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.opq",
+        "Build/build-web.data": "../../assets/0b907545de8586329328f771e2d63fc336c008ac3ff3ed6e53112346e5dc1250.data",
+        "Build/build-web.framework.js": "../../assets/0cfeef6866bc785a3a770ac150c4daa512c7d8fc3f71e04f232c06079d2c286d.js",
+        "Build/build-web.loader.js": "../../assets/8c7a9e4b2538dab3353b31f3894d51b38781580a059cbae2a67c6ca092fa7bf2.js",
+        "Build/build-web.wasm": "../../assets/2a931eb388ad60f52043560cd18ce0525821c4fb0a28705bbc54201fe1e1532a.wasm",
+        "field-ticket-scene.png": "../../assets/ae0c231d5c1831086b1e83f7129f996a5c7f8284a190073c732e4efeda003da0.png"
+      },
+      "playback": {
+        "mode": "browser-local-original-world",
+        "status": "browser-loaded-world-verified",
+        "multiplayer": false,
+        "note": "当時のWebGLと当時のルールを使用。このタブ内でNPCと対戦し、現在のオンラインへ接続しません。",
+        "worldVerified": true,
+        "browserLoadVerified": true,
+        "browserVerification": "元のWebGLをChromeで起動し参加画面を撮影。各版のWorldは別に40tick進行を確認。全版の通し試合を確認した意味ではありません。",
+        "joinedInBrowser": true
+      }
+    },
+    {
+      "number": 14,
+      "id": "r14",
+      "revision": "orbit-salvage-prototype-00014-ws6",
+      "imageDigest": "sha256:f50440876a782a17259029b2ad15d8f0f39971c703f8aaaa7dad6c5813c23d32",
+      "createdAt": "2026-11-07T22:10:24.914330Z",
+      "sourceDirectory": "history-source/r14",
+      "layers": [
+        "sha256:071409a402546fea9e56af710d951a9e0c9bb205e4b1186811677d2c9dcad115",
+        "sha256:3eb36f3f0471bf57b821e4080af8b940db8178d4e8f55800e8f8dbc64b5f14ba",
+        "sha256:afb4fa22cf94045df41093ec82da1181e4b9a75a9c32b92b1e783409003b9bc9",
+        "sha256:efc88ffead83ca5fd14b1b1edaf77c53c0d6cf2bd7240eac0651f97c91ed36a1",
+        "sha256:dc6d0b23c46784a0ed037357b7a169aede6b5a462d118d3f9a29b99ed6f6dd62",
+        "sha256:054d6023c26843b055f37abf06a223629c7caac0bee8bc277a1818d93bff6b3a"
+      ],
+      "runtimeExtracted": true,
+      "webglRetained": true,
+      "playUrl": "/history-play/play/r14/",
+      "sourceUrl": "/history-play/sources/r14.zip",
+      "assetMapping": {
+        ".wh..wh..opq": "../../assets/e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.opq",
+        "Build/build-web.data": "../../assets/78b887859c0657c94cc81313ca2f7ab9532ec10b374ea9af00b2faaf913367dd.data",
+        "Build/build-web.framework.js": "../../assets/f17f54d8ec4a24b24cc502cc83515a4eed807ef5bb34551c6f61065432450bf4.js",
+        "Build/build-web.loader.js": "../../assets/8c7a9e4b2538dab3353b31f3894d51b38781580a059cbae2a67c6ca092fa7bf2.js",
+        "Build/build-web.wasm": "../../assets/1d7b21f5416692ed7fef46d3f44eb9bd2718c7381d051f57f317b77460c356cf.wasm",
+        "field-ticket-scene.png": "../../assets/ae0c231d5c1831086b1e83f7129f996a5c7f8284a190073c732e4efeda003da0.png"
+      },
+      "playback": {
+        "mode": "browser-local-original-world",
+        "status": "browser-loaded-world-verified",
+        "multiplayer": false,
+        "note": "当時のWebGLと当時のルールを使用。このタブ内でNPCと対戦し、現在のオンラインへ接続しません。",
+        "worldVerified": true,
+        "browserLoadVerified": true,
+        "browserVerification": "元のWebGLをChromeで起動し参加画面を撮影。各版のWorldは別に40tick進行を確認。全版の通し試合を確認した意味ではありません。"
+      }
+    },
+    {
+      "number": 15,
+      "id": "r15",
+      "revision": "orbit-salvage-prototype-00015-m59",
+      "imageDigest": "sha256:c1c11aecdb04350494ab887465f0dbfa5e98c247dba1332ec89002bec3befe25",
+      "createdAt": "2026-11-07T22:48:33.113381Z",
+      "sourceDirectory": "history-source/r15",
+      "layers": [
+        "sha256:071409a402546fea9e56af710d951a9e0c9bb205e4b1186811677d2c9dcad115",
+        "sha256:3907d253b8b0b6f2db59570789803e8bab9ac69f774a399563e89560f1316a02",
+        "sha256:bbc0be4768a737991ca1029091dc306ded0786ef8c50a70211abdf4690560a5b",
+        "sha256:ba16e9ea2f549d89fb81aec439213027eb3b665708a07e0e6842bb14a3bc3c60",
+        "sha256:e7cbdd29d9a10cd59964d12558c5c61647ae6a849241a941e937624496e8498b",
+        "sha256:fb8e8ffaf6d3fd8b3c7f89ed6b746b2d570db06ba8b05103bce536950838a891"
+      ],
+      "runtimeExtracted": true,
+      "webglRetained": true,
+      "playUrl": "/history-play/play/r15/",
+      "sourceUrl": "/history-play/sources/r15.zip",
+      "assetMapping": {
+        ".wh..wh..opq": "../../assets/e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.opq",
+        "Build/build-web.data": "../../assets/e8fe383b750317a463025a35ec46f1d8b632557bd0ab192648c0a9a60eef79f7.data",
+        "Build/build-web.framework.js": "../../assets/eaedcd0ad9975d73e2e8dee17cc82af587eef84e6d5fa1efaed92e2c8319a571.js",
+        "Build/build-web.loader.js": "../../assets/8c7a9e4b2538dab3353b31f3894d51b38781580a059cbae2a67c6ca092fa7bf2.js",
+        "Build/build-web.wasm": "../../assets/50bcfddbe51440dc6e0e96e72fa14af7cdd7e466dbba785d259ffce1eff79a00.wasm",
+        "field-ticket-scene.png": "../../assets/ae0c231d5c1831086b1e83f7129f996a5c7f8284a190073c732e4efeda003da0.png",
+        "valley-intro.jpg": "../../assets/af1d7c8936ca024452f2e84043824a0414ca5bacaa3d9eebc84f4290fac77fab.jpg",
+        "valley-title-LICENSE.txt": "../../assets/b6108d5e2607ca721d26fa66346e7a7547341cdffc4d0d97bec017c7ab93c645.txt",
+        "valley-title.png": "../../assets/5df659d8a608216b96750e66a1c65c67961580d16df676f036a0724f32dc54c9.png"
+      },
+      "playback": {
+        "mode": "browser-local-original-world",
+        "status": "browser-loaded-world-verified",
+        "multiplayer": false,
+        "note": "当時のWebGLと当時のルールを使用。このタブ内でNPCと対戦し、現在のオンラインへ接続しません。",
+        "worldVerified": true,
+        "browserLoadVerified": true,
+        "browserVerification": "元のWebGLをChromeで起動し参加画面を撮影。各版のWorldは別に40tick進行を確認。全版の通し試合を確認した意味ではありません。"
+      }
+    },
+    {
+      "number": 16,
+      "id": "r16",
+      "revision": "orbit-salvage-prototype-00016-pfg",
+      "imageDigest": "sha256:ef6ad1ffcb6a75394958826d874e5457c5d2ff989117604a2c217805d3ab2481",
+      "createdAt": "2026-11-08T00:06:19.144657Z",
+      "sourceDirectory": "history-source/r16",
+      "layers": [
+        "sha256:071409a402546fea9e56af710d951a9e0c9bb205e4b1186811677d2c9dcad115",
+        "sha256:c66438eeb0bd17daeb643f8a3d514724520bfc72d08ee356f9ec4fe1b5a2824e",
+        "sha256:a36f0b2140d535a09deadadc948ed6688d0b71140059f921c022c37b073eddad",
+        "sha256:e79cc1de6618b85c56708848a0cdd95f2bb8e36daecb9ea053f73acaa2248181",
+        "sha256:b073f3739f33a7a993ce142a878dd0911e041dbd657849de29ebb840b4166d37",
+        "sha256:866ba9fa2e3b6631b18589c1a9c922d9b5151082a294798e72e11ba4079d1859",
+        "sha256:c26de741f34fc4a9cbc48e28b5dc142b43fd13a3637fb34d237dd5cc3e090ffb"
+      ],
+      "runtimeExtracted": true,
+      "webglRetained": true,
+      "playUrl": "/history-play/play/r16/",
+      "sourceUrl": "/history-play/sources/r16.zip",
+      "assetMapping": {
+        ".wh..wh..opq": "../../assets/e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.opq",
+        "Build/build-web.data": "../../assets/33386a2e7e9bae6fe70d298c27ba5027b7e32364d1922ffae82ca9cdaf1328ed.data",
+        "Build/build-web.framework.js": "../../assets/7b871e48d078e01d6ecdca0462befca74cd5995ade23e61495f3798bec7cba9c.js",
+        "Build/build-web.loader.js": "../../assets/8c7a9e4b2538dab3353b31f3894d51b38781580a059cbae2a67c6ca092fa7bf2.js",
+        "Build/build-web.wasm": "../../assets/47a7ef7d8d10fd111ac53e8e1dd0d03a178375cd66d33e70e760ddb4cb08d3dd.wasm",
+        "field-ticket-scene.png": "../../assets/ae0c231d5c1831086b1e83f7129f996a5c7f8284a190073c732e4efeda003da0.png",
+        "valley-intro.jpg": "../../assets/af1d7c8936ca024452f2e84043824a0414ca5bacaa3d9eebc84f4290fac77fab.jpg",
+        "valley-title-LICENSE.txt": "../../assets/b6108d5e2607ca721d26fa66346e7a7547341cdffc4d0d97bec017c7ab93c645.txt",
+        "valley-title.png": "../../assets/5df659d8a608216b96750e66a1c65c67961580d16df676f036a0724f32dc54c9.png"
+      },
+      "playback": {
+        "mode": "browser-local-original-world",
+        "status": "browser-loaded-world-verified",
+        "multiplayer": false,
+        "note": "当時のWebGLと当時のルールを使用。このタブ内でNPCと対戦し、現在のオンラインへ接続しません。",
+        "worldVerified": true,
+        "browserLoadVerified": true,
+        "browserVerification": "元のWebGLをChromeで起動し参加画面を撮影。各版のWorldは別に40tick進行を確認。全版の通し試合を確認した意味ではありません。"
+      }
+    },
+    {
+      "number": 17,
+      "id": "r17",
+      "revision": "orbit-salvage-prototype-00017-vd8",
+      "imageDigest": "sha256:aa789e5b5cbfefa5bafba6e6e59ec839d16679f466af0fe7c21c27fe68b8dae9",
+      "createdAt": "2026-11-08T00:31:25.089163Z",
+      "sourceDirectory": "history-source/r17",
+      "layers": [
+        "sha256:071409a402546fea9e56af710d951a9e0c9bb205e4b1186811677d2c9dcad115",
+        "sha256:9351a7ac8df9371c234f955f46920ea9f284c8efafac191b07c9241d5db4531c",
+        "sha256:adfb9de5c363fc05b190dfb5878328b5d03e0df723eaee95662dc9f7e02e1ba4",
+        "sha256:5ff450b45f1e3f15167e4fafc62201d1df1d82620a82e323d34b3c3dae776eae",
+        "sha256:d68d0166d3ba30815e51461926ed659b60436fd88d235fdb44ac768a7acbb8b4",
+        "sha256:4d75b5740a806a70b7676a49a73b23c7c737f113203244837d2ce552a2a2a82c",
+        "sha256:e4bebe85ccd28bedaa43a04759c6553c5acd3c4d8cde565cbecf5df83a67c268"
+      ],
+      "runtimeExtracted": true,
+      "webglRetained": true,
+      "playUrl": "/history-play/play/r17/",
+      "sourceUrl": "/history-play/sources/r17.zip",
+      "assetMapping": {
+        ".wh..wh..opq": "../../assets/e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.opq",
+        "Build/build-web.data": "../../assets/27a1a235dca0bfe85fd0d4e5b09e3923dbaff24ac0db11f9ae20dbd73cd78723.data",
+        "Build/build-web.framework.js": "../../assets/7b871e48d078e01d6ecdca0462befca74cd5995ade23e61495f3798bec7cba9c.js",
+        "Build/build-web.loader.js": "../../assets/8c7a9e4b2538dab3353b31f3894d51b38781580a059cbae2a67c6ca092fa7bf2.js",
+        "Build/build-web.wasm": "../../assets/3ca060bd32f9a45498c9226920b43c1ea6262362ee2020f784d0c700961e7515.wasm",
+        "field-ticket-scene.png": "../../assets/ae0c231d5c1831086b1e83f7129f996a5c7f8284a190073c732e4efeda003da0.png",
+        "valley-intro.jpg": "../../assets/af1d7c8936ca024452f2e84043824a0414ca5bacaa3d9eebc84f4290fac77fab.jpg",
+        "valley-title-LICENSE.txt": "../../assets/b6108d5e2607ca721d26fa66346e7a7547341cdffc4d0d97bec017c7ab93c645.txt",
+        "valley-title.png": "../../assets/5df659d8a608216b96750e66a1c65c67961580d16df676f036a0724f32dc54c9.png"
+      },
+      "playback": {
+        "mode": "browser-local-original-world",
+        "status": "browser-loaded-world-verified",
+        "multiplayer": false,
+        "note": "当時のWebGLと当時のルールを使用。このタブ内でNPCと対戦し、現在のオンラインへ接続しません。",
+        "worldVerified": true,
+        "browserLoadVerified": true,
+        "browserVerification": "元のWebGLをChromeで起動し参加画面を撮影。各版のWorldは別に40tick進行を確認。全版の通し試合を確認した意味ではありません。"
+      }
+    },
+    {
+      "number": 18,
+      "id": "r18",
+      "revision": "orbit-salvage-prototype-00018-tkz",
+      "imageDigest": "sha256:9d572e0cc23b418685d52389a93a864284a24c598d9b370eb3105a13f2604916",
+      "createdAt": "2026-11-08T00:57:36.456304Z",
+      "sourceDirectory": "history-source/r18",
+      "layers": [
+        "sha256:071409a402546fea9e56af710d951a9e0c9bb205e4b1186811677d2c9dcad115",
+        "sha256:6fd49fa91108e0698a1a12588007addc1f9141f4a1e867bf3ddf780df5f6ddfd",
+        "sha256:2f690478bcfde3b879786c841482d040ac5e2153fb9764763a1500e07e90b786",
+        "sha256:2cc73554efe0c58d40be6331c59f37f43f505858bc53074c6790bce1f7c0023e",
+        "sha256:1c97ec09e594794166971383b0f2b13a81f94ec8d254d051b1e0539ded495cbb",
+        "sha256:f099bc5331f9aea5dfb3f8644d6944842a7951bf0925a9ccfcb9a7567a4aab52",
+        "sha256:869056d3c7f575ed772d348a53178629ed5e366d425f6d90a2bd75d09678bd8b"
+      ],
+      "runtimeExtracted": true,
+      "webglRetained": true,
+      "playUrl": "/history-play/play/r18/",
+      "sourceUrl": "/history-play/sources/r18.zip",
+      "assetMapping": {
+        ".wh..wh..opq": "../../assets/e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.opq",
+        "Build/build-web.data": "../../assets/c8b4f2a65a99289d85ae77bda5a35d39f69e8c78893487f043a971def34d44b3.data",
+        "Build/build-web.framework.js": "../../assets/0584bd6d47597d08751f1aae2ce001711d883bcbada61d80d3a6c00e9ad980d2.js",
+        "Build/build-web.loader.js": "../../assets/8c7a9e4b2538dab3353b31f3894d51b38781580a059cbae2a67c6ca092fa7bf2.js",
+        "Build/build-web.wasm": "../../assets/653c805da516e29c82627207b5dca66b43f6ac1078a10a38be7273a95234e56a.wasm",
+        "field-ticket-scene.png": "../../assets/ae0c231d5c1831086b1e83f7129f996a5c7f8284a190073c732e4efeda003da0.png",
+        "valley-intro.jpg": "../../assets/af1d7c8936ca024452f2e84043824a0414ca5bacaa3d9eebc84f4290fac77fab.jpg",
+        "valley-title-LICENSE.txt": "../../assets/b6108d5e2607ca721d26fa66346e7a7547341cdffc4d0d97bec017c7ab93c645.txt",
+        "valley-title.png": "../../assets/5df659d8a608216b96750e66a1c65c67961580d16df676f036a0724f32dc54c9.png"
+      },
+      "playback": {
+        "mode": "browser-local-original-world",
+        "status": "browser-loaded-world-verified",
+        "multiplayer": false,
+        "note": "当時のWebGLと当時のルールを使用。このタブ内でNPCと対戦し、現在のオンラインへ接続しません。",
+        "worldVerified": true,
+        "browserLoadVerified": true,
+        "browserVerification": "元のWebGLをChromeで起動し参加画面を撮影。各版のWorldは別に40tick進行を確認。全版の通し試合を確認した意味ではありません。"
+      }
+    },
+    {
+      "number": 19,
+      "id": "r19",
+      "revision": "orbit-salvage-prototype-00019-xd5",
+      "imageDigest": "sha256:617cf658a24151744027448b850deedb9a67faac2de905358ba9451bb1d70447",
+      "createdAt": "2026-11-08T02:03:54.447351Z",
+      "sourceDirectory": "history-source/r19",
+      "layers": [
+        "sha256:071409a402546fea9e56af710d951a9e0c9bb205e4b1186811677d2c9dcad115",
+        "sha256:47f89cc42af161ba54cc4f9ea288a9f0abe186760b6a96fc6dfe48a263e6773e",
+        "sha256:443275ad0c2b362df5a14ccc46b0db259e2e9b8ffe200c61f9c08e4e72e2c877",
+        "sha256:4afb080411ed4d0a7102904b28dcd467ea19f6828bcac18bc04bc4368d995013",
+        "sha256:d648bb132200ae875070e01e9b42df920616f1ddb0665a7238cfe7427beee319",
+        "sha256:961a5f4dfd397b9ad161fa2fade6e13f945d539accc540cc9dcf0da4d2f3f006",
+        "sha256:d9747af11ae77046c7eafbf49b21eab86f837e2873cee28df82995c899b2fffa"
+      ],
+      "runtimeExtracted": true,
+      "webglRetained": true,
+      "playUrl": "/history-play/play/r19/",
+      "sourceUrl": "/history-play/sources/r19.zip",
+      "assetMapping": {
+        ".wh..wh..opq": "../../assets/e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.opq",
+        "Build/build-web.data": "../../assets/1df5f9f1d46e384b70dc2abfe228dd6fdd8ab5eece7213e14a642e15cdc1037f.data",
+        "Build/build-web.framework.js": "../../assets/74f6f8779cf2b0277d922a22670617c24c99e6349b118fe6afb899740b4fbcbd.js",
+        "Build/build-web.loader.js": "../../assets/8c7a9e4b2538dab3353b31f3894d51b38781580a059cbae2a67c6ca092fa7bf2.js",
+        "Build/build-web.wasm": "../../assets/1830a82ac05bab26896bc2e923a53cac74680051c50f8780a3a87bc9bbc305b3.wasm",
+        "field-ticket-scene.png": "../../assets/ae0c231d5c1831086b1e83f7129f996a5c7f8284a190073c732e4efeda003da0.png",
+        "valley-intro.jpg": "../../assets/af1d7c8936ca024452f2e84043824a0414ca5bacaa3d9eebc84f4290fac77fab.jpg",
+        "valley-title-LICENSE.txt": "../../assets/b6108d5e2607ca721d26fa66346e7a7547341cdffc4d0d97bec017c7ab93c645.txt",
+        "valley-title.png": "../../assets/5df659d8a608216b96750e66a1c65c67961580d16df676f036a0724f32dc54c9.png"
+      },
+      "playback": {
+        "mode": "browser-local-original-world",
+        "status": "browser-loaded-world-verified",
+        "multiplayer": false,
+        "note": "当時のWebGLと当時のルールを使用。このタブ内でNPCと対戦し、現在のオンラインへ接続しません。",
+        "worldVerified": true,
+        "browserLoadVerified": true,
+        "browserVerification": "元のWebGLをChromeで起動し参加画面を撮影。各版のWorldは別に40tick進行を確認。全版の通し試合を確認した意味ではありません。"
+      }
+    },
+    {
+      "number": 20,
+      "id": "r20",
+      "revision": "orbit-salvage-prototype-00020-6nd",
+      "imageDigest": "sha256:45fb495a8df903e02a050599d26080fc1d553074920877e946bac74643ff4b02",
+      "createdAt": "2026-11-08T02:54:17.494808Z",
+      "sourceDirectory": "history-source/r20",
+      "layers": [
+        "sha256:071409a402546fea9e56af710d951a9e0c9bb205e4b1186811677d2c9dcad115",
+        "sha256:57d79d4eaa973c553875adeefff8b7de9333092072353896e8d80013efc2dcff",
+        "sha256:e5058f43ec024ecb6f0327e2b7d7d55a4bd8339c3d48884a7dae748008e598bf",
+        "sha256:a478bd8b70d3512ce628b187670ba212f5770d9b2705e63ef98eeac54256c4c2",
+        "sha256:188035c81b4e03e58269ecba435ece9cb53c2fbf19688ec8ff652a75efdc6cb7",
+        "sha256:652cf5026ce1664b41dcfce4eca40b3e19b68f0e7903f76a8fbbc5c291ea418a",
+        "sha256:9bef342464544259e6a97bc0632a628403552359338c4f09a1b8943abac58447"
+      ],
+      "runtimeExtracted": true,
+      "webglRetained": true,
+      "playUrl": "/history-play/play/r20/",
+      "sourceUrl": "/history-play/sources/r20.zip",
+      "assetMapping": {
+        ".wh..wh..opq": "../../assets/e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.opq",
+        "Build/build-web.data": "../../assets/d43b4f675888c054650147b677aa5ca4f92c11475400b6f876f1cd02f2c61d74.data",
+        "Build/build-web.framework.js": "../../assets/4f7f0a4f44c3704adf25f2ae8d7ab9f523d125970036e3b0ed50d40014ba85ba.js",
+        "Build/build-web.loader.js": "../../assets/8c7a9e4b2538dab3353b31f3894d51b38781580a059cbae2a67c6ca092fa7bf2.js",
+        "Build/build-web.wasm": "../../assets/8241e23df28bbb63b4b2640ff8ecd86d62f3b30be01c188236c43aba9eefed2b.wasm",
+        "field-ticket-scene.png": "../../assets/ae0c231d5c1831086b1e83f7129f996a5c7f8284a190073c732e4efeda003da0.png",
+        "valley-intro.jpg": "../../assets/af1d7c8936ca024452f2e84043824a0414ca5bacaa3d9eebc84f4290fac77fab.jpg",
+        "valley-title-LICENSE.txt": "../../assets/b6108d5e2607ca721d26fa66346e7a7547341cdffc4d0d97bec017c7ab93c645.txt",
+        "valley-title.png": "../../assets/5df659d8a608216b96750e66a1c65c67961580d16df676f036a0724f32dc54c9.png"
+      },
+      "playback": {
+        "mode": "browser-local-original-world",
+        "status": "browser-loaded-world-verified",
+        "multiplayer": false,
+        "note": "当時のWebGLと当時のルールを使用。このタブ内でNPCと対戦し、現在のオンラインへ接続しません。",
+        "worldVerified": true,
+        "browserLoadVerified": true,
+        "browserVerification": "元のWebGLをChromeで起動し参加画面を撮影。各版のWorldは別に40tick進行を確認。全版の通し試合を確認した意味ではありません。"
+      }
+    },
+    {
+      "number": 21,
+      "id": "r21",
+      "revision": "orbit-salvage-prototype-00021-8jb",
+      "imageDigest": "sha256:9ca0f11c8213cfa9fd2ecfdf9935bc7c367a1ba5ebe6fec242fb56fd9c01a7d4",
+      "createdAt": "2026-11-08T03:03:41.436015Z",
+      "sourceDirectory": "history-source/r21",
+      "layers": [
+        "sha256:071409a402546fea9e56af710d951a9e0c9bb205e4b1186811677d2c9dcad115",
+        "sha256:87067cefbadd297f8dcd711799dbe64876984c1e46eebfc16b94b4de1f186c65",
+        "sha256:40e7ab16f5350d3d86282d02cd484a5287aa14f4cc910edeeb925d076af945d3",
+        "sha256:c8a7069df4ba102bc38e8bda960ea235b02fb17039d47ee1e035f75ca0b2ce52",
+        "sha256:4f7ba154fc63b0a9d8f12cb904885257d81f73df54337b2f20885173a305dc37",
+        "sha256:1a32a81db4e157a8bc32867dfd9dec02842a1b070c86ed917395848cf11e7441",
+        "sha256:0c3a4e76afbee2fd0b726a85a68feed46ac42633b7ac01bdbea611a0ad630117"
+      ],
+      "runtimeExtracted": true,
+      "webglRetained": true,
+      "playUrl": "/history-play/play/r21/",
+      "sourceUrl": "/history-play/sources/r21.zip",
+      "assetMapping": {
+        ".wh..wh..opq": "../../assets/e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.opq",
+        "Build/build-web.data": "../../assets/d43b4f675888c054650147b677aa5ca4f92c11475400b6f876f1cd02f2c61d74.data",
+        "Build/build-web.framework.js": "../../assets/4f7f0a4f44c3704adf25f2ae8d7ab9f523d125970036e3b0ed50d40014ba85ba.js",
+        "Build/build-web.loader.js": "../../assets/8c7a9e4b2538dab3353b31f3894d51b38781580a059cbae2a67c6ca092fa7bf2.js",
+        "Build/build-web.wasm": "../../assets/8241e23df28bbb63b4b2640ff8ecd86d62f3b30be01c188236c43aba9eefed2b.wasm",
+        "field-ticket-scene.png": "../../assets/ae0c231d5c1831086b1e83f7129f996a5c7f8284a190073c732e4efeda003da0.png",
+        "valley-intro.jpg": "../../assets/af1d7c8936ca024452f2e84043824a0414ca5bacaa3d9eebc84f4290fac77fab.jpg",
+        "valley-title-LICENSE.txt": "../../assets/b6108d5e2607ca721d26fa66346e7a7547341cdffc4d0d97bec017c7ab93c645.txt",
+        "valley-title.png": "../../assets/5df659d8a608216b96750e66a1c65c67961580d16df676f036a0724f32dc54c9.png"
+      },
+      "playback": {
+        "mode": "browser-local-original-world",
+        "status": "browser-loaded-world-verified",
+        "multiplayer": false,
+        "note": "当時のWebGLと当時のルールを使用。このタブ内でNPCと対戦し、現在のオンラインへ接続しません。",
+        "worldVerified": true,
+        "browserLoadVerified": true,
+        "browserVerification": "元のWebGLをChromeで起動し参加画面を撮影。各版のWorldは別に40tick進行を確認。全版の通し試合を確認した意味ではありません。"
+      }
+    },
+    {
+      "number": 22,
+      "id": "r22",
+      "revision": "orbit-salvage-prototype-00022-nqt",
+      "imageDigest": "sha256:5cdeac411a2963c8020dfbed5f298600b2ce80bb2f3df3da44a777e6b25a393b",
+      "createdAt": "2026-11-08T09:40:06.634554Z",
+      "sourceDirectory": "history-source/r22",
+      "layers": [
+        "sha256:071409a402546fea9e56af710d951a9e0c9bb205e4b1186811677d2c9dcad115",
+        "sha256:af770ea8a6a49b16706a914a036f86bccbc7047f54593d3a8c4423277b38884d",
+        "sha256:b0408ce88efed5e01ff89beb5d11620cc1f47310153bfc5f6fc485177d219d15",
+        "sha256:c6457baaa355d0cafddbb54ba3fe5fdb0502155bae87cef8706a330f07fa49ef",
+        "sha256:438635c45f7e1e060bbb7e6125c0e617cb278b2b7c0b4cf4205ac0032560ee3b",
+        "sha256:b5a1a071135e0a85a046b55fed98791f68bf1b686ab591d072516e8cdfdfa314",
+        "sha256:6b24b21c9c0cc2375c0dd564a291ed3d225e54c753ab3a35ec148d26c789fef5"
+      ],
+      "runtimeExtracted": true,
+      "webglRetained": true,
+      "playUrl": "/history-play/play/r22/",
+      "sourceUrl": "/history-play/sources/r22.zip",
+      "assetMapping": {
+        ".wh..wh..opq": "../../assets/e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.opq",
+        "Build/build-web.data": "../../assets/2e4bbe98acde1e3aa909304dc08de7b6c37e788ccef83d38e36310293c8c8f43.data",
+        "Build/build-web.framework.js": "../../assets/a9d276f423afce966467a85e2a4c84b86fae383a22493a2f41b124faa79c5c67.js",
+        "Build/build-web.loader.js": "../../assets/8c7a9e4b2538dab3353b31f3894d51b38781580a059cbae2a67c6ca092fa7bf2.js",
+        "Build/build-web.wasm": "../../assets/5608de60dd745512b48f56646415b5fb15bc504ff53877c8fc6c2841e004877a.wasm",
+        "field-ticket-scene.png": "../../assets/ae0c231d5c1831086b1e83f7129f996a5c7f8284a190073c732e4efeda003da0.png",
+        "valley-intro.jpg": "../../assets/af1d7c8936ca024452f2e84043824a0414ca5bacaa3d9eebc84f4290fac77fab.jpg",
+        "valley-title-LICENSE.txt": "../../assets/b6108d5e2607ca721d26fa66346e7a7547341cdffc4d0d97bec017c7ab93c645.txt",
+        "valley-title.png": "../../assets/5df659d8a608216b96750e66a1c65c67961580d16df676f036a0724f32dc54c9.png"
+      },
+      "playback": {
+        "mode": "browser-local-original-world",
+        "status": "browser-loaded-world-verified",
+        "multiplayer": false,
+        "note": "当時のWebGLと当時のルールを使用。このタブ内でNPCと対戦し、現在のオンラインへ接続しません。",
+        "worldVerified": true,
+        "browserLoadVerified": true,
+        "browserVerification": "元のWebGLをChromeで起動し参加画面を撮影。各版のWorldは別に40tick進行を確認。全版の通し試合を確認した意味ではありません。"
+      }
+    },
+    {
+      "number": 23,
+      "id": "r23",
+      "revision": "orbit-salvage-prototype-00023-h27",
+      "imageDigest": "sha256:469c748c20fd007ec95f4b02b5bd9c4474f256f5decf237ccea667fed1b4f69d",
+      "createdAt": "2026-11-08T10:45:05.296427Z",
+      "sourceDirectory": "history-source/r23",
+      "layers": [
+        "sha256:071409a402546fea9e56af710d951a9e0c9bb205e4b1186811677d2c9dcad115",
+        "sha256:29b125288f827c2775069250d2c610e0753be475ff1aafb34bf78dc59f786201",
+        "sha256:9cde7a464f5dea4dc8ca2498ad98dcb466df7c67de5a016529750c3b71d6e55c",
+        "sha256:b920997861edf457859d2a3c61b51141d8ba4a2e5fe65f618ac530dc2fc6900c",
+        "sha256:018c782b41a5bcf47f1b32de3ecf79e949b7b2db8edd8e4432bb526bc95c7066",
+        "sha256:ee92606bf375fef19548d244070a4f45b9073bf33298e54a6fe17b8804ad492a",
+        "sha256:8df81f09c4b33623d4e5d6249ef7a2bab72c1d60e28a0e5391ecc0d77e8f754b"
+      ],
+      "runtimeExtracted": true,
+      "webglRetained": true,
+      "playUrl": "/history-play/play/r23/",
+      "sourceUrl": "/history-play/sources/r23.zip",
+      "assetMapping": {
+        ".wh..wh..opq": "../../assets/e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.opq",
+        "Build/build-web.data": "../../assets/c302d5cdf8148a08178388a38cad99531e3136eaa6b2c1582e3a6651b616e47d.data",
+        "Build/build-web.framework.js": "../../assets/b90ef0841efca5892aa8dbf0b38c45f0e2b159e558a4c88616f6e63058e11b5e.js",
+        "Build/build-web.loader.js": "../../assets/8c7a9e4b2538dab3353b31f3894d51b38781580a059cbae2a67c6ca092fa7bf2.js",
+        "Build/build-web.wasm": "../../assets/4975c0ef062590519df57603f83f4399aa277fb6a5040bfa994f4e02ef5b6237.wasm",
+        "field-ticket-scene.png": "../../assets/ae0c231d5c1831086b1e83f7129f996a5c7f8284a190073c732e4efeda003da0.png",
+        "valley-intro.jpg": "../../assets/af1d7c8936ca024452f2e84043824a0414ca5bacaa3d9eebc84f4290fac77fab.jpg",
+        "valley-title-LICENSE.txt": "../../assets/b6108d5e2607ca721d26fa66346e7a7547341cdffc4d0d97bec017c7ab93c645.txt",
+        "valley-title.png": "../../assets/5df659d8a608216b96750e66a1c65c67961580d16df676f036a0724f32dc54c9.png"
+      },
+      "playback": {
+        "mode": "browser-local-original-world",
+        "status": "browser-loaded-world-verified",
+        "multiplayer": false,
+        "note": "当時のWebGLと当時のルールを使用。このタブ内でNPCと対戦し、現在のオンラインへ接続しません。",
+        "worldVerified": true,
+        "browserLoadVerified": true,
+        "browserVerification": "元のWebGLをChromeで起動し参加画面を撮影。各版のWorldは別に40tick進行を確認。全版の通し試合を確認した意味ではありません。"
+      }
+    },
+    {
+      "number": 24,
+      "id": "r24",
+      "revision": "orbit-salvage-prototype-00024-nlr",
+      "imageDigest": "sha256:8d3f68364f10f96d36791a7774e0ccab1d5bfd93c9af4971e301780ab19cb23d",
+      "createdAt": "2026-11-08T11:02:40.674366Z",
+      "sourceDirectory": "history-source/r24",
+      "layers": [
+        "sha256:071409a402546fea9e56af710d951a9e0c9bb205e4b1186811677d2c9dcad115",
+        "sha256:3504ee5cd74c952a99b20fdaeebe4c184e558a57f63501b07683841b6ce3f0e9",
+        "sha256:978d64d55815be628afc71c30148e1fb22931a4023d5f1d1dad969a628ae42da",
+        "sha256:7f1ce56114b421a04b63dd55ec13751a65d3e829c41ccf559e6d1105a40450b8",
+        "sha256:af3019af46b23d35e2494b5c80c4f31a6080cecf9193f49484de4564fbb6869e",
+        "sha256:87a6e7013d4ddb92baff287f04afc17ecf97fa6b2183a773735e2f3ebc11d12c",
+        "sha256:8f0d98928d4a22cc967e1cb503fe1d2368b400d5c0b14bdc3ecb82fc5eaa7c61"
+      ],
+      "runtimeExtracted": true,
+      "webglRetained": true,
+      "playUrl": "/history-play/play/r24/",
+      "sourceUrl": "/history-play/sources/r24.zip",
+      "assetMapping": {
+        ".wh..wh..opq": "../../assets/e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.opq",
+        "Build/build-web.data": "../../assets/be641333e93287f3b91bd0b68f621553a33c51e0dea5e0ec80c2df38e3695379.data",
+        "Build/build-web.framework.js": "../../assets/07303ffc678673ec2a071c05715ee8d31fbf856b7f79250a461e15b426bcb71e.js",
+        "Build/build-web.loader.js": "../../assets/8c7a9e4b2538dab3353b31f3894d51b38781580a059cbae2a67c6ca092fa7bf2.js",
+        "Build/build-web.wasm": "../../assets/483f25d4a092645d5b1801cbfc5ca7cfc0cfab4dab3445b9b14693e373f2cb92.wasm",
+        "field-ticket-scene.png": "../../assets/ae0c231d5c1831086b1e83f7129f996a5c7f8284a190073c732e4efeda003da0.png",
+        "valley-intro.jpg": "../../assets/af1d7c8936ca024452f2e84043824a0414ca5bacaa3d9eebc84f4290fac77fab.jpg",
+        "valley-title-LICENSE.txt": "../../assets/b6108d5e2607ca721d26fa66346e7a7547341cdffc4d0d97bec017c7ab93c645.txt",
+        "valley-title.png": "../../assets/5df659d8a608216b96750e66a1c65c67961580d16df676f036a0724f32dc54c9.png"
+      },
+      "playback": {
+        "mode": "browser-local-original-world",
+        "status": "browser-loaded-world-verified",
+        "multiplayer": false,
+        "note": "当時のWebGLと当時のルールを使用。このタブ内でNPCと対戦し、現在のオンラインへ接続しません。",
+        "worldVerified": true,
+        "browserLoadVerified": true,
+        "browserVerification": "元のWebGLをChromeで起動し参加画面を撮影。各版のWorldは別に40tick進行を確認。全版の通し試合を確認した意味ではありません。"
+      }
+    },
+    {
+      "number": 25,
+      "id": "r25",
+      "revision": "orbit-salvage-prototype-00025-mkk",
+      "imageDigest": "sha256:211e9e2092068fa8c61e4dfc798d8320c42e4431bb676a4e389636a8e751fa74",
+      "createdAt": "2026-11-08T11:14:46.974938Z",
+      "sourceDirectory": "history-source/r25",
+      "layers": [
+        "sha256:071409a402546fea9e56af710d951a9e0c9bb205e4b1186811677d2c9dcad115",
+        "sha256:a3050ab06eb624f409a40a019472bb93d90c23a45c4fdac3b6790bdcb3bffdcb",
+        "sha256:9456fc27867523097d6885db1665bc3baeec451e2fc714600c39df731d6e8a51",
+        "sha256:d36984e6d1cbe79fe1d1b430edfcbb0c9692c0c772912861d66da4918c019cb0",
+        "sha256:f51d34a0553bb890b06d25e7f9687c53c11a34975d6b16bcdec3b64bad662953",
+        "sha256:f13b2579a0f087343d139927bc0d94fe730aa6e945a199480e369c0ed108abf1",
+        "sha256:39d8e66520643662cf8d3fe0cab5eab57626d05787d8e6f6606865a9f45ac5d3"
+      ],
+      "runtimeExtracted": true,
+      "webglRetained": true,
+      "playUrl": "/history-play/play/r25/",
+      "sourceUrl": "/history-play/sources/r25.zip",
+      "assetMapping": {
+        ".wh..wh..opq": "../../assets/e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.opq",
+        "Build/build-web.data": "../../assets/be641333e93287f3b91bd0b68f621553a33c51e0dea5e0ec80c2df38e3695379.data",
+        "Build/build-web.framework.js": "../../assets/07303ffc678673ec2a071c05715ee8d31fbf856b7f79250a461e15b426bcb71e.js",
+        "Build/build-web.loader.js": "../../assets/8c7a9e4b2538dab3353b31f3894d51b38781580a059cbae2a67c6ca092fa7bf2.js",
+        "Build/build-web.wasm": "../../assets/483f25d4a092645d5b1801cbfc5ca7cfc0cfab4dab3445b9b14693e373f2cb92.wasm",
+        "field-ticket-scene.png": "../../assets/ae0c231d5c1831086b1e83f7129f996a5c7f8284a190073c732e4efeda003da0.png",
+        "valley-intro.jpg": "../../assets/af1d7c8936ca024452f2e84043824a0414ca5bacaa3d9eebc84f4290fac77fab.jpg",
+        "valley-title-LICENSE.txt": "../../assets/b6108d5e2607ca721d26fa66346e7a7547341cdffc4d0d97bec017c7ab93c645.txt",
+        "valley-title.png": "../../assets/5df659d8a608216b96750e66a1c65c67961580d16df676f036a0724f32dc54c9.png"
+      },
+      "playback": {
+        "mode": "browser-local-original-world",
+        "status": "browser-loaded-world-verified",
+        "multiplayer": false,
+        "note": "当時のWebGLと当時のルールを使用。このタブ内でNPCと対戦し、現在のオンラインへ接続しません。",
+        "worldVerified": true,
+        "browserLoadVerified": true,
+        "browserVerification": "元のWebGLをChromeで起動し参加画面を撮影。各版のWorldは別に40tick進行を確認。全版の通し試合を確認した意味ではありません。"
+      }
+    },
+    {
+      "number": 26,
+      "id": "r26",
+      "revision": "orbit-salvage-prototype-00026-php",
+      "imageDigest": "sha256:0c067f67dae5943c2fb6f75c83141e4f8ff77910fa0b2d145ff94486904c81c7",
+      "createdAt": "2026-11-08T11:20:26.438430Z",
+      "sourceDirectory": "history-source/r26",
+      "layers": [
+        "sha256:071409a402546fea9e56af710d951a9e0c9bb205e4b1186811677d2c9dcad115",
+        "sha256:0cb4b8b4cfd46c81524808eb178ad155dea118e2c7876baea0257a50df465c90",
+        "sha256:b5ad7d820c6626d8368a8955d9fd888889402c46a7e723e1b60a641c1e8765ba",
+        "sha256:17dd16202c383219f0b31f2f4ee0f389c8a70b9694588348d9b13eebe7a595bf",
+        "sha256:31fb5d56b66b81662405a26fc03805696dc4ef9473c475ecadcff0c679043b91",
+        "sha256:99daa78ef3b25c6cc0dd71748f9051739a1e009c147a569fcee740df33923f4c",
+        "sha256:043807637492c84c72ac98d2180c629818bd7a01916b7d7812f73d671ea68383"
+      ],
+      "runtimeExtracted": true,
+      "webglRetained": true,
+      "playUrl": "/history-play/play/r26/",
+      "sourceUrl": "/history-play/sources/r26.zip",
+      "assetMapping": {
+        ".wh..wh..opq": "../../assets/e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.opq",
+        "Build/build-web.data": "../../assets/c5a877708b07d8864b787f17f41e2e8accb1d1c05f02d3070a3b443e10123ace.data",
+        "Build/build-web.framework.js": "../../assets/07303ffc678673ec2a071c05715ee8d31fbf856b7f79250a461e15b426bcb71e.js",
+        "Build/build-web.loader.js": "../../assets/8c7a9e4b2538dab3353b31f3894d51b38781580a059cbae2a67c6ca092fa7bf2.js",
+        "Build/build-web.wasm": "../../assets/4b9afc4d56c551d0d269921382ec4f4d1dec780ea0b1b71e2a63be65ed6ac337.wasm",
+        "field-ticket-scene.png": "../../assets/ae0c231d5c1831086b1e83f7129f996a5c7f8284a190073c732e4efeda003da0.png",
+        "valley-intro.jpg": "../../assets/af1d7c8936ca024452f2e84043824a0414ca5bacaa3d9eebc84f4290fac77fab.jpg",
+        "valley-title-LICENSE.txt": "../../assets/b6108d5e2607ca721d26fa66346e7a7547341cdffc4d0d97bec017c7ab93c645.txt",
+        "valley-title.png": "../../assets/5df659d8a608216b96750e66a1c65c67961580d16df676f036a0724f32dc54c9.png"
+      },
+      "playback": {
+        "mode": "browser-local-original-world",
+        "status": "browser-loaded-world-verified",
+        "multiplayer": false,
+        "note": "当時のWebGLと当時のルールを使用。このタブ内でNPCと対戦し、現在のオンラインへ接続しません。",
+        "worldVerified": true,
+        "browserLoadVerified": true,
+        "browserVerification": "元のWebGLをChromeで起動し参加画面を撮影。各版のWorldは別に40tick進行を確認。全版の通し試合を確認した意味ではありません。"
+      }
+    },
+    {
+      "number": 27,
+      "id": "r27",
+      "revision": "orbit-salvage-prototype-00027-fmt",
+      "imageDigest": "sha256:0a078eb1fc4af70a6d846ebdc5b66d834b3c2f3a05d78457e20b801529b8f014",
+      "createdAt": "2026-11-08T12:53:14.051833Z",
+      "sourceDirectory": "history-source/r27",
+      "layers": [
+        "sha256:071409a402546fea9e56af710d951a9e0c9bb205e4b1186811677d2c9dcad115",
+        "sha256:1faee7760aa7d80363336fd3cc24074cf642352333d78e2e2a810f382837c12e",
+        "sha256:cd11a75709125b2f50fda58c96fda1af05bd16d6da2848c94acc9f05ffc9312d",
+        "sha256:0c7d743865201bb01f063d8b3f71fd842085e7c2b62280e24a59dbaad0bfda5f",
+        "sha256:61f130559d3144138c05555a41a6ba86f74b5bf17c00f842d4e7859f6c453867",
+        "sha256:a56e5e441221a3cc10e068a6e4bffd0b1f1d8757acb7f15e1b96c2db5dacb3cd",
+        "sha256:b573ae26051ab3d42c2ac3e1598335078706274b121132eaabe5dd6d5172f063"
+      ],
+      "runtimeExtracted": true,
+      "webglRetained": true,
+      "playUrl": "/history-play/play/r27/",
+      "sourceUrl": "/history-play/sources/r27.zip",
+      "assetMapping": {
+        ".wh..wh..opq": "../../assets/e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.opq",
+        "Build/build-web.data": "../../assets/79123f403ab2508512681b1d43fe929977b9af80321e10671fd49edeaf281a4b.data",
+        "Build/build-web.framework.js": "../../assets/216ac994e13de820da5abe02f0e1d2425bac8f6f79d5f775d678b9b73b826305.js",
+        "Build/build-web.loader.js": "../../assets/8c7a9e4b2538dab3353b31f3894d51b38781580a059cbae2a67c6ca092fa7bf2.js",
+        "Build/build-web.wasm": "../../assets/16c13b5e8680a5af51aa0bcfa0220b8b4666b499b1123ad224f34bfa6fdf09c5.wasm",
+        "field-ticket-scene.png": "../../assets/ae0c231d5c1831086b1e83f7129f996a5c7f8284a190073c732e4efeda003da0.png",
+        "valley-intro.jpg": "../../assets/af1d7c8936ca024452f2e84043824a0414ca5bacaa3d9eebc84f4290fac77fab.jpg",
+        "valley-title-LICENSE.txt": "../../assets/b6108d5e2607ca721d26fa66346e7a7547341cdffc4d0d97bec017c7ab93c645.txt",
+        "valley-title.png": "../../assets/5df659d8a608216b96750e66a1c65c67961580d16df676f036a0724f32dc54c9.png"
+      },
+      "playback": {
+        "mode": "browser-local-original-world",
+        "status": "browser-loaded-world-verified",
+        "multiplayer": false,
+        "note": "当時のWebGLと当時のルールを使用。このタブ内でNPCと対戦し、現在のオンラインへ接続しません。",
+        "worldVerified": true,
+        "browserLoadVerified": true,
+        "browserVerification": "元のWebGLをChromeで起動し参加画面を撮影。各版のWorldは別に40tick進行を確認。全版の通し試合を確認した意味ではありません。"
+      }
+    },
+    {
+      "number": 28,
+      "id": "r28",
+      "revision": "orbit-salvage-prototype-00028-ful",
+      "imageDigest": "sha256:c9e3338854ae71eecac74c64b4db09d1f4a398e4857f2fb4a30d05a79b167e15",
+      "createdAt": "2026-11-08T14:25:06.062335Z",
+      "sourceDirectory": "history-source/r28",
+      "layers": [
+        "sha256:071409a402546fea9e56af710d951a9e0c9bb205e4b1186811677d2c9dcad115",
+        "sha256:e1693258e4087c254031663a694852bc474e7f93ae063368303cda0f710c068e",
+        "sha256:ab3f523559b4b370dc798e245bc2a83e9993730703d8708e55e088e7edb73205",
+        "sha256:04261ae333d24b66bd5d0f6d122b8524b15bee1d71c0582d15e40a23456ddb48",
+        "sha256:9d2d54a93444d0091251fd2558373defc60b0f54025ed7bb31599cc66c83c10f",
+        "sha256:20ff29f08fd590690b0a654b3c045e7bf072f8afbf8099c9bc678f522d857073",
+        "sha256:fc7a631e488d7f4249e48ccb797816afd474dffc54540f6ad8ee2f956f33a2a8"
+      ],
+      "runtimeExtracted": true,
+      "webglRetained": true,
+      "playUrl": "/history-play/play/r28/",
+      "sourceUrl": "/history-play/sources/r28.zip",
+      "assetMapping": {
+        ".wh..wh..opq": "../../assets/e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.opq",
+        "Build/build-web.data": "../../assets/6635cd7460d73193395675d8e23f88e93c00f5968c9d2e3e7d9db4ee691fcff3.data",
+        "Build/build-web.framework.js": "../../assets/916c6c9f3c22db26e63f172b2d086b48df0bb81ff0911918cbd2f6627b7638db.js",
+        "Build/build-web.loader.js": "../../assets/8c7a9e4b2538dab3353b31f3894d51b38781580a059cbae2a67c6ca092fa7bf2.js",
+        "Build/build-web.wasm": "../../assets/47d764997546ccd3c9659b30d5462b57ae426cb4fb30f1307b0d17259ba51f9a.wasm",
+        "field-ticket-scene.png": "../../assets/ae0c231d5c1831086b1e83f7129f996a5c7f8284a190073c732e4efeda003da0.png",
+        "valley-intro.jpg": "../../assets/af1d7c8936ca024452f2e84043824a0414ca5bacaa3d9eebc84f4290fac77fab.jpg",
+        "valley-title-LICENSE.txt": "../../assets/b6108d5e2607ca721d26fa66346e7a7547341cdffc4d0d97bec017c7ab93c645.txt",
+        "valley-title.png": "../../assets/5df659d8a608216b96750e66a1c65c67961580d16df676f036a0724f32dc54c9.png"
+      },
+      "playback": {
+        "mode": "browser-local-original-world",
+        "status": "browser-loaded-world-verified",
+        "multiplayer": false,
+        "note": "当時のWebGLと当時のルールを使用。このタブ内でNPCと対戦し、現在のオンラインへ接続しません。",
+        "worldVerified": true,
+        "browserLoadVerified": true,
+        "browserVerification": "元のWebGLをChromeで起動し参加画面を撮影。各版のWorldは別に40tick進行を確認。全版の通し試合を確認した意味ではありません。"
+      }
+    },
+    {
+      "number": 29,
+      "id": "r29",
+      "revision": "orbit-salvage-prototype-00029-np5",
+      "imageDigest": "sha256:b9ff15a6b229af85757d363b1bbaee243da6e162fe15c06e3132ca52dd1776b4",
+      "createdAt": "2026-11-08T14:37:58.947616Z",
+      "sourceDirectory": "history-source/r29",
+      "layers": [
+        "sha256:071409a402546fea9e56af710d951a9e0c9bb205e4b1186811677d2c9dcad115",
+        "sha256:50c0c54590a220118b0dff7fb526891fb2c0fdbdbfe90ccab13c2651b7035cd6",
+        "sha256:5aac2971b6083d4760a1e8a5d7c2980ecd63dc360640fd877c04726a7ee47ced",
+        "sha256:0f449c6dc5858e8e52bf0893b143f2fc32dc71487a25b0f77b2f5595e20ed2a0",
+        "sha256:cffde718af546cc3fa8518674265eb7bbe4c887a61259ba83766a5d3ccb35c81",
+        "sha256:a5cdeb201da97aa62c764fa9de276702ef902ec7f24e2da286119a8de4034a4c",
+        "sha256:2b8228ec42bfa4da7007a4f71776e451d561267237b3edf127e48eb0230ead79"
+      ],
+      "runtimeExtracted": true,
+      "webglRetained": true,
+      "playUrl": "/history-play/play/r29/",
+      "sourceUrl": "/history-play/sources/r29.zip",
+      "assetMapping": {
+        ".wh..wh..opq": "../../assets/e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.opq",
+        "Build/build-web.data": "../../assets/1001180003ca5564b44945caf5dbd713558988256817d03efdb941b2e3ec7098.data",
+        "Build/build-web.framework.js": "../../assets/916c6c9f3c22db26e63f172b2d086b48df0bb81ff0911918cbd2f6627b7638db.js",
+        "Build/build-web.loader.js": "../../assets/8c7a9e4b2538dab3353b31f3894d51b38781580a059cbae2a67c6ca092fa7bf2.js",
+        "Build/build-web.wasm": "../../assets/cb0b0cd78b7fa32940dfa26812decfa2700934f4751c6b969a01d5b493d349f6.wasm",
+        "field-ticket-scene.png": "../../assets/ae0c231d5c1831086b1e83f7129f996a5c7f8284a190073c732e4efeda003da0.png",
+        "valley-intro.jpg": "../../assets/af1d7c8936ca024452f2e84043824a0414ca5bacaa3d9eebc84f4290fac77fab.jpg",
+        "valley-title-LICENSE.txt": "../../assets/b6108d5e2607ca721d26fa66346e7a7547341cdffc4d0d97bec017c7ab93c645.txt",
+        "valley-title.png": "../../assets/5df659d8a608216b96750e66a1c65c67961580d16df676f036a0724f32dc54c9.png"
+      },
+      "playback": {
+        "mode": "browser-local-original-world",
+        "status": "browser-loaded-world-verified",
+        "multiplayer": false,
+        "note": "当時のWebGLと当時のルールを使用。このタブ内でNPCと対戦し、現在のオンラインへ接続しません。",
+        "worldVerified": true,
+        "browserLoadVerified": true,
+        "browserVerification": "元のWebGLをChromeで起動し参加画面を撮影。各版のWorldは別に40tick進行を確認。全版の通し試合を確認した意味ではありません。"
+      }
+    },
+    {
+      "number": 31,
+      "id": "r31",
+      "revision": "orbit-salvage-prototype-00031-fej",
+      "imageDigest": "sha256:8c5a72fe6f13507d96ea2cf500a1412a83c3ecd1eb3139e895c6a386153f8c58",
+      "createdAt": "2026-11-08T17:02:16.929665Z",
+      "sourceDirectory": "history-source/r31",
+      "layers": [
+        "sha256:071409a402546fea9e56af710d951a9e0c9bb205e4b1186811677d2c9dcad115",
+        "sha256:8b73bea947b8e41cae2ffca345f3541932194460e61b8d6148b39f5fdcf4eaf0",
+        "sha256:1075c58bcb14ecbd5109658ac3fca15202c4dbb56f6a9c13024ad06cf9e7c72b",
+        "sha256:290469b0b39f9709df7a6f3fd451202c4c6e226cacb6e475e7a072547f46dc25",
+        "sha256:5cd370ad14b963823344243eec49725a4e5197f18a0cdbf7a8f29234bf2b916e",
+        "sha256:9c0d2fc5fdd48072021ccfb23c70e9168489a2c7855e922e43ea0edb0c5b7441",
+        "sha256:c9bcf72c7c96e8c022a308b019942a5da1e0a98adb66e678278ba384800f4a18"
+      ],
+      "runtimeExtracted": true,
+      "webglRetained": true,
+      "playUrl": "/history-play/play/r31/",
+      "sourceUrl": "/history-play/sources/r31.zip",
+      "assetMapping": {
+        ".wh..wh..opq": "../../assets/e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.opq",
+        "Build/build-web.data": "../../assets/baba96f1489bcbe1ebb755076b8bac380f58909aba0a9e0a9500d818620b0d6e.data",
+        "Build/build-web.framework.js": "../../assets/4ac68367b124ada9031e57fc139a0a70f384d0b3eb97a9a349f8d0cc6c10548f.js",
+        "Build/build-web.loader.js": "../../assets/8c7a9e4b2538dab3353b31f3894d51b38781580a059cbae2a67c6ca092fa7bf2.js",
+        "Build/build-web.wasm": "../../assets/e3d6fb73ccea5861e5c701dd12af115f1e7cc129d6aedf11d63c8f81f1543046.wasm",
+        "field-ticket-scene.png": "../../assets/ae0c231d5c1831086b1e83f7129f996a5c7f8284a190073c732e4efeda003da0.png",
+        "valley-intro.jpg": "../../assets/af1d7c8936ca024452f2e84043824a0414ca5bacaa3d9eebc84f4290fac77fab.jpg",
+        "valley-title-LICENSE.txt": "../../assets/b6108d5e2607ca721d26fa66346e7a7547341cdffc4d0d97bec017c7ab93c645.txt",
+        "valley-title.png": "../../assets/5df659d8a608216b96750e66a1c65c67961580d16df676f036a0724f32dc54c9.png"
+      },
+      "playback": {
+        "mode": "browser-local-original-world",
+        "status": "browser-loaded-world-verified",
+        "multiplayer": false,
+        "note": "当時のWebGLと当時のルールを使用。このタブ内でNPCと対戦し、現在のオンラインへ接続しません。",
+        "worldVerified": true,
+        "browserLoadVerified": true,
+        "browserVerification": "元のWebGLをChromeで起動し参加画面を撮影。各版のWorldは別に40tick進行を確認。全版の通し試合を確認した意味ではありません。"
+      }
+    },
+    {
+      "number": 32,
+      "id": "r32",
+      "revision": "orbit-salvage-prototype-00032-yak",
+      "imageDigest": "sha256:94252b6e579db24b80fb523ef78b079d119ce4348405438d0ffddc9b8e59e00d",
+      "createdAt": "2026-11-08T17:06:38.498679Z",
+      "sourceDirectory": "history-source/r32",
+      "layers": [
+        "sha256:071409a402546fea9e56af710d951a9e0c9bb205e4b1186811677d2c9dcad115",
+        "sha256:e3615870ea05a167dc089c65e0daa306bd0738b3e455a60c8cceaa86c0523e96",
+        "sha256:39b9a0095e04fcbab732908a4c2f190692c6fbc3b6fc1eb12493f2aa0aa3f246",
+        "sha256:df01d271482aea6541640e2b934424190e46a527f6999df0df8ba65c5bf4f390",
+        "sha256:c89f8a8a59d620871323d223121de8eabda6c89e3cf7ea3a95b0835e43a04e6b",
+        "sha256:f896ba894ba57789b89fd770b4f7883beeee29ef05181457e791736da556e25b",
+        "sha256:bf94a4f59acb75b078f5bc85226b6a0058f8976c4f2c2f66520a7c1c952c0630"
+      ],
+      "runtimeExtracted": true,
+      "webglRetained": true,
+      "playUrl": "/history-play/play/r32/",
+      "sourceUrl": "/history-play/sources/r32.zip",
+      "assetMapping": {
+        ".wh..wh..opq": "../../assets/e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.opq",
+        "Build/build-web.data": "../../assets/4deb2d57d7ff2bdb95e6bae562d7be9ce4758c907f4e54b027527af9366c7d50.data",
+        "Build/build-web.framework.js": "../../assets/4ac68367b124ada9031e57fc139a0a70f384d0b3eb97a9a349f8d0cc6c10548f.js",
+        "Build/build-web.loader.js": "../../assets/8c7a9e4b2538dab3353b31f3894d51b38781580a059cbae2a67c6ca092fa7bf2.js",
+        "Build/build-web.wasm": "../../assets/6ededdf5d33529515003e0a707d2f4133258d7963f432db7051e96c49a1824aa.wasm",
+        "field-ticket-scene.png": "../../assets/ae0c231d5c1831086b1e83f7129f996a5c7f8284a190073c732e4efeda003da0.png",
+        "valley-intro.jpg": "../../assets/af1d7c8936ca024452f2e84043824a0414ca5bacaa3d9eebc84f4290fac77fab.jpg",
+        "valley-title-LICENSE.txt": "../../assets/b6108d5e2607ca721d26fa66346e7a7547341cdffc4d0d97bec017c7ab93c645.txt",
+        "valley-title.png": "../../assets/5df659d8a608216b96750e66a1c65c67961580d16df676f036a0724f32dc54c9.png"
+      },
+      "playback": {
+        "mode": "browser-local-original-world",
+        "status": "browser-loaded-world-verified",
+        "multiplayer": false,
+        "note": "当時のWebGLと当時のルールを使用。このタブ内でNPCと対戦し、現在のオンラインへ接続しません。",
+        "worldVerified": true,
+        "browserLoadVerified": true,
+        "browserVerification": "元のWebGLをChromeで起動し参加画面を撮影。各版のWorldは別に40tick進行を確認。全版の通し試合を確認した意味ではありません。"
+      }
+    },
+    {
+      "number": 34,
+      "id": "r34",
+      "revision": "orbit-salvage-prototype-00034-tum",
+      "imageDigest": "sha256:3b8ce8a163e0683de4da493674461185f2605fdd7a4f38a66957e50743bc730c",
+      "createdAt": "2026-11-08T20:19:48.581569Z",
+      "sourceDirectory": "history-source/r34",
+      "layers": [
+        "sha256:071409a402546fea9e56af710d951a9e0c9bb205e4b1186811677d2c9dcad115",
+        "sha256:576b9a99694219883fea092a83d7ea6ac1ef2185baee0ec82e77ba8c586f34b2",
+        "sha256:edd2a90c85fe284d3ff1d00966d58f9628827dcc4a1837081d2a5403ce322156",
+        "sha256:c2ee4e919a31c9308550ead46a2fbcd30b0eb7192e70be8bf11bea1e9511f4d9",
+        "sha256:bc61f57116912fd72c7cdc6e98d2babe52f01d837830eb6867dd41fb7dd49951",
+        "sha256:04554d7dd64fd0f07ef90b9826446c509f2da76489262fdd81f88792f3762b0e",
+        "sha256:304af0e5b8b4049b902cc25ddd4a9db1092e3c0f4bd1383c67236e545cc86aba"
+      ],
+      "runtimeExtracted": true,
+      "webglRetained": true,
+      "playUrl": "/history-play/play/r34/",
+      "sourceUrl": "/history-play/sources/r34.zip",
+      "assetMapping": {
+        ".wh..wh..opq": "../../assets/e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.opq",
+        "Build/build-web.data": "../../assets/28e6a175e9cbf34ddd917d7da17995cd6bef33da1e1c5b7757e7a85b5572c4a4.data",
+        "Build/build-web.framework.js": "../../assets/e4e65dbd89457de1b68b8f1e7a9a16f6df4167363a8a3039a5afe2dffcb2d104.js",
+        "Build/build-web.loader.js": "../../assets/8c7a9e4b2538dab3353b31f3894d51b38781580a059cbae2a67c6ca092fa7bf2.js",
+        "Build/build-web.wasm": "../../assets/6167923be30a7747c6bc5e5a79de41ca7335d61686f490cbf2d6854420d02bf9.wasm",
+        "field-ticket-scene.png": "../../assets/ae0c231d5c1831086b1e83f7129f996a5c7f8284a190073c732e4efeda003da0.png",
+        "valley-intro.jpg": "../../assets/af1d7c8936ca024452f2e84043824a0414ca5bacaa3d9eebc84f4290fac77fab.jpg",
+        "valley-title-LICENSE.txt": "../../assets/b6108d5e2607ca721d26fa66346e7a7547341cdffc4d0d97bec017c7ab93c645.txt",
+        "valley-title.png": "../../assets/5df659d8a608216b96750e66a1c65c67961580d16df676f036a0724f32dc54c9.png"
+      },
+      "playback": {
+        "mode": "browser-local-original-world",
+        "status": "browser-loaded-world-verified",
+        "multiplayer": false,
+        "note": "当時のWebGLと当時のルールを使用。このタブ内でNPCと対戦し、現在のオンラインへ接続しません。",
+        "worldVerified": true,
+        "browserLoadVerified": true,
+        "browserVerification": "元のWebGLをChromeで起動し参加画面を撮影。各版のWorldは別に40tick進行を確認。全版の通し試合を確認した意味ではありません。"
+      }
+    },
+    {
+      "number": 36,
+      "id": "r36",
+      "revision": "orbit-salvage-prototype-00036-zil",
+      "imageDigest": "sha256:04ec5fb31728dff0d1b7aa044de49b6cea2d6db6feb6916da18de5473e8c38d4",
+      "createdAt": "2026-11-08T21:24:25.090275Z",
+      "sourceDirectory": "history-source/r36",
+      "layers": [
+        "sha256:071409a402546fea9e56af710d951a9e0c9bb205e4b1186811677d2c9dcad115",
+        "sha256:14dbd5c6f34636b34e5a920b97d659954337538e7cac4ee41148420c5f65b31f",
+        "sha256:a6e7d8ec0e16fc50aac97adc125b038fade50ef9b910e200d97e2a16c4453ac3",
+        "sha256:f9a122c35c550e4f613c3c266e9a8e2cd849bd2625e6d55dc0b1b3eeabbf322d",
+        "sha256:4ee519eaef7575cbed778cb2385aa25272ab819abc00fda9d52a49ad3d51fc6d",
+        "sha256:fc50fa75528420e3e5f8e056d6b224bdc4abd781b849beb7e0d7c2b254b7ed41",
+        "sha256:84687d511a0fb53889eda1b860f4e11b1a82593e252ddef5af656725d6951a05"
+      ],
+      "runtimeExtracted": true,
+      "webglRetained": true,
+      "playUrl": "/history-play/play/r36/",
+      "sourceUrl": "/history-play/sources/r36.zip",
+      "assetMapping": {
+        ".wh..wh..opq": "../../assets/e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.opq",
+        "Build/build-web.data": "../../assets/81266cd7b161f687e5ace56403ef4c9f9567af5a3cba2ac6f84f7e867048e3e7.data",
+        "Build/build-web.framework.js": "../../assets/af17d914baa998c360cd86837840310c08b3795df2d2af0c246171e25136032a.js",
+        "Build/build-web.loader.js": "../../assets/8c7a9e4b2538dab3353b31f3894d51b38781580a059cbae2a67c6ca092fa7bf2.js",
+        "Build/build-web.wasm": "../../assets/6a8dfd61128be4b79219ff9879c789d8133c840aa388f3e56624039117393d93.wasm",
+        "field-ticket-scene.png": "../../assets/ae0c231d5c1831086b1e83f7129f996a5c7f8284a190073c732e4efeda003da0.png",
+        "valley-intro.jpg": "../../assets/17f65e6fccbd079a7d02233b9c654ee30e81669d3bdd611e053986bbd6dfbf1f.jpg",
+        "valley-title-LICENSE.txt": "../../assets/b6108d5e2607ca721d26fa66346e7a7547341cdffc4d0d97bec017c7ab93c645.txt",
+        "valley-title.png": "../../assets/5df659d8a608216b96750e66a1c65c67961580d16df676f036a0724f32dc54c9.png"
+      },
+      "playback": {
+        "mode": "browser-local-original-world",
+        "status": "browser-loaded-world-verified",
+        "multiplayer": false,
+        "note": "当時のWebGLと当時のルールを使用。このタブ内でNPCと対戦し、現在のオンラインへ接続しません。",
+        "worldVerified": true,
+        "browserLoadVerified": true,
+        "browserVerification": "元のWebGLをChromeで起動し参加画面を撮影。各版のWorldは別に40tick進行を確認。全版の通し試合を確認した意味ではありません。"
+      }
+    },
+    {
+      "number": 37,
+      "id": "r37",
+      "revision": "orbit-salvage-prototype-00037-ful",
+      "imageDigest": "sha256:97a093da0f4699688ef4771bc238fdfa3030f57dcf12f1131be20dfe46796faa",
+      "createdAt": "2026-11-08T21:41:49.233533Z",
+      "sourceDirectory": "history-source/r37",
+      "layers": [
+        "sha256:071409a402546fea9e56af710d951a9e0c9bb205e4b1186811677d2c9dcad115",
+        "sha256:a0fe49085440989199c11fe5d53e0a462ffc4ca86393fa893fd72d37bdc61270",
+        "sha256:190715babc51c42ed22ccbeb7710d0e15ff09e5dcecc72d80ca8bb60b28b4f02",
+        "sha256:58b557ad55d8ad9e06327e88cc705a9f179ebdb76fafb66ba8d14e7d8f598867",
+        "sha256:2c8bec93062434a7e65b068acc732bda89dc24f7e733ad52f1478ddb2e58c1ba",
+        "sha256:594c27b3eba194888593923183fe915e6ec0830b67d3a5054fe20060c3064391",
+        "sha256:1ca0e9435d020ed08556ec67b2993931913cc2b09171efaaf048abdda2324a1c"
+      ],
+      "runtimeExtracted": true,
+      "webglRetained": true,
+      "playUrl": "/history-play/play/r37/",
+      "sourceUrl": "/history-play/sources/r37.zip",
+      "assetMapping": {
+        ".wh..wh..opq": "../../assets/e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.opq",
+        "Build/build-web.data": "../../assets/56fb710938eef51ad2fb4b53f511e866dfa7ebd5503b27886ca60558440886d5.data",
+        "Build/build-web.framework.js": "../../assets/2b9c07698cecdca813541db9d24457538dcd0d3da7416aacf8aa0dc3f87fdf51.js",
+        "Build/build-web.loader.js": "../../assets/8c7a9e4b2538dab3353b31f3894d51b38781580a059cbae2a67c6ca092fa7bf2.js",
+        "Build/build-web.wasm": "../../assets/c215f32f68eba4114a7a5e41353d35ef5121f9fce7f64c9ac61072052ea11451.wasm",
+        "field-ticket-scene.png": "../../assets/ae0c231d5c1831086b1e83f7129f996a5c7f8284a190073c732e4efeda003da0.png",
+        "valley-intro.jpg": "../../assets/ac51a875f1bdcb97ba5c367bba9f89e39e78d05f8938994e5a30c5d2bf6d70f1.jpg",
+        "valley-title-LICENSE.txt": "../../assets/b6108d5e2607ca721d26fa66346e7a7547341cdffc4d0d97bec017c7ab93c645.txt",
+        "valley-title.png": "../../assets/5df659d8a608216b96750e66a1c65c67961580d16df676f036a0724f32dc54c9.png"
+      },
+      "playback": {
+        "mode": "browser-local-original-world",
+        "status": "browser-loaded-world-verified",
+        "multiplayer": false,
+        "note": "当時のWebGLと当時のルールを使用。このタブ内でNPCと対戦し、現在のオンラインへ接続しません。",
+        "worldVerified": true,
+        "browserLoadVerified": true,
+        "browserVerification": "元のWebGLをChromeで起動し参加画面を撮影。各版のWorldは別に40tick進行を確認。全版の通し試合を確認した意味ではありません。"
+      }
+    },
+    {
+      "number": 39,
+      "id": "r39",
+      "revision": "orbit-salvage-prototype-00039-zux",
+      "imageDigest": "sha256:cd2e2878f874af5f3354b4bd95f5aae54f96e10a89df160c44faff9c2bf5412a",
+      "createdAt": "2026-11-08T22:37:44.863745Z",
+      "sourceDirectory": "history-source/r39",
+      "layers": [
+        "sha256:071409a402546fea9e56af710d951a9e0c9bb205e4b1186811677d2c9dcad115",
+        "sha256:44c15e538ba457ae42a24ec201ebbcee12d7b7a5046ae47f4f8f415ad8b5da82",
+        "sha256:9ab0f26f045646172532c86b4f1797ca3b3f2f55734c18af9cd9f31835951a07",
+        "sha256:3345efbf8cf1170b03b55d63342ce6f6dfd381863ab5dfe36bb99c5365ccc237",
+        "sha256:ba6415f908a3799bc0883d00e9394d0af44a506726f641b6d1fdec6bdecbdced",
+        "sha256:38c937a5c3dbdf65f93368c90615224a7734042108963f4dc92f2d7331c4b679",
+        "sha256:ff0bd2fc8e3d5c7fab92ebcde73d00bc544a095630d61414c0032e7f22aa3e32"
+      ],
+      "runtimeExtracted": true,
+      "webglRetained": true,
+      "playUrl": "/history-play/play/r39/",
+      "sourceUrl": "/history-play/sources/r39.zip",
+      "assetMapping": {
+        ".wh..wh..opq": "../../assets/e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.opq",
+        "Build/build-web.data": "../../assets/b55ba3fdb1139d8771497ae19db277ee51d855aae13e3b61b9e77a1d1ca337d0.data",
+        "Build/build-web.framework.js": "../../assets/d3f88c4344a6db82e7122d1008539e3d3cf067c43978b21023e2b6cea5aa8d08.js",
+        "Build/build-web.loader.js": "../../assets/8c7a9e4b2538dab3353b31f3894d51b38781580a059cbae2a67c6ca092fa7bf2.js",
+        "Build/build-web.wasm": "../../assets/68703c1958d4322a45c420222b85c1773bb4b73cf354e98189372178d0754b62.wasm",
+        "field-ticket-scene.png": "../../assets/ae0c231d5c1831086b1e83f7129f996a5c7f8284a190073c732e4efeda003da0.png",
+        "valley-intro.jpg": "../../assets/ac51a875f1bdcb97ba5c367bba9f89e39e78d05f8938994e5a30c5d2bf6d70f1.jpg",
+        "valley-title-LICENSE.txt": "../../assets/b6108d5e2607ca721d26fa66346e7a7547341cdffc4d0d97bec017c7ab93c645.txt",
+        "valley-title.png": "../../assets/5df659d8a608216b96750e66a1c65c67961580d16df676f036a0724f32dc54c9.png"
+      },
+      "playback": {
+        "mode": "browser-local-original-world",
+        "status": "browser-loaded-world-verified",
+        "multiplayer": false,
+        "note": "当時のWebGLと当時のルールを使用。このタブ内でNPCと対戦し、現在のオンラインへ接続しません。",
+        "worldVerified": true,
+        "browserLoadVerified": true,
+        "browserVerification": "元のWebGLをChromeで起動し参加画面を撮影。各版のWorldは別に40tick進行を確認。全版の通し試合を確認した意味ではありません。"
+      }
+    },
+    {
+      "number": 40,
+      "id": "r40",
+      "revision": "orbit-salvage-prototype-00040-zus",
+      "imageDigest": "sha256:267869187bd086517f1c88000f23129d22c37c625afcf4f287fe3bde04d3169e",
+      "createdAt": "2026-11-08T22:41:26.563790Z",
+      "sourceDirectory": "history-source/r40",
+      "layers": [
+        "sha256:071409a402546fea9e56af710d951a9e0c9bb205e4b1186811677d2c9dcad115",
+        "sha256:a1c3de3c19d4b296c32a1166bc49b6705517415832887194b852863356d799cf",
+        "sha256:4837fac78537d5d23f1672487669fe4ed72bd6eae22988eedee537e40eccfa3d",
+        "sha256:e7fabcd4827733820550bddd8ac7c1f3377a4b8177a51fd5c84605c3307f7c93",
+        "sha256:5c18802c61a386d6023429ecb55c0d33a46419c7fbbbbd76bc0e9654179adda6",
+        "sha256:13f8ff7bdd37cd333e7f9b28d046b1222784cca219aff4a736036af7f5412c13",
+        "sha256:2fd6d2dd17acf487f75d111bc41152c70b754452ac17423a428bf6f0458bc5a4"
+      ],
+      "runtimeExtracted": true,
+      "webglRetained": true,
+      "playUrl": "/history-play/play/r40/",
+      "sourceUrl": "/history-play/sources/r40.zip",
+      "assetMapping": {
+        ".wh..wh..opq": "../../assets/e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.opq",
+        "Build/build-web.data": "../../assets/b55ba3fdb1139d8771497ae19db277ee51d855aae13e3b61b9e77a1d1ca337d0.data",
+        "Build/build-web.framework.js": "../../assets/d3f88c4344a6db82e7122d1008539e3d3cf067c43978b21023e2b6cea5aa8d08.js",
+        "Build/build-web.loader.js": "../../assets/8c7a9e4b2538dab3353b31f3894d51b38781580a059cbae2a67c6ca092fa7bf2.js",
+        "Build/build-web.wasm": "../../assets/68703c1958d4322a45c420222b85c1773bb4b73cf354e98189372178d0754b62.wasm",
+        "field-ticket-scene.png": "../../assets/ae0c231d5c1831086b1e83f7129f996a5c7f8284a190073c732e4efeda003da0.png",
+        "valley-intro.jpg": "../../assets/ac51a875f1bdcb97ba5c367bba9f89e39e78d05f8938994e5a30c5d2bf6d70f1.jpg",
+        "valley-title-LICENSE.txt": "../../assets/b6108d5e2607ca721d26fa66346e7a7547341cdffc4d0d97bec017c7ab93c645.txt",
+        "valley-title.png": "../../assets/5df659d8a608216b96750e66a1c65c67961580d16df676f036a0724f32dc54c9.png"
+      },
+      "playback": {
+        "mode": "browser-local-original-world",
+        "status": "browser-loaded-world-verified",
+        "multiplayer": false,
+        "note": "当時のWebGLと当時のルールを使用。このタブ内でNPCと対戦し、現在のオンラインへ接続しません。",
+        "worldVerified": true,
+        "browserLoadVerified": true,
+        "browserVerification": "元のWebGLをChromeで起動し参加画面を撮影。各版のWorldは別に40tick進行を確認。全版の通し試合を確認した意味ではありません。"
+      }
+    },
+    {
+      "number": 41,
+      "id": "r41",
+      "revision": "orbit-salvage-prototype-00041-bes",
+      "imageDigest": "sha256:fec4b554fbfc3d928f9d6ba619fdf6dfac78b9baecf4e7d4d4f86ad104059dca",
+      "createdAt": "2026-11-08T23:35:31.387417Z",
+      "sourceDirectory": "history-source/r41",
+      "layers": [
+        "sha256:071409a402546fea9e56af710d951a9e0c9bb205e4b1186811677d2c9dcad115",
+        "sha256:b1f64613c3773b06ad6ed7821c76af93a04b80bf9300355034cf6ff36c4db0c5",
+        "sha256:3ca8b43ee0e5a0f57cfa818dee85a5957136005e138c83663befc026b374dde1",
+        "sha256:ed2466907cb9a27c80ae784a3b4ac67ed56b333178c7db958e3e21ba8119f75c",
+        "sha256:45849094d7a129581addef738313bb2143f2be145742dc2037f801601f57fad7",
+        "sha256:2033f8864214d0b3ca6afedf5efc3215d4e2cfbcdd0cec524cb31a342b4f7f4c",
+        "sha256:9d37da4663515c628ac25242ca5c942bc1a7cd6e391c6ea7b3b35fe492c96a41"
+      ],
+      "runtimeExtracted": true,
+      "webglRetained": true,
+      "playUrl": "/history-play/play/r41/",
+      "sourceUrl": "/history-play/sources/r41.zip",
+      "assetMapping": {
+        ".wh..wh..opq": "../../assets/e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.opq",
+        "Build/build-web.data": "../../assets/45bbaf08f7cad79a80b6460a2d57f10c03ac1ce3ee9936c2e5ae31e15a6e971e.data",
+        "Build/build-web.framework.js": "../../assets/d3f88c4344a6db82e7122d1008539e3d3cf067c43978b21023e2b6cea5aa8d08.js",
+        "Build/build-web.loader.js": "../../assets/8c7a9e4b2538dab3353b31f3894d51b38781580a059cbae2a67c6ca092fa7bf2.js",
+        "Build/build-web.wasm": "../../assets/d28dc892dbba1cf6c43d93cf5b21b617e5feae72eebdd3e8fdc659aa1733948d.wasm",
+        "field-ticket-scene.png": "../../assets/ae0c231d5c1831086b1e83f7129f996a5c7f8284a190073c732e4efeda003da0.png",
+        "valley-intro.jpg": "../../assets/ac51a875f1bdcb97ba5c367bba9f89e39e78d05f8938994e5a30c5d2bf6d70f1.jpg",
+        "valley-title-LICENSE.txt": "../../assets/b6108d5e2607ca721d26fa66346e7a7547341cdffc4d0d97bec017c7ab93c645.txt",
+        "valley-title.png": "../../assets/5df659d8a608216b96750e66a1c65c67961580d16df676f036a0724f32dc54c9.png"
+      },
+      "playback": {
+        "mode": "browser-local-original-world",
+        "status": "browser-loaded-world-verified",
+        "multiplayer": false,
+        "note": "当時のWebGLと当時のルールを使用。このタブ内でNPCと対戦し、現在のオンラインへ接続しません。",
+        "worldVerified": true,
+        "browserLoadVerified": true,
+        "browserVerification": "元のWebGLをChromeで起動し参加画面を撮影。各版のWorldは別に40tick進行を確認。全版の通し試合を確認した意味ではありません。"
+      }
+    },
+    {
+      "number": 43,
+      "id": "r43",
+      "revision": "orbit-salvage-prototype-00043-yed",
+      "imageDigest": "sha256:f8ccb284ab73478d4010177b8253d71935f1eb9983f8effda7d039f00fb9eb7f",
+      "createdAt": "2026-11-09T00:04:39.028761Z",
+      "sourceDirectory": "history-source/r43",
+      "layers": [
+        "sha256:071409a402546fea9e56af710d951a9e0c9bb205e4b1186811677d2c9dcad115",
+        "sha256:af56958dfcba79d78f2ebe180e9944bdf12aa1006699d5b916516f35a089fb1b",
+        "sha256:2a0462bb06facfe51d019c7c796d5a405916cf12d3cb27ec689039a624789ebf",
+        "sha256:c1069f7eb6c39d1f647c60954c7d750d1a956d084cea1380ee9070d2e3a3e044",
+        "sha256:b61b89a84f9aeead902cd7fa8c28c415f3586d7d6cc01cdace2dfb2bdd98a75e",
+        "sha256:104b5c5e1f2011c96c083624bbe2f9d2fdef43532cff6e63efba06041a77d01d",
+        "sha256:25a25aa1863e1306f1178f1186e1d6f927bca3b907cc1e88ac88e47a832f5536"
+      ],
+      "runtimeExtracted": true,
+      "webglRetained": true,
+      "playUrl": "/history-play/play/r43/",
+      "sourceUrl": "/history-play/sources/r43.zip",
+      "assetMapping": {
+        ".wh..wh..opq": "../../assets/e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.opq",
+        "Build/build-web.data": "../../assets/8f8908a5e039eee677cef83e4aa17d241f5290674a080977e45c8457fb3d3526.data",
+        "Build/build-web.framework.js": "../../assets/2b9c07698cecdca813541db9d24457538dcd0d3da7416aacf8aa0dc3f87fdf51.js",
+        "Build/build-web.loader.js": "../../assets/8c7a9e4b2538dab3353b31f3894d51b38781580a059cbae2a67c6ca092fa7bf2.js",
+        "Build/build-web.wasm": "../../assets/65c4a01132a39e99aa7b5a6dd9015793a8291a315b528bd5d5cad2d5de5f41a1.wasm",
+        "field-ticket-scene.png": "../../assets/ae0c231d5c1831086b1e83f7129f996a5c7f8284a190073c732e4efeda003da0.png",
+        "valley-intro.jpg": "../../assets/ac51a875f1bdcb97ba5c367bba9f89e39e78d05f8938994e5a30c5d2bf6d70f1.jpg",
+        "valley-title-LICENSE.txt": "../../assets/b6108d5e2607ca721d26fa66346e7a7547341cdffc4d0d97bec017c7ab93c645.txt",
+        "valley-title.png": "../../assets/5df659d8a608216b96750e66a1c65c67961580d16df676f036a0724f32dc54c9.png"
+      },
+      "playback": {
+        "mode": "browser-local-original-world",
+        "status": "browser-loaded-world-verified",
+        "multiplayer": false,
+        "note": "当時のWebGLと当時のルールを使用。このタブ内でNPCと対戦し、現在のオンラインへ接続しません。",
+        "worldVerified": true,
+        "browserLoadVerified": true,
+        "browserVerification": "元のWebGLをChromeで起動し参加画面を撮影。各版のWorldは別に40tick進行を確認。全版の通し試合を確認した意味ではありません。"
+      }
+    },
+    {
+      "number": 44,
+      "id": "r44",
+      "revision": "orbit-salvage-prototype-00044-neq",
+      "imageDigest": "sha256:7715ef89fda8f85528712664078b8ad8be8c9a3661f60451b6bb897df83ea07e",
+      "createdAt": "2026-11-09T00:37:50.186025Z",
+      "sourceDirectory": "history-source/r44",
+      "layers": [
+        "sha256:071409a402546fea9e56af710d951a9e0c9bb205e4b1186811677d2c9dcad115",
+        "sha256:b03ab3ad7cc7d4bb032b381ca34d98376017ba68ce103ac234825bb93b50cbca",
+        "sha256:e84bfd72f57cd2fa88ac55372f41f17b79a5d34fb956e6270e627f8526fcb89a",
+        "sha256:a4420f412a525363a6c37fa15745bb90ec12cc63ae95bffeda066cd287bffeb4",
+        "sha256:4e0713931bb0258aa77ffe277e26db0b641bc192545671fb397a6fb408086679",
+        "sha256:fe3f13f28c741030c9bcd433b04b94d1d0fed939c2b907ad2858d7f10e4cdd9d",
+        "sha256:b504778726a766a7b6b69b1786c8c428fd2bd734430fae6c95f4371c403024ae"
+      ],
+      "runtimeExtracted": true,
+      "webglRetained": true,
+      "playUrl": "/history-play/play/r44/",
+      "sourceUrl": "/history-play/sources/r44.zip",
+      "assetMapping": {
+        ".wh..wh..opq": "../../assets/e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.opq",
+        "Build/build-web.data": "../../assets/d1e4eff5ef0ed677262ee0f10edd191850e78f0612481cc8abfa3294c06b1e30.data",
+        "Build/build-web.framework.js": "../../assets/6ca05502a9453e35e5a9794f19b827a5963f514c96ebdf4e5cec79e2d65c58a8.js",
+        "Build/build-web.loader.js": "../../assets/8c7a9e4b2538dab3353b31f3894d51b38781580a059cbae2a67c6ca092fa7bf2.js",
+        "Build/build-web.wasm": "../../assets/35825850fc8b147e9faec584d432e9c0b691e97f1f7e3250fb7e65c800e3f488.wasm",
+        "field-ticket-scene.png": "../../assets/ae0c231d5c1831086b1e83f7129f996a5c7f8284a190073c732e4efeda003da0.png",
+        "valley-intro.jpg": "../../assets/ac51a875f1bdcb97ba5c367bba9f89e39e78d05f8938994e5a30c5d2bf6d70f1.jpg",
+        "valley-title-LICENSE.txt": "../../assets/b6108d5e2607ca721d26fa66346e7a7547341cdffc4d0d97bec017c7ab93c645.txt",
+        "valley-title.png": "../../assets/5df659d8a608216b96750e66a1c65c67961580d16df676f036a0724f32dc54c9.png"
+      },
+      "playback": {
+        "mode": "browser-local-original-world",
+        "status": "browser-loaded-world-verified",
+        "multiplayer": false,
+        "note": "当時のWebGLと当時のルールを使用。このタブ内でNPCと対戦し、現在のオンラインへ接続しません。",
+        "worldVerified": true,
+        "browserLoadVerified": true,
+        "browserVerification": "元のWebGLをChromeで起動し参加画面を撮影。各版のWorldは別に40tick進行を確認。全版の通し試合を確認した意味ではありません。",
+        "joinedInBrowser": true
+      }
+    }
+  ]
+}

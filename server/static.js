@@ -6,11 +6,11 @@ const types = {
   '.html': 'text/html; charset=utf-8', '.js': 'application/javascript',
   '.css': 'text/css', '.json': 'application/json', '.wasm': 'application/wasm',
   '.data': 'application/octet-stream', '.png': 'image/png', '.jpg': 'image/jpeg',
-  '.jpeg': 'image/jpeg', '.svg': 'image/svg+xml', '.ico': 'image/x-icon',
+  '.jpeg': 'image/jpeg', '.svg': 'image/svg+xml', '.ico': 'image/x-icon', '.webp': 'image/webp',
   '.mp3': 'audio/mpeg', '.ogg': 'audio/ogg', '.wav': 'audio/wav',
 };
 
-function encodingQuality(header) {
+export function encodingQuality(header) {
   const offers = new Map();
   for (const item of String(header || '').toLowerCase().split(',')) {
     const [name, ...parameters] = item.trim().split(';');
@@ -22,6 +22,7 @@ function encodingQuality(header) {
   return { gzip: offers.get('gzip') ?? offers.get('*') ?? 0,
     identity: offers.get('identity') ?? (offers.get('*') === 0 ? 0 : 1) };
 }
+export const contentType = filename => types[path.extname(filename)] || 'application/octet-stream';
 
 const releaseAsset = name => name.endsWith('.wasm') || name.endsWith('.data') || name.endsWith('.framework.js');
 
@@ -37,6 +38,9 @@ export function serveBuild(directory) {
     catch { res.writeHead(400).end('Invalid path'); return; }
     if (pathname.includes('\0') || pathname.includes('\\')) {
       res.writeHead(400).end('Invalid path'); return;
+    }
+    if (pathname.startsWith('/history-play/sources/') && /\.bundle$/i.test(pathname)) {
+      res.writeHead(404).end('Not found'); return;
     }
     const target = path.resolve(root, '.' + pathname, pathname.endsWith('/') ? 'index.html' : '');
     if (target !== root && !target.startsWith(root + path.sep)) {
@@ -66,7 +70,7 @@ export function serveBuild(directory) {
         logicalName = target.slice(0, -3);
       } else if (target.endsWith('.unityweb')) logicalName = target.slice(0, -9);
       headers['Content-Length'] = info.size;
-      headers['Content-Type'] = types[path.extname(logicalName)] || 'application/octet-stream';
+      headers['Content-Type'] = contentType(logicalName);
       res.writeHead(200, headers);
       if (req.method === 'HEAD') res.end();
       else createReadStream(representation).on('error', () => res.destroy()).pipe(res);

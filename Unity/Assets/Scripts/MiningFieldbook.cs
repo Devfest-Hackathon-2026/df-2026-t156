@@ -126,6 +126,7 @@ public partial class OrbitGame
             StartGame();
         }
         if (DrawFieldLink(new Rect(x, y + 160, 120, 27), "操作方法", "intro-controls")) introControls = true;
+        if (DrawFieldLink(new Rect(x, y + 198, 260, 27), "このゲームができるまで", "intro-improvements")) OpenImprovements(true);
 
     }
 

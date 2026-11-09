@@ -20,6 +20,7 @@
     progress::-moz-progress-bar { background:#d0d8d0 }
     #error { white-space:pre-wrap; line-height:1.6; color:#f2b1a1; font-size:14px; overflow-wrap:anywhere }
     #error:empty { display:none }
+    .history-link { position:absolute;left:48px;bottom:18px;color:#d6ded7;text-underline-offset:4px;font-size:14px }
     @media(max-width:520px) { .loading{left:24px;bottom:32px;width:calc(100% - 48px)}h1{font-size:25px} }
   </style>
 </head>
@@ -32,6 +33,7 @@
       <progress id="progress" max="1" value="0" aria-label="ゲームの読み込み"></progress>
       <p id="error" role="alert"></p>
     </div>
+    <a class="history-link" href="/history/">このゲームができるまで</a>
   </div>
   <script>
     const canvas = document.getElementById('unity-canvas');

@@ -18,10 +18,11 @@ public partial class OrbitGame
     private void Update()
     {
         PollNetwork();
+        UpdateImprovements();
         UpdateChips();
         UpdateMeleeHitTint();
         if (!started) return;
-        bool surveying = Input.GetKey(KeyCode.Tab);
+        bool surveying = improvementOpen || Input.GetKey(KeyCode.Tab);
         UpdateSurveyInteraction(surveying);
         if (Input.GetKeyDown(KeyCode.Escape)) Unlock();
         if (Input.GetKeyDown(KeyCode.R) && !connected)
@@ -40,7 +41,7 @@ public partial class OrbitGame
         Vector3 aim = looking * Vector3.forward;
         var localMove = new Vector3(KeyAxis(KeyCode.D, KeyCode.A), 0, KeyAxis(KeyCode.W, KeyCode.S));
         Vector3 move = surveying ? Vector3.zero : Quaternion.Euler(0, yaw, 0) * localMove;
-        bool playing = focused && joined && self != null && state != null && state.phase != "finished" && valley.mining != null;
+        bool playing = !improvementOpen && focused && joined && self != null && state != null && state.phase != "finished" && valley.mining != null;
         bool actionsAllowed = playing && !surveying && !surveyResumeBlock;
         UpdateCrossbowSelection(actionsAllowed);
         bool fireHeld = Input.GetKey(KeyCode.F) || Input.GetMouseButton(0);
@@ -189,6 +190,7 @@ public partial class OrbitGame
         GUI.matrix = Matrix4x4.Scale(Vector3.one * scale);
         float w = Screen.width / scale;
         float h = Screen.height / scale;
+        if (improvementOpen) { DrawImprovementBoard(w, h); return; }
         if (!started)
         {
             DrawMiningIntro(w, h);
@@ -209,12 +211,14 @@ public partial class OrbitGame
         if (state.phase == "finished")
         {
             DrawMiningResult(w, h);
+            if (DrawFieldLink(new Rect(w / 2 - 125, h - 46, 250, 30), "改善案を送る・投票する", "result-improvements")) OpenImprovements(false);
             return;
         }
         bool surveyOpen = Input.GetKey(KeyCode.Tab);
         if (surveyOpen) hasOpenedSurvey = true;
         if (Event.current.type == EventType.Repaint && !surveyOpen) DrawMatchHud(w, h, false);
         if (surveyOpen) DrawSurvey(w, h);
+        if (!locked && !surveyOpen && DrawFieldLink(new Rect(w - 156, 24, 135, 28), "提案と変更の記録", "play-improvements")) OpenImprovements(false);
     }
 
     private void InitHudStyles()

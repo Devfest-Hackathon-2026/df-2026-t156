@@ -8,15 +8,32 @@ import { serveBuild } from './static.js';
 import { StateStream, prepareFrame } from './stream.js';
 import { MELEE } from './melee.js';
 import { BOW } from './crossbow.js';
+import { FeedbackBoard, feedbackIdentity } from './feedback.js';
+import { serveArchivedAsset } from './archive.js';
 
-export function createGameServer({ staticDir, world = new World() } = {}) {
+export function createGameServer({ staticDir, world = new World(), feedback = new FeedbackBoard() } = {}) {
   const directory = staticDir || process.env.STATIC_DIR || fileURLToPath(new URL('../build-web', import.meta.url));
   const staticHandler = serveBuild(directory);
+  const historyHandler = serveBuild(process.env.STATIC_DIR || fileURLToPath(new URL('../public', import.meta.url)));
+  const archiveHandler = serveBuild(process.env.HISTORY_DIR || process.env.STATIC_DIR || fileURLToPath(new URL('../public', import.meta.url)));
   const configHash = createHash('sha256').update(JSON.stringify(world.valley.data)).digest('hex');
+  const feedbackRoom = randomUUID(), feedbackIdentities = new Map();
+  let feedbackRound = -1, feedbackSaving = false, feedbackRetryAt = 0;
   const server = http.createServer((req, res) => {
     let pathname;
     try { pathname = new URL(req.url, 'http://local').pathname; }
     catch { res.writeHead(400).end('Invalid URL'); return; }
+    if (pathname === '/api/feedback') { void feedback.http(req, res); return; }
+    if ((pathname.startsWith('/history-play/assets/') || pathname.startsWith('/history-play/chunks/')) && process.env.HISTORY_ASSET_BUCKET) {
+      serveArchivedAsset(req, res, feedback.storage).catch(() => { if (!res.headersSent) res.writeHead(503); res.end(); }); return;
+    }
+    if (pathname.startsWith('/history-play/')) {
+      archiveHandler(req, res).catch(() => { if (!res.headersSent) res.writeHead(500); res.end(); }); return;
+    }
+    if (pathname === '/history') { res.writeHead(302, { Location: '/history/' }).end(); return; }
+    if (pathname.startsWith('/history/') || pathname.startsWith('/versions/')) {
+      historyHandler(req, res).catch(() => { if (!res.headersSent) res.writeHead(500); res.end(); }); return;
+    }
     if (pathname === '/health') {
       res.writeHead(200, { 'Content-Type': 'application/json', 'Cache-Control': 'no-store' });
       res.end(JSON.stringify({ ok: true, round: world.round, phase: world.phase,
@@ -26,7 +43,7 @@ export function createGameServer({ staticDir, world = new World() } = {}) {
           botKnowledge: world.botKnowledge, botTactics: world.botTactics, spawnPolicy: world.spawnPolicy,
           bags: world.valley.data.bags,
           bow: BOW, theft: { unitsPerHit: 1, lastItem: true, graceSeconds: 0, hurtSeconds: MELEE.hurtSeconds } },
-        network: { protocol: 2, ...networkStats } }));
+        feedback: { storage: feedback.storage.mode, versionId: feedback.versionId }, network: { protocol: 2, ...networkStats } }));
     } else staticHandler(req, res).catch(() => { if (!res.headersSent) res.writeHead(500); res.end(); });
   });
   const wss = new WebSocketServer({ server, path: '/ws', maxPayload: 2048, perMessageDeflate: false });
@@ -64,12 +81,34 @@ export function createGameServer({ staticDir, world = new World() } = {}) {
         }
         id = randomUUID();
         world.addPlayer(id, packet.name);
+        socket.feedbackIdentity = feedbackIdentity(packet.feedbackKey);
+        if (socket.feedbackIdentity) feedbackIdentities.set(id, socket.feedbackIdentity);
         socket.playerId = id;
         if (packet.protocol === 2) socket.stream = new StateStream();
         clearTimeout(joinedBy);
         send(socket, { type: 'welcome', id, protocol: socket.stream ? 2 : 1 });
         const initial = world.snapshot(id);
         send(socket, socket.stream ? socket.stream.frame(prepareFrame(initial), id, initial.localClaims) : initial);
+      } else if (packet.type === 'feedback' && id) {
+        if (socket.feedbackBusy) {
+          if (packet.action !== 'view') send(socket, { type: 'feedback', feedback: { unavailable: true, notice: '読み込み中です。少し待ってもう一度押してください' } });
+          return;
+        }
+        if (packet.action === 'view' && performance.now() < (socket.feedbackNextAt || 0)) return;
+        socket.feedbackBusy = true; socket.feedbackNextAt = performance.now() + 700;
+        const handle = async () => {
+          let notice = '';
+          try {
+            if (packet.action === 'propose') { await feedback.submit(socket.feedbackIdentity, packet.text); notice = '改善案を投稿しました'; }
+            else if (packet.action === 'vote') { await feedback.vote(socket.feedbackIdentity, packet.proposalId); notice = '投票しました'; }
+            const view = await feedback.view(socket.feedbackIdentity);
+            send(socket, { type: 'feedback', feedback: { ...view, notice } });
+          } catch (error) {
+            const safe = /^[改善案勝敗同こ提]/.test(error.message) ? error.message : '保存先に接続できません。少し待って再度開いてください';
+            send(socket, { type: 'feedback', feedback: { notice: safe, unavailable: true } });
+          } finally { socket.feedbackBusy = false; }
+        };
+        void handle();
       } else if (packet.type === 'ack' && id && socket.stream) {
         socket.stream.acknowledge(packet.ack);
       } else if (packet.type === 'input' && id) {
@@ -105,6 +144,15 @@ export function createGameServer({ staticDir, world = new World() } = {}) {
       }
     }
     if (steps) {
+      if (world.phase === 'finished' && feedbackRound !== world.round && !feedbackSaving && now >= feedbackRetryAt) {
+        feedbackSaving = true;
+        const round = world.round;
+        void feedback.recordRound(`${feedbackRoom}:${round}`, world.standings, feedbackIdentities).then(() => {
+          feedbackRound = round;
+          for (const id of feedbackIdentities.keys()) if (!world.players.has(id)) feedbackIdentities.delete(id);
+        }).catch(() => { feedbackRetryAt = performance.now() + 5000; })
+          .finally(() => { feedbackSaving = false; });
+      }
       const recipients = [...wss.clients].filter(socket => socket.playerId && canSend(socket));
       if (recipients.length) {
         // Build shared accounting/geometry once, rather than once per viewer on every tick.

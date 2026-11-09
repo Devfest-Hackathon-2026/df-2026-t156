@@ -4,9 +4,9 @@
 
 [ブラウザーで遊ぶ](https://orbit-salvage-prototype-905974313870.asia-northeast1.run.app/)
 
-2026-11-09、通常URLは公開44です。中央アンビルに加え、人物と対人判定を少し横に広げ、有効な近接命中に2秒間の加速を付けました。旧版の接続が0になった時点で反映しています。
+現在のゲームに加え、[これまでのゲームと改善案](https://orbit-salvage-prototype-905974313870.asia-northeast1.run.app/history/)から39の保存版を遊び、実際の試遊の意見と変更を辿れます。試合後は勝者が改善案を投稿し、ほかの参加者は案に投票できます。
 
-以下のルールと晶鉱6本の配置・硬度を公開しています。版と確認範囲は末尾の「公開確認」を参照してください。
+現在のルールは以下の通りです。提出物と保存版の再現方法は後半を参照してください。
 
 ## 遊び方
 
@@ -87,7 +87,7 @@ npm --prefix server start
 
 ## 提出物と再現
 
-チーム: @山。公開44のソーススナップショットです。`Unity/` に必要素材・設定・Scene・正規UnitySkills依存、`server/` に権威ゲームサーバー、`scripts/` と `Dockerfile` に配信手順を収録しています。開発用リポジトリの過去履歴、診断ログ、キャッシュ、認証、個人用資料は含みません。UnityパッケージはUnity Package Managerが正規配布元から復元します。
+チーム: @山。公開44の完全なソーススナップショットを最初に保存し、後続commitに改善案・投票と保存版の再生を追加しています。`Unity/` に必要素材・設定・Scene・正規UnitySkills依存、`server/` に権威ゲームサーバー、`scripts/` と `Dockerfile` に配信手順を収録しています。開発用リポジトリの過去履歴、診断ログ、キャッシュ、認証、個人用資料は含みません。UnityパッケージはUnity Package Managerが正規配布元から復元します。
 
 Unity 2022.3.22f1（WebGL Build Support付）で `Unity/` を開き、`Assets/Scenes/Orbit.unity` をPlayしてください。Editor接続先は `ws://127.0.0.1:18087/ws` です。Windows PowerShellでは `$env:PORT=18087; npm --prefix server start` で起動します。WebGLは `./Unity/Build-Web.ps1` で `build-web/` に生成し、Node.js 22以上で `npm --prefix server ci`、`npm --prefix server start`。既定は http://localhost:8080/ です。詳細は [Unity](Unity/README.md) と [server](server/README.md) を参照してください。
 
@@ -95,6 +95,17 @@ Unity 2022.3.22f1（WebGL Build Support付）で `Unity/` を開き、`Assets/Sc
 
 コードは既存の [MIT License](LICENSE)、第三者素材は各同梱ライセンス（CC0/OFL）が優先します。購入・再配布禁止素材は含まれていません。自作の手続きメッシュとCC0原素材を同梱し、ゲームで使っていない外部原アーカイブは含めていません。
 
+## 改善案と遊べる履歴
+
+試合終了時の確定順位から、同率首位を含む人間の勝者は1件の自由記述案を投稿し、それ以外の人間は他の案に1票を入れられます。BOTには権利がなく、同じブラウザーの重複参加をまとめます。案と得票はゲーム内と `/history/` で共有され、再戦しても残ります。ブラウザーの保存データを消すと本人の権利を引き継げなくなるため、個人アカウントによる認証の代わりにはなりません。
+
+履歴は試作から公開44までの保存された39実バージョン、46件の意見の前後関係と画面を収録しています。旧版は当時のWebGLとゲーム判定をブラウザー内のWorkerで動かし、対人オンラインは最新版のみです。過去の意見は開発中の本人入力に基づく記録で、新しい投票UIで集まった票として扱いません。AIの自動実装・本番再配備には未接続です。
+
+`public/history/generations.json` が版と意見の正本です。世代の区切りは仮案で、既定表示は実際のバージョン順。保存を確認できない公開番号30/33/35/38/42は別記しています。履歴のソースzipはその時点のゲーム判定・共有データ等のランタイム一式で、過去のUnity C#一式ではありません。現在のUnityソース・必要素材・設定はこの公式リポジトリにあります。非公開開発Git全履歴のbundleは配布しません。
+
+旧版の重いdata/wasmはGitに重複保存せず、SHA256付き分割資産を既存配信から復元します。ローカルで1版を遊ぶ場合は `node scripts/fetch-history-assets.mjs https://orbit-salvage-prototype-905974313870.asia-northeast1.run.app r01`、全保存版は末尾の版指定を省略します。`npm --prefix server start` 後に `/history/` へ。初回はネット接続が必要です。再生成元は `scripts/history-replay/` を参照してください。
+
+投稿・投票のローカル保存は `FEEDBACK_FILE`、既存Cloud Runでは非公開Cloud Storageへの世代番号付き更新を使います。無設定の場合はメモリ保存になり、プロセス再起動で失われます。認証情報・実行時DB・入力例の診断ログはこのGitには含めません。
 ## 運営からの提出案内
 # DevFest Hackathon 2026 提出用リポジトリ
 

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>谷の採鉱競争</title>
+  <style>
+    html,body { margin:0; width:100%; height:100%; overflow:hidden; background:#030812; font:15px system-ui; color:#b9d2dc }
+    canvas { width:100%; height:100%; display:block; outline:0 }
+    #load { position:absolute; left:8%; top:43%; width:310px }
+    h1 { font-size:38px; letter-spacing:4px; color:#eefaff; margin-bottom:12px }
+    progress { width:100%; height:3px; accent-color:#91b676 }
+    #error { white-space:pre-wrap; line-height:1.6; color:#ffd29a }
+  </style>
+</head>
+<body>
+  <canvas id="unity-canvas" tabindex="0"></canvas>
+  <div id="load">
+    <h1>谷の採鉱競争</h1>
+    <p>谷の風景を準備しています…</p>
+    <progress id="progress" max="1" value="0"></progress>
+    <p id="error"></p>
+  </div>
+  <script src="../../runtime/history-bridge.js" data-version="r10"></script><script>
+    const canvas = document.getElementById('unity-canvas');
+
+
+    function resizeRenderBuffer() {
+      const width = canvas.clientWidth || 1280;
+      const height = canvas.clientHeight || 720;
+      const ratio = Math.min(1, 1920 / width, Math.sqrt((1920 * 1080) / (width * height)));
+      const targetWidth = Math.max(1, Math.round(width * ratio));
+      const targetHeight = Math.max(1, Math.round(height * ratio));
+      if (canvas.width !== targetWidth) canvas.width = targetWidth;
+      if (canvas.height !== targetHeight) canvas.height = targetHeight;
+    }
+    new ResizeObserver(resizeRenderBuffer).observe(canvas);
+    resizeRenderBuffer();
+
+    const config = {
+      dataUrl: window.historyAssetUrls["19c2f4b316ce2e185c1f173000af61510c9b70efe64a74f9e43a1b9bce983531.data"],
+      frameworkUrl: '../../assets/6113366115dcd18f1fe8cfdcbb068f5c5f41beeeb11a5b328d2af6a7ca951a10.js',
+      codeUrl: window.historyAssetUrls["9569dab8ba7b1ee5a606769d912dda6d85b1a9dd0a1113bd4bf1e5a3fe33f97a.wasm"],
+      streamingAssetsUrl: 'StreamingAssets',
+      companyName: 'Pichu',
+      productName: '谷の採鉱競争',
+      productVersion: '0.2',
+      matchWebGLToCanvasSize: false,
+      showBanner(message, type) {
+        if (type === 'error') document.getElementById('error').textContent = message;
+      }
+    };
+    const loader = document.createElement('script');
+    loader.src = '../../assets/8c7a9e4b2538dab3353b31f3894d51b38781580a059cbae2a67c6ca092fa7bf2.js';
+    loader.onload = () => {
+      createUnityInstance(canvas, config, value => {
+        document.getElementById('progress').value = value;
+      }).then(instance => {
+        window.orbitUnity = instance;
+        document.getElementById('load').style.display = 'none';
+
+        canvas.focus();
+      }).catch(error => {
+        document.getElementById('error').textContent = '読み込めませんでした。ページを再読み込みしてください。\n' + error;
+      });
+    };
+    document.body.appendChild(loader);
+  </script>
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>谷の採鉱競争</title>
+  <style>
+    html,body { margin:0; width:100%; height:100%; overflow:hidden; background:#163d42; font:15px 'Noto Sans JP','Yu Gothic UI',system-ui,sans-serif; color:#f6eedb }
+    canvas { width:100%; height:100%; display:block; outline:0 }
+    #load { position:absolute; inset:0; display:grid; place-items:center; padding:32px; box-sizing:border-box; background:#163d42 }
+    .ticket { position:relative; width:min(720px,100%); padding:38px 40px 30px; box-sizing:border-box; background:#f6eedb; color:#163d42; border-radius:15px; overflow:hidden }
+    .land { display:block; width:100%; height:auto; margin:10px 0 26px; object-fit:contain }
+    h1 { font-size:clamp(30px,5vw,48px); line-height:1.3; font-weight:700; margin:0 0 14px }
+    .progress-label { display:flex; justify-content:space-between; margin:0 0 13px; font-size:14px; color:#546b66 }
+    #percent { color:#163d42; font-variant-numeric:tabular-nums }
+    progress { display:block; width:100%; height:6px; border:0; border-radius:3px; appearance:none; overflow:hidden; background:#163d4220; color:#bb873b }
+    progress::-webkit-progress-bar { background:#163d4220 }
+    progress::-webkit-progress-value { background:#bb873b; border-radius:3px }
+    progress::-moz-progress-bar { background:#bb873b; border-radius:3px }
+    .foot { margin:22px 0 0; font-size:12px; color:#546b66 }
+    #error { white-space:pre-wrap; line-height:1.6; color:#973e26; font-size:14px; overflow-wrap:anywhere }
+    #error:empty { display:none }
+    @media(max-height:600px) { .ticket{padding:25px 35px}.land{height:90px;margin-bottom:18px}.invitation{margin-bottom:24px}.foot{margin-top:15px} }
+    @media(max-width:520px) { #load{padding:16px}.ticket{padding:28px 26px}.land{height:112px}.invitation{font-size:14px} }
+  </style>
+</head>
+<body>
+  <canvas id="unity-canvas" tabindex="0"></canvas>
+  <div id="load">
+    <div class="ticket">
+      <h1>谷の採鉱競争</h1>
+      <img class="land" src="../../assets/ae0c231d5c1831086b1e83f7129f996a5c7f8284a190073c732e4efeda003da0.png" alt="" aria-hidden="true">
+      <p class="progress-label"><span id="load-label">谷の風景を準備しています</span><span id="percent">0%</span></p>
+      <progress id="progress" max="1" value="0" aria-label="ゲームの読み込み"></progress>
+      <p class="foot">3分間の採鉱。最後の残高で競います。</p>
+      <p id="error" role="alert"></p>
+    </div>
+  </div>
+  <script src="../../runtime/history-bridge.js" data-version="r13"></script><script>
+    const canvas = document.getElementById('unity-canvas');
+
+
+    function resizeRenderBuffer() {
+      const width = canvas.clientWidth || 1280;
+      const height = canvas.clientHeight || 720;
+      const ratio = Math.min(1, 1920 / width, Math.sqrt((1920 * 1080) / (width * height)));
+      const targetWidth = Math.max(1, Math.round(width * ratio));
+      const targetHeight = Math.max(1, Math.round(height * ratio));
+      if (canvas.width !== targetWidth) canvas.width = targetWidth;
+      if (canvas.height !== targetHeight) canvas.height = targetHeight;
+    }
+    new ResizeObserver(resizeRenderBuffer).observe(canvas);
+    resizeRenderBuffer();
+
+    const config = {
+      dataUrl: window.historyAssetUrls["0b907545de8586329328f771e2d63fc336c008ac3ff3ed6e53112346e5dc1250.data"],
+      frameworkUrl: '../../assets/0cfeef6866bc785a3a770ac150c4daa512c7d8fc3f71e04f232c06079d2c286d.js',
+      codeUrl: window.historyAssetUrls["2a931eb388ad60f52043560cd18ce0525821c4fb0a28705bbc54201fe1e1532a.wasm"],
+      streamingAssetsUrl: 'StreamingAssets',
+      companyName: 'Pichu',
+      productName: '谷の採鉱競争',
+      productVersion: '0.2',
+      matchWebGLToCanvasSize: false,
+      showBanner(message, type) {
+        if (type === 'error') document.getElementById('error').textContent = message;
+      }
+    };
+    const loader = document.createElement('script');
+    loader.src = '../../assets/8c7a9e4b2538dab3353b31f3894d51b38781580a059cbae2a67c6ca092fa7bf2.js';
+    loader.onload = () => {
+      createUnityInstance(canvas, config, value => {
+        document.getElementById('progress').value = value;
+        document.getElementById('percent').textContent = Math.round(value * 100) + '%';
+        if (value > .9) document.getElementById('load-label').textContent = '入坑の準備をしています';
+      }).then(instance => {
+        window.orbitUnity = instance;
+        document.getElementById('load').style.display = 'none';
+
+        canvas.focus();
+      }).catch(error => {
+        document.getElementById('error').textContent = '読み込めませんでした。ページを再読み込みしてください。\n' + error;
+      });
+    };
+    document.body.appendChild(loader);
+  </script>
+</body>
+</html>

@@ -10,3 +10,5 @@ Unity 2022.3.22f1、Built-in Render Pipeline、WebGL Build Supportを使用し�
 開いている同一Editorの正規UnitySkills `build_player` からビルドする場合は、WebGL、Scene `Assets/Scenes/Orbit.unity`、プロジェクト内 `Builds/build-web` を指定し、完了後に生成物をルート `build-web/` へコピーします。ローカルRESTのport/instanceId/projectを必ず照合し、別プロジェクトには操作しません。Library/Temp/Builds/Logsは再生成物です。
 
 素材の出典とライセンスは各Resources下のLICENSES.md、およびNoto Sans JP/題字のOFLを参照してください。Unity自体は各自の正規インストールが必要です。
+
+改善案の入口は入坑前と精算画面です。実行時の履歴リンクは同originの /history/ を開きます。WebGLの自由記述は日本語IMEに対応するブラウザーtextareaを使用し、開いている間はゲーム入力を止めます。EditorはGUI.TextAreaとPlayerPrefsを使います。UnitySkillsで本プロジェクトを照合し、コンパイル・WebGL実ビルド・Play反映を行っています。

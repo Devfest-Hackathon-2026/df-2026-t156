@@ -1,0 +1,10 @@
+history-source/
+history-play/
+history-distribution/
+history-inventory.json
+history-size.json
+history-chunk-size.json
+world-verification.json
+__pycache__/
+_research/
+*.bundle
