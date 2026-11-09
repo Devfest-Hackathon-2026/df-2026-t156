@@ -145,3 +145,8 @@ Unity 2022.3.22f1（WebGL Build Support付）で `Unity/` を開き、`Assets/Sc
   ## ライセンス
 
   [MIT License](LICENSE) です。ほかのライセンスにしたいときは、LICENSE を書き換えてください。
+
+## 公開46の反映
+
+2026-11-09、通常URLを revision orbit-salvage-prototype-00046-geh に反映しました。投稿・投票はCloud Storage保存、履歴の39版データとページ6ファイルを配信照合済み。実Chromeでr01の参加・移動、r40→意見→r41の起動、最新版への復帰・銅2個の採掘を確認しています。通常180秒の追加網羅や全39版の通し試合は行っていません。Wasmは74e88d6b09bfb6fc167b64271c32ac30242ad84409cdccfd2e718f763d3bd1c3、dataはea9f8e19edd62be00184da0621ce3938d8a6dec9a9f9ba386a8a45aefae7042dです。
+
