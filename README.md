@@ -150,3 +150,11 @@ Unity 2022.3.22f1（WebGL Build Support付）で `Unity/` を開き、`Assets/Sc
 ## 公開46の反映
 
 2026-11-09、通常URLを revision orbit-salvage-prototype-00046-geh に反映しました。投稿・投票はCloud Storage保存、履歴の39版データとページ6ファイルを配信照合済み。実Chromeでr01の参加・移動、r40→意見→r41の起動、最新版への復帰・銅2個の採掘を確認しています。通常180秒の追加網羅や全39版の通し試合は行っていません。Wasmは74e88d6b09bfb6fc167b64271c32ac30242ad84409cdccfd2e718f763d3bd1c3、dataはea9f8e19edd62be00184da0621ce3938d8a6dec9a9f9ba386a8a45aefae7042dです。
+
+## 2026-11-09 公開50：意見と前後の実物を比較
+
+通常URLは `orbit-salvage-prototype-00050-joh` へ100%反映しています。人間0接続を確認して切り替え、従来のworkshop-use/central-anvil/historyタグと遊べる旧版URLを維持しました。39版すべての画像は参加後の実画面です。当時の公開記録、保存版の再生、開始条件を揃えた操作確認はキャプションとimageSourceで区別しています。
+
+1280×720のCSS表示で、意見の下端336px、両側の「遊ぶ」下端715px。原文の折りたたみと、39実版だけの選択を公開Chromeで確認。390px幅では縦配置、横はみ出しなし。比較の両ボタンでr03/r04の保存WebGLを開き、閉じて同じ比較へ戻る操作は公開48で確認し、最終50では同じ再生コードとWebGLのまま仮の章を選択から外しました。
+
+ページ6ファイル・画像39枚の45ファイルと版データを配信照合し、WebGLの復号3hashも一致。Wasm `96a68b3aaa218fd338a075c1a10fc6dfdc1f07c1e4e64bc031218e7cb591fb42`、data `b40165ac28f0756f988afd0c63bc5192f831d5d2c58eeb64a49aba6ae81fada9`。ゲームのルールと投稿/投票の権威処理は変更していません。

@@ -26,3 +26,7 @@ Node.js 22以上、依存はws。`npm ci` → `npm start` でルートbuild-web�
 実際に改修・公開できた時だけ、`public/history/generations.json` の `proposals[]` へ同じidと本文を追加します。本文は `originalText`、`originalWording: "ゲーム内の投稿"` とし、要約は別の `text` に置きます。直前の実版の `feedbackUntilNextVersionIds` と、反映された実版の `inputProposalIds` がそのidを参照し、反映版の `examples[].proposalId` にも同じid、`idea` に要約、`change` に実際に変わったことを書きます。`basedOnVersion` は意見が書かれた版として保持し、改修版へ書き換えません。
 
 版のid/playUrl/対応する画面と、公開された公式commitの証拠を揃えてから取り込みます。公開番号の飛びを新しい章番号で埋めません。新しい試合の投稿は動的な掲示板に残り、静的履歴には確認済みの実例だけを置きます。AIの自動実装・本番再配備をつなぐ仕組みは追加していません。
+
+意見の `basedOnVersion` がまだ保存版一覧にない場合は、その実版のランタイムと画面を先に回収して版の記録を追加します。既存の最終r44などへ便宜的に付け替えません。ライブ掲示板の採用状態を変えるのは、実際の改修と公開を確認した後の作業です。今回、未実装の案や確認用の文を反映済みにしていません。
+
+仮の章はJSONに保持しますが、`groupingStatus: "draft"` の間、通常の選択欄は39の実版のみです。`?generation=g01` のように直接開いた場合だけ「仮のまとまり（確認用）」としてレビューでき、確定した章として一般の選択へ並べません。
