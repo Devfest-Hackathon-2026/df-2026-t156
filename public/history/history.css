@@ -48,3 +48,4 @@
 @media(min-width:761px){.story-grid{row-gap:14px}.story-grid .transition{padding:0 0 8px}.transition-next{min-height:28px;font-size:.8125rem}.change-pair .idea-text{font-size:.9375rem}.comparison-label{margin-top:0}}
 
 @media(min-width:761px){.screen{max-height:31vh}}
+@media(min-width:761px){.story-grid[data-online=true] .screen{max-height:26vh}}

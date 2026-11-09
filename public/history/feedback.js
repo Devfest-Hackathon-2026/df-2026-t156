@@ -45,7 +45,7 @@ function renderBoard() {
   if (!board) return;
   $('refresh-board').disabled = pending || loading; $('board').setAttribute('aria-busy', String(pending || loading));
   const permission = board.permission, canPropose = permission?.role === 'winner' && !permission.used;
-  $('participation').hidden = false; $('permission-message').textContent = permissionText(permission);
+  $('participation').hidden = false; $('permission-message').textContent = board.pending ? board.notice : permissionText(permission);
   $('proposal-form').hidden = !canPropose;
   $('proposal-count').textContent = `${board.proposals.length}件の改善案`;
   $('proposal-empty').hidden = board.proposals.length !== 0;

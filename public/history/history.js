@@ -6,7 +6,8 @@ const safeUrl = value => {
   if (typeof value !== 'string' || !value.trim()) return null;
   try { const url = new URL(value, document.baseURI); return /^https?:$/.test(url.protocol) && !url.username && !url.password ? url.href : null; } catch { return null; }
 };
-let comparisonVersion = null, groupingDraft = false;
+let comparisonVersion = null, groupingDraft = false, onlineContinuation = null;
+const continuationFor = record => mode === 'versions' && onlineContinuation?.fromVersionId === record?.id ? onlineContinuation : null;
 let generations = [], versions = [], pastProposals = new Map(), mode = 'versions', index = 0, selected = null, nextImage;
 const list = () => mode === 'versions' ? versions : generations;
 const recordName = record => String(record.title || record.id || 'ゲーム');
@@ -30,6 +31,7 @@ async function loadHistory() {
     if (!response.ok) throw new Error();
     const data = await response.json();
     groupingDraft = data.groupingStatus === 'draft';
+    onlineContinuation = data.onlineContinuation || null;
     generations = (Array.isArray(data.generations) ? data.generations : []).filter(row => row && typeof row.id === 'string');
     versions = (Array.isArray(data.versions) ? data.versions : []).filter(row => row && typeof row.id === 'string');
     pastProposals = new Map((Array.isArray(data.proposals) ? data.proposals : []).map(row => [row.id, row]));
@@ -89,6 +91,17 @@ function changePair(row, destination) {
 }
 function renderTransition(current, next) {
   const content = $('transition-content'); content.replaceChildren();
+  const online = continuationFor(current);
+  if (online) {
+    $('transition-destination').textContent = '仮完成したゲームから、現在へ';
+    $('transition-title').textContent = '仮完成後に届いた要望';
+    const pair = element('div', 'change-pair'), opinion = element('div', 'opinion'), change = element('div', 'reflection');
+    appendOpinion(opinion, '', online.request);
+    change.append(element('p', 'change-label', '現在のオンライン版での変化'), element('p', 'change-text', online.summary));
+    pair.append(opinion, change); content.append(pair);
+    $('latest-ideas').hidden = false; $('transition-next').hidden = true;
+    return;
+  }
   const incoming = next || current;
   const ids = next && Array.isArray(current.feedbackUntilNextVersionIds) ? current.feedbackUntilNextVersionIds : incoming.inputProposalIds;
   const inputs = Array.isArray(ids) ? ids : null;
@@ -163,7 +176,8 @@ function renderStory() {
   $('version-select').value = `${mode}:${selected.id}`;
   document.querySelector('.version-picker').hidden = groupingDraft && mode === 'generations';
   const meta = [groupingDraft && mode === 'generations' ? '仮のまとまり（確認用）' : '', versionLabel(selected), selected.period].filter(Boolean).join('　');
-  $('version-meta').textContent = meta; $('generation-title').textContent = recordName(selected);
+  const online = continuationFor(selected);
+  $('version-meta').textContent = meta; $('generation-title').textContent = online ? '仮完成したベースゲーム' : recordName(selected);
   $('generation-summary').textContent = selected.summary || '';
   announcement.textContent = `${meta}、${recordName(selected)}を表示しています。`;
   const image = $('game-image'), imageUrl = safeUrl(selected.image);
@@ -178,14 +192,15 @@ function renderStory() {
   $('play-note').textContent = playUrl ? '過去の版は一人で試せます' : '実装の記録は引き続き読めます';
   const source = safeUrl(selected.sourceUrl); $('source-link').hidden = !source;
   if (source) { $('source-link').href = source; $('source-link').target = '_blank'; $('source-link').rel = 'noopener noreferrer'; }
-  comparisonVersion = next || previous || null;
+  comparisonVersion = online || next || previous || null;
   const compare = $('comparison-stage'), comparisonImage = $('comparison-image');
   compare.hidden = !comparisonVersion;
-  document.querySelector('.story-grid').dataset.final = String(!next && !!previous);
+  document.querySelector('.story-grid').dataset.final = String(!online && !next && !!previous);
+  document.querySelector('.story-grid').dataset.online = String(!!online);
   const comparisonLabels = (next ? selected : previous)?.comparison;
-  $('before-label').textContent = `${next ? '変更前' : '反映後'}　${versionLabel(selected)}${comparisonLabels ? '　' + (next ? comparisonLabels.beforeLabel : comparisonLabels.afterLabel) : ''}`;
+  $('before-label').textContent = online ? '仮完成したベースゲーム　r44' : `${next ? '変更前' : '反映後'}　${versionLabel(selected)}${comparisonLabels ? '　' + (next ? comparisonLabels.beforeLabel : comparisonLabels.afterLabel) : ''}`;
   if (comparisonVersion) {
-    $('after-label').textContent = `${next ? '反映後' : '変更前'}　${versionLabel(comparisonVersion)}${comparisonLabels ? '　' + (next ? comparisonLabels.afterLabel : comparisonLabels.beforeLabel) : ''}`;
+    $('after-label').textContent = online ? '現在のオンライン版' : `${next ? '反映後' : '変更前'}　${versionLabel(comparisonVersion)}${comparisonLabels ? '　' + (next ? comparisonLabels.afterLabel : comparisonLabels.beforeLabel) : ''}`;
     const url = safeUrl(comparisonVersion.image);
     comparisonImage.hidden = !url;
     if (url) { comparisonImage.src = url; comparisonImage.alt = `${versionLabel(comparisonVersion)} ${recordName(comparisonVersion)}のゲーム画面`; }
@@ -193,6 +208,7 @@ function renderStory() {
     $('comparison-caption').textContent = comparisonVersion.caption || '';
     $('play-comparison').textContent = `${versionLabel(comparisonVersion)}を遊ぶ`;
     $('play-comparison').disabled = !safeUrl(comparisonVersion.playUrl);
+    $('comparison-note').textContent = online ? 'オンライン本編に参加します' : '過去の版は一人で試せます';
   }
   renderTransition(selected, next); renderEvidence(selected);
   $('previous-version').disabled = !previous; $('next-version').disabled = !next;
@@ -210,6 +226,7 @@ window.addEventListener('popstate', selectFromUrl);
 const dialog = $('game-dialog'), frame = $('game-frame'); let gameOpener;
 function playRecord(record) {
   const url = safeUrl(record?.playUrl); if (!url) return;
+  if (record.live) { location.assign(url); return; }
   gameOpener = document.activeElement; $('game-dialog-version').textContent = versionLabel(record);
   $('game-dialog-title').textContent = recordName(record); frame.title = `${optionName(record)}のゲーム`;
   $('game-new-tab').href = url; dialog.showModal(); document.body.style.overflow = 'hidden'; frame.src = url;

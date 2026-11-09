@@ -1,4 +1,5 @@
 import test from 'node:test';
+import WebSocket from 'ws';
 import assert from 'node:assert/strict';
 import { mkdtemp, rm } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
@@ -100,4 +101,57 @@ test('history HTTP API shares round rights and totals without joining a game soc
     assert.ok(!JSON.stringify(shared).includes(winner));
     assert.equal(app.world.players.size, 0, 'viewing history does not add an in-game human');
   } finally { await app.stop(); }
+});
+
+
+test('completed round rights survive a storage outage beyond the result screen without replacing newer rights', async () => {
+  class InterruptedStorage extends FeedbackStorage {
+    constructor() { super({ file: '', bucket: '' }); this.offline = false; this.attempts = 0; }
+    async load() { this.attempts++; if (this.offline) throw new Error('Storage read unavailable'); return super.load(); }
+  }
+  const delay = ms => new Promise(resolve => setTimeout(resolve, ms));
+  const storage = new InterruptedStorage(), board = new FeedbackBoard(storage), world = new World({ bots: false });
+  await board.recordRound('prior', rows.map(r => ({ ...r, rank: r.id === 'b' ? 1 : 2 })), identities);
+  const app = createGameServer({ world, feedback: board });
+  await new Promise(resolve => app.server.listen(0, '127.0.0.1', resolve));
+  const clients = [];
+  const join = (key, name) => new Promise((resolve, reject) => {
+    const socket = new WebSocket(`ws://127.0.0.1:${app.server.address().port}/ws`); clients.push(socket);
+    socket.once('error', reject); socket.once('open', () => socket.send(JSON.stringify({ type: 'join', name, feedbackKey: key })));
+    socket.on('message', bytes => { const packet = JSON.parse(bytes); if (packet.type === 'welcome') resolve(packet.id); });
+  });
+  try {
+    const a = await join('a'.repeat(64), 'first winner'), b = await join('b'.repeat(64), 'first voter');
+    world.players.get(a).score = 10; world.players.get(b).score = 0;
+    storage.offline = true; world.timeLeft = .05;
+    await delay(9300); // Real eight-second results window, then the ordinary rematch.
+    assert.equal(world.phase, 'playing'); assert.equal(world.round, 2);
+    const pending = await board.view(winner).catch(error => ({ notice: error.message }));
+    console.log('outage observation', { round: world.round, pending: pending.pending, attempts: storage.attempts });
+    const response = await fetch(`http://127.0.0.1:${app.server.address().port}/api/feedback`, { headers: { Authorization: `Bearer ${'a'.repeat(64)}` } });
+    const waiting = await response.json();
+    assert.equal(response.status, 200); assert.equal(waiting.permission, null); assert.match(waiting.notice, /保存中/);
+    const socketView = new Promise(resolve => {
+      const receive = bytes => { const packet = JSON.parse(bytes); if (packet.type === 'feedback') { clients[0].off('message', receive); resolve(packet.feedback); } };
+      clients[0].on('message', receive); clients[0].send(JSON.stringify({ type: 'feedback', action: 'view' }));
+    });
+    assert.match((await socketView).notice, /保存中/, 'the formal Unity socket retains the pending notice');
+    world.players.get(a).name = 'renamed after result';
+    storage.offline = false;
+    const until = Date.now() + 2300;
+    while (Date.now() < until && (board.data?.grants.filter(g => g.roundKey !== 'prior').length || 0) < 2) await delay(50);
+    const recovered = board.data.grants.filter(g => g.roundKey !== 'prior');
+    assert.equal(recovered.length, 2, 'the completed round is retried after rematch');
+    assert.equal(pending.permission, null); assert.equal(pending.pending, true);
+    assert.equal(recovered.find(g => g.owner === winner).name, 'first winner');
+    assert.equal((await board.view(winner)).permission.role, 'winner');
+    assert.equal((await board.view(loser)).permission.role, 'voter');
+    const key = recovered[0].roundKey;
+    await board.recordRound(key, [{ id: 'a', rank: 1 }, { id: 'b', rank: 2 }], identities);
+    assert.equal(board.data.grants.filter(g => g.roundKey === key).length, 2, 'retries do not duplicate either grant');
+    const completedAt = Date.now();
+    await board.recordRound('newer', [{ id: 'a', rank: 2, name: 'newer voter' }], identities, { completedAt: completedAt + 1000 });
+    await board.recordRound('older-late', [{ id: 'a', rank: 1, name: 'older winner' }], identities, { completedAt: completedAt - 1000 });
+    assert.equal((await board.view(winner)).permission.roundKey, 'newer', 'a late older result does not replace the later role');
+  } finally { clients.forEach(socket => socket.terminate()); await app.stop(); }
 });

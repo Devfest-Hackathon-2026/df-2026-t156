@@ -67,7 +67,23 @@ export class FeedbackStorage {
 }
 
 export class FeedbackBoard {
-  constructor(storage = new FeedbackStorage()) { this.storage = storage; this.versionId = feedbackVersion(); this.queue = Promise.resolve(); this.cachedAt = 0; this.httpRequests = new Map(); }
+  constructor(storage = new FeedbackStorage()) { this.storage = storage; this.versionId = feedbackVersion(); this.queue = Promise.resolve(); this.cachedAt = 0; this.httpRequests = new Map(); this.pendingGrants = new Map(); }
+  pendingRound(round, failed = false) {
+    for (const row of round.standings) {
+      const owner = round.identities.get(row.id), previous = this.pendingGrants.get(owner);
+      if (row.bot || !owner || previous?.completedAt > round.completedAt) continue;
+      this.pendingGrants.set(owner, { roundKey: round.roundKey, completedAt: round.completedAt, failed });
+    }
+    while (this.pendingGrants.size > 64) this.pendingGrants.delete(this.pendingGrants.keys().next().value);
+  }
+  savedRound(round) {
+    for (const owner of round.identities.values()) if (this.pendingGrants.get(owner)?.roundKey === round.roundKey) this.pendingGrants.delete(owner);
+  }
+  pendingNotice(owner, data) {
+    const pending = this.pendingGrants.get(owner), grant = data.grants.findLast(g => g.owner === owner);
+    if (!pending || grant?.roundKey === pending.roundKey || grant?.createdAt > pending.completedAt) return '';
+    return pending.failed ? 'この試合の参加権を保存できませんでした。次の試合から再度参加できます。' : 'この試合の参加権を保存中です。少し待ってください。';
+  }
   async http(req, res) {
     const reply = (status, data) => { res.writeHead(status, { 'Content-Type': 'application/json; charset=utf-8', 'Cache-Control': 'no-store' }); res.end(JSON.stringify(data)); };
     const owner = feedbackIdentity(/^Bearer ([a-f0-9]{64})$/.exec(req.headers.authorization || '')?.[1]);
@@ -112,31 +128,36 @@ export class FeedbackBoard {
     });
     this.queue = operation.catch(() => {}); return operation;
   }
-  recordRound(roundKey, standings, identities) {
+  recordRound(roundKey, standings, identities, { completedAt = Date.now(), versionId = this.versionId } = {}) {
     return this.transaction(data => {
       for (const row of standings) {
         const owner = identities.get(row.id);
         if (row.bot || !owner || data.grants.some(g => g.roundKey === roundKey && g.owner === owner)) continue;
         data.grants.push({ id: randomUUID(), roundKey, owner, name: plain(row.name).slice(0, 24),
-          role: row.rank === 1 ? 'winner' : 'voter', versionId: this.versionId, used: false, createdAt: Date.now() });
+          role: row.rank === 1 ? 'winner' : 'voter', versionId, used: false, createdAt: completedAt });
       }
       // Retain the latest permissions per browser; old votes are already in totals.
+      data.grants.sort((a, b) => a.createdAt - b.createdAt);
       if (data.grants.length > 2000) data.grants = data.grants.slice(-2000);
     });
   }
   async view(owner) {
     if (!this.data || Date.now() - this.cachedAt > 3000) {
-      await this.queue; this.data = (await this.storage.load()).data; this.cachedAt = Date.now();
+      await this.queue;
+      try { this.data = (await this.storage.load()).data; this.cachedAt = Date.now(); }
+      catch (error) { if (!this.pendingGrants.has(owner)) throw error; }
     }
-    const grant = this.data.grants.findLast(g => g.owner === owner);
-    return { storage: this.storage.mode, versionId: this.versionId, permission: grant ? { role: grant.role, used: grant.used, roundKey: grant.roundKey, versionId: grant.versionId } : null,
-      proposals: this.data.proposals.map(p => ({ id: p.id, text: p.text, author: p.author, votes: p.votes,
+    const data = this.data || empty(), notice = this.pendingNotice(owner, data);
+    const grant = notice ? null : data.grants.findLast(g => g.owner === owner);
+    return { storage: this.storage.mode, versionId: this.versionId, pending: !!notice, notice, permission: grant ? { role: grant.role, used: grant.used, roundKey: grant.roundKey, versionId: grant.versionId } : null,
+      proposals: data.proposals.map(p => ({ id: p.id, text: p.text, author: p.author, votes: p.votes,
         status: p.status, basedOnVersion: p.basedOnVersion, isOwn: p.owner === owner, createdAt: new Date(p.createdAt).toISOString() })).reverse() };
   }
   submit(owner, text) {
     const cleaned = plain(text);
     if (!owner || typeof text !== 'string' || [...cleaned].length < 3 || [...cleaned].length > 180) throw new Error('改善案は3〜180文字で入力してください');
     return this.transaction(data => {
+      const notice = this.pendingNotice(owner, data); if (notice) throw new Error(notice);
       const grant = data.grants.findLast(g => g.owner === owner);
       if (!grant || grant.role !== 'winner' || grant.used) throw new Error('勝者は一試合につき1案を投稿できます');
       if (data.proposals.length >= 500) throw new Error('提案の受付上限に達しました');
@@ -148,6 +169,7 @@ export class FeedbackBoard {
   }
   vote(owner, proposalId) {
     return this.transaction(data => {
+      const notice = this.pendingNotice(owner, data); if (notice) throw new Error(notice);
       const grant = data.grants.findLast(g => g.owner === owner);
       const proposal = data.proposals.find(p => p.id === proposalId);
       if (!grant || grant.role !== 'voter' || grant.used) throw new Error('敗者は一試合につき1票を投じられます');

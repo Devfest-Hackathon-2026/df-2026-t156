@@ -4066,28 +4066,33 @@
   "unverifiedRevisionNumbers": [
     {
       "number": 30,
-      "status": "not-retained-not-confirmed",
-      "note": "現在のCloud Run revision一覧・元image一覧にありません。成功配布版だったか未確認。近い版をこの番号として置換しません。"
+      "status": "traffic-update-same-game",
+      "note": "当時のゲーム本体が変わらなかった配信設定更新。監査記録25件とビルド10件を照合。配信先はr29で、別のゲーム版には数えていません。",
+      "servedVersion": "r29"
     },
     {
       "number": 33,
-      "status": "not-retained-not-confirmed",
-      "note": "現在のCloud Run revision一覧・元image一覧にありません。成功配布版だったか未確認。近い版をこの番号として置換しません。"
+      "status": "traffic-update-same-game",
+      "note": "当時のゲーム本体が変わらなかった配信設定更新。監査記録25件とビルド10件を照合。配信先はr32で、別のゲーム版には数えていません。",
+      "servedVersion": "r32"
     },
     {
       "number": 35,
-      "status": "not-retained-not-confirmed",
-      "note": "現在のCloud Run revision一覧・元image一覧にありません。成功配布版だったか未確認。近い版をこの番号として置換しません。"
+      "status": "traffic-update-same-game",
+      "note": "当時のゲーム本体が変わらなかった配信設定更新。監査記録25件とビルド10件を照合。配信先はr34で、別のゲーム版には数えていません。",
+      "servedVersion": "r34"
     },
     {
       "number": 38,
-      "status": "not-retained-not-confirmed",
-      "note": "現在のCloud Run revision一覧・元image一覧にありません。成功配布版だったか未確認。近い版をこの番号として置換しません。"
+      "status": "traffic-update-same-game",
+      "note": "当時のゲーム本体が変わらなかった配信設定更新。監査記録25件とビルド10件を照合。配信先はr37で、別のゲーム版には数えていません。",
+      "servedVersion": "r37"
     },
     {
       "number": 42,
-      "status": "not-retained-not-confirmed",
-      "note": "現在のCloud Run revision一覧・元image一覧にありません。成功配布版だったか未確認。近い版をこの番号として置換しません。"
+      "status": "traffic-update-same-game",
+      "note": "当時のゲーム本体が変わらなかった配信設定更新。監査記録25件とビルド10件を照合。配信先はr41で、別のゲーム版には数えていません。",
+      "servedVersion": "r41"
     }
   ],
   "fieldMeaning": {
@@ -4096,5 +4101,20 @@
     "feedbackUntilNextVersionIds": "この配布版から次の配布版までの本人入力。次版のinputProposalIdsと同じ。",
     "examples": "本人の要望を受けたこの版の変更。全変更が本人の具体案そのものという意味ではない。",
     "originalText": "本人メッセージの原文またはゲーム要望部分の逐語抜粋。originalWordingに区分。"
+  },
+  "onlineContinuation": {
+    "id": "online",
+    "fromVersionId": "r44",
+    "version": "現在のオンライン版",
+    "title": "意見と投票で次へ",
+    "live": true,
+    "playUrl": "/",
+    "image": "generation-media/online-feedback.webp",
+    "caption": "公開50の実ゲームで開いた改善案画面。新しい案の投稿を待っている状態。",
+    "request": {
+      "originalText": "とりあえず改善案が入力でき、投票もあって、さらに過去のバージョンが見れて、改善案の文章が見れるという箇所を品質をとことん追求して作り切ってほしい。",
+      "originalWording": "本人の開発中の要望（原文）"
+    },
+    "summary": "試合後、勝者は改善案を投稿し、ほかの参加者は投票できるように。寄せられた意見と実際の変更をたどり、過去の版と今のゲームを遊び比べられるようになった。"
   }
 }

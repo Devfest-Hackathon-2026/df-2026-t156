@@ -19,6 +19,7 @@ export function createGameServer({ staticDir, world = new World(), feedback = ne
   const configHash = createHash('sha256').update(JSON.stringify(world.valley.data)).digest('hex');
   const feedbackRoom = randomUUID(), feedbackIdentities = new Map();
   let feedbackRound = -1, feedbackSaving = false, feedbackRetryAt = 0;
+  const pendingRounds = [];
   const server = http.createServer((req, res) => {
     let pathname;
     try { pathname = new URL(req.url, 'http://local').pathname; }
@@ -102,7 +103,7 @@ export function createGameServer({ staticDir, world = new World(), feedback = ne
             if (packet.action === 'propose') { await feedback.submit(socket.feedbackIdentity, packet.text); notice = '改善案を投稿しました'; }
             else if (packet.action === 'vote') { await feedback.vote(socket.feedbackIdentity, packet.proposalId); notice = '投票しました'; }
             const view = await feedback.view(socket.feedbackIdentity);
-            send(socket, { type: 'feedback', feedback: { ...view, notice } });
+            send(socket, { type: 'feedback', feedback: { ...view, notice: notice || view.notice || '' } });
           } catch (error) {
             const safe = /^[改善案勝敗同こ提]/.test(error.message) ? error.message : '保存先に接続できません。少し待って再度開いてください';
             send(socket, { type: 'feedback', feedback: { notice: safe, unavailable: true } });
@@ -143,16 +144,25 @@ export function createGameServer({ staticDir, world = new World(), feedback = ne
         steps++;
       }
     }
+    if (world.phase === 'finished' && feedbackRound !== world.round) {
+      feedbackRound = world.round;
+      const round = { roundKey: `${feedbackRoom}:${world.round}`, standings: structuredClone(world.standings),
+        identities: new Map(feedbackIdentities), completedAt: Date.now(), versionId: feedback.versionId };
+      pendingRounds.push(round); feedback.pendingRound(round);
+      // Bound transient recovery to four completed matches; gameplay never waits for storage.
+      if (pendingRounds.length > 4) feedback.pendingRound(pendingRounds.shift(), true);
+      for (const id of feedbackIdentities.keys()) if (!world.players.has(id)) feedbackIdentities.delete(id);
+    }
+    if (pendingRounds.length && !feedbackSaving && now >= feedbackRetryAt) {
+      feedbackSaving = true;
+      const round = pendingRounds[0];
+      void feedback.recordRound(round.roundKey, round.standings, round.identities, round).then(() => {
+        const position = pendingRounds.indexOf(round); if (position >= 0) pendingRounds.splice(position, 1);
+        feedback.savedRound(round); feedbackRetryAt = 0;
+      }).catch(() => { feedbackRetryAt = performance.now() + 5000; })
+        .finally(() => { feedbackSaving = false; });
+    }
     if (steps) {
-      if (world.phase === 'finished' && feedbackRound !== world.round && !feedbackSaving && now >= feedbackRetryAt) {
-        feedbackSaving = true;
-        const round = world.round;
-        void feedback.recordRound(`${feedbackRoom}:${round}`, world.standings, feedbackIdentities).then(() => {
-          feedbackRound = round;
-          for (const id of feedbackIdentities.keys()) if (!world.players.has(id)) feedbackIdentities.delete(id);
-        }).catch(() => { feedbackRetryAt = performance.now() + 5000; })
-          .finally(() => { feedbackSaving = false; });
-      }
       const recipients = [...wss.clients].filter(socket => socket.playerId && canSend(socket));
       if (recipients.length) {
         // Build shared accounting/geometry once, rather than once per viewer on every tick.
