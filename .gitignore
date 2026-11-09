@@ -32,3 +32,29 @@ Thumbs.db
 .vscode/*
 !.vscode/extensions.json
 *.log
+
+# Unity project and game runtime
+# Unity generated state
+Unity/[Ll]ibrary
+Unity/[Tt]emp
+Unity/[Oo]bj/
+Unity/[Ll]ogs/
+Unity/[Uu]ser[Ss]ettings/
+Unity/.vs/
+Unity/*.csproj
+Unity/*.sln
+Unity/*.slnx
+Unity/*.pidb
+Unity/*.user
+Unity/*.userprefs
+Unity/MemoryCaptures/
+Unity/Recordings/
+Unity/Builds/
+# Runtime and build outputs
+server/node_modules/
+build-web/
+*.log
+.env
+.env.*
+!.env.example
+.DS_Store

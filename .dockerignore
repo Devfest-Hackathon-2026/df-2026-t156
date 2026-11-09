@@ -1,0 +1,7 @@
+**
+!Dockerfile
+!server/
+!server/**
+server/node_modules/
+!build-web/
+!build-web/**
