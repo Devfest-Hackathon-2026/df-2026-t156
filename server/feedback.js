@@ -142,7 +142,8 @@ export class FeedbackBoard {
     });
   }
   async view(owner) {
-    if (!this.data || Date.now() - this.cachedAt > 3000) {
+    // Report a locally known pending result immediately, even while a cloud request is timing out.
+    if (!this.pendingNotice(owner, this.data || empty()) && (!this.data || Date.now() - this.cachedAt > 3000)) {
       await this.queue;
       try { this.data = (await this.storage.load()).data; this.cachedAt = Date.now(); }
       catch (error) { if (!this.pendingGrants.has(owner)) throw error; }
