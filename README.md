@@ -1,8 +1,8 @@
-# 谷の採鉱競争
+# WORLDSHIFT
 
-3分の採鉱対戦を遊び、勝者は次の改善案を書き、ほかの参加者は投票します。実際に寄せられた意見で何が変わったかを、変更前後の画面と両方のゲームで辿れます。
+宇宙船で荷を運ぶゲームが、「自然の中を自分の足で歩きたい」という提案から、一人称の採鉱対戦に変わりました。WORLDSHIFTでは勝者が次の遊び方を提案し、敗者は試したい案に投票します。現在のゲームは「谷の採鉱競争」。開発中の7つの大きな変化を、提案の原文と実際に遊べる39版でたどれます。
 
-[最新版を遊ぶ](https://orbit-salvage-prototype-905974313870.asia-northeast1.run.app/) · [ゲームの履歴](https://orbit-salvage-prototype-905974313870.asia-northeast1.run.app/history/) · [次の改善案](https://orbit-salvage-prototype-905974313870.asia-northeast1.run.app/history/#ideas)
+[作品サイト・57秒の実演](https://worldshift.pichu.dev/) · [宇宙船から谷への変化](https://worldshift.pichu.dev/history/#r04) · [最新版で対戦](https://worldshift.pichu.dev/play) · [次の改善案](https://worldshift.pichu.dev/history/#ideas)
 
 ## 技術構成
 
@@ -20,7 +20,7 @@
 
 ## 体験と改善の記録
 
-比較から見るなら、[宇宙船から自然の谷へ](https://orbit-salvage-prototype-905974313870.asia-northeast1.run.app/history/?version=r03)、[拾うから掘るへ](https://orbit-salvage-prototype-905974313870.asia-northeast1.run.app/history/?version=r04)、[景観の大岩も採れる](https://orbit-salvage-prototype-905974313870.asia-northeast1.run.app/history/?version=r15)、[円に入るだけの売却へ](https://orbit-salvage-prototype-905974313870.asia-northeast1.run.app/history/?version=r40)。意見のそばで前後の実版をそのまま遊べます。
+[宇宙船から谷へ](https://worldshift.pichu.dev/history/#r04)、[背景の大岩から採掘できる近道へ](https://worldshift.pichu.dev/history/#r16)、[弓で鉱石を奪う対戦へ](https://worldshift.pichu.dev/history/#r26)。それぞれの画面から当時の版を起動できます。
 
 過去の実例は、開発中の本人の意見をCodexが実装してきた記録です。新しい投稿・投票とは分けて表示し、自動実装・自動再配備は接続していません。
 

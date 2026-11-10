@@ -16,17 +16,27 @@ const entries = [
   {until:44, shot:'r44',title:'一撃当てたら、追うか、逃げるか',body:'見た目に合わせて当たる幅を広げた。近接攻撃が当たると2秒間、足が1.4倍速くなる。空のバッグを持つ相手にも、一撃を入れる意味が生まれた。',inputs:['p46']}
 ];
 const mark='<svg viewBox="0 0 39 32" fill="currentColor" aria-hidden="true"><path d="M0 3h19L9 16H0zm12 13L22 3h17L17 29H0z"/></svg>';
-const word='<span class="wordmark">'+mark+'WORLDSHIFT</span>';
+const word='<span class="wordmark">'+mark+'<span>WORLD<em>SHIFT</em></span></span>';
 const head=(title,desc)=>`<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#11131b"><title>${title}</title><meta name="description" content="${desc}"><meta property="og:title" content="${title}"><meta property="og:description" content="${desc}"><meta property="og:image" content="https://worldshift.pichu.dev/patchplay/poster.jpg"><meta name="twitter:card" content="summary_large_image"><link rel="icon" href="/patchplay/icon.svg"><link rel="stylesheet" href="/patchplay/style.css"></head><body><a class="skip" href="#main">本文へ</a>`;
 const nav=(history=false)=>`<header class="top"><div class="wrap bar"><a class="brand" href="/" aria-label="WORLDSHIFT ホーム">${word}</a><nav><a class="${history?'active':''}" href="/history/">進化の履歴</a><a href="/history/#ideas">改善案</a><a class="navplay" href="/play">遊ぶ <i>↗</i></a></nav></div></header>`;
 const foot=`<footer><div class="wrap foot"><a href="/" class="brand">${word}</a><a href="/history/">進化の履歴</a><a href="/play">最新版を遊ぶ ↗</a></div></footer></body></html>`;
-const art=`<div class="keyart" aria-label="宇宙の試作から現在の採鉱谷へ"><div class="art-before"></div><div class="art-after"></div><div class="slice"></div><div class="arttag first"><span></span>最初の試作</div><div class="arttag last"><span></span>現在のゲーム</div></div>`;
+const videoFile = '1-4jKsDMGDks1GtSBuY7P2qrnsaZC5rN7';
+const videoUrl = 'https://drive.google.com/file/d/' + videoFile;
+const art = `<a class="keyart" id="trailer-link" href="${videoUrl}/view" aria-label="WORLDSHIFTの実演を見る（57秒）">
+  <div class="art-before"></div><div class="art-after"></div><div class="slice"></div>
+  <div class="arttag first">宇宙船で運ぶ</div><div class="arttag last">谷を歩いて掘る</div>
+  <span class="watch"><span class="play-symbol" aria-hidden="true">▶</span> 実演を見る <small>0:57</small></span>
+</a>`;
+const trailer = `<dialog id="trailer" aria-labelledby="trailer-title"><header><h2 id="trailer-title">WORLDSHIFT 実演</h2>
+  <form method="dialog"><button aria-label="動画を閉じる" autofocus>閉じる ×</button></form></header>
+  <iframe title="WORLDSHIFTの実演動画" data-src="${videoUrl}/preview" allow="autoplay; fullscreen" allowfullscreen></iframe>
+  <a class="trailer-fallback" href="${videoUrl}/view" target="_blank" rel="noopener noreferrer">Google Driveで見る ↗</a>
+</dialog><script type="module" src="/patchplay/trailer.js"></script>`;
 const origin='/history-play/play/';
-const playlink=(id,label)=>`<a class="minor" href="${origin}${id}/">${esc(label)} <i>↗</i></a>`;
 const previews=entries.filter((_,i)=>[0,3,5].includes(i)).map(e=>`<a class="thumb" href="/history/#${e.shot}"><img src="${img(e.shot)}" alt="" loading="lazy"><h3>${e.title} <i>↗</i></h3></a>`).join('');
-const home=head('WORLDSHIFT — プレイヤーの一票で進化するゲーム','勝者のアイデアを、みんなの一票で次のアップデートへ。変わる前と後をその場で遊べるゲーム。')+nav()+`<main id="main"><section class="hero wrap"><div class="hero-copy"><h1>宇宙船を降りたら、<br><b>別のゲームだった。</b></h1><p>「自然の中を自分の足で歩きたい」<br>その声から、宇宙の運搬ゲームは谷の採鉱対戦に変わった。</p><div class="ctas"><a class="action" href="/play">最新版を遊ぶ <i>↗</i></a><a class="action ghost" href="/history/">進化の履歴 <i>↓</i></a></div></div>${art}</section>
+const home=head('WORLDSHIFT — プレイヤーの一票で進化するゲーム','宇宙船を操る試作が、ひとつの提案から採鉱対戦へ。勝者が提案し、敗者が投票する。AIと作り変えてきた39版を遊べます。')+nav()+`<main id="main"><section class="hero wrap"><div class="hero-copy"><h1>宇宙船を降りたら、<br><b>別のゲームだった。</b></h1><p>自然の中を、自分の足で歩きたい。<br>その提案を受けて、AIが宇宙の運搬ゲームを谷の採鉱対戦に作り変えた。</p><div class="ctas"><a class="action" href="/history/#r04">変化を遊び比べる <i>↗</i></a><a class="action ghost" href="/play">最新版を遊ぶ <i>↗</i></a></div></div>${art}</section>${trailer}
 <section class="loop"><div class="wrap steps"><div><em>01</em><div><h2>勝者が書く</h2><p>試合を終えたら、変えてほしいことを一案。</p></div></div><div><em>02</em><div><h2>みんなで選ぶ</h2><p>敗者は、遊んでみたい案に一票。</p></div></div><div><em>03</em><div><h2>AIが実装する</h2><p data-cycle-copy>得票した案から次のゲームを作る。6時間ごとの自動更新を開発中。</p></div></div></div></section>
-<section class="wrap showcase"><div class="sectionhead"><h2>声から生まれたアップデート</h2><a href="/history/">履歴をすべて見る ↗</a></div><div class="thumbs">${previews}</div></section>
+<section class="wrap showcase"><div class="sectionhead"><h2>提案から生まれた遊び</h2><a href="/history/">履歴をすべて見る ↗</a></div><div class="thumbs">${previews}</div></section>
 <section class="now"><div class="wrap now-inner"><div><p>いま遊べるオンラインゲーム</p><h2>谷の採鉱競争</h2></div><p>掘る、奪う、持ち帰る。<br>3分間でいちばん稼いだ人が勝つ。</p><a class="action" href="/play">対戦に参加 <i>↗</i></a></div></section></main>`+foot;
 const versionOptions=archive.versions.map(v=>`<option value="${esc(v.playUrl)}">${v.id}　${esc(v.title)}</option>`).join('');
 let low=1;
@@ -34,9 +44,16 @@ const cards=entries.map((e,i)=>{
   const versions=archive.versions.filter(v=>v.number>=low&&v.number<=e.until);low=e.until+1;
   const props=e.inputs.map(prompt);
   const original=props.filter(p=>p?.originalText).map(p=>`<blockquote>${esc(p.originalText)}</blockquote>`).join('');
+  const shotLink = (id, label) => `<a class="patch-image" href="${origin}${id}/" aria-label="${esc(label)}">
+    <img width="800" height="450" ${i ? 'loading="lazy"' : ''} src="${img(id)}" alt="${esc(ver(id).title)}">
+    <span>▶　${esc(label)}</span>
+  </a>`;
+  const shot = i === 0
+    ? `<div class="first-versions">${shotLink('r03','宇宙船を操る')}${shotLink('r04','谷を歩く')}</div>`
+    : shotLink(e.shot, 'この版を遊ぶ');
   return `<article id="${e.shot}" class="patch" data-versions="${versions.map(v=>v.id).join(' ')}">
-  <a class="patch-image" href="${origin}${e.shot}/" aria-label="${esc(e.title)}の版を遊ぶ"><img width="800" height="450" ${i?'loading="lazy"':''} src="${img(e.shot)}" alt="${esc(ver(e.shot).title)}のゲーム画面"><span>▶　この版を遊ぶ</span></a>
-  <div class="patch-body"><p class="version">SHIFT ${String(i+1).padStart(2,'0')} <span>/</span> ${versions[0].id.toUpperCase()}–${versions.at(-1).id.toUpperCase()}</p><h2>${esc(e.title)}</h2>${i===0?'<p class="first-idea">'+esc(e.lead)+'</p>':''}<p>${esc(e.body)}</p><details><summary>提案の原文</summary>${original}</details>${i===0?playlink('r01','変更前の宇宙を遊ぶ'):''}</div></article>`;
+  ${shot}
+  <div class="patch-body"><p class="version">SHIFT ${String(i+1).padStart(2,'0')} <span>/</span> ${versions[0].id.toUpperCase()}–${versions.at(-1).id.toUpperCase()}</p><h2>${esc(e.title)}</h2>${i===0?'<p class="first-idea">'+esc(e.lead)+'</p>':''}<p>${esc(e.body)}</p><details><summary>提案の原文</summary>${original}</details></div></article>`;
 }).join('');
 const previous=await fs.readFile(new URL('history/index.html',root),'utf8');
 const board=previous.match(/<section class="feedback-section"[\s\S]*?<\/section>/)?.[0];
