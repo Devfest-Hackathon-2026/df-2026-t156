@@ -8,7 +8,11 @@ mergeInto(LibraryManager.library, {
             window.orbitSocket.close();
         }
 
-        var url = (location.protocol === 'https:' ? 'wss://' : 'ws://') + location.host + '/ws';
+        // The branded hosts serve the client. The authoritative match socket is on Cloud Run.
+        var brandedHost = location.hostname === 'worldshift.pichu.dev' || location.hostname === 'patchplay.pichu.dev';
+        var url = brandedHost
+            ? 'wss://orbit-salvage-prototype-905974313870.asia-northeast1.run.app/ws'
+            : (location.protocol === 'https:' ? 'wss://' : 'ws://') + location.host + '/ws';
         var ws = new WebSocket(url);
         window.orbitSocket = ws;
         var network = window.orbitNetwork = { pending: null, latest: 0, acknowledged: 0, sentAck: 0, ackQueued: false };
