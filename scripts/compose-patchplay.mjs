@@ -7,13 +7,13 @@ const prompt = id => archive.proposals.find(p => p.id === id);
 const esc = s => String(s ?? '').replace(/[&<>"']/g, c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const img = id => '/history/'+ver(id).image;
 const entries = [
-  {until:7, shot:'r04', title:'宇宙から、歩いて探す谷へ',lead:'サイバーな舞台より、自然でオープンワールドのような世界を、一人称・WASDで歩きたい', body:'宇宙船でコアを運ぶ試作から、谷を一人称で歩く遊びへ。地面に落ちた鉱石は、ピッケルで掘って持ち帰る鉱脈に変わった。',inputs:['p13','p14','p15']},
-  {until:15, shot:'r09',title:'3分間、稼ぐか、強くなるか',body:'売上でピッケルを強化すれば、次はもっと硬い鉱石を掘れる。強化に費やした点は順位から引かれる。残り時間が投資の判断を変える。',inputs:['p17','p19','p21','p22']},
-  {until:19, shot:'r16',title:'岩を削って、帰り道を変える',body:'背景だった大岩からも銅が採れるようになった。割れる岩を崩せば、売店への近道が開く。道中で奪われた鉱石は、相手を追って奪い返せる。',inputs:['p26','p25','p30']},
-  {until:27, shot:'r26',title:'弓の一射で、荷物を奪う',body:'接近して殴るほかに、弓を引いて帰り道の相手を狙えるように。矢の軌道が見え、鉱石を持ち帰る側にもかわす余地ができた。',inputs:['p31','p34','p35']},
-  {until:37, shot:'r29',title:'光を見て、奪い合う場所を選ぶ',body:'希少な鉱脈を遠くから見つけられるようにした。高く買う店は30秒ごとに移る。灯りを追うか、近くで換金するかを選べる。',inputs:['p37','p38','p39','p42']},
-  {until:43, shot:'r43',title:'店に入れば売れる。道具は一押しで強化',body:'売店の円に入るだけで換金。中央のアンビルにピッケルやバッグを使えば、その道具を強化できる。',inputs:['p43','p44','p45']},
-  {until:44, shot:'r44',title:'一撃当てたら、追うか、逃げるか',body:'見た目に合わせて当たる幅を広げた。近接攻撃が当たると2秒間、足が1.4倍速くなる。空のバッグを持つ相手にも、一撃を入れる意味が生まれた。',inputs:['p46']}
+  {until:7, shot:'r04', title:'宇宙船を降りて、谷を歩く',lead:'サイバーな舞台より、自然でオープンワールドのような世界を、一人称・WASDで歩きたい', body:'宇宙船でコアを運ぶ試作から、一人称で谷を歩き、ピッケルで鉱石を掘る対戦へ。',inputs:['p13','p14','p15']},
+  {until:15, shot:'r09',lead:'いつまで強化して、いつから稼ぎに行くかを考えたい。',title:'道具を強くするか、売上を残すか',body:'売上を強化に使うと今の順位は下がる。そのぶん硬い鉱石を掘れるようになる。',inputs:['p17','p19','p21','p22']},
+  {until:19, shot:'r16',lead:'大きい岩も掘りたい。',title:'大岩を壊すと近道が開く',body:'岩から銅を採れるようになり、崩せば売店への近道が開く。',inputs:['p26','p25','p30']},
+  {until:27, shot:'r26',lead:'弓や銃みたいな概念があっても良いと思う。',title:'弓で相手の鉱石を奪える',body:'帰り道の相手を矢で狙えるように。運ぶ側は、飛んでくる矢を見てかわす。',inputs:['p31','p34','p35']},
+  {until:37, shot:'r29',lead:'遠くからでも高い鉱脈が分かるようにしたい。',title:'光る鉱脈と、高く買う店',body:'希少な鉱脈に光が付き、高く買う店は30秒で移る。次に向かう場所を選べる。',inputs:['p37','p38','p39','p42']},
+  {until:43, shot:'r43',lead:'円の中に入ったら、自動で売れたらいい。',title:'売店に入ると自動で換金',body:'売却ボタンを押す手間がなくなり、強化は中央のアンビルにまとまった。',inputs:['p43','p44','p45']},
+  {until:44, shot:'r44',lead:'鉱石を持っていない相手にも、攻撃する理由がほしい。',title:'攻撃を当てると足が速くなる',body:'近接攻撃を当てると、2秒間だけ足が1.4倍速くなる。',inputs:['p46']}
 ];
 const videoUrl = 'https://drive.google.com/file/d/1-4jKsDMGDks1GtSBuY7P2qrnsaZC5rN7';
 const pitch = '勝者が改善案を投稿し、ほかのプレイヤーが投票。選ばれた案をAIが数時間ごとに実装して、ゲームに反映する仕組みを開発中です。';
@@ -64,7 +64,7 @@ const cards=entries.map((e,i)=>{
     : shotLink(e.shot, 'この版を遊ぶ');
   return `<article id="${e.shot}" class="patch" data-versions="${versions.map(v=>v.id).join(' ')}">
   ${shot}
-  <div class="patch-body"><p class="version">${versions[0].id.toUpperCase()}${versions.length > 1 ? ' → ' + versions.at(-1).id.toUpperCase() : ''}</p><h2>${esc(e.title)}</h2>${i===0?'<p class="first-idea">'+esc(e.lead)+'</p>':''}<p>${esc(e.body)}</p><details><summary>提案の原文</summary>${original}</details></div></article>`;
+  <div class="patch-body"><p class="version">${versions[0].id.toUpperCase()}${versions.length > 1 ? ' → ' + versions.at(-1).id.toUpperCase() : ''}</p><details class="source"><summary><span class="source-label">提案</span><span>${esc(e.lead)}</span><span class="source-more">原文</span></summary>${original}</details><h2>${esc(e.title)}</h2><p>${esc(e.body)}</p></div></article>`;
 }).join('');
 const previous=await fs.readFile(new URL('history/index.html',root),'utf8');
 const board=previous.match(/<section class="feedback-section"[\s\S]*?<\/section>/)?.[0];

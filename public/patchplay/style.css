@@ -57,8 +57,13 @@ h1,h2,h3,p,figure{margin:0}
 .version{color:var(--green);font:700 12px/1.3 monospace}
 .patch h2{font-size:clamp(21px,2.2vw,31px);letter-spacing:-.045em;line-height:1.3;margin:6px 0 9px}
 .patch-body>p:not(.version){font-size:15px}
-.first-idea{border-left:4px solid var(--gold);padding-left:10px;font-weight:700;margin:10px 0}
-.patch details,.allversions{margin-top:12px}
+.patch .source{margin:9px 0 12px}
+.source summary{list-style:none;display:flex;align-items:baseline;gap:9px;padding:5px 0;text-wrap:pretty}
+.source summary::-webkit-details-marker{display:none}
+.source-label{flex:none;color:#365840;border-radius:4px;background:#e5eadb;font-size:11px;padding:1px 6px}
+.source-more{flex:none;color:#486253;font-size:12px;text-decoration:underline;text-underline-offset:3px}
+.source-more::after{content:" ▾"}.source[open] .source-more::after{content:" ▴"}
+.allversions{margin-top:12px}
 .patch summary,.allversions summary{font-size:14px;color:var(--green);font-weight:700}
 .patch blockquote{margin:12px 0;padding:8px 14px;border-left:2px solid var(--line);background:var(--paper);white-space:pre-line;font-size:14px}
 .allversions{padding:16px 18px;border:1px solid var(--line);border-radius:8px;background:var(--paper)}
@@ -83,3 +88,6 @@ h1,h2,h3,p,figure{margin:0}
 .archive-intro{padding-top:24px}.feedback-layout{grid-template-columns:1fr;gap:15px}.feedback-section{padding:25px 0}
 }
 @media(max-width:360px){.bar nav{gap:9px}.wordmark{font-size:23px}.game-id>span:last-child{display:none}}
+@media(min-width:701px){
+  .patch:has(.source[open])>.first-versions,.patch:has(.source[open])>.patch-image{position:sticky;top:12px;align-self:start}
+}
