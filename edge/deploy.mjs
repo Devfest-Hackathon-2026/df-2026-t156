@@ -2,7 +2,7 @@ import { readFile } from 'node:fs/promises';
 const api = 'https://api.cloudflare.com/client/v4';
 const token = process.env.CLOUDFLARE_API_TOKEN;
 if (!token) throw Error('Set CLOUDFLARE_API_TOKEN for the pichu.dev zone.');
-const host = 'patchplay.pichu.dev', name = 'patchplay-edge';
+const host = 'worldshift.pichu.dev', name = 'worldshift-edge';
 async function call(path, options = {}) {
   const r = await fetch(api + path, {...options, headers: {Authorization: 'Bearer ' + token,...options.headers}});
   const b = await r.json(); if (!r.ok || !b.success) throw Error(r.status+' '+JSON.stringify(b.errors));

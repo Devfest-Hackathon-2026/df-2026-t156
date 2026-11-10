@@ -1,5 +1,5 @@
 const backend = 'https://orbit-salvage-prototype-905974313870.asia-northeast1.run.app';
-const site = 'https://patchplay.pichu.dev';
+const site = 'https://worldshift.pichu.dev';
 
 export default {
   async fetch(request) {
