@@ -24,6 +24,15 @@ export function createGameServer({ staticDir, world = new World(), feedback = ne
     let pathname;
     try { pathname = new URL(req.url, 'http://local').pathname; }
     catch { res.writeHead(400).end('Invalid URL'); return; }
+    if (pathname === '/play/') { res.writeHead(308, { Location: '/play' }).end(); return; }
+    if (pathname === '/play') {
+      req.url = '/index.html';
+      staticHandler(req, res).catch(() => { if (!res.headersSent) res.writeHead(500); res.end(); }); return;
+    }
+    if (pathname === '/' || pathname.startsWith('/patchplay/')) {
+      if (pathname === '/') req.url = '/patchplay/index.html';
+      historyHandler(req, res).catch(() => { if (!res.headersSent) res.writeHead(500); res.end(); }); return;
+    }
     if (pathname === '/api/feedback') { void feedback.http(req, res); return; }
     if ((pathname.startsWith('/history-play/assets/') || pathname.startsWith('/history-play/chunks/')) && process.env.HISTORY_ASSET_BUCKET) {
       serveArchivedAsset(req, res, feedback.storage).catch(() => { if (!res.headersSent) res.writeHead(503); res.end(); }); return;

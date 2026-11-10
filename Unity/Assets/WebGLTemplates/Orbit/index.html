@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>谷の採鉱競争</title>
+  <title>谷の採鉱競争を遊ぶ — PATCHPLAY</title>
   <style>
     html,body { margin:0; width:100%; height:100%; overflow:hidden; background:#141c1d; font:15px 'Noto Sans JP','Yu Gothic UI',system-ui,sans-serif; color:#f2f5ef }
     canvas { width:100%; height:100%; display:block; outline:0 }
@@ -20,7 +20,7 @@
     progress::-moz-progress-bar { background:#d0d8d0 }
     #error { white-space:pre-wrap; line-height:1.6; color:#f2b1a1; font-size:14px; overflow-wrap:anywhere }
     #error:empty { display:none }
-    .history-link { position:absolute;left:48px;bottom:18px;color:#d6ded7;text-underline-offset:4px;font-size:14px }
+    .history-link { position:absolute;left:48px;bottom:18px;color:#ddff65;text-underline-offset:4px;font-weight:700;font-size:15px }
     @media(max-width:520px) { .loading{left:24px;bottom:32px;width:calc(100% - 48px)}h1{font-size:25px} }
   </style>
 </head>
@@ -33,7 +33,7 @@
       <progress id="progress" max="1" value="0" aria-label="ゲームの読み込み"></progress>
       <p id="error" role="alert"></p>
     </div>
-    <a class="history-link" href="/history/">このゲームができるまで</a>
+    <a class="history-link" href="/history/">PATCHPLAY　進化の履歴を見る ↗</a>
   </div>
   <script>
     const canvas = document.getElementById('unity-canvas');

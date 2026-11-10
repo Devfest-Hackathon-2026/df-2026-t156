@@ -86,7 +86,7 @@ public partial class OrbitGame
         if (!introTitle) introTitle = Resources.Load<Texture2D>("ValleyTitle");
         if (introTitle)
         {
-            var titleRect = new Rect(x - 3, 53, 355, 355f * introTitle.height / introTitle.width);
+            var titleRect = new Rect(x - 3, 32, 355, 355f * introTitle.height / introTitle.width);
             float edge = 1.1f / Mathf.Min(Screen.width / 1000f, Screen.height / 680f);
             GUI.color = GuiTint(new Color(.015f, .025f, .02f, .56f));
             GUI.DrawTexture(new Rect(titleRect.x - edge, titleRect.y, titleRect.width, titleRect.height), introTitle);
@@ -126,7 +126,7 @@ public partial class OrbitGame
             StartGame();
         }
         if (DrawFieldLink(new Rect(x, y + 160, 120, 27), "操作方法", "intro-controls")) introControls = true;
-        if (DrawFieldLink(new Rect(x, y + 198, 260, 27), "このゲームができるまで", "intro-improvements")) OpenImprovements(true);
+        if (DrawFieldLink(new Rect(x, y + 194, 305, 38), "▶  プレイヤーが変えたゲームの履歴", "intro-improvements")) OpenImprovements(true);
 
     }
 
