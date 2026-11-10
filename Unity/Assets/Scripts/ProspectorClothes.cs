@@ -4,10 +4,10 @@ public partial class OrbitGame
 {
     // Muted cloth dyes, unrelated to rank, equipment, team or carried ore.
     private static readonly Color[] CoatDyes = {
-        new Color(.46f,.56f,.37f), new Color(.31f,.43f,.53f),
-        new Color(.48f,.34f,.24f), new Color(.55f,.53f,.46f),
-        new Color(.24f,.40f,.38f), new Color(.61f,.46f,.27f),
-        new Color(.43f,.29f,.28f), new Color(.66f,.62f,.49f)
+        new Color(.56f,.63f,.46f), new Color(.34f,.48f,.60f),
+        new Color(.64f,.42f,.25f), new Color(.69f,.65f,.55f),
+        new Color(.25f,.49f,.43f), new Color(.77f,.57f,.28f),
+        new Color(.59f,.32f,.28f), new Color(.72f,.69f,.57f)
     };
     private static readonly Color[] CollarDyes = {
         new Color(.80f,.71f,.52f), new Color(.64f,.30f,.18f),

@@ -86,7 +86,7 @@ public partial class OrbitGame
         if (!introTitle) introTitle = Resources.Load<Texture2D>("ValleyTitle");
         if (introTitle)
         {
-            var titleRect = new Rect(x - 3, 32, 355, 355f * introTitle.height / introTitle.width);
+            var titleRect = new Rect(x - 3, 52, 405, 405f * introTitle.height / introTitle.width);
             float edge = 1.1f / Mathf.Min(Screen.width / 1000f, Screen.height / 680f);
             GUI.color = GuiTint(new Color(.015f, .025f, .02f, .56f));
             GUI.DrawTexture(new Rect(titleRect.x - edge, titleRect.y, titleRect.width, titleRect.height), introTitle);

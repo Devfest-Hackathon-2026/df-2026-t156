@@ -16,7 +16,7 @@ public partial class OrbitGame
         trousers = GearMaterial(new Color(.52f, .60f, .67f), "Denim");
         cuff = GearMaterial(new Color(.65f, .48f, .29f), "Denim");
         glove = GearMaterial(new Color(.25f, .155f, .10f), null, .22f);
-        hat = GearMaterial(new Color(.33f, .25f, .15f), null);
+        hat = GearMaterial(new Color(.57f, .39f, .18f), null, .20f);
         scarf = GearMaterial(new Color(.59f, .24f, .12f), null);
         pack = GearMaterial(new Color(.59f, .47f, .29f), "Denim");
         iron = GearMaterial(new Color(.58f, .62f, .63f), "Oxide", .44f, .67f);
@@ -129,24 +129,14 @@ public partial class OrbitGame
         var person = new Walker { root = new GameObject("Walking prospector").transform };
         person.root.localScale = new Vector3(valley.combat.bodyScale, 1, valley.combat.bodyScale);
         person.body = GearPivot(person.root, "Upper body", new Vector3(0,.79f,0));
-        Rounded(person.body, "Field jacket", jacket,
-            new Ring(-.05f,.19f,.119f), new Ring(.05f,.203f,.135f), new Ring(.19f,.182f,.134f),
-            new Ring(.39f,.220f,.151f), new Ring(.53f,.228f,.136f), new Ring(.64f,.101f,.086f));
-        Rounded(person.body, "Work collar", scarf, new Ring(.565f,.126f,.103f), new Ring(.62f,.115f,.098f),
-            new Ring(.70f,.096f,.086f));
-        Rounded(person.body, "Face", skin, new Ring(.65f,.064f,.061f,0,.029f),
-            new Ring(.69f,.085f,.088f,0,.012f), new Ring(.76f,.108f,.106f,0,.002f),
-            new Ring(.84f,.101f,.110f,0,-.003f), new Ring(.90f,.078f,.085f));
-        Rounded(person.body, "Nose bridge", skin, new Ring(.734f,.014f,.014f,0,.101f),
-            new Ring(.751f,.021f,.021f,0,.109f), new Ring(.793f,.013f,.012f,0,.104f));
-        Rounded(person.body, "Felt hatband", cuff, new Ring(.881f,.121f,.13f),
-            new Ring(.900f,.117f,.126f));
-        Rounded(person.body, "Felt brim", hat, new Ring(.854f,.166f,.192f,0,.023f),
-            new Ring(.865f,.174f,.198f,0,.022f), new Ring(.883f,.152f,.181f,0,.018f));
-        Rounded(person.body, "Creased hat", hat, new Ring(.871f,.115f,.124f),
-            new Ring(.914f,.110f,.119f), new Ring(.986f,.095f,.103f), new Ring(1.001f,.068f,.083f,0,-.014f));
+        Tailored(person.body, "Tailored field coat", jacket,
+            new Ring(-.035f,.198f,.120f), new Ring(.012f,.205f,.128f),
+            new Ring(.17f,.181f,.131f), new Ring(.34f,.203f,.143f),
+            new Ring(.47f,.233f,.137f), new Ring(.535f,.214f,.110f),
+            new Ring(.60f,.090f,.073f));
+        BuildProspectorHead(person.body);
         var sack=GearPivot(person.body,"Canvas rucksack volume",new Vector3(0,.09f,-.14f));
-        Rounded(sack, "Canvas rucksack", pack, new Ring(0,.13f,.075f,0,-.034f),
+        Tailored(sack, "Gusseted canvas rucksack", pack, new Ring(0,.13f,.075f,0,-.034f),
             new Ring(.07f,.164f,.091f,0,-.045f), new Ring(.31f,.16f,.095f,0,-.047f),
             new Ring(.40f,.137f,.079f,0,-.031f), new Ring(.44f,.11f,.064f,0,-.015f));
         var flap=GearPivot(person.body,"Rucksack flap hinge",new Vector3(0,.50f,-.19f));
@@ -166,25 +156,30 @@ public partial class OrbitGame
         person.leftLeg = MakeLeg(person.root, -.104f, out person.leftKnee, out person.leftBoot);
         person.rightLeg = MakeLeg(person.root, .104f, out person.rightKnee, out person.rightBoot);
         var held = GearPivot(person.rightElbow, "Held miner's pick", new Vector3(0,-.276f,.025f));
-        held.localRotation = Quaternion.Euler(-30, 25, 12);
+        held.localRotation = Quaternion.Euler(152, 25, -12);
         held.localScale = Vector3.one * .86f;
         MountPick(held, wood);
         RegisterProspectorToolkit(person, held);
+        Tailored(person.root, "Trouser seat", trousers, new Ring(.70f,.035f,.045f),
+            new Ring(.75f,.166f,.112f), new Ring(.81f,.183f,.120f), new Ring(.85f,.173f,.109f));
+        DressProspector(person, sack, flap);
         return person;
     }
 
     private Transform MakeArm(Transform body, float x, out Transform elbow)
     {
         var shoulder = GearPivot(body, "Shoulder", new Vector3(x,.504f,0));
-        Rounded(shoulder, "Jacket upper sleeve", jacket, new Ring(-.296f,.045f,.048f), new Ring(-.245f,.065f,.071f),
-            new Ring(-.205f,.073f,.076f), new Ring(-.10f,.084f,.083f),
-            new Ring(.007f,.083f,.080f), new Ring(.061f,.056f,.061f));
+        Tailored(shoulder, "Shaped jacket sleeve", jacket, new Ring(-.284f,.052f,.052f),
+            new Ring(-.237f,.067f,.064f), new Ring(-.212f,.072f,.069f),
+            new Ring(-.14f,.073f,.073f), new Ring(-.065f,.083f,.079f),
+            new Ring(.012f,.086f,.082f), new Ring(.053f,.060f,.064f));
         elbow = GearPivot(shoulder, "Elbow", new Vector3(0,-.244f,0));
         Rounded(elbow, "Jacket lower sleeve", jacket, new Ring(-.235f,.044f,.049f),
             new Ring(-.177f,.052f,.058f), new Ring(-.065f,.064f,.071f), new Ring(-.009f,.066f,.070f), new Ring(.044f,.047f,.052f));
         Rounded(elbow, "Work glove", glove, new Ring(-.321f,.027f,.029f,0,.010f),
             new Ring(-.302f,.041f,.040f,0,.014f), new Ring(-.252f,.045f,.043f,0,.007f),
             new Ring(-.221f,.039f,.040f));
+        AddSleeveDetails(shoulder, elbow);
         return shoulder;
     }
 
@@ -202,6 +197,7 @@ public partial class OrbitGame
         Rounded(boot, "Laced leather boot", glove, new Ring(-.080f,.073f,.134f,0,.047f),
             new Ring(-.056f,.077f,.135f,0,.046f), new Ring(-.021f,.071f,.122f,0,.036f),
             new Ring(.027f,.060f,.073f,0,.002f), new Ring(.076f,.061f,.068f,0,-.004f));
+        AddWorkwearLeg(hip, knee, boot);
         return hip;
     }
 
@@ -264,7 +260,12 @@ public partial class OrbitGame
 
     private Mesh Profile(params Ring[] rings)
     {
-        const int sides = 12, columns = sides + 1;
+        return Profile(12, rings);
+    }
+
+    private Mesh Profile(int sides, params Ring[] rings)
+    {
+        int columns = sides + 1;
         var vertices = new Vector3[rings.Length * columns + 2];
         var uv = new Vector2[vertices.Length];
         var indices = new int[((rings.Length - 1) * sides * 2 + sides * 2) * 3];
