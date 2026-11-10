@@ -25,7 +25,7 @@ h1,h2,h3,p,figure{margin:0}
 .bar nav a:hover,.trailer-fallback:hover{text-decoration:underline;text-underline-offset:4px}
 .bar.wrap,.lobby.wrap{width:min(1360px,calc(100% - 56px))}
 .lobby{padding:8px 0 12px}
-.brand{gap:13px}.tagline{font-size:clamp(12px,1.3vw,16px);font-weight:700}.game-about{font-size:12px;line-height:1.45;color:#dee7da}.game-about::before{content:"・"}
+.brand{gap:22px}.tagline{font-size:clamp(12px,1.3vw,16px);font-weight:700}.game-about{font-size:12px;line-height:1.45;color:#dee7da}.game-about::before{content:"・"}
 .archive-intro h1{font-size:clamp(26px,3.1vw,43px);letter-spacing:-.055em;line-height:1.25;font-weight:850}
 .archive-intro p{margin-top:6px;color:var(--muted);font-size:clamp(13px,1.15vw,16px);text-wrap:pretty}
 .phone{display:none}
@@ -80,7 +80,7 @@ h1,h2,h3,p,figure{margin:0}
 @media(max-width:700px){
 .wrap,.page-width,.bar.wrap,.lobby.wrap{width:calc(100% - 28px)}.bar{height:55px}.bar nav{gap:13px;font-size:12px}
 .wordmark{font-size:26px}.wordmark img{width:29px;height:29px}
-.lobby{padding-top:6px}.brand{display:grid;gap:1px}.tagline{font-size:10px}.bar nav{gap:10px}
+.lobby{padding-top:6px}.brand{display:grid;gap:4px}.tagline{font-size:10px}.bar nav{gap:10px}
 .game-window{height:clamp(220px,73vw,calc(100svh - 125px))}.game-shell{border-radius:10px}
 .game-bar{flex-wrap:wrap;padding:9px 10px}.game-id{display:block}.game-id>*{display:inline}.game-id .lamp{display:inline-block;margin-right:5px}.game-duration{margin-left:5px}.game-id strong{font-size:14px}.game-duration{font-size:12px}
 .tools{gap:5px}.tools a,.tools button{font-size:12px;padding:7px 9px}
