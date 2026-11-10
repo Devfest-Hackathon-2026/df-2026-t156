@@ -1,8 +1,10 @@
 # WORLDSHIFT
 
-宇宙船で荷を運ぶゲームが、「自然の中を自分の足で歩きたい」という提案から、一人称の採鉱対戦に変わりました。WORLDSHIFTでは勝者が次の遊び方を提案し、敗者は試したい案に投票します。現在のゲームは「谷の採鉱競争」。開発中の7つの大きな変化を、提案の原文と実際に遊べる39版でたどれます。
+**プレイヤー自身が作り替えるゲーム。** 現在遊べる「谷の採鉱競争」は、鉱石を掘り、相手と奪い合って持ち帰る3分のオンライン対戦です。勝者は改善案を書き、ほかの参加者は試したい案に投票できます。目指しているのは、選ばれた案を数時間ごとにAIが実装し、次の試合から共通のゲームが変わることです。
 
-[作品サイト・57秒の実演](https://worldshift.pichu.dev/) · [宇宙船から谷への変化](https://worldshift.pichu.dev/history/#r04) · [最新版で対戦](https://worldshift.pichu.dev/play) · [次の改善案](https://worldshift.pichu.dev/history/#ideas)
+開発中に実際に寄せられた「弓や銃みたいな概念があっても良いと思う。」という提案から、離れた相手の鉱石を弓で奪えるようになりました。履歴には提案の原文と、当時のルールで遊べる39版を残しています。
+
+[ゲームを遊ぶ・PVを見る](https://worldshift.pichu.dev/) · [弓が入った版を遊ぶ](https://worldshift.pichu.dev/history/#r26) · [進化の履歴](https://worldshift.pichu.dev/history/) · [次の改善案](https://worldshift.pichu.dev/history/#ideas)
 
 ## 技術構成
 

@@ -17,12 +17,12 @@ const entries = [
 ];
 const videoUrl = 'https://drive.google.com/file/d/1-4jKsDMGDks1GtSBuY7P2qrnsaZC5rN7';
 const pitch = '勝者が改善案を投稿し、ほかのプレイヤーが投票。選ばれた案をAIが数時間ごとに実装して、ゲームに反映する仕組みを開発中です。';
-const word = '<span class="wordmark"><img width="36" height="36" src="/patchplay/pick.png" alt="">Worldshift</span>';
+const word = '<span class="wordmark"><img width="36" height="36" src="/patchplay/icon.svg" alt="">Worldshift</span>';
 const head = (title, desc) => `<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
   <title>${title}</title><meta name="description" content="${desc}"><meta name="theme-color" content="#f7f3e9">
   <meta property="og:title" content="${title}"><meta property="og:description" content="${desc}">
   <meta property="og:image" content="https://worldshift.pichu.dev/patchplay/poster.jpg"><meta name="twitter:card" content="summary_large_image">
-  <link rel="icon" href="/patchplay/pick.png"><link rel="stylesheet" href="/patchplay/style.css"></head><body><a class="skip" href="#main">本文へ</a>`;
+  <link rel="icon" href="/patchplay/icon.svg"><link rel="stylesheet" href="/patchplay/style.css"></head><body><a class="skip" href="#main">本文へ</a>`;
 const nav = (history = false) => `<header class="mast"><div class="bar wrap">
   <a class="brand" href="/" aria-label="WORLDSHIFT ホーム">${word}</a>
   <nav aria-label="メイン"><a href="/" ${history ? '' : 'aria-current="page"'}>ゲーム</a>

@@ -18,11 +18,12 @@ h1,h2,h3,p,figure{margin:0}
 .bar,.bar nav,.brand,.wordmark,.game-bar,.game-id,.tools{display:flex;align-items:center}
 .bar{height:62px;justify-content:space-between;gap:12px}
 .wordmark{gap:.32em;color:var(--pine);font:900 32px/.98 "Trebuchet MS","Arial Rounded MT Bold",system-ui,sans-serif;letter-spacing:-.075em}
-.wordmark img{width:37px;height:37px;padding:3px;border:1px solid #cbab60;border-radius:10px 7px 9px 6px;background:#f4d489;object-fit:contain;image-rendering:pixelated;transform:rotate(-8deg)}
+.wordmark img{width:37px;height:37px;object-fit:contain;transform:rotate(-3deg)}
 .bar nav{gap:24px;align-self:stretch;font-size:14px;font-weight:700}
 .bar nav a{align-self:stretch;display:flex;align-items:center;position:relative}
 .bar nav a[aria-current]::after{content:"";position:absolute;bottom:9px;height:4px;left:0;right:0;border-radius:60% 25%;background:var(--gold);transform:rotate(-2deg)}
 .bar nav a:hover,.trailer-fallback:hover{text-decoration:underline;text-underline-offset:4px}
+.bar.wrap,.lobby.wrap{width:min(1360px,calc(100% - 56px))}
 .lobby{padding:clamp(17px,2.2vw,32px) 0 30px}
 .welcome{margin:0 0 17px}
 .welcome h1,.archive-intro h1{font-size:clamp(26px,3.1vw,43px);letter-spacing:-.055em;line-height:1.25;font-weight:850}
@@ -72,7 +73,7 @@ h1,h2,h3,p,figure{margin:0}
 .feedback-section{background:var(--cream);color:var(--pine);padding:48px 0}.feedback-layout{display:grid;grid-template-columns:.65fr 1.35fr;gap:40px}.feedback-intro h2{font-size:clamp(26px,3vw,40px);line-height:1.4;letter-spacing:-.05em}.feedback-intro>p,.board-message,.empty-state,.proposal-meta,.form-meta{font-size:13px}.feedback-intro p:not(.section-overline){margin:12px 0}.section-overline{font-size:12px;font-weight:650;color:#595d55}.board{min-width:0}.board-toolbar,.board-toolbar>div,.form-meta{display:flex;align-items:center;gap:10px;justify-content:space-between}.board-toolbar{padding-bottom:10px;border-bottom:1px solid #afb3ad}.board-toolbar p{font-weight:750}.feedback-section select,.feedback-section button:not(.button-primary){background:transparent;color:var(--pine);border-color:#969a90}.participation,.empty-state{padding:10px 0;color:#545853;font-size:14px}.proposal-form textarea{margin:10px 0 3px;display:block;width:100%;padding:12px;border:1px solid #90958b;resize:vertical;background:#fff;color:var(--pine)}.proposal-form label{font-weight:700}.form-meta{color:#535951}.proposal-form button{margin-top:10px}.proposal{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:16px 0;border-top:1px solid #bdc0b7}.proposal-text{overflow-wrap:anywhere}.proposal-meta{display:flex;gap:7px;color:#62645c}.proposal-vote{display:flex;align-items:center;gap:8px}.is-error,.form-error{color:#9b2424}
 .feedback-section{border-top:1px solid var(--line)}
 @media(max-width:700px){
-.wrap,.page-width{width:calc(100% - 28px)}.bar{height:55px}.bar nav{gap:13px;font-size:12px}
+.wrap,.page-width,.bar.wrap,.lobby.wrap{width:calc(100% - 28px)}.bar{height:55px}.bar nav{gap:13px;font-size:12px}
 .wordmark{font-size:26px}.wordmark img{width:29px;height:29px}
 .lobby{padding-top:20px}.welcome{margin-bottom:14px}.welcome h1{font-size:clamp(25px,5.6vw,35px)}
 .game-window{aspect-ratio:1.35;min-height:230px;max-height:none}.game-shell{border-radius:10px}
