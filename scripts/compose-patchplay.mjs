@@ -57,7 +57,7 @@ const cards=entries.map((e,i)=>{
   const props=e.inputs.map(prompt);
   const original=props.filter(p=>p?.originalText).map(p=>`<blockquote>${esc(p.originalText)}</blockquote>`).join('');
   const shotLink = (id, label) => `<a class="patch-image" href="${origin}${id}/" aria-label="${esc(label)}">
-    <img width="800" height="450" ${i ? 'loading="lazy"' : ''} src="${img(id)}" alt="${esc(ver(id).title)}">
+    <img width="800" height="450" ${i ? 'loading="lazy"' : ''} src="https://hobby-256508.web.app/worldshift/history/${esc(ver(id).image.split('/').at(-1))}" data-fallback="${esc(img(id))}" onerror="this.onerror=null;this.src=this.dataset.fallback" alt="${esc(ver(id).title)}">
     <span>▶　${esc(label)}</span>
   </a>`;
   const shot = i === 0
