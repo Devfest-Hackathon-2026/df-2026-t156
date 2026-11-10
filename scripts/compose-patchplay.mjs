@@ -16,17 +16,17 @@ const entries = [
   {until:44, shot:'r44',lead:'鉱石を持っていない相手にも、攻撃する理由がほしい。',title:'攻撃を当てると足が速くなる',body:'近接攻撃を当てると、2秒間だけ足が1.4倍速くなる。',inputs:['p46']}
 ];
 const videoUrl = 'https://drive.google.com/file/d/1-4jKsDMGDks1GtSBuY7P2qrnsaZC5rN7';
-const pitch = '勝者が改善案を投稿し、ほかのプレイヤーが投票。選ばれた案をAIが数時間ごとに実装して、ゲームに反映する仕組みを開発中です。';
-const word = '<span class="wordmark"><img width="36" height="36" src="/patchplay/icon.svg" alt="">Worldshift</span>';
+const pitch = '勝者は改善案を投稿し、敗者は投票。選ばれた案をAIが数時間ごとに実装し、ゲームに反映する仕組みを開発中です。';
+const word = '<span class="wordmark"><img width="36" height="36" src="/patchplay/icon.svg" alt="">WorldShift</span>';
 const head = (title, desc) => `<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
   <title>${title}</title><meta name="description" content="${desc}"><meta name="theme-color" content="#f7f3e9">
   <meta property="og:title" content="${title}"><meta property="og:description" content="${desc}">
   <meta property="og:image" content="https://worldshift.pichu.dev/patchplay/poster.jpg"><meta name="twitter:card" content="summary_large_image">
   <link rel="icon" href="/patchplay/icon.svg"><link rel="stylesheet" href="/patchplay/style.css"></head><body><a class="skip" href="#main">本文へ</a>`;
 const nav = (history = false) => `<header class="mast"><div class="bar wrap">
-  <a class="brand" href="/" aria-label="WORLDSHIFT ホーム">${word}</a>
+  <a class="brand" href="/" aria-label="WORLDSHIFT ホーム">${word}<span class="tagline">プレイヤー自身が作り変えるゲーム</span></a>
   <nav aria-label="メイン"><a href="/" ${history ? '' : 'aria-current="page"'}>ゲーム</a>
-  <a href="/history/" ${history ? 'aria-current="page"' : ''}>進化の履歴</a><a href="/history/#ideas">改善案</a></nav>
+  <a data-trailer href="${videoUrl}/view">PVを見る</a><a href="/history/" ${history ? 'aria-current="page"' : ''}>進化の履歴</a></nav>
 </div></header>`;
 const foot = '</body></html>';
 const origin = '/history-play/play/';
@@ -37,17 +37,18 @@ const trailer = `<dialog id="trailer" aria-labelledby="trailer-title"><header>
 </dialog><script type="module" src="/patchplay/trailer.js"></script>`;
 const home = head('WORLDSHIFT — プレイヤー自身が作り替えるゲーム', pitch) + nav() + `
 <main class="lobby wrap" id="main">
-  <div class="welcome"><h1>プレイヤー自身が<br class="phone">作り替えるゲーム</h1><p>${pitch}</p></div>
+  <h1 class="sr-only">WorldShift　プレイヤー自身が作り変えるゲーム</h1>
   <section class="game-shell" id="game-shell" aria-labelledby="game-name">
     <div class="game-window" id="game-window">
       <div class="preview"><img class="game-title" src="/valley-title.png" alt="谷の採鉱競争">
         <a class="start" id="launch-game" href="/play">ゲームを開く <span aria-hidden="true">▶</span></a>
       </div>
     </div>
-    <div class="game-bar"><div class="game-id"><span class="lamp"></span><strong id="game-name">谷の採鉱競争</strong><span>3分のオンライン対戦</span></div>
-      <div class="tools"><a id="trailer-link" href="${videoUrl}/view">▶ PVを見る</a><button type="button" id="fullscreen">⛶ 全画面</button></div>
+    <div class="game-bar"><div class="game-id"><span class="lamp"></span><strong id="game-name">谷の採鉱競争</strong><span class="game-duration">3分のオンライン対戦</span><span class="game-about">${pitch}</span></div>
+      <div class="tools"><a data-trailer href="${videoUrl}/view">▶ PVを見る</a><a href="/history/">進化の履歴</a><button type="button" id="fullscreen">⛶ 全画面</button></div>
     </div>
   </section>
+
 </main>${trailer}<script type="module" src="/patchplay/lobby.js"></script>` + foot;
 const versionOptions=archive.versions.map(v=>`<option value="${esc(v.playUrl)}">${v.id}　${esc(v.title)}</option>`).join('');
 let low=1;
@@ -69,7 +70,7 @@ const cards=entries.map((e,i)=>{
 const previous=await fs.readFile(new URL('history/index.html',root),'utf8');
 const board=previous.match(/<section class="feedback-section"[\s\S]*?<\/section>/)?.[0];
 if(!board)throw Error('Missing feedback form');
-const history=head('進化の履歴 — WORLDSHIFT','プレイヤーの声で何が変わったか。実際の提案とゲームを並べて辿る。')+nav(true)+`<main id="main"><section class="archive-intro wrap"><h1>進化の履歴</h1><p>提案を開いて、当時のゲームを遊んでみよう。</p></section><section class="wrap timeline">${cards}<details class="allversions"><summary>保存版から選んで遊ぶ <span>39 versions</span></summary><form id="archive-pick"><label for="archived">バージョン</label><select id="archived">${versionOptions}</select><button>遊ぶ ↗</button></form></details></section>${board.replace('href="/"','href="/play"').replace('最新版を遊んだら','試合を終えたら')}</main><script type="module" src="/patchplay/history.js"></script>`+foot;
+const history=head('進化の履歴 — WORLDSHIFT','プレイヤーの声で何が変わったか。実際の提案とゲームを並べて辿る。')+nav(true)+`<main id="main"><section class="archive-intro wrap"><h1>進化の履歴</h1><p>提案を開いて、当時のゲームを遊んでみよう。</p></section><section class="wrap timeline">${cards}<details class="allversions"><summary>保存版から選んで遊ぶ <span>39 versions</span></summary><form id="archive-pick"><label for="archived">バージョン</label><select id="archived">${versionOptions}</select><button>遊ぶ ↗</button></form></details></section>${board.replace('href="/"','href="/play"').replace('最新版を遊んだら','試合を終えたら')}</main><script type="module" src="/patchplay/history.js"></script>`+trailer+foot;
 await fs.mkdir(new URL('patchplay/',root),{recursive:true});
 await fs.writeFile(new URL('patchplay/index.html',root),home);
 await fs.writeFile(new URL('history/index.html',root),history);

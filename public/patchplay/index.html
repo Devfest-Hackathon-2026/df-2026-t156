@@ -1,24 +1,25 @@
 <!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>WORLDSHIFT — プレイヤー自身が作り替えるゲーム</title><meta name="description" content="勝者が改善案を投稿し、ほかのプレイヤーが投票。選ばれた案をAIが数時間ごとに実装して、ゲームに反映する仕組みを開発中です。"><meta name="theme-color" content="#f7f3e9">
-  <meta property="og:title" content="WORLDSHIFT — プレイヤー自身が作り替えるゲーム"><meta property="og:description" content="勝者が改善案を投稿し、ほかのプレイヤーが投票。選ばれた案をAIが数時間ごとに実装して、ゲームに反映する仕組みを開発中です。">
+  <title>WORLDSHIFT — プレイヤー自身が作り替えるゲーム</title><meta name="description" content="勝者は改善案を投稿し、敗者は投票。選ばれた案をAIが数時間ごとに実装し、ゲームに反映する仕組みを開発中です。"><meta name="theme-color" content="#f7f3e9">
+  <meta property="og:title" content="WORLDSHIFT — プレイヤー自身が作り替えるゲーム"><meta property="og:description" content="勝者は改善案を投稿し、敗者は投票。選ばれた案をAIが数時間ごとに実装し、ゲームに反映する仕組みを開発中です。">
   <meta property="og:image" content="https://worldshift.pichu.dev/patchplay/poster.jpg"><meta name="twitter:card" content="summary_large_image">
   <link rel="icon" href="/patchplay/icon.svg"><link rel="stylesheet" href="/patchplay/style.css"></head><body><a class="skip" href="#main">本文へ</a><header class="mast"><div class="bar wrap">
-  <a class="brand" href="/" aria-label="WORLDSHIFT ホーム"><span class="wordmark"><img width="36" height="36" src="/patchplay/icon.svg" alt="">Worldshift</span></a>
+  <a class="brand" href="/" aria-label="WORLDSHIFT ホーム"><span class="wordmark"><img width="36" height="36" src="/patchplay/icon.svg" alt="">WorldShift</span><span class="tagline">プレイヤー自身が作り変えるゲーム</span></a>
   <nav aria-label="メイン"><a href="/" aria-current="page">ゲーム</a>
-  <a href="/history/" >進化の履歴</a><a href="/history/#ideas">改善案</a></nav>
+  <a data-trailer href="https://drive.google.com/file/d/1-4jKsDMGDks1GtSBuY7P2qrnsaZC5rN7/view">PVを見る</a><a href="/history/" >進化の履歴</a></nav>
 </div></header>
 <main class="lobby wrap" id="main">
-  <div class="welcome"><h1>プレイヤー自身が<br class="phone">作り替えるゲーム</h1><p>勝者が改善案を投稿し、ほかのプレイヤーが投票。選ばれた案をAIが数時間ごとに実装して、ゲームに反映する仕組みを開発中です。</p></div>
+  <h1 class="sr-only">WorldShift　プレイヤー自身が作り変えるゲーム</h1>
   <section class="game-shell" id="game-shell" aria-labelledby="game-name">
     <div class="game-window" id="game-window">
       <div class="preview"><img class="game-title" src="/valley-title.png" alt="谷の採鉱競争">
         <a class="start" id="launch-game" href="/play">ゲームを開く <span aria-hidden="true">▶</span></a>
       </div>
     </div>
-    <div class="game-bar"><div class="game-id"><span class="lamp"></span><strong id="game-name">谷の採鉱競争</strong><span>3分のオンライン対戦</span></div>
-      <div class="tools"><a id="trailer-link" href="https://drive.google.com/file/d/1-4jKsDMGDks1GtSBuY7P2qrnsaZC5rN7/view">▶ PVを見る</a><button type="button" id="fullscreen">⛶ 全画面</button></div>
+    <div class="game-bar"><div class="game-id"><span class="lamp"></span><strong id="game-name">谷の採鉱競争</strong><span class="game-duration">3分のオンライン対戦</span><span class="game-about">勝者は改善案を投稿し、敗者は投票。選ばれた案をAIが数時間ごとに実装し、ゲームに反映する仕組みを開発中です。</span></div>
+      <div class="tools"><a data-trailer href="https://drive.google.com/file/d/1-4jKsDMGDks1GtSBuY7P2qrnsaZC5rN7/view">▶ PVを見る</a><a href="/history/">進化の履歴</a><button type="button" id="fullscreen">⛶ 全画面</button></div>
     </div>
   </section>
+
 </main><dialog id="trailer" aria-labelledby="trailer-title"><header>
   <h2 id="trailer-title">WORLDSHIFTのPV</h2><form method="dialog"><button autofocus>閉じる ×</button></form></header>
   <iframe title="WORLDSHIFTの実演動画" data-src="https://drive.google.com/file/d/1-4jKsDMGDks1GtSBuY7P2qrnsaZC5rN7/preview" allow="autoplay; fullscreen" allowfullscreen></iframe>
