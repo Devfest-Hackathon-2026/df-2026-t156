@@ -2,7 +2,9 @@ import { readFile } from 'node:fs/promises';
 const api = 'https://api.cloudflare.com/client/v4';
 const token = process.env.CLOUDFLARE_API_TOKEN;
 if (!token) throw Error('Set CLOUDFLARE_API_TOKEN for the pichu.dev zone.');
-const host = 'worldshift.pichu.dev', name = 'worldshift-edge';
+const legacy = process.argv.includes('--legacy');
+const prefix = legacy ? 'patchplay' : 'worldshift';
+const host = prefix + '.pichu.dev', name = prefix + '-edge';
 async function call(path, options = {}) {
   const r = await fetch(api + path, {...options, headers: {Authorization: 'Bearer ' + token,...options.headers}});
   const b = await r.json(); if (!r.ok || !b.success) throw Error(r.status+' '+JSON.stringify(b.errors));
@@ -12,6 +14,7 @@ const zone = (await call('/zones?name=pichu.dev&status=active')).find(z=>z.name=
 if(!zone) throw Error('Zone unavailable');
 const acc='/accounts/'+zone.account.id+'/workers';
 const domains=await call(acc+'/domains'), current=domains.find(d=>d.hostname===host);
+if (legacy && !current) throw Error('Expected existing legacy hostname');
 const records=await call('/zones/'+zone.id+'/dns_records?name='+host);
 if ((current && current.service!==name) || (!current && records.length)) throw Error('Hostname in use');
 const scripts=await call(acc+'/scripts');

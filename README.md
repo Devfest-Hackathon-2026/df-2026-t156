@@ -20,6 +20,12 @@
 
 開発ではCodexによる実装支援と、UnitySkillsによるEditorの状態確認・操作・WebGLビルドを利用しています。実行時の対戦・旧版再生は、上表のC#・Node.js・Workerが担当します。
 
+### 公開サイトの接続
+
+2026-11-10に、公開ドメインでWebSocketの接続開始だけ成功し、参加メッセージが届かない障害を修正しました。現行WebGLは公開時にCloud Runの同じ対戦サーバーへ直接つなぎます。旧クライアント用の同一ドメインの `/ws` は、Workerから新しいUpgrade要求を送り、101応答をそのまま返します。配信ファイルは再検証し、投票・参加権利APIの応答はブラウザーに保存しません。
+
+再現確認は、公開サイトの「参加する」から試合タイマーが進むところまで行います。通信単体では `/ws` を開き、`{"type":"join","name":"接続確認","protocol":2}` に対する `welcome` と `frame` の両方で判定できます。旧ドメインの既存Workerに同じ修正を適用する際は、通常のedge配備に `--legacy` を渡します。
+
 ## 体験と改善の記録
 
 [宇宙船から谷へ](https://worldshift.pichu.dev/history/#r04)、[背景の大岩から採掘できる近道へ](https://worldshift.pichu.dev/history/#r16)、[弓で鉱石を奪う対戦へ](https://worldshift.pichu.dev/history/#r26)。それぞれの画面から当時の版を起動できます。
